@@ -22,11 +22,13 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <RouterLink to="/about">About</RouterLink></a
+              <RouterLink to="/about">Om oss</RouterLink></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#"
+              ><RouterLink to="/products">Produkter</RouterLink></a
+            >
           </li>
           <li class="nav-item dropdown">
             <a

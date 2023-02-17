@@ -1,11 +1,12 @@
 <script setup>
 import NavBar from "../components/NavBar.vue";
+import ProductCard from "../components/ProductCard.vue";
 </script>
 
 <template>
   <NavBar></NavBar>
   <h1>ABOUT VIEW</h1>
-  <p>Testar branch</p>
+  <ProductCard></ProductCard>
 </template>
 
 <style></style>
