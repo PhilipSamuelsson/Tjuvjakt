@@ -1,4 +1,5 @@
 <template>
+
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -14,7 +15,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">
               <RouterLink to="/">Home</RouterLink></a
@@ -45,3 +46,30 @@
     </div>
   </nav>
 </template>
+
+
+<style>
+nav {
+  background: white;
+  height: 40px;
+  width: 100%;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul li a:hover {
+  color: black;
+}
+
+
+
+
+</style>
