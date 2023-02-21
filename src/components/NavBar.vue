@@ -5,7 +5,7 @@
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img class="img-logo" src="../assets/img/tjuvgods_logo.png"></a>
+      <a class="navbar-brand" href="#"><img class="img-logo" src="../assets/img/tjuvgods_logo.png" alt="Logo"></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -52,15 +52,15 @@
 
 <style>
 
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
 nav[class="navbar navbar-expand-lg bg-body-tertiary"] {
-  font-family: "Turret Road", cursive;
-  /* font-family: Outfit; */
-  background-color: white;
+  font-family: "Outfit", sans-serif;
   font-weight: bold;
+  font-size: 20px;
 }
 
 nav {
-  font-family: "Outfit", sans-serif;
   background: white;
   height: 40px;
   width: 100%;
@@ -74,6 +74,8 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: black;
+  font-size: 20px;
+  
 }
 
 nav ul li a:hover {
@@ -82,10 +84,16 @@ nav ul li a:hover {
 
 .img-logo{
   height: 25px;
-  width: 100px;
+  width: 147px;
 }
 .Kassa {
-  height: 20px;
-  width: 20px;
+  height: 28px;
+  width: 39px;
 }
+
+
+/* @media screen and (min-width: 375px) and (max-width: 980px) {
+ 
+  
+} */
 </style>
