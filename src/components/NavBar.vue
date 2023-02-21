@@ -93,7 +93,11 @@ nav ul li a:hover {
 
 
 /* @media screen and (min-width: 375px) and (max-width: 980px) {
- 
-  
+  nav{
+    position: fixed;
+    background-color: white;
+    height: 400px;
+    width: 100%;
+  }
 } */
 </style>
