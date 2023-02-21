@@ -1,13 +1,35 @@
-# Labb-3-Team-6-
+# vue-project
 
-länk till API vi kommer använda:
-https://fakestoreapi.com/docs
+This template should help get you started developing with Vue 3 in Vite.
 
-Länk till unsplash:
-https://unsplash.com/s/photos/product
+## Recommended IDE Setup
 
-https://unsplash.com/collections/NB062zcldns/object
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-https://unsplash.com/photos/2cFZ_FB08UM
+## Customize configuration
 
-https://unsplash.com/collections/8209878/product
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
