@@ -1,7 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import FooterBar from "./components/FooterBar.vue";
 </script>
 
 <template>
-  <RouterView />
+  <main>
+    <RouterView />
+    <FooterBar />
+  </main>
 </template>
+
+<style scoped>
+main {
+  height: auto;
+}
+</style>
