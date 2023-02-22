@@ -1,0 +1,14 @@
+@import url('https://fonts.google.com/specimen/Outfit?preview.text=outfit&preview.text_type=custom&category=Sans+Serif');
+@import url('https://fonts.google.com/specimen/Turret+Road?preview.text=Tjuvgods&preview.text_type=custom&category=Serif,Display,Monospace');
+
+* {
+    font-family: Outfit, sans-serif;
+    box-sizing: border-box;
+
+    --primary-red: #F56B6B;
+    --secondary-red: #EF6C6C;
+    --third-red: #f2a7a7;
+    --grey: #f2f2f2;
+    --black: #0d0d0d;
+
+}
