@@ -72,7 +72,10 @@ nav {
   background: white;
   height: 60px;
   width: 100%;
+  z-index: 10;
 }
+
+
 
 nav ul li {
   display: inline-block;
@@ -100,9 +103,9 @@ nav ul li a:hover {
   width: 39px;
 }
 
- /* @media screen and (min-width: 375px) and (max-width: 980px) {
+ @media screen and (min-width: 375px) and (max-width: 980px) {
 
 
  
-}  */
+} 
 </style>
