@@ -105,10 +105,13 @@ nav ul li a:hover {
 
  @media screen and (min-width: 375px) and (max-width: 980px) {
   nav ul {
-     background-color: white;
+    background-color: white;
+    /* height: 100%; */
     height: 100vh;
     width: 100%;
+    border-radius: 5px;
     
+
   }
  
   .img-logo{
