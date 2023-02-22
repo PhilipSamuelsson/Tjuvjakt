@@ -69,7 +69,7 @@ nav[class="navbar navbar-expand-lg bg-body-tertiary"] {
 }
 
 nav {
-  background: white;
+  background-color: white;
   height: 60px;
   width: 100%;
   z-index: 10;
@@ -104,7 +104,16 @@ nav ul li a:hover {
 }
 
  @media screen and (min-width: 375px) and (max-width: 980px) {
-
+  nav ul {
+     background-color: white;
+    height: 100vh;
+    width: 100%;
+    
+  }
+ 
+  .img-logo{
+    width: 90px;
+  }
 
  
 } 
