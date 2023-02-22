@@ -5,9 +5,18 @@
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img class="img-logo" src="../assets/img/tjuvgods_logo.png" alt="Logo" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#"
+        ><img class="img-logo" src="../assets/img/tjuvgods_logo.png" alt="Logo"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -20,13 +29,13 @@
 
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <RouterLink to="/about">Produkt</RouterLink>
+              <RouterLink to="/products">Produkt</RouterLink>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <RouterLink to="/products">Mitt konto</RouterLink>
+              <RouterLink to="/profile">Mitt konto</RouterLink>
             </a>
           </li>
 
@@ -39,7 +48,10 @@
           <li class="nav-item">
             <a class="nav-link" href="#">
               <RouterLink to="/checkout">
-                <img class="Kassa" src="../assets/img/shopping-cart-icon-1.png" />
+                <img
+                  class="Kassa"
+                  src="../assets/img/shopping-cart-icon-1.png"
+                />
               </RouterLink>
             </a>
           </li>
