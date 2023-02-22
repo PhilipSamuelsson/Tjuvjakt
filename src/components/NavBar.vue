@@ -65,17 +65,19 @@ nav[class="navbar navbar-expand-lg bg-body-tertiary"] {
   font-family: "Outfit", sans-serif;
   font-weight: bold;
   font-size: 20px;
+  
 }
 
 nav {
   background: white;
-  height: 40px;
+  height: 60px;
   width: 100%;
 }
 
 nav ul li {
   display: inline-block;
   margin: 0 20px;
+  
 }
 
 nav ul li a {
@@ -98,9 +100,9 @@ nav ul li a:hover {
   width: 39px;
 }
 
- @media screen and (min-width: 375px) and (max-width: 980px) {
+ /* @media screen and (min-width: 375px) and (max-width: 980px) {
 
 
  
-} 
+}  */
 </style>
