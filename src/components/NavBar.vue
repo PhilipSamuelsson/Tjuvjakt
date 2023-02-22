@@ -29,7 +29,7 @@
 
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <RouterLink to="/products">Produkt</RouterLink>
+              <RouterLink to="/testproducts">Produkt</RouterLink>
             </a>
           </li>
 
