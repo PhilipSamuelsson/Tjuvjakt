@@ -35,12 +35,6 @@ import FooterBar from "../components/FooterBar.vue";
           </a>
         </li>
 
-          <!-- <li class="nav-item">
-                <a class="nav-link" href="#"
-                  ><RouterLink to="/profile">profil</RouterLink></a
-                >
-              </li> -->
-
           <li class="nav-item">
             <a class="nav-link" href="#">
               <RouterLink to="/checkout">
