@@ -1,0 +1,362 @@
+[
+  {
+    "id": "1",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80",
+    "title": "Hermes Watch",
+    "category": "Elektronik",
+    "price": 4999,
+    "quantity": 2,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "2",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Bose Earphones",
+    "category": "Elektronik",
+    "price": 2999,
+    "quantity": 5,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "3",
+    "image": "https://images.unsplash.com/photo-1580236176063-bea7f16aec30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=372&q=80",
+    "title": "Apple Earpods Vintage",
+    "category": "Elektronik",
+    "price": 199,
+    "quantity": 6,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "4",
+    "image": "https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "PS4",
+    "category": "Elektronik",
+    "price": 1999,
+    "quantity": 2,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "5",
+    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Polaroidkamera",
+    "category": "Elektronik",
+    "price": 1999,
+    "quantity": 8,
+    "description": ""
+  },
+  {
+    "id": "6",
+    "image": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    "title": "Nike XC-2 Air",
+    "category": "Skor",
+    "price": 999,
+    "quantity": 5,
+    "description": "Skor kan vara tillverkade av olika material, inklusive läder, tyg, gummi och syntetiska material. Skor kan också ha olika funktioner, som att ge extra stöd till fötterna, skydda mot vatten och kyla, ge extra grepp på ytan och förbättra prestanda vid sportaktiviteter.  De finns i olika stilar och modeller, såsom sandaler, sneakers, klackskor, kängor och många fler. Skor är en viktig del av vår garderob och väljs ofta baserat på både funktion och stil."
+  },
+  {
+    "id": "7",
+    "image": "https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Adidas Vintage White",
+    "category": "Skor",
+    "price": 1999,
+    "quantity": 4,
+    "description": "Skor kan vara tillverkade av olika material, inklusive läder, tyg, gummi och syntetiska material. Skor kan också ha olika funktioner, som att ge extra stöd till fötterna, skydda mot vatten och kyla, ge extra grepp på ytan och förbättra prestanda vid sportaktiviteter.  De finns i olika stilar och modeller, såsom sandaler, sneakers, klackskor, kängor och många fler. Skor är en viktig del av vår garderob och väljs ofta baserat på både funktion och stil."
+  },
+  {
+    "id": "8",
+    "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    "title": "Nike Airforce One",
+    "category": "Skor",
+    "price": 999,
+    "quantity": 2,
+    "description": "Skor kan vara tillverkade av olika material, inklusive läder, tyg, gummi och syntetiska material. Skor kan också ha olika funktioner, som att ge extra stöd till fötterna, skydda mot vatten och kyla, ge extra grepp på ytan och förbättra prestanda vid sportaktiviteter.  De finns i olika stilar och modeller, såsom sandaler, sneakers, klackskor, kängor och många fler. Skor är en viktig del av vår garderob och väljs ofta baserat på både funktion och stil."
+  },
+  {
+    "id": "9",
+    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+    "title": "Axel Arigato Vintage",
+    "category": "Skor",
+    "price": 2999,
+    "quantity": 5,
+    "description": "Skor kan vara tillverkade av olika material, inklusive läder, tyg, gummi och syntetiska material. Skor kan också ha olika funktioner, som att ge extra stöd till fötterna, skydda mot vatten och kyla, ge extra grepp på ytan och förbättra prestanda vid sportaktiviteter.  De finns i olika stilar och modeller, såsom sandaler, sneakers, klackskor, kängor och många fler. Skor är en viktig del av vår garderob och väljs ofta baserat på både funktion och stil."
+  },
+  {
+    "id": "10",
+    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80",
+    "title": "Vans Red Sway",
+    "category": "Skor",
+    "price": 999,
+    "quantity": 3,
+    "description": "Skor kan vara tillverkade av olika material, inklusive läder, tyg, gummi och syntetiska material. Skor kan också ha olika funktioner, som att ge extra stöd till fötterna, skydda mot vatten och kyla, ge extra grepp på ytan och förbättra prestanda vid sportaktiviteter.  De finns i olika stilar och modeller, såsom sandaler, sneakers, klackskor, kängor och många fler. Skor är en viktig del av vår garderob och väljs ofta baserat på både funktion och stil."
+  },
+  {
+    "id": "11",
+    "image": "https://images.unsplash.com/photo-1606746448655-6d7d999ebf31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Apple Earpods",
+    "category": "Elektronik",
+    "price": 3999,
+    "quantity": 5,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "12",
+    "image": "https://images.unsplash.com/photo-1499033300314-43c811cff6d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    "title": "Apple laddare",
+    "category": "Elektronik",
+    "price": 199,
+    "quantity": 6,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "13",
+    "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+    "title": "Apple Watch",
+    "category": "Elektronik",
+    "price": 5999,
+    "quantity": 5,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "14",
+    "image": "https://images.unsplash.com/photo-1598900785046-724f0370f319?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    "title": "Apple Pocketwatch",
+    "category": "Elektronik",
+    "price": 4999,
+    "quantity": 6,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "15",
+    "image": "https://images.unsplash.com/photo-1522040883829-9104eee3488a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+    "title": "Apple MacBook",
+    "category": "Elektronik",
+    "price": 8999,
+    "quantity": 8,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "16",
+    "image": "https://images.unsplash.com/photo-1510674485131-dc88d96369b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=349&q=80",
+    "title": "Apple Magic Keyboard",
+    "category": "Elektronik",
+    "price": 6999,
+    "quantity": 6,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "17",
+    "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    "title": "Ray-Ban Wayfarer",
+    "category": "Glasögon",
+    "price": 1999,
+    "quantity": 5,
+    "description": "Glasögon kan tillverkas av olika material, inklusive plast, metall och titan, och finns i olika stilar och modeller för att passa olika ansiktsformer och personliga preferenser. Glasögon är en viktig hjälpmedel för människor med synproblem och har också blivit en modeaccessoar. Glasögon kan också ha andra funktioner, som att skydda ögonen från solens skadliga strålar, skydda mot vind och damm, eller användas för att förstärka en viss färg eller kontrast."
+  },
+  {
+    "id": "18",
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    "title": "Hermes Rounded Gold",
+    "category": "Glasögon",
+    "price": 3999,
+    "quantity": 5,
+    "description": "Glasögon kan tillverkas av olika material, inklusive plast, metall och titan, och finns i olika stilar och modeller för att passa olika ansiktsformer och personliga preferenser. Glasögon är en viktig hjälpmedel för människor med synproblem och har också blivit en modeaccessoar. Glasögon kan också ha andra funktioner, som att skydda ögonen från solens skadliga strålar, skydda mot vind och damm, eller användas för att förstärka en viss färg eller kontrast."
+  },
+  {
+    "id": "19",
+    "image": "https://images.unsplash.com/photo-1581778571772-11f8c6af4103?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80",
+    "title": "Hermes Rounded Silver",
+    "category": "Glasögon",
+    "price": 3999,
+    "quantity": 5,
+    "description": "Glasögon kan tillverkas av olika material, inklusive plast, metall och titan, och finns i olika stilar och modeller för att passa olika ansiktsformer och personliga preferenser. Glasögon är en viktig hjälpmedel för människor med synproblem och har också blivit en modeaccessoar. Glasögon kan också ha andra funktioner, som att skydda ögonen från solens skadliga strålar, skydda mot vind och damm, eller användas för att förstärka en viss färg eller kontrast."
+  },
+  {
+    "id": "20",
+    "image": "https://images.unsplash.com/photo-1589642380614-4a8c2147b857?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    "title": "Gucci Squared Silver",
+    "category": "Glasögon",
+    "price": 3999,
+    "quantity": 5,
+    "description": "Glasögon kan tillverkas av olika material, inklusive plast, metall och titan, och finns i olika stilar och modeller för att passa olika ansiktsformer och personliga preferenser. Glasögon är en viktig hjälpmedel för människor med synproblem och har också blivit en modeaccessoar. Glasögon kan också ha andra funktioner, som att skydda ögonen från solens skadliga strålar, skydda mot vind och damm, eller användas för att förstärka en viss färg eller kontrast."
+  },
+  {
+    "id": "21",
+    "image": "https://images.unsplash.com/photo-1599838082471-71ca4aa8e0c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Ray-Ban Club Master Classics",
+    "category": "Glasögon",
+    "price": 3999,
+    "quantity": 3,
+    "description": "Glasögon kan tillverkas av olika material, inklusive plast, metall och titan, och finns i olika stilar och modeller för att passa olika ansiktsformer och personliga preferenser. Glasögon är en viktig hjälpmedel för människor med synproblem och har också blivit en modeaccessoar. Glasögon kan också ha andra funktioner, som att skydda ögonen från solens skadliga strålar, skydda mot vind och damm, eller användas för att förstärka en viss färg eller kontrast."
+  },
+  {
+    "id": "22",
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    "title": "Armani Icabag",
+    "category": "Kläder",
+    "price": 4999,
+    "quantity": 2,
+    "description": "Kläder är plagg som bärs för att täcka och skydda kroppen. De kan vara tillverkade av olika material, inklusive tyg, läder och syntetiska fibrer, och finns i olika stilar och modeller som passar olika aktiviteter och tillfällen. Kläder inkluderar vanligtvis byxor, kjolar, shorts, klänningar, skjortor, tröjor, jackor, rockar och mycket mer. Kläder kan också ha olika funktioner, som att ge skydd mot väder och vind, ge extra stöd och komfort, eller användas för att uttrycka sin personliga stil och smak."
+  },
+  {
+    "id": "23",
+    "image": "https://images.unsplash.com/photo-1574365569389-a10d488ca3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Hermes Coopkasse",
+    "category": "Kläder",
+    "price": 4999,
+    "quantity": 3,
+    "description": "Kläder är plagg som bärs för att täcka och skydda kroppen. De kan vara tillverkade av olika material, inklusive tyg, läder och syntetiska fibrer, och finns i olika stilar och modeller som passar olika aktiviteter och tillfällen. Kläder inkluderar vanligtvis byxor, kjolar, shorts, klänningar, skjortor, tröjor, jackor, rockar och mycket mer. Kläder kan också ha olika funktioner, som att ge skydd mot väder och vind, ge extra stöd och komfort, eller användas för att uttrycka sin personliga stil och smak."
+  },
+  {
+    "id": "24",
+    "image": "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=939&q=80",
+    "title": "En banan",
+    "category": "Hittegods",
+    "price": 9,
+    "quantity": 1,
+    "description": "Hittegods är förlorade eller borttappade föremål som hittas av någon annan person. Det kan vara allt från mobiltelefoner, plånböcker och nycklar till cyklar, smycken och kläder. När hittegodset hittas, är det oftast skyldigheten för personen som hittade det att sälja det, så att ägaren kan återfå det. Hittegods kan också säljas eller auktioneras ut om ingen ägare dyker upp inom en viss tid."
+  },
+  {
+    "id": "25",
+    "image": "https://images.unsplash.com/photo-1544441892-794166f1e3be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Adidas Stan Smith",
+    "category": "Skor",
+    "price": 999,
+    "quantity": 7,
+    "description": "Skor kan vara tillverkade av olika material, inklusive läder, tyg, gummi och syntetiska material. Skor kan också ha olika funktioner, som att ge extra stöd till fötterna, skydda mot vatten och kyla, ge extra grepp på ytan och förbättra prestanda vid sportaktiviteter.  De finns i olika stilar och modeller, såsom sandaler, sneakers, klackskor, kängor och många fler. Skor är en viktig del av vår garderob och väljs ofta baserat på både funktion och stil."
+  },
+  {
+    "id": "26",
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Adidas Runners Vintage",
+    "category": "Skor",
+    "price": 1999,
+    "quantity": 8,
+    "description": "Skor kan vara tillverkade av olika material, inklusive läder, tyg, gummi och syntetiska material. Skor kan också ha olika funktioner, som att ge extra stöd till fötterna, skydda mot vatten och kyla, ge extra grepp på ytan och förbättra prestanda vid sportaktiviteter.  De finns i olika stilar och modeller, såsom sandaler, sneakers, klackskor, kängor och många fler. Skor är en viktig del av vår garderob och väljs ofta baserat på både funktion och stil."
+  },
+  {
+    "id": "27",
+    "image": "https://images.unsplash.com/photo-1544428571-aaf850ce481e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    "title": "Google Listener",
+    "category": "Elektronik",
+    "price": 2999,
+    "quantity": 12,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "28",
+    "image": "https://images.unsplash.com/photo-1592832122594-c0c6bad718b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    "title": "Apple Iphone 13 Pro",
+    "category": "Elektronik",
+    "price": 2999,
+    "quantity": 7,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "29",
+    "image": "https://images.unsplash.com/photo-1575908539629-62b3f98d7b3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=703&q=80",
+    "title": "Leffes tändare",
+    "category": "Hittegods",
+    "price": 19,
+    "quantity": 1,
+    "description": "Hittegods är förlorade eller borttappade föremål som hittas av någon annan person. Det kan vara allt från mobiltelefoner, plånböcker och nycklar till cyklar, smycken och kläder. När hittegodset hittas, är det oftast skyldigheten för personen som hittade det att sälja det, så att ägaren kan återfå det. Hittegods kan också säljas eller auktioneras ut om ingen ägare dyker upp inom en viss tid."
+  },
+  {
+    "id": "30",
+    "image": "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=375&q=80",
+    "title": "Svart bläckpenna",
+    "category": "Hittegods",
+    "price": 19,
+    "quantity": 5,
+    "description": "Hittegods är förlorade eller borttappade föremål som hittas av någon annan person. Det kan vara allt från mobiltelefoner, plånböcker och nycklar till cyklar, smycken och kläder. När hittegodset hittas, är det oftast skyldigheten för personen som hittade det att sälja det, så att ägaren kan återfå det. Hittegods kan också säljas eller auktioneras ut om ingen ägare dyker upp inom en viss tid."
+  },
+  {
+    "id": "31",
+    "image": "https://images.unsplash.com/photo-1474508297924-60ae8de135eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    "title": "Google Home",
+    "category": "Elektronik",
+    "price": 1999,
+    "quantity": 12,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "32",
+    "image": "https://images.unsplash.com/photo-1612801799890-4ba4760b6590?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
+    "title": "Xbox Series S",
+    "category": "Elektronik",
+    "price": 6999,
+    "quantity": 8,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "33",
+    "image": "https://images.unsplash.com/photo-1606171687198-55586a6cdf4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=446&q=80",
+    "title": "PS5 DualSense",
+    "category": "Elektronik",
+    "price": 1999,
+    "quantity": 11,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "34",
+    "image": "https://images.unsplash.com/photo-1603313011101-320f26a4f6f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    "title": "Crocodile Skin Svart Mobilskal",
+    "category": "Hittegods",
+    "price": 199,
+    "quantity": 34,
+    "description": "Hittegods är förlorade eller borttappade föremål som hittas av någon annan person. Det kan vara allt från mobiltelefoner, plånböcker och nycklar till cyklar, smycken och kläder. När hittegodset hittas, är det oftast skyldigheten för personen som hittade det att sälja det, så att ägaren kan återfå det. Hittegods kan också säljas eller auktioneras ut om ingen ägare dyker upp inom en viss tid."
+  },
+  {
+    "id": "35",
+    "image": "https://images.unsplash.com/photo-1528921581519-52b9d779df2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
+    "title": "Väska med innehåll hittat i Tunnelbanan",
+    "category": "Hittegods",
+    "price": 6999,
+    "quantity": 2,
+    "description": "Hittegods är förlorade eller borttappade föremål som hittas av någon annan person. Det kan vara allt från mobiltelefoner, plånböcker och nycklar till cyklar, smycken och kläder. När hittegodset hittas, är det oftast skyldigheten för personen som hittade det att sälja det, så att ägaren kan återfå det. Hittegods kan också säljas eller auktioneras ut om ingen ägare dyker upp inom en viss tid."
+  },
+  {
+    "id": "36",
+    "image": "https://images.unsplash.com/photo-1531525645387-7f14be1bdbbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    "title": "Gameboy Color Yellow",
+    "category": "Elektronik",
+    "price": 999,
+    "quantity": 5,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "37",
+    "image": "https://images.unsplash.com/photo-1557180295-76eee20ae8aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    "title": "Telephone Vintage",
+    "category": "Elektronik",
+    "price": 899,
+    "quantity": 5,
+    "description": "Elektroniska saker är produkter som är baserade på elektronik och som används för att utföra olika funktioner. Det kan inkludera datorer, mobiltelefoner, TV-apparater, högtalare, kameror, spelkonsoler, bärbara enheter, smarta hemsystem och mycket mer. Dessa produkter har blivit en viktig del av vår vardag och har förändrat hur vi kommunicerar, underhåller oss och utför våra dagliga sysslor."
+  },
+  {
+    "id": "38",
+    "image": "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "'Leffes bästa eurotechno'-mixtejp",
+    "category": "Hittegods",
+    "price": 9,
+    "quantity": 3,
+    "description": "Hittegods är förlorade eller borttappade föremål som hittas av någon annan person. Det kan vara allt från mobiltelefoner, plånböcker och nycklar till cyklar, smycken och kläder. När hittegodset hittas, är det oftast skyldigheten för personen som hittade det att sälja det, så att ägaren kan återfå det. Hittegods kan också säljas eller auktioneras ut om ingen ägare dyker upp inom en viss tid."
+  },
+  {
+    "id": "39",
+    "image": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Grå Cykel",
+    "category": "Hittegods",
+    "price": 9999,
+    "quantity": 2,
+    "description": "Hittegods är förlorade eller borttappade föremål som hittas av någon annan person. Det kan vara allt från mobiltelefoner, plånböcker och nycklar till cyklar, smycken och kläder. När hittegodset hittas, är det oftast skyldigheten för personen som hittade det att sälja det, så att ägaren kan återfå det. Hittegods kan också säljas eller auktioneras ut om ingen ägare dyker upp inom en viss tid."
+  },
+  {
+    "id": "40",
+    "image": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "title": "Vit Cykel",
+    "category": "Hittegods",
+    "price": 9999,
+    "quantity": 4,
+    "description": "Hittegods är förlorade eller borttappade föremål som hittas av någon annan person. Det kan vara allt från mobiltelefoner, plånböcker och nycklar till cyklar, smycken och kläder. När hittegodset hittas, är det oftast skyldigheten för personen som hittade det att sälja det, så att ägaren kan återfå det. Hittegods kan också säljas eller auktioneras ut om ingen ägare dyker upp inom en viss tid."
+  }
+]
