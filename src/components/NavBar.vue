@@ -1,8 +1,5 @@
 <template>
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet"/> -->
-
+  
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"
@@ -102,13 +99,7 @@ nav ul li a:hover {
 }
 
  @media screen and (min-width: 375px) and (max-width: 980px) {
-  nav{
-    position: fixed;
-     background-color: white;
-    height: 400px;
-     width: 100%; 
-    margin: 0;
-  }
+
 
  
 } 
