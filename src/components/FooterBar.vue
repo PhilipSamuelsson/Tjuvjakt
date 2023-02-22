@@ -27,8 +27,8 @@ import { RouterLink } from "vue-router";
 
 <style scoped>
 .footerbar {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   width: 100vw;
   /* border-top: 2px solid black; */
   padding: auto 20px;
