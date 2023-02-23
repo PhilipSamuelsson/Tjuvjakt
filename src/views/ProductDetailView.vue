@@ -1,18 +1,19 @@
 <template>
-  <div class="product-wrapper">
-    <div class="product-container">
-      <!-- <div class="product-img-container">
-        <div
-                      :style="{ backgroundImage: 'url(' + productImage + ')' }"
-                      class="product-img"
-                    />
-                  </div> -->
-      <div class="product-info-container">
-        <p class="product-price">Här ligger product id {{ productID }} KR</p>
-        <p class="product-price">Finns det här: {{ varan.title }} ?</p>
-        <!-- <button @click="fetchProduct">Klicka rå</button> -->
-      </div>
+  <div class="col">
+    <div class="kontägner">
+      <img :src=varan.image alt="product image" class="produktbilden">
     </div>
+  </div>
+  <div class="information">
+    <h4 class="titel">Vara {{ productID }}: {{ varan.title }}</h4>
+    <h4 class="pris">Pris {{ varan.price }} Kr</h4>
+  </div>
+  <div class="mer-information">
+    <h4>Kategori: {{ varan.category }}</h4>
+    <h4>(Antal) I lager: {{ varan.quantity }}</h4>
+  </div>
+  <div class="mera-information">
+    <p>Beskrivning: <br> {{ varan.description }}</p>
   </div>
 </template>
 
@@ -25,11 +26,6 @@ export default {
       varan: {}
     };
   },
-  // created() {
-  //   this.$on('produkt-vald', ({ productData }) => {
-  //     this.productData = productData;
-  //   });
-  // },
   methods: {
     async fetchProduct() {
       const result = await axios.get('/productapi.json', {
@@ -41,8 +37,53 @@ export default {
     },
   },
   mounted() {
-    // this.kollar()
     this.fetchProduct()
   }
 };
 </script>
+
+<style scoped>
+.kontägner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.produktbilden {
+  width: clamp(250px, 80%, 920px);
+}
+
+.information {
+  width: clamp(250px, 80%, 920px);
+  display: flex;
+  margin: 3vh auto;
+  justify-content: space-between;
+}
+
+.information h4 {
+  font-size: clamp(16px, 4vw, 24px);
+}
+
+.mer-information {
+  width: clamp(250px, 80%, 920px);
+  display: flex;
+  margin: 3vh auto;
+  justify-content: space-between;
+}
+
+.mer-information h4 {
+  font-size: clamp(16px, 4vw, 24px);
+}
+
+.mera-information {
+  width: clamp(250px, 80%, 920px);
+  display: flex;
+  margin: 3vh auto;
+  justify-content: space-between;
+}
+
+.mera-information p {
+  font-size: clamp(12px, 3vw, 20px);
+}
+</style>
