@@ -44,19 +44,19 @@ import CartContainer from '../components/CartContainer.vue'
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <RouterLink to="/checkout">
+            <a class="nav-link" href="#" @click="$store.commit('toggleCart')">
+
                 <img
                   class="Kassa"
                   src="../assets/img/shopping-cart-icon-1.png"
                 />
-              </RouterLink>
+
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <CartContainer/>
+    <CartContainer v-if="$store.state.showCart"/>
   </nav>
   <RouterView />
   <FooterBar />

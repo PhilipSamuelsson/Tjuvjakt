@@ -8,7 +8,7 @@
     <h2 class="cartHeader">Varukorg</h2>
 
 
-    <button data-close class="close">&times;</button>
+    <button @click="$store.commit('toggleCart')" class="close">&times;</button>
 
     <button class="button-50" role="button">Till kassan</button>
 
