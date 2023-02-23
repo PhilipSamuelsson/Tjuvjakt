@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .kontägner {
   display: flex;
   flex-direction: column;
@@ -63,6 +63,7 @@ export default {
 
 .information h4 {
   font-size: clamp(16px, 4vw, 24px);
+  font-family: 'Outfit', sans-serif;
 }
 
 .mer-information {
@@ -74,6 +75,7 @@ export default {
 
 .mer-information h4 {
   font-size: clamp(16px, 4vw, 24px);
+  font-family: 'Outfit', sans-serif;
 }
 
 .mera-information {
@@ -85,5 +87,6 @@ export default {
 
 .mera-information p {
   font-size: clamp(12px, 3vw, 20px);
+  font-family: 'Outfit', sans-serif;
 }
 </style>
