@@ -4,9 +4,6 @@ import FooterBar from "../components/FooterBar.vue";
 </script>
 
 <template>
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet"/> -->
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -57,17 +54,22 @@ nav[class="navbar navbar-expand-lg bg-body-tertiary"] {
   font-family: "Outfit", sans-serif;
   font-weight: bold;
   font-size: 20px;
+  
 }
 
 nav {
-  background: white;
-  height: 40px;
+  background-color: white;
+  height: 60px;
   width: 100%;
+  z-index: 10;
 }
+
+
 
 nav ul li {
   display: inline-block;
   margin: 0 20px;
+  
 }
 
 nav ul li a {
@@ -90,12 +92,21 @@ nav ul li a:hover {
   width: 39px;
 }
 
-/* @media screen and (min-width: 375px) and (max-width: 980px) {
-  nav{
-    position: fixed;
+ @media screen and (min-width: 375px) and (max-width: 980px) {
+  nav ul {
     background-color: white;
-    height: 400px;
+    /* height: 100%; */
+    height: 100vh;
     width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+
   }
-} */
+ 
+  .img-logo{
+    width: 90px;
+  }
+
+ 
+} 
 </style>
