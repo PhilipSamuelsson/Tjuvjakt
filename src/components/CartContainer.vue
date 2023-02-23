@@ -1,10 +1,19 @@
+<script>
+
+</script>
 <template>
+
   <div class="container">
+
     <h2 class="cartHeader">Varukorg</h2>
-    <button class="close">&times;</button>
+
+
+    <button data-close class="close">&times;</button>
 
     <button class="button-50" role="button">Till kassan</button>
+
   </div>
+
 </template>
 
 <style scoped>
@@ -32,10 +41,17 @@
   right: 0;
   top: 0;
   background-color: white;
-  z-index: 999;
+  z-index: 99;
   display: flex;
   justify-content: center;
   border-radius: 4px;
+}
+
+.cart-item-holder {
+  width: 500px;
+  height: 400px;
+  background-color: yellow;
+  z-index: 100;
 }
 .button-50 {
   appearance: button;
