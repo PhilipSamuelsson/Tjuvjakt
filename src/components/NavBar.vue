@@ -1,6 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import FooterBar from "../components/FooterBar.vue";
+import CartContainer from '../components/CartContainer.vue'
+
+
 </script>
 
 <template>
@@ -39,20 +42,17 @@ import FooterBar from "../components/FooterBar.vue";
               <RouterLink to="/profile">Mitt konto</RouterLink>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <RouterLink to="/checkout">
                 <img
                   class="Kassa"
                   src="../assets/img/shopping-cart-icon-1.png"
                 />
-              </RouterLink>
             </a>
           </li>
         </ul>
       </div>
     </div>
+    <CartContainer v-if="$store.state.showCart"/>
   </nav>
   <RouterView />
   <FooterBar />

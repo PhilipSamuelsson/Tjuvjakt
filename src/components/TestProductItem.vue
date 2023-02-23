@@ -5,7 +5,7 @@
         <div
           :style="{ backgroundImage: 'url(' + productImage + ')' }"
           class="product-img"
-        />
+        ></div>
       </div>
       <div class="product-info-container">
         <p class="product-title">{{ productTitle }}</p>
