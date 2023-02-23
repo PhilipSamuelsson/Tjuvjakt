@@ -1,6 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import FooterBar from "../components/FooterBar.vue";
+import CartContainer from '../components/CartContainer.vue'
+
 
 </script>
 
@@ -54,6 +56,7 @@ import FooterBar from "../components/FooterBar.vue";
         </ul>
       </div>
     </div>
+    <CartContainer/>
   </nav>
   <RouterView />
   <FooterBar />
