@@ -42,15 +42,11 @@ import CartContainer from '../components/CartContainer.vue'
               <RouterLink to="/profile">Mitt konto</RouterLink>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="#" @click="$store.commit('toggleCart')">
-
                 <img
                   class="Kassa"
                   src="../assets/img/shopping-cart-icon-1.png"
                 />
-
             </a>
           </li>
         </ul>
