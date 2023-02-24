@@ -6,7 +6,7 @@
   </div>
   <div class="information">
     <h4 class="titel">Vara {{ productID }}: {{ varan.title }}</h4>
-    <button class="kopKnapp">Lägg i Kundkorg</button>
+    <button class="kopKnapp" @click="varuID">Lägg i Kundkorg</button>
   </div>
   <div class="mer-information">
     <h4 class="pris">Pris {{ varan.price }} Kr</h4>
@@ -36,6 +36,9 @@ export default {
       });
       this.varan = result.data[this.productID - 1];
     },
+    varuID() {
+      console.log(this.productID)
+    }
   },
   mounted() {
     this.fetchProduct()
