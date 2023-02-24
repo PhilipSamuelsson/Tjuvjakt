@@ -1,28 +1,31 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { ref } from "vue";
+
+const showVillkor = ref(false);
+const showKontakt = ref(false);
 </script>
 
 <template>
   <footer class="footerbar">
     <h4 class="footer-header">Quick Links</h4>
     <div class="footer-links">
-      <div class="mobile">
+      <div class="mobile" @click="showVillkor = !showVillkor">
         <p>Villkor</p>
-        <i class="fa-solid fa-plus" id="togglare"></i>
-        <i class="fa-solid fa-minus" id="togglare"></i>
+        <i class="fa-solid" v-bind:class="{ 'fa-plus': !showVillkor, 'fa-minus': showVillkor }"></i>
+        <!-- <i class="fa-solid fa-minus/plus" id="togglare"></i> -->
       </div>
-      <div class="villkor">
-        <RouterLink to="#">Terms of Service</RouterLink>
-        <RouterLink to="#">Privacy Policies</RouterLink>
+      <div class="villkor" v-show="showVillkor">
+        <RouterLink to="#" v-bind:style="{ display: showVillkor ? 'block' : 'none' }">Terms of Service</RouterLink>
+        <RouterLink to="#" v-bind:style="{ display: showVillkor ? 'block' : 'none' }">Privacy Policies</RouterLink>
       </div>
-      <div class="mobile">
+      <div class="mobile" @click="showKontakt = !showKontakt">
         <p>Kontakt</p>
-        <i class="fa-solid fa-plus" id="togglare"></i>
-        <i class="fa-solid fa-minus" id="togglare"></i>
+        <i class="fa-solid" v-bind:class="{ 'fa-plus': !showKontakt, 'fa-minus': showKontakt }"></i>
       </div>
-      <div class="kontakt">
-        <RouterLink to="#">(No) Refund Policy</RouterLink>
-        <RouterLink to="#">(No) Contact Policy</RouterLink>
+      <div class="kontakt" v-show="showKontakt">
+        <RouterLink to="#" v-bind:style="{ display: showKontakt ? 'block' : 'none' }">(No) Refund Policy</RouterLink>
+        <RouterLink to="#" v-bind:style="{ display: showKontakt ? 'block' : 'none' }">(No) Contact Policy</RouterLink>
       </div>
     </div>
     <div class="footer-icon">
@@ -36,8 +39,6 @@ import { RouterLink } from "vue-router";
     </div>
   </footer>
 </template>
-
-<script></script>
 
 <style scoped>
 .footerbar {
@@ -71,6 +72,7 @@ import { RouterLink } from "vue-router";
 
 .footer-links .villkor a,
 .kontakt a {
+  display: block;
   margin: auto 25px;
   font-size: 1.5rem;
   text-decoration: none;
@@ -120,9 +122,9 @@ import { RouterLink } from "vue-router";
     align-self: center;
   } */
 
-  .footer-links .mobile i.fa-solid.fa-minus {
+  /* .footer-links .mobile i.fa-solid.fa-minus {
     display: none;
-  }
+  } */
 
 }
 </style>
