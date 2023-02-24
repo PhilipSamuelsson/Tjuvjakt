@@ -25,35 +25,58 @@
         <p class="info-category">{{ productCategory }}</p>
         <p class="info-price">{{ totalPrice }}</p>
       </div>
-      <CartItemIncrement />
+      <div class="increment-container">
+        <button @click="decrement" class="increment-btn">-</button>
+        <p class="increment-number">{{ quantity }}</p>
+        <button @click="increment" class="increment-btn">+</button>
+      </div>
+      <!-- <CartItemIncrement /> -->
     </div>
     <button @click="removeFromCart" class="remove-item-btn">X</button>
   </div>
 </template>
 
 <script>
-import CartItemIncrement from "../components/CartItemIncrement.vue";
+// import CartItemIncrement from "../components/CartItemIncrement.vue";
 export default {
   components: {
-    CartItemIncrement,
+    // CartItemIncrement,
   },
   methods: {
     removeFromCart() {
       console.log(this.productId);
     },
+    increment() {
+      if (this.inStock > this.number) {
+        this.productPrice += this.price;
+        this.number++;
+      }
+    },
+    decrement() {
+      if (this.number > 1) {
+        console.log("slut");
+        this.productPrice -= this.price;
+        this.number--;
+      }
+    },
   },
-  computed:{
-    totalPrice(){
-        return this.productPrice
-    }
+  computed: {
+    quantity() {
+      return this.number;
+    },
+    totalPrice() {
+      return this.productPrice;
+    },
   },
   data() {
     return {
+      number: 1,
       productId: this.id,
       productTitle: this.title,
       productImg: this.image,
       productCategory: this.category,
       productPrice: this.price,
+      inStock: this.stock,
     };
   },
   props: {
@@ -74,6 +97,10 @@ export default {
       required: true,
     },
     price: {
+      type: Number,
+      required: true,
+    },
+    stock: {
       type: Number,
       required: true,
     },
@@ -98,11 +125,11 @@ export default {
 } */
 
 .item-container {
-    /* max-height: 100px; */
+  /* max-height: 100px; */
   display: grid;
   grid-template-columns: 1fr 1fr 30px;
-  padding: .5rem 0;
-  gap: .5rem;
+  padding: 0.5rem 0;
+  gap: 0.5rem;
 }
 .img-container {
   height: 100%;
@@ -115,26 +142,42 @@ export default {
   /* grid-template-rows: 3fr 1fr; */
 }
 
-.cart-info{
-    /* display: grid; */
+.cart-info {
+  /* display: grid; */
 }
 
-.info-title{
-    margin: 0;
-    padding: 0;
-    font-size: 0.6rem;
+.info-title {
+  margin: 0;
+  padding: 0;
+  font-size: 0.6rem;
 }
 
-.info-category{
-    font-size: .7rem;
-    font-weight: bold;
+.info-category {
+  font-size: 0.7rem;
+  font-weight: bold;
 }
 
-.info-price{
+.info-price {
 }
 
 .remove-item-btn {
+color: var(--primary-red);
   background: transparent;
   max-height: 30px;
+}
+
+.increment-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+}
+
+.increment-btn {
+  height: 30px;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+.increment-number {
+  text-align: center;
 }
 </style>

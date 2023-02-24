@@ -1,8 +1,17 @@
-<script></script>
+<script>
+import CartitemsContainer from "./CartitemsContainer.vue";
+
+export default {
+  components: {
+    CartitemsContainer,
+  },
+};
+</script>
 <template>
   <div class="container">
     <h2 class="cartHeader">Varukorg</h2>
     <button @click="$store.commit('toggleCart')" class="close">&times;</button>
+    <CartitemsContainer style="width: 100%;"/>
     <p>Du har inga stöldgods i varukorgen</p>
     <button class="button-50" role="button">Till kassan</button>
   </div>

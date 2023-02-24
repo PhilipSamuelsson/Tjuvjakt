@@ -7,6 +7,7 @@
     :image="cartItem.image"
     :category="cartItem.category"
     :price="cartItem.price"
+    :stock="cartItem.quantity"
   />
 </template>
 
