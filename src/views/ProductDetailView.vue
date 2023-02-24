@@ -40,8 +40,8 @@ export default {
       this.varan = result.data[this.productID - 1];
     },
     varuID() {
-      console.log(this.productID);
       this.$store.commit("addToCart", this.productID);
+      console.log(this.productID);
     },
   },
   mounted() {
