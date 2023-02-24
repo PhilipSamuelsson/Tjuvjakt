@@ -1,29 +1,14 @@
-<script>
-
-</script>
+<script></script>
 <template>
-
   <div class="container">
-
     <h2 class="cartHeader">Varukorg</h2>
-
-
     <button @click="$store.commit('toggleCart')" class="close">&times;</button>
-
+    <p>Du har inga stöldgods i varukorgen</p>
     <button class="button-50" role="button">Till kassan</button>
-
   </div>
-
 </template>
 
 <style scoped>
-.cartHeader {
-  font-family: "turret road";
-  text-align: center;
-  margin-left: 50%;
-  margin-top: 10px;
-  display: flex;
-}
 .close {
   position: absolute;
   right: 0;
@@ -42,9 +27,9 @@
   top: 0;
   background-color: white;
   z-index: 99;
-  display: flex;
-  justify-content: center;
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
 }
 
 .cart-item-holder {
@@ -72,12 +57,6 @@
   -webkit-user-select: none;
   white-space: nowrap;
   margin-bottom: 20px;
-  display: flex;
-  align-self: flex-end;
-  margin-right: 80%;
-}
-
-button {
 }
 
 .button-50:focus {
