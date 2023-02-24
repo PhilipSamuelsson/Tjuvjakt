@@ -9,18 +9,9 @@ import CartContainer from '../components/CartContainer.vue'
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"
-        ><img class="img-logo" src="../assets/img/tjuvgods_logo.png" alt="Logo"
-      /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <a class="navbar-brand" href="#"><img class="img-logo" src="../assets/img/tjuvgods_logo.png" alt="Logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -43,16 +34,14 @@ import CartContainer from '../components/CartContainer.vue'
             </a>
           </li>
           <li class="nav-item">
-                <img
-                  class="Kassa"
-                  src="../assets/img/shopping-cart-icon-1.png"
-                />
+            <a class="nav-link" href="#">
+              <img class="Kassa" src="../assets/img/shopping-cart-icon-1.png" />
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <CartContainer v-if="$store.state.showCart"/>
+    <CartContainer v-if="$store.state.showCart" />
   </nav>
   <RouterView />
   <FooterBar />
