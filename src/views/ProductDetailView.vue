@@ -1,7 +1,7 @@
 <template>
   <div class="col">
     <div class="kontägner">
-      <img :src=varan.image alt="product image" class="produktbilden">
+      <img :src="varan.image" alt="product image" class="produktbilden" />
     </div>
   </div>
   <div class="information">
@@ -12,7 +12,10 @@
     <h4 class="pris">Pris {{ varan.price }} Kr</h4>
   </div>
   <div class="mera-information">
-    <p>Beskrivning: <br> {{ varan.description }}</p>
+    <p>
+      Beskrivning: <br />
+      {{ varan.description }}
+    </p>
     <h4>Kategori: {{ varan.category }}</h4>
     <h4>(Antal) I lager: {{ varan.quantity }}</h4>
   </div>
@@ -24,12 +27,12 @@ export default {
   data() {
     return {
       productID: this.$route.params.productID,
-      varan: {}
+      varan: {},
     };
   },
   methods: {
     async fetchProduct() {
-      const result = await axios.get('/productapi.json', {
+      const result = await axios.get("/productapi.json", {
         headers: {
           Accept: "application/json",
         },
@@ -37,12 +40,13 @@ export default {
       this.varan = result.data[this.productID - 1];
     },
     varuID() {
-      console.log(this.productID)
-    }
+      console.log(this.productID);
+      this.$store.commit("addToCart", this.productID);
+    },
   },
   mounted() {
-    this.fetchProduct()
-  }
+    this.fetchProduct();
+  },
 };
 </script>
 
@@ -71,12 +75,12 @@ export default {
   font-size: clamp(12px, 3vw, 20px);
   border: 3px black solid;
   font-weight: bolder;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 .information h4 {
   font-size: clamp(16px, 4vw, 24px);
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 .mer-information {
@@ -88,7 +92,7 @@ export default {
 
 .mer-information h4 {
   font-size: clamp(16px, 4vw, 24px);
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 .mera-information {
@@ -100,13 +104,13 @@ export default {
 
 .mera-information h4 {
   font-size: clamp(16px, 4vw, 24px);
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   margin: 2vh 0;
 }
 
 .mera-information p {
   font-size: clamp(12px, 3vw, 20px);
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   line-height: 2.2em;
 }
 </style>
