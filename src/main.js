@@ -5,7 +5,7 @@ import "./assets/main.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle.js";
-import store from './store'
+import store from "./store";
 const app = createApp(App);
 app.use(store);
 app.use(router);
