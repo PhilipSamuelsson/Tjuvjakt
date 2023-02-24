@@ -29,7 +29,7 @@ import { RouterLink } from "vue-router";
 .footerbar {
   /* position: absolute;
   bottom: 0; */
-  width: 100vw;
+  width: 98vw;
   /* border-top: 2px solid black; */
   padding: auto 20px;
 }

@@ -6,14 +6,15 @@
   </div>
   <div class="information">
     <h4 class="titel">Vara {{ productID }}: {{ varan.title }}</h4>
-    <h4 class="pris">Pris {{ varan.price }} Kr</h4>
+    <button class="kopKnapp">Lägg i Kundkorg</button>
   </div>
   <div class="mer-information">
-    <h4>Kategori: {{ varan.category }}</h4>
-    <h4>(Antal) I lager: {{ varan.quantity }}</h4>
+    <h4 class="pris">Pris {{ varan.price }} Kr</h4>
   </div>
   <div class="mera-information">
     <p>Beskrivning: <br> {{ varan.description }}</p>
+    <h4>Kategori: {{ varan.category }}</h4>
+    <h4>(Antal) I lager: {{ varan.quantity }}</h4>
   </div>
 </template>
 
@@ -61,6 +62,15 @@ export default {
   justify-content: space-between;
 }
 
+.information .kopKnapp {
+  background-color: white;
+  padding: clamp(1.5%, 2%, 3%) clamp(1.5%, 4%, 7%);
+  font-size: clamp(12px, 3vw, 20px);
+  border: 3px black solid;
+  font-weight: bolder;
+  font-family: 'Outfit', sans-serif;
+}
+
 .information h4 {
   font-size: clamp(16px, 4vw, 24px);
   font-family: 'Outfit', sans-serif;
@@ -81,12 +91,19 @@ export default {
 .mera-information {
   width: clamp(250px, 80%, 920px);
   display: flex;
-  margin: 3vh auto;
-  justify-content: space-between;
+  margin: 12vh auto;
+  flex-direction: column;
+}
+
+.mera-information h4 {
+  font-size: clamp(16px, 4vw, 24px);
+  font-family: 'Outfit', sans-serif;
+  margin: 2vh 0;
 }
 
 .mera-information p {
   font-size: clamp(12px, 3vw, 20px);
   font-family: 'Outfit', sans-serif;
+  line-height: 2.2em;
 }
 </style>
