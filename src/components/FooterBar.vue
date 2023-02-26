@@ -1,15 +1,60 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { ref } from "vue";
+
+const showVillkor = ref(false);
+const showKontakt = ref(false);
 </script>
 
 <template>
   <footer class="footerbar">
     <h4 class="footer-header">Quick Links</h4>
     <div class="footer-links">
-      <RouterLink to="#">Terms of Service</RouterLink>
-      <RouterLink to="#">Privacy Policies</RouterLink>
-      <RouterLink to="#">(No) Refund Policy</RouterLink>
-      <RouterLink to="#">(No) Contact Policy</RouterLink>
+      <div class="desktop-footer">
+        <p>Terms of Service</p>
+        <p>Privacy</p>
+        <p>(no) Refund Policy</p>
+        <p>(no) Contact Policy</p>
+      </div>
+      <div class="mobile" @click="showVillkor = !showVillkor">
+        <p>Villkor</p>
+        <i
+          class="fa-solid"
+          v-bind:class="{ 'fa-plus': !showVillkor, 'fa-minus': showVillkor }"
+        ></i>
+        <!-- <i class="fa-solid fa-minus/plus" id="togglare"></i> -->
+      </div>
+      <div class="villkor" v-show="showVillkor">
+        <RouterLink
+          to="#"
+          v-bind:style="{ display: showVillkor ? 'block' : 'none' }"
+          >Terms of Service</RouterLink
+        >
+        <RouterLink
+          to="#"
+          v-bind:style="{ display: showVillkor ? 'block' : 'none' }"
+          >Privacy Policies</RouterLink
+        >
+      </div>
+      <div class="mobile" @click="showKontakt = !showKontakt">
+        <p>Kontakt</p>
+        <i
+          class="fa-solid"
+          v-bind:class="{ 'fa-plus': !showKontakt, 'fa-minus': showKontakt }"
+        ></i>
+      </div>
+      <div class="kontakt" v-show="showKontakt">
+        <RouterLink
+          to="#"
+          v-bind:style="{ display: showKontakt ? 'block' : 'none' }"
+          >(No) Refund Policy</RouterLink
+        >
+        <RouterLink
+          to="#"
+          v-bind:style="{ display: showKontakt ? 'block' : 'none' }"
+          >(No) Contact Policy</RouterLink
+        >
+      </div>
     </div>
     <div class="footer-icon">
       <i class="fa-brands fa-youtube"></i>
@@ -23,8 +68,6 @@ import { RouterLink } from "vue-router";
   </footer>
 </template>
 
-<script></script>
-
 <style scoped>
 .footerbar {
   /* position: absolute;
@@ -32,6 +75,20 @@ import { RouterLink } from "vue-router";
   width: 98vw;
   /* border-top: 2px solid black; */
   padding: auto 20px;
+  margin-top: 17vh;
+}
+
+.desktop-footer {
+  display: flex;
+}
+
+.desktop-footer p {
+  display: flex;
+  margin: 20px;
+}
+
+.mobile {
+  display: none;
 }
 
 .footer-header {
@@ -45,20 +102,69 @@ import { RouterLink } from "vue-router";
   justify-content: center;
 }
 
-.footer-links * {
-  margin: 20px 55px 10px;
-  font-size: 24px;
+.villkor,
+.kontakt {
+  margin: 30px auto;
+}
+
+.footer-links .villkor a,
+.kontakt a {
+  display: block;
+  margin: auto 25px;
+  font-size: 1.5rem;
   text-decoration: none;
   color: black;
+  text-align: center;
 }
 
 .footer-icon {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .footer-icon * {
   margin: 12px 25px 10px;
   font-size: 2em;
+}
+
+@media (max-width: 949px) {
+  .footer-header {
+    display: none;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto 15vw;
+    /* align-items: center; */
+  }
+
+  .footer-links a {
+    display: none;
+  }
+
+  .mobile * {
+    font-size: 24px;
+    font-weight: bold;
+    align-self: center;
+    padding: 0.2rem;
+  }
+
+  /* .mobile i {
+    align-self: center;
+  } */
+
+  /* .footer-links .mobile i.fa-solid.fa-minus {
+    display: none;
+  } */
+  .desktop-footer {
+    display: none;
+  }
 }
 </style>

@@ -7,9 +7,13 @@ import CartContainer from "../components/CartContainer.vue";
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"
-        ><img class="img-logo" src="../assets/img/tjuvgods_logo.png" alt="Logo"
-      /></a>
+      <a class="navbar-brand" href="#">
+        <RouterLink to="/">
+          <img
+            class="img-logo"
+            src="../assets/img/tjuvgods_logo.png"
+            alt="Logo" /></RouterLink
+      ></a>
       <button
         class="navbar-toggler"
         type="button"

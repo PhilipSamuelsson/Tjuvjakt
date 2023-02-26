@@ -1,3 +1,4 @@
+
 <script setup>
 import NavBar from "../components/NavBar.vue";
 // import ProductCard from "../components/ProductCard.vue";
@@ -48,6 +49,7 @@ import NavBar from "../components/NavBar.vue";
     </div>
   </div>
 </template>
+
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap");
