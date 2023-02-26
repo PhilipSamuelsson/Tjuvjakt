@@ -1,8 +1,3 @@
-<script setup>
-import NavBar from "../components/NavBar.vue";
-</script>
+<script setup></script>
 
-<template>
-  <NavBar></NavBar>
-  <h1>HOME VIEW</h1>
-</template>
+<template></template>

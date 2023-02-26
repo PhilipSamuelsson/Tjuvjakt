@@ -8,7 +8,9 @@
       <div class="bigContainerMobile"></div>
       <div class="smallContainer">
         <div class="small1">
-          <button class="button-50" role="button">Button 50</button>
+          <RouterLink to="/testproducts">
+            <button class="button-50" role="button">Till produkter</button>
+          </RouterLink>
         </div>
         <div class="small2"></div>
         <div class="small3"></div>

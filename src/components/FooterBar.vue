@@ -10,22 +10,50 @@ const showKontakt = ref(false);
   <footer class="footerbar">
     <h4 class="footer-header">Quick Links</h4>
     <div class="footer-links">
+      <div class="desktop-footer">
+        <p>Terms of Service</p>
+        <p>Privacy</p>
+        <p>(no) Refund Policy</p>
+        <p>(no) Contact Policy</p>
+      </div>
       <div class="mobile" @click="showVillkor = !showVillkor">
         <p>Villkor</p>
-        <i class="fa-solid" v-bind:class="{ 'fa-plus': !showVillkor, 'fa-minus': showVillkor }"></i>
+        <i
+          class="fa-solid"
+          v-bind:class="{ 'fa-plus': !showVillkor, 'fa-minus': showVillkor }"
+        ></i>
         <!-- <i class="fa-solid fa-minus/plus" id="togglare"></i> -->
       </div>
       <div class="villkor" v-show="showVillkor">
-        <RouterLink to="#" v-bind:style="{ display: showVillkor ? 'block' : 'none' }">Terms of Service</RouterLink>
-        <RouterLink to="#" v-bind:style="{ display: showVillkor ? 'block' : 'none' }">Privacy Policies</RouterLink>
+        <RouterLink
+          to="#"
+          v-bind:style="{ display: showVillkor ? 'block' : 'none' }"
+          >Terms of Service</RouterLink
+        >
+        <RouterLink
+          to="#"
+          v-bind:style="{ display: showVillkor ? 'block' : 'none' }"
+          >Privacy Policies</RouterLink
+        >
       </div>
       <div class="mobile" @click="showKontakt = !showKontakt">
         <p>Kontakt</p>
-        <i class="fa-solid" v-bind:class="{ 'fa-plus': !showKontakt, 'fa-minus': showKontakt }"></i>
+        <i
+          class="fa-solid"
+          v-bind:class="{ 'fa-plus': !showKontakt, 'fa-minus': showKontakt }"
+        ></i>
       </div>
       <div class="kontakt" v-show="showKontakt">
-        <RouterLink to="#" v-bind:style="{ display: showKontakt ? 'block' : 'none' }">(No) Refund Policy</RouterLink>
-        <RouterLink to="#" v-bind:style="{ display: showKontakt ? 'block' : 'none' }">(No) Contact Policy</RouterLink>
+        <RouterLink
+          to="#"
+          v-bind:style="{ display: showKontakt ? 'block' : 'none' }"
+          >(No) Refund Policy</RouterLink
+        >
+        <RouterLink
+          to="#"
+          v-bind:style="{ display: showKontakt ? 'block' : 'none' }"
+          >(No) Contact Policy</RouterLink
+        >
       </div>
     </div>
     <div class="footer-icon">
@@ -48,6 +76,15 @@ const showKontakt = ref(false);
   /* border-top: 2px solid black; */
   padding: auto 20px;
   margin-top: 17vh;
+}
+
+.desktop-footer {
+  display: flex;
+}
+
+.desktop-footer p {
+  display: flex;
+  margin: 20px;
 }
 
 .mobile {
@@ -83,6 +120,7 @@ const showKontakt = ref(false);
 .footer-icon {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .footer-icon * {
@@ -115,7 +153,7 @@ const showKontakt = ref(false);
     font-size: 24px;
     font-weight: bold;
     align-self: center;
-    padding: .2rem;
+    padding: 0.2rem;
   }
 
   /* .mobile i {
@@ -125,6 +163,8 @@ const showKontakt = ref(false);
   /* .footer-links .mobile i.fa-solid.fa-minus {
     display: none;
   } */
-
+  .desktop-footer {
+    display: none;
+  }
 }
 </style>
