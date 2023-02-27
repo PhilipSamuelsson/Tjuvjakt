@@ -30,7 +30,7 @@
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 550px) {
   .products-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
