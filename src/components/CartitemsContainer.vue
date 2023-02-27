@@ -13,27 +13,23 @@
 
 <script>
 import CartItem from "../components/CartItem.vue";
-// import axios from "axios";
 
 export default {
   components: {
     CartItem,
   },
   mounted() {
-    // this.fetchCartItems();
     this.fetchProducts();
   },
   methods: {
     fetchProducts() {
       this.cartList = this.$store.state.cart;
-      console.log(this.cartList);
     },
 
   },
   data() {
     return {
       cartList: {},
-      //   testList: [2, 5, 6],
     };
   },
 };

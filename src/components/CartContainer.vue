@@ -90,7 +90,8 @@ export default {
 
 .cart-container{
     width: 100%;
-    max-height: 300px;
+    max-height: 400px;
+    overflow-y:scroll;
 }
 
 @media (min-width: 768px) {

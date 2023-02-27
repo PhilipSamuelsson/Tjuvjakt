@@ -28,11 +28,11 @@
       <div class="increment-container">
         <button @click="decrement" class="increment-btn">-</button>
         <p class="increment-number">{{ quantity }}</p>
-        <button @click="increment" class="increment-btn">+</button>
+        <button :disabled="(this.inStock === this.number)" @click="increment" class="increment-btn">+</button>
       </div>
       <!-- <CartItemIncrement /> -->
     </div>
-    <button @click="removeFromCart" class="remove-item-btn">X</button>
+    <button @click="remove" class="remove-item-btn">X</button>
   </div>
 </template>
 
@@ -43,8 +43,9 @@ export default {
     // CartItemIncrement,
   },
   methods: {
-    removeFromCart() {
+    remove() {
       console.log(this.productId);
+      this.$store.commit("removeFromCart", this.productId);
     },
     increment() {
       if (this.inStock > this.number) {
@@ -54,9 +55,10 @@ export default {
     },
     decrement() {
       if (this.number > 1) {
-        console.log("slut");
         this.productPrice -= this.price;
         this.number--;
+      } else {
+        this.$store.commit("removeFromCart", this.productId);
       }
     },
   },
@@ -105,8 +107,6 @@ export default {
       required: true,
     },
   },
-  //   name: "CartItem",
-  //   props: {},
 };
 </script>
 
@@ -125,11 +125,11 @@ export default {
 } */
 
 .item-container {
-    border: 1px solid #000000;
+  border: 1px solid #000000;
   width: 100%;
   /* max-height: 100px; */
   display: grid;
-  grid-template-columns: 1fr 100px 50px;
+  grid-template-columns: 1fr 100px 35px;
   margin: 0.5rem 0;
   gap: 0.5rem;
 }
@@ -141,6 +141,7 @@ export default {
 
 .spec-item {
   display: grid;
+  grid-template-rows: auto;
   /* grid-template-rows: 3fr 1fr; */
 }
 
@@ -151,8 +152,8 @@ export default {
 .info-title {
   margin: 0;
   padding: 0;
-  padding-top: .5rem;
-  font-size: 0.6rem;
+  padding-top: 0.5rem;
+  font-size: 0.7rem;
 }
 
 .info-category {
@@ -161,13 +162,15 @@ export default {
 }
 
 .info-price {
+    font-size: 0.9rem;
 }
 
 .remove-item-btn {
-    margin: .5rem;
-    border: 1px solid #000000;
-  background: transparent;
-  max-height: 30px;
+    font-size: .8rem;
+  color: #ffffff;
+  margin: 0.3rem;
+  background: #000000;
+  max-height: 25px;
 }
 
 .increment-container {
@@ -176,7 +179,7 @@ export default {
 }
 
 .increment-btn {
-    border: 1px solid #000000;
+  border: 1px solid #000000;
   height: 30px;
   background: transparent;
   margin: 0;
