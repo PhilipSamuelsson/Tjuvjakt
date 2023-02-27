@@ -19,14 +19,12 @@ const showSort = ref(false);
       <select v-model="Kategori" v-bind:style="{ display: showSort ? 'block' : 'none' }"
         @change="filterCategory(this.Kategori)">
         <option>Hittegods</option>
-      <option>Kläder</option>
+        <option>Kläder</option>
         <option>Skor</option>
         <option>Elektronik</option>
         <option>Glasögon</option>
       </select>
-      <!-- <input class="openClose" type="dropdown" v-model="this.Kategori"
-                                                            v-bind:style="{ display: showSort ? 'block' : 'none' }"> -->
-
+      <!-- <input class="openClose" type="dropdown" v-model="this.Kategori" v-bind:style="{ display: showSort ? 'block' : 'none' }"> -->
     </div>
 
 
@@ -36,7 +34,7 @@ const showSort = ref(false);
     <!-- <input class=openClose type=dropdown v-model=this.data> -->
 
   </div>
-
+  <!-- {display: showVillkor ? 'block' : 'none' }" -->
   <div class="products-wrapper">
     <div class="products-container">
       <!-- @click="sendId(product.id)" -->
@@ -111,8 +109,7 @@ export default {
     filterCategory(kategory) {
       // this.fetchProducts()
       console.log(kategory)
-      // let filteredArray = []
-      this.products = this.products.filter(item => item.category === kategory);
+      this.filteredArray = this.products.filter(item => item.category === kategory);
       // return filteredArray = this.products.filter(item => item.category === kategory);
     },
 
@@ -139,7 +136,8 @@ export default {
     return {
       products: [],
       Kategori: "",
-      titlesok: ""
+      titlesok: "",
+      filteredArray: []
       // Kategori: "Glasögon" || "Skor" || "Kläder" || "Hittegods" || "Elektronik",
 
     };
