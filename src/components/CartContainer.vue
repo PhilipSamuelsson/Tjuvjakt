@@ -11,7 +11,9 @@ export default {
   <div class="container">
     <h2 class="cartHeader">Varukorg</h2>
     <button @click="$store.commit('toggleCart')" class="close">&times;</button>
-    <CartitemsContainer />
+    <div class="cart-container">
+        <CartitemsContainer />
+    </div>
     <p>Du har inga stöldgods i varukorgen</p>
     <button class="button-50" role="button">Till kassan</button>
   </div>
@@ -84,6 +86,11 @@ export default {
 .button-50:not([disabled]):active {
   box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
   transform: translate(2px, 2px);
+}
+
+.cart-container{
+    width: 100%;
+    max-height: 300px;
 }
 
 @media (min-width: 768px) {
