@@ -1,4 +1,42 @@
+<script setup>
+import { ref } from "vue";
+const showSearch = ref(false);
+const showSort = ref(false);
+</script>
+
 <template>
+  <div class="searchSort">
+    <!-- Search -->
+    <div>
+      <i class="fa-solid fa-magnifying-glass" @click="showSearch = !showSearch"></i>
+      <input class="openClose" type="dropdown" v-model="titlesok"
+        v-bind:style="{ display: showSearch ? 'block' : 'none' }">
+    </div>
+
+    <!-- Sort -->
+    <div>
+      <i class="fa-solid fa-filter" @click="showSort = !showSort"></i>
+      <select v-model="Kategori" v-bind:style="{ display: showSort ? 'block' : 'none' }"
+        @change="filterCategory(this.Kategori)">
+        <option>Hittegods</option>
+      <option>Kläder</option>
+        <option>Skor</option>
+        <option>Elektronik</option>
+        <option>Glasögon</option>
+      </select>
+      <!-- <input class="openClose" type="dropdown" v-model="this.Kategori"
+                                                            v-bind:style="{ display: showSort ? 'block' : 'none' }"> -->
+
+    </div>
+
+
+    <!-- Div @click style=display:block/none -->
+
+
+    <!-- <input class=openClose type=dropdown v-model=this.data> -->
+
+  </div>
+
   <div class="products-wrapper">
     <div class="products-container">
       <!-- @click="sendId(product.id)" -->
@@ -71,8 +109,11 @@ export default {
     },
 
     filterCategory(kategory) {
-      let filteredArray = []
-      return filteredArray = this.products.filter(item => item.category === kategory);
+      // this.fetchProducts()
+      console.log(kategory)
+      // let filteredArray = []
+      this.products = this.products.filter(item => item.category === kategory);
+      // return filteredArray = this.products.filter(item => item.category === kategory);
     },
 
     selectProduct(id) {
@@ -97,7 +138,12 @@ export default {
   data() {
     return {
       products: [],
+      Kategori: "",
+      titlesok: ""
+      // Kategori: "Glasögon" || "Skor" || "Kläder" || "Hittegods" || "Elektronik",
+
     };
   },
 };
+
 </script>
