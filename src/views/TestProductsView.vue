@@ -38,8 +38,9 @@ const showSort = ref(false);
   <div class="products-wrapper">
     <div class="products-container">
       <!-- @click="sendId(product.id)" -->
-      <TestProductItem class="product-item" v-for="product in products" :key="product.id"
-        @click="selectProduct(product.id)" :image="product.image" :price="product.price" :title="product.title" />
+      <TestProductItem class="product-item" v-for="product in filteredArray | products" v-if=filteredArray
+        :key="product.id" @click="selectProduct(product.id)" :image="product.image" :price="product.price"
+        :title="product.title" />
     </div>
   </div>
 </template>
