@@ -61,6 +61,20 @@ export default {
   },
   // emits: ["produkt-vald"],
   methods: {
+    priceHigh() {
+      this.products.sort((a, b) => a.price - b.price);
+      console.log("körs denna funktion? priceHigh")
+    },
+    priceLow() {
+      this.products.sort((a, b) => b.price - a.price);
+      console.log("körs denna funktion? priceLow")
+    },
+
+    filterCategory(kategory) {
+      let filteredArray = []
+      return filteredArray = this.products.filter(item => item.category === kategory);
+    },
+
     selectProduct(id) {
       // const valdProdukt = this.products.find(product => product.id == id)
       // console.log(valdProdukt.title)
