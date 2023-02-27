@@ -6,7 +6,9 @@
   </div>
   <div class="information">
     <h4 class="titel">Vara {{ productID }}: {{ varan.title }}</h4>
-    <button class="kopKnapp" @click="varuID">Lägg i Kundkorg</button>
+    <button v-if="disabledAddButton" class="kopKnapp" @click="varuID">
+      Lägg i Kundkorg
+    </button>
   </div>
   <div class="mer-information">
     <h4 class="pris">Pris {{ varan.price }} Kr</h4>
@@ -28,7 +30,18 @@ export default {
     return {
       productID: this.$route.params.productID,
       varan: {},
+      noProductAdded: true,
     };
+  },
+  computed:{
+    disabledAddButton(){
+        for (let i = 0; i < this.$store.state.cart.length; i++) {
+        if (this.varan.id === this.$store.state.cart[i].id) {
+          return false
+        }
+      }
+        return true
+    }
   },
   methods: {
     async fetchProduct() {
@@ -40,8 +53,7 @@ export default {
       this.varan = result.data[this.productID - 1];
     },
     varuID() {
-      this.$store.commit("addToCart", this.productID);
-      console.log(this.productID);
+      this.$store.commit("addToCart", this.varan);
     },
   },
   mounted() {

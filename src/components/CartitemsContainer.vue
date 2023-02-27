@@ -13,32 +13,34 @@
 
 <script>
 import CartItem from "../components/CartItem.vue";
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   components: {
     CartItem,
   },
   mounted() {
-    this.fetchCartItems();
+    // this.fetchCartItems();
+    this.fetchProducts();
   },
   methods: {
-    async fetchCartItems() {
-      const result = await axios.get("productapi.json", {
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      this.cartList = result.data;
+    fetchProducts() {
+      this.cartList = this.$store.state.cart;
+      console.log(this.cartList);
     },
-    idFromCart(){
-        // for(let i =0; this.$store.cart)
-    }
+    // async fetchCartItems() {
+    //   const result = await axios.get("productapi.json", {
+    //     headers: {
+    //       Accept: "application/json",
+    //     },
+    //   });
+    //   console.log(result.data);
+    // },
   },
   data() {
     return {
       cartList: {},
-      testList: [2, 5, 6],
+      //   testList: [2, 5, 6],
     };
   },
 };

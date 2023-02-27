@@ -125,10 +125,12 @@ export default {
 } */
 
 .item-container {
+    border: 1px solid #000000;
+  width: 100%;
   /* max-height: 100px; */
   display: grid;
-  grid-template-columns: 1fr 1fr 30px;
-  padding: 0.5rem 0;
+  grid-template-columns: 1fr 100px 50px;
+  margin: 0.5rem 0;
   gap: 0.5rem;
 }
 .img-container {
@@ -149,6 +151,7 @@ export default {
 .info-title {
   margin: 0;
   padding: 0;
+  padding-top: .5rem;
   font-size: 0.6rem;
 }
 
@@ -161,7 +164,8 @@ export default {
 }
 
 .remove-item-btn {
-color: var(--primary-red);
+    margin: .5rem;
+    border: 1px solid #000000;
   background: transparent;
   max-height: 30px;
 }
@@ -172,6 +176,7 @@ color: var(--primary-red);
 }
 
 .increment-btn {
+    border: 1px solid #000000;
   height: 30px;
   background: transparent;
   margin: 0;
