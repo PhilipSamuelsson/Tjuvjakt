@@ -12,9 +12,11 @@ export default {
     <h2 class="cartHeader">Varukorg</h2>
     <button @click="$store.commit('toggleCart')" class="close">&times;</button>
     <div class="cart-container">
-        <CartitemsContainer />
+      <CartitemsContainer />
     </div>
-    <p>Du har inga stöldgods i varukorgen</p>
+    <p v-if="$store.state.cart.length === 0">
+      Du har inga stöldgods i varukorgen
+    </p>
     <button class="button-50" role="button">Till kassan</button>
   </div>
 </template>
@@ -88,10 +90,10 @@ export default {
   transform: translate(2px, 2px);
 }
 
-.cart-container{
-    width: 100%;
-    max-height: 400px;
-    overflow-y:scroll;
+.cart-container {
+  width: 100%;
+  max-height: 400px;
+  overflow-y: scroll;
 }
 
 @media (min-width: 768px) {
