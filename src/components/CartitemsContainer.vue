@@ -28,14 +28,7 @@ export default {
       this.cartList = this.$store.state.cart;
       console.log(this.cartList);
     },
-    // async fetchCartItems() {
-    //   const result = await axios.get("productapi.json", {
-    //     headers: {
-    //       Accept: "application/json",
-    //     },
-    //   });
-    //   console.log(result.data);
-    // },
+
   },
   data() {
     return {
