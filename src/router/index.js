@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import ProfileView from "../views/ProfileView.vue";
-import ProductsView from "../views/ProductsView.vue";
 import CheckoutView from "../views/CheckoutView.vue";
 import TestProductsView from "../views/TestProductsView.vue";
 import ProductDetailView from "../views/ProductDetailView.vue";
@@ -26,11 +25,6 @@ const router = createRouter({
       component: ProfileView,
     },
     {
-      path: "/products",
-      name: "products",
-      component: ProductsView,
-    },
-    {
       path: "/testproducts",
       name: "testproducts",
       component: TestProductsView,
@@ -38,7 +32,7 @@ const router = createRouter({
     {
       path: "/testproducts/:productID",
       name: "productdetail",
-      component: ProductDetailView
+      component: ProductDetailView,
     },
     {
       path: "/checkout",

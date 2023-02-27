@@ -31,9 +31,9 @@ export default {
       });
       this.cartList = result.data;
     },
-    idFromCart(){
-        // for(let i =0; this.$store.cart)
-    }
+    idFromCart() {
+      // for(let i =0; this.$store.cart)
+    },
   },
   data() {
     return {
