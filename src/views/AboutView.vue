@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar.vue";
 </script>
 
 <template>
-  <NavBar></NavBar>
   <div class="container-about">
     <h1>Lorem ipsum dolor sit amet consectetur.</h1>
     <p>
