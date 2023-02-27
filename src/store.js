@@ -5,7 +5,14 @@ const mutations = {
   },
   addToCart(state, product) {
     state.cart.push(product);
-    console.log(state.cart)
+  },
+  removeFromCart(state, productId) {
+    const removeThisProduct = state.cart.findIndex(
+      (product) => product.id === productId
+    );
+    if (removeThisProduct !== -1) {
+      state.cart.splice(removeThisProduct, 1);
+    }
   },
 };
 const state = {
