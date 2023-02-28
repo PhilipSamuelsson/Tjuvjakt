@@ -1,7 +1,16 @@
 <script>
 import CartitemsContainer from "./CartitemsContainer.vue";
-
+import { mapGetters } from "vuex";
 export default {
+  computed: {
+    totalCost() {
+      console.log(this.$store.commit("getCartTotal"));
+      return this.$store.commit("getCartTotal");
+    },
+  },
+  methods: {
+    ...mapGetters(["getCartTotal"]),
+  },
   components: {
     CartitemsContainer,
   },
@@ -11,13 +20,23 @@ export default {
   <div class="container">
     <h2 class="cartHeader">Varukorg</h2>
     <button @click="$store.commit('toggleCart')" class="close">&times;</button>
+    <div v-if="$store.state.cart.length === 0" class="no-products">
+        <p>Du har inga stöldgods i varukorgen</p>
+        <RouterLink class="button-50 link" to="/testproducts">Handla istället</RouterLink>
+    </div>
     <div class="cart-container">
       <CartitemsContainer />
     </div>
-    <p v-if="$store.state.cart.length === 0">
+    <!-- <p v-if="$store.state.cart.length === 0">
       Du har inga stöldgods i varukorgen
-    </p>
-    <button class="button-50" role="button">Till kassan</button>
+    </p> -->
+    <div v-if="$store.state.cart.length" class="to-checkout-container">
+      <div class="total-cost-container">
+        <p>Totalt :</p>
+        <p>CASH KR</p>
+      </div>
+      <button class="button-50" role="button">Till kassan</button>
+    </div>
   </div>
 </template>
 
@@ -94,6 +113,20 @@ export default {
   width: 100%;
   max-height: 400px;
   overflow-y: scroll;
+}
+
+.no-products{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.total-cost-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.link{
+    text-decoration: none;
 }
 
 @media (min-width: 768px) {

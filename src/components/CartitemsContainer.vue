@@ -8,6 +8,7 @@
     :category="cartItem.category"
     :price="cartItem.price"
     :stock="cartItem.quantity"
+    :numberOfProducts="cartItem.numberOfItem"
     :product="cartItem"
   />
 </template>
