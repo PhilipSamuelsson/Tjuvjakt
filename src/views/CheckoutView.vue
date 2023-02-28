@@ -28,7 +28,7 @@
 //     }
 //   },
 //   goToNextPage(){
-//     this.$router.push('/checkoutViewTSecond')
+//     this.$router.push('/checkoutViewSecond')
 //   }
 // }
 //
