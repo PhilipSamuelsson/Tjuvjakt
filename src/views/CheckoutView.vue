@@ -52,15 +52,15 @@
       </div>
       <i class="bx bx-chevron-right" id="icon-toNextCircle"></i>
       <div class="circles" id="circle-correctTwo">
-        <i class="bx bx-check"></i>
+        <i class="bx bx-check" id="icone-two"></i>
       </div>
       <i class="bx bx-chevron-right" id="icon-toNextCircle"></i>
       <div class="circles" id="circle-correctThree">
-        <i class="bx bx-check"></i>
+        <i class="bx bx-check" id="icone-three"></i>
       </div>
       <i class="bx bx-chevron-right" id="icon-toNextCircle"></i>
       <div class="circles" id="circle-correctFour">
-        <i class="bx bx-check"></i>
+        <i class="bx bx-check" id="icone-four"></i>
       </div>
     </div>
   </div>
@@ -180,9 +180,10 @@ i[class="bx bx-check"] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
   position: relative;
   box-shadow: rgb(233, 233, 233) 0px 0px 2px 2px;
-  height: 90vh;
+  height: 100vh;
   width: 50%;
 }
 
@@ -196,30 +197,28 @@ label {
 label::before {
   content: "Förnamn";
   position: absolute;
-  top: -15px;
+  top: -10px;
   left: 10px;
   background-color: white;
   padding: 0 5px;
 }
 
-.förnamn,
-.efternamn,
-.stad,
-.postnummer {
+#förnamn,
+#efternamn,
+#stad,
+#postnummer {
   display: inline-flex;
   flex-direction: column;
   width: 300px;
+  height: 40px;
 }
 
-.telefonnummer,
-.gatuadress,
-.email {
+#telefonnummer,
+#gatuadress,
+#email {
   display: flex;
   width: 500px;
-}
-
-input {
-  border: none;
+  height: 40px;
 }
 
 #back-icon {
@@ -249,4 +248,54 @@ input {
 /* input:focus {
   border: none;
 }*/
+@media screen and (min-width: 375px) and (max-width: 980px) {
+ 
+  .circles{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 30px 10px;
+  }
+
+  #icon-toNextCircle{
+font-size: 30px;
+  }
+  #icone-one, #icone-three, #icone-two, #icone-four{
+    font-size: 30px;
+    margin:  5px auto;
+  }
+
+  #förnamn,
+#efternamn,
+#stad,
+#postnummer{
+  width: 200px;
+}
+
+#telefonnummer,
+#gatuadress,
+#email{
+  width: 350px;
+}
+
+.container-checkout{
+  width: 90%;
+  height:800px;
+}
+
+.vidare-btn{
+  height: 40px;
+  width: 100px;
+  font-size: 20px;
+}
+
+#back-icon{
+  font-size: 40px;
+  margin-left: 0;
+}
+/* #next-icon{
+  font-size: 40px;
+  margin-right: -40px;
+} */
+}
 </style>

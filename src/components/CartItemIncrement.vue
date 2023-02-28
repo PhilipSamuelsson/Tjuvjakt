@@ -35,12 +35,12 @@ export default {
 }
 
 .increment-btn {
-    height: 30px;
+  height: 30px;
   background: transparent;
   margin: 0;
   padding: 0;
 }
-.increment-number{
-    text-align: center;
+.increment-number {
+  text-align: center;
 }
 </style>

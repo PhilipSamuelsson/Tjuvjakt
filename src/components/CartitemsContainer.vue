@@ -8,6 +8,7 @@
     :category="cartItem.category"
     :price="cartItem.price"
     :stock="cartItem.quantity"
+    :product="cartItem"
   />
 </template>
 
@@ -25,7 +26,6 @@ export default {
     fetchProducts() {
       this.cartList = this.$store.state.cart;
     },
-
   },
   data() {
     return {
