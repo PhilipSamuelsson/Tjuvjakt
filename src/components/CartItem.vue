@@ -14,13 +14,15 @@
       </div>
 
       <div class="increment-container">
-        <!-- FIXA -->
+
         <button @click="decrement" class="increment-btn">-</button>
         <p class="increment-number">{{ getCartItemCount }}</p>
 
         <button
           :disabled="this.inStock === getCartItemCount"
-          @click="addItemCart(cartItem)"
+
+          @click="increment"
+
           class="increment-btn"
         >
           +
@@ -38,30 +40,24 @@ export default {
   components: {},
   methods: {
     remove() {
-        this.removeFromCart(this.productId);
-    },
-    // increment() {
-    //     if (this.inStock > this.number) {
-    //       this.productPrice += this.price;
-    //       this.number++;
-    //     }
-    // },
 
-    // FUNKAR EJ
+      this.removeFromCart(this.productId);
+    },
+    increment() {
+      //this.addItemCart(this.cartItem);
+      this.addMore(this.cartItem)
+    },
     decrement() {
+
       if (this.getCartItemCount > 1) {
         this.removeItemFromCart(this.cartItem);
       } else {
         this.remove()
+
       }
-      //   if (this.number > 1) {
-      //     this.productPrice -= this.price;
-      //     this.number--;
-      //   } else {
-      //     this.$store.commit("removeFromCart", this.productId);
-      //   }
     },
-    ...mapMutations(["addItemCart", "removeItemFromCart", "removeFromCart"]),
+
+    ...mapMutations(["addItemCart", "removeItemFromCart", "removeFromCart", "addMore"]),
   },
   computed: {
     ...mapGetters(["getCartItemCount"]),
@@ -115,23 +111,9 @@ export default {
 </script>
 
 <style scoped>
-/* .grid-container {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "part1 part2";
-}
-
-.grid-item {
-  z-index: 1000;
-
-  background-color: green;
-} */
-
 .item-container {
   border: 1px solid #000000;
   width: 100%;
-  /* max-height: 100px; */
   display: grid;
   grid-template-columns: 1fr 100px 35px;
   margin: 0.5rem 0;
@@ -146,11 +128,6 @@ export default {
 .spec-item {
   display: grid;
   grid-template-rows: auto;
-  /* grid-template-rows: 3fr 1fr; */
-}
-
-.cart-info {
-  /* display: grid; */
 }
 
 .info-title {
