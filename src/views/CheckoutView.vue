@@ -180,6 +180,7 @@ i[class="bx bx-check"] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
   position: relative;
   box-shadow: rgb(233, 233, 233) 0px 0px 2px 2px;
   height: 90vh;
@@ -196,28 +197,29 @@ label {
 label::before {
   content: "Förnamn";
   position: absolute;
-  top: -15px;
+  top: -10px;
   left: 10px;
   background-color: white;
   padding: 0 5px;
 }
 
-.förnamn,
-.efternamn,
-.stad,
-.postnummer {
+#förnamn,
+#efternamn,
+#stad,
+#postnummer {
   display: inline-flex;
   flex-direction: column;
   width: 300px;
+  height: 40px;
 }
 
-.telefonnummer,
-.gatuadress,
-.email {
+#telefonnummer,
+#gatuadress,
+#email {
   display: flex;
   width: 500px;
+  height: 40px;
 }
-
 
 #back-icon {
   position: absolute;
