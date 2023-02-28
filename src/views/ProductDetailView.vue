@@ -6,7 +6,7 @@
   </div>
   <div class="information">
     <h4 class="titel">Vara {{ productID }}: {{ varan.title }}</h4>
-    <button v-if="disabledAddButton" class="kopKnapp" @click="addItemCart(varan)">
+    <button v-if="disabledAddButton" class="kopKnapp" @click="varuID">
       Lägg i Kundkorg
     </button>
   </div>
@@ -55,7 +55,8 @@ export default {
     },
     ...mapMutations(["addItemCart"]),
     varuID() {
-      this.$store.commit("addToCart", this.varan);
+        this.addItemCart(this.varan)
+    //   this.$store.commit("addToCart", this.varan);
     },
   },
   mounted() {
