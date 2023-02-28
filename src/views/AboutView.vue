@@ -2,6 +2,11 @@
 
 <template>
   <div class="container-about">
+    <img
+      src="https://images.unsplash.com/photo-1543983419-dbdc20257c3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+      class="vr-header"
+      alt="vr headset"
+    />
     <h1>Lorem ipsum dolor sit amet consectetur.</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut modi,
@@ -25,13 +30,21 @@
         </p>
       </div>
       <div>
-        <img class="img" src="../assets/img/img2.jpeg" alt="Bild" />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1443884590026-2e4d21aee71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1686&q=80"
+          alt="Bild"
+        />
       </div>
     </div>
 
     <div class="content-second">
       <div>
-        <img class="img" src="../assets/img/img2.jpeg" alt="Bild" />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1527090526205-beaac8dc3c62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+          alt="Bild"
+        />
       </div>
       <div class="title-content-second">
         <h2>Varför och hur</h2>
@@ -51,7 +64,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 0;
   font-family: "Outfit", sans-serif;
 }
 
@@ -60,6 +73,14 @@
 }
 .container-about h1 {
   font-weight: 600;
+}
+
+.vr-header {
+  margin-top: 0;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: ;
 }
 
 .Container {
@@ -74,8 +95,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 55%;
-  height: 300px;
+  width: 40%;
+  height: 400px;
   border: solid 1px rgb(180, 180, 180);
   margin: 40px auto;
 }
