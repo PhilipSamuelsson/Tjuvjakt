@@ -34,7 +34,6 @@
         <button
           :disabled="this.inStock === getCartItemCount"
           @click="addItemCart(cartItem)"
-
           class="increment-btn"
         >
           +
@@ -60,7 +59,6 @@ export default {
     //       this.number++;
     //     }
     // },
-
 
     // FUNKAR EJ
     decrement() {

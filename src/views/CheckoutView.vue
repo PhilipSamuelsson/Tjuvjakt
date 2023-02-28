@@ -1,5 +1,5 @@
 <script setup>
-// import axios from 'axios',
+// import axios from "axios",
 // export default {
 //   name:'checkoutView',
 //   data() {
@@ -11,7 +11,7 @@
 //        gatuadress: '',
 //        stad: '',
 //        postnummer:''
-//     }
+//     };
 //   },
 //   methods: {
 //     async checkoutView(){
@@ -32,7 +32,7 @@
 //     this.$router.push('/checkoutViewSecond')
 //   }
 // }
-//
+
 </script>
 
 <template>
@@ -71,7 +71,7 @@
       <h3 class="adress">Adress</h3>
       <div>
         <label class="förnamn" for="förnamn"
-          ><input v-model="förnamn" type="text" id="förnamn" placeholder="xx"
+          ><input v-model="förnamn" type="text" id="förnamn" placeholder="xx" required
         /></label>
       </div>
       <br />
@@ -83,6 +83,7 @@
             type="text"
             id="efternamn"
             placeholder="xx"
+            required
         /></label>
       </div>
       <br />
@@ -94,6 +95,7 @@
             type="email"
             id="email"
             placeholder="username@gmail.com"
+            required
         /></label>
       </div>
       <br />
@@ -104,6 +106,7 @@
           type="tel"
           id="telefonnummer"
           placeholder="+ 123 456 789"
+          required
       /></label>
       <br />
 
@@ -114,6 +117,7 @@
             type="text"
             id="gatuadress"
             placeholder="Hägerneholmsvägen"
+            required
         /></label>
       </div>
       <br />
@@ -121,6 +125,7 @@
       <div>
         <label class="stad" for="stad">
           <input v-model="stad" type="text" id="stad" placeholder="Stockholm"
+          required
         /></label>
       </div>
       <br />
@@ -132,6 +137,7 @@
             type="text"
             id="postnummer"
             placeholder="123 45"
+            required
         /></label>
       </div>
     </form>

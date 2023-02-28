@@ -10,7 +10,7 @@ const mutations = {
   removeItemFromCart(state, product) {
     for (let i = 0; i < state.cart.length; i++) {
       if (state.cart[i].id === product.id) {
-        state.cart[i].numberOfItem--
+        state.cart[i].numberOfItem--;
       }
     }
   },
