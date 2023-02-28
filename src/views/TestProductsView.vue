@@ -2,6 +2,7 @@
 import { ref } from "vue";
 const showSearch = ref(false);
 const showSort = ref(false);
+
 </script>
 
 <template>
@@ -9,7 +10,7 @@ const showSort = ref(false);
     <!-- Search -->
     <div>
       <i class="fa-solid fa-magnifying-glass" @click="showSearch = !showSearch"></i>
-      <input class="openClose" type="dropdown" v-model="titlesok"
+      <input @keyup.enter="this.products = searchProducts(this.titlesok)" placeholder="Sök efter produkt..." class="openClose" type="text" v-model="titlesok"
         v-bind:style="{ display: showSearch ? 'block' : 'none' }">
     </div>
 
@@ -131,6 +132,33 @@ export default {
       }
     },
 
+    // Sök funktionalitet
+    searchProducts(search) {
+      console.log(search)
+      const  matchingProducts = this.products.filter(product => {
+          const title = product.title.toLowerCase();
+          return title.includes(search.toLowerCase());
+        });
+        if(matchingProducts.length==0) {
+          console.log(matchingProducts == true)
+          console.log(matchingProducts.length)
+          console.log(this.resterProducts.length)
+          console.log("Nu ska man fetcha nya produkter")
+
+          const matchandeProdukter = this.resterProducts.filter(produkt => {
+            const titel = produkt.title.toLowerCase();
+            return titel.includes(search.toLowerCase());
+          })
+          console.log(matchandeProdukter.length, " vi kom till andra sök")
+          return matchandeProdukter
+        }
+        else {
+          console.log("vi kom till else, nu ska man fetcha enligt sök")
+          console.log(matchingProducts, typeof matchingProducts)
+          return matchingProducts;
+        }
+      },
+
     selectProduct(id) {
       // const valdProdukt = this.products.find(product => product.id == id)
       // console.log(valdProdukt.title)
@@ -148,6 +176,7 @@ export default {
         },
       });
       this.products = result.data;
+      this.resterProducts = result.data;
     },
   },
   data() {
@@ -155,6 +184,7 @@ export default {
       products: [],
       Kategori: "Allt",
       titlesok: "",
+      resterProducts: []
       // filteredArray: []
       // Kategori: "Glasögon" || "Skor" || "Kläder" || "Hittegods" || "Elektronik",
 
