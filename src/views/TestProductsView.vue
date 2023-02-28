@@ -18,6 +18,7 @@ const showSort = ref(false);
       <i class="fa-solid fa-filter" @click="showSort = !showSort"></i>
       <select v-model="Kategori" v-bind:style="{ display: showSort ? 'block' : 'none' }"
         @change="filterCategory(this.Kategori)">
+        <option>Allt</option>
         <option>Hittegods</option>
         <option>Kläder</option>
         <option>Skor</option>
@@ -38,9 +39,8 @@ const showSort = ref(false);
   <div class="products-wrapper">
     <div class="products-container">
       <!-- @click="sendId(product.id)" -->
-      <TestProductItem class="product-item" v-for="product in filteredArray | products" v-if=filteredArray
-        :key="product.id" @click="selectProduct(product.id)" :image="product.image" :price="product.price"
-        :title="product.title" />
+      <TestProductItem class="product-item" v-for="product in products" :key="product.id"
+        @click="selectProduct(product.id)" :image="product.image" :price="product.price" :title="product.title" />
     </div>
   </div>
 </template>
@@ -107,11 +107,16 @@ export default {
       console.log("körs denna funktion? priceLow")
     },
 
-    filterCategory(kategory) {
-      // this.fetchProducts()
+    // Filter funktionalitet
+    async filterCategory(kategory) {
       console.log(kategory)
-      this.filteredArray = this.products.filter(item => item.category === kategory);
-      // return filteredArray = this.products.filter(item => item.category === kategory);
+      if (kategory === "Allt") {
+        await this.fetchProducts()
+      }
+      else if (kategory !== "Allt") {
+        await this.fetchProducts()
+        this.products = this.products.filter(item => item.category === kategory);
+      }
     },
 
     selectProduct(id) {
@@ -136,9 +141,9 @@ export default {
   data() {
     return {
       products: [],
-      Kategori: "",
+      Kategori: "Allt",
       titlesok: "",
-      filteredArray: []
+      // filteredArray: []
       // Kategori: "Glasögon" || "Skor" || "Kläder" || "Hittegods" || "Elektronik",
 
     };
