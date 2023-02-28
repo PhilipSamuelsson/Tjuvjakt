@@ -15,15 +15,18 @@
       <div class="circles" id="circle-correctOne">
         <i class="bx bx-check" id="icone-one"></i>
       </div>
-      <i class="bx bx-chevron-right" id="icon-toNextCircle"></i>
+      <i class="bx bx-chevron-right" id="icon-toNextCircleOne"></i>
+
       <div class="circles" id="circle-correctTwo">
         <i class="bx bx-check" id="icone-two"></i>
       </div>
-      <i class="bx bx-chevron-right" id="icon-toNextCircle"></i>
+      <i class="bx bx-chevron-right" id="icon-toNextCircleTwo"></i>
+
       <div class="circles" id="circle-correctThree">
         <i class="bx bx-check" id="icone-three"></i>
       </div>
-      <i class="bx bx-chevron-right" id="icon-toNextCircle"></i>
+      <i class="bx bx-chevron-right" id="icon-toNextCircleThree"></i>
+
       <div class="circles" id="circle-correctFour">
         <i class="bx bx-check" id="icone-four"></i>
       </div>
@@ -45,7 +48,7 @@
 }
 
 #circle-correctOne {
-  background-color: rgb(91, 179, 252);
+  background-color: rgb(48, 189, 135);
 }
 
 i[class="bx bx-check"] {
@@ -58,8 +61,14 @@ i[class="bx bx-check"] {
 #icone-one {
   color: white;
 }
-
-#icon-toNextCircle {
+#icon-toNextCircleOne, #icon-toNextCircleTwo, #icon-toNextCircleThree{
   font-size: 60px;
+}
+
+#icon-toNextCircleOne {
+  color: rgb(48, 189, 135);
+}
+
+@media screen and (min-width: 375px) and (max-width: 980px) {
 }
 </style>

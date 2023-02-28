@@ -51,7 +51,7 @@ import CartContainer from "../components/CartContainer.vue";
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <RouterLink to="/checkout">Test checkout</RouterLink>
+              <RouterLink to="/checkoutSecond">Test checkout</RouterLink>
             </a>
           </li>
           <li class="nav-item">
