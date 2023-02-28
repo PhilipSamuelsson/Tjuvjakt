@@ -54,14 +54,15 @@ import CartContainer from "../components/CartContainer.vue";
               <RouterLink to="/checkout">Test checkout</RouterLink>
             </a>
           </li>
-          <li class="nav-item">
-            <a @click="$store.commit('toggleCart')" class="nav-link" href="#">
-              <img class="Kassa" src="../assets/img/shopping-cart-icon-1.png" />
-            </a>
-          </li>
         </ul>
       </div>
+      <div class="navbar-nav ml-auto">
+        <a @click="$store.commit('toggleCart')" class="nav-link" href="#">
+          <img class="Kassa" src="../assets/img/shopping-cart-icon-1.png" />
+        </a>
+      </div>
     </div>
+
     <CartContainer v-if="$store.state.showCart" />
   </nav>
   <RouterView />
@@ -121,6 +122,15 @@ nav ul li a:hover {
 
   .img-logo {
     width: 90px;
+  }
+}
+
+@media (max-width: 990px) {
+  .navbar-toggler {
+    order: -1;
+  }
+  .img-logo {
+    display: none;
   }
 }
 </style>
