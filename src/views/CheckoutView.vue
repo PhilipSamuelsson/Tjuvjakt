@@ -24,6 +24,7 @@
 //         stad:this.stad,
 //         postnummer:this.postnummer
 //       })
+ 
 
 //     }
 //   },
