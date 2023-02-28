@@ -50,6 +50,11 @@ import CartContainer from "../components/CartContainer.vue";
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#">
+              <RouterLink to="/checkoutSecond">Test checkout</RouterLink>
+            </a>
+          </li>
+          <li class="nav-item">
             <a @click="$store.commit('toggleCart')" class="nav-link" href="#">
               <img class="Kassa" src="../assets/img/shopping-cart-icon-1.png" />
             </a>
@@ -63,7 +68,7 @@ import CartContainer from "../components/CartContainer.vue";
   <FooterBar />
 </template>
 
-<style>
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap");
 
 nav[class="navbar navbar-expand-lg bg-body-tertiary"] {

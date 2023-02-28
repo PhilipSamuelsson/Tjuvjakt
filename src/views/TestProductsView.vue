@@ -17,9 +17,14 @@ const showSort = ref(false);
     <!-- Sort -->
     <div>
       <i class="fa-solid fa-filter" @click="showSort = !showSort"></i>
-      <h5 v-bind:style="{ display: showSort ? 'block' : 'none' }">Filtrera efter Kategori</h5>
-      <select v-model="Kategori" v-bind:style="{ display: showSort ? 'block' : 'none' }"
-        @change="filterCategory(this.Kategori)">
+      <h5 v-bind:style="{ display: showSort ? 'block' : 'none' }">
+        Filtrera efter Kategori
+      </h5>
+      <select
+        v-model="Kategori"
+        v-bind:style="{ display: showSort ? 'block' : 'none' }"
+        @change="filterCategory(this.Kategori)"
+      >
         <option>Allt</option>
         <option>Hittegods</option>
         <option>Kläder</option>
@@ -33,19 +38,23 @@ const showSort = ref(false);
       <button @click="alfabeticalLow">Alfabetisk ordning: Ö-A</button>
     </div>
 
-
     <!-- Div @click style=display:block/none -->
 
-
     <!-- <input class=openClose type=dropdown v-model=this.data> -->
-
   </div>
   <!-- {display: showVillkor ? 'block' : 'none' }" -->
   <div class="products-wrapper">
     <div class="products-container">
       <!-- @click="sendId(product.id)" -->
-      <TestProductItem class="product-item" v-for="product in products" :key="product.id"
-        @click="selectProduct(product.id)" :image="product.image" :price="product.price" :title="product.title" />
+      <TestProductItem
+        class="product-item"
+        v-for="product in products"
+        :key="product.id"
+        @click="selectProduct(product.id)"
+        :image="product.image"
+        :price="product.price"
+        :title="product.title"
+      />
     </div>
   </div>
 </template>
@@ -105,30 +114,31 @@ export default {
   methods: {
     priceHigh() {
       this.products.sort((a, b) => b.price - a.price);
-      console.log("körs denna funktion? priceHigh")
+      console.log("körs denna funktion? priceHigh");
     },
     alfabeticalHigh() {
       this.products.sort((a, b) => a.title.localeCompare(b.title));
-      console.log("körs denna funktion? AlfabeticalHigh")
+      console.log("körs denna funktion? AlfabeticalHigh");
     },
     alfabeticalLow() {
       this.products.sort((a, b) => a.title.localeCompare(b.title)).reverse();
-      console.log("körs denna funktion? AlfabeticalLow")
+      console.log("körs denna funktion? AlfabeticalLow");
     },
     priceLow() {
       this.products.sort((a, b) => a.price - b.price);
-      console.log("körs denna funktion? priceLow")
+      console.log("körs denna funktion? priceLow");
     },
 
     // Filter funktionalitet
     async filterCategory(kategory) {
-      console.log(kategory)
+      console.log(kategory);
       if (kategory === "Allt") {
-        await this.fetchProducts()
-      }
-      else if (kategory !== "Allt") {
-        await this.fetchProducts()
-        this.products = this.products.filter(item => item.category === kategory);
+        await this.fetchProducts();
+      } else if (kategory !== "Allt") {
+        await this.fetchProducts();
+        this.products = this.products.filter(
+          (item) => item.category === kategory
+        );
       }
     },
 
@@ -165,9 +175,9 @@ export default {
       // console.log(id); name: 'productdetail' Voalr föreslåt detta "name: ProductDetailView" props: { productData: this.products }
       // this.$emit("produkt-vald", { id, productData: valdProdukt });
       this.$router.push({
-        name: 'productdetail',
-        params: { productID: id }
-      })
+        name: "productdetail",
+        params: { productID: id },
+      });
     },
     async fetchProducts() {
       const result = await axios.get("productapi.json", {
@@ -187,9 +197,7 @@ export default {
       resterProducts: []
       // filteredArray: []
       // Kategori: "Glasögon" || "Skor" || "Kläder" || "Hittegods" || "Elektronik",
-
     };
   },
 };
-
 </script>

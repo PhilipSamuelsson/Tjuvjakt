@@ -1,7 +1,4 @@
-<script setup>
-import NavBar from "../components/NavBar.vue";
-// import ProductCard from "../components/ProductCard.vue";
-</script>
+<script setup></script>
 
 <template>
   <div class="container-about">

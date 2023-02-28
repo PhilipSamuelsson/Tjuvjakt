@@ -23,49 +23,61 @@
       <div class="cart-info">
         <p class="info-title">{{ productTitle }}</p>
         <p class="info-category">{{ productCategory }}</p>
-        <p class="info-price">{{ totalPrice }}</p>
+        <p class="info-price">{{ getCartItemCount * productPrice }}</p>
       </div>
+
       <div class="increment-container">
+        <!-- FIXA -->
         <button @click="decrement" class="increment-btn">-</button>
-        <p class="increment-number">{{ quantity }}</p>
-        <button :disabled="(this.inStock === this.number)" @click="increment" class="increment-btn">+</button>
+        <p class="increment-number">{{ getCartItemCount }}</p>
+
+        <button
+          :disabled="this.inStock === getCartItemCount"
+          @click="addItemCart(cartItem)"
+          class="increment-btn"
+        >
+          +
+        </button>
       </div>
-      <!-- <CartItemIncrement /> -->
     </div>
+
     <button @click="remove" class="remove-item-btn">X</button>
   </div>
 </template>
 
 <script>
-// import CartItemIncrement from "../components/CartItemIncrement.vue";
+import { mapGetters, mapMutations } from "vuex";
 export default {
-  components: {
-    // CartItemIncrement,
-  },
+  components: {},
   methods: {
     remove() {
-      console.log(this.productId);
       this.$store.commit("removeFromCart", this.productId);
     },
-    increment() {
-      if (this.inStock > this.number) {
-        this.productPrice += this.price;
-        this.number++;
-      }
-    },
+    // increment() {
+    //     if (this.inStock > this.number) {
+    //       this.productPrice += this.price;
+    //       this.number++;
+    //     }
+    // },
+
+    // FUNKAR EJ
     decrement() {
-      if (this.number > 1) {
-        this.productPrice -= this.price;
-        this.number--;
-      } else {
+      if (this.getCartItemCount > 0) {
         this.$store.commit("removeFromCart", this.productId);
+      } else {
+        this.removeItemFromCart(this.cartItem);
       }
+      //   if (this.number > 1) {
+      //     this.productPrice -= this.price;
+      //     this.number--;
+      //   } else {
+      //     this.$store.commit("removeFromCart", this.productId);
+      //   }
     },
+    ...mapMutations(["addItemCart", "removeItemFromCart"]),
   },
   computed: {
-    quantity() {
-      return this.number;
-    },
+    ...mapGetters(["getCartItemCount"]),
     totalPrice() {
       return this.productPrice;
     },
@@ -79,6 +91,7 @@ export default {
       productCategory: this.category,
       productPrice: this.price,
       inStock: this.stock,
+      cartItem: this.product,
     };
   },
   props: {
@@ -104,6 +117,10 @@ export default {
     },
     stock: {
       type: Number,
+      required: true,
+    },
+    product: {
+      type: Object,
       required: true,
     },
   },
@@ -162,11 +179,11 @@ export default {
 }
 
 .info-price {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .remove-item-btn {
-    font-size: .8rem;
+  font-size: 0.8rem;
   color: #ffffff;
   margin: 0.3rem;
   background: #000000;

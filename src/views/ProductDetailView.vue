@@ -6,7 +6,11 @@
   </div>
   <div class="information">
     <h4 class="titel">Vara {{ productID }}: {{ varan.title }}</h4>
-    <button v-if="disabledAddButton" class="kopKnapp" @click="varuID">
+    <button
+      v-if="disabledAddButton"
+      class="kopKnapp"
+      @click="addItemCart(varan)"
+    >
       Lägg i Kundkorg
     </button>
   </div>
@@ -25,6 +29,7 @@
 
 <script>
 import axios from "axios";
+import { mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -33,15 +38,15 @@ export default {
       noProductAdded: true,
     };
   },
-  computed:{
-    disabledAddButton(){
-        for (let i = 0; i < this.$store.state.cart.length; i++) {
+  computed: {
+    disabledAddButton() {
+      for (let i = 0; i < this.$store.state.cart.length; i++) {
         if (this.varan.id === this.$store.state.cart[i].id) {
-          return false
+          return false;
         }
       }
-        return true
-    }
+      return true;
+    },
   },
   methods: {
     async fetchProduct() {
@@ -52,6 +57,7 @@ export default {
       });
       this.varan = result.data[this.productID - 1];
     },
+    ...mapMutations(["addItemCart"]),
     varuID() {
       this.$store.commit("addToCart", this.varan);
     },

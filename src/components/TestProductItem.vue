@@ -43,7 +43,7 @@ export default {
 
 <style>
 .product-wrapper {
-  margin: .4rem;
+  margin: 0.4rem;
   border: 1px solid black;
 }
 
