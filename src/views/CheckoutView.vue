@@ -218,9 +218,6 @@ label::before {
   width: 500px;
 }
 
-input {
-  border: none;
-}
 
 #back-icon {
   position: absolute;
