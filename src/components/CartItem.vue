@@ -10,19 +10,16 @@
       <div class="cart-info">
         <p class="info-title">{{ productTitle }}</p>
         <p class="info-category">{{ productCategory }}</p>
-        <p class="info-price">{{ getCartItemCount * productPrice }}</p>
+        <p class="info-price">{{ totalPrice }}</p>
       </div>
 
       <div class="increment-container">
-
         <button @click="decrement" class="increment-btn">-</button>
-        <p class="increment-number">{{ getCartItemCount }}</p>
+        <p class="increment-number">{{ numberOfProducts }}</p>
 
         <button
-          :disabled="this.inStock === getCartItemCount"
-
+          :disabled="this.inStock === this.numberOfProducts"
           @click="increment"
-
           class="increment-btn"
         >
           +
@@ -37,37 +34,40 @@
 <script>
 import { mapGetters, mapMutations } from "vuex";
 export default {
-  components: {},
   methods: {
     remove() {
-
       this.removeFromCart(this.productId);
     },
     increment() {
-      //this.addItemCart(this.cartItem);
-      this.addMore(this.cartItem)
+      this.addMore(this.cartItem);
     },
     decrement() {
-
       if (this.getCartItemCount > 1) {
         this.removeItemFromCart(this.cartItem);
       } else {
-        this.remove()
-
+        this.remove();
       }
     },
 
-    ...mapMutations(["addItemCart", "removeItemFromCart", "removeFromCart", "addMore"]),
+    ...mapMutations([
+      "addItemCart",
+      "removeItemFromCart",
+      "removeFromCart",
+      "addMore",
+    ]),
   },
   computed: {
     ...mapGetters(["getCartItemCount"]),
     totalPrice() {
-      return this.productPrice;
+        return this.productPrice * this.numberOfItem;
     },
+    // totalProductPrice() {
+    //   return this.$store.commit("getNumberOfProducts", this.cartItem);
+    // },
   },
   data() {
     return {
-      number: 1,
+      productTotalPrice: 0,
       productId: this.id,
       productTitle: this.title,
       productImg: this.image,
@@ -75,6 +75,7 @@ export default {
       productPrice: this.price,
       inStock: this.stock,
       cartItem: this.product,
+      numberOfItem: this.numberOfProducts,
     };
   },
   props: {
@@ -99,6 +100,10 @@ export default {
       required: true,
     },
     stock: {
+      type: Number,
+      required: true,
+    },
+    numberOfProducts: {
       type: Number,
       required: true,
     },
