@@ -32,9 +32,27 @@
       </div>
     </div>
   </div>
+
+  <div class="containerTwo">
+  <div class="firstContent">
+  </div>
+
+  <div class="secondContent">
+  </div>
+   </div>
 </template>
 
 <style scoped>
+.firstContent, .secondContent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  border: 1px solid black;
+  height: 60px;
+  width: 400px;
+
+}
 .circles {
   display: inline-block;
   align-items: center;
@@ -68,6 +86,44 @@ i[class="bx bx-check"] {
 #icon-toNextCircleOne {
   color: rgb(48, 189, 135);
 }
+#circle-correctTwo{
+  background-color: rgb(91, 179, 252);
+}
+
+.containerTwo{
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin: auto;
+  width: 60%;
+  height: 300px;
+  box-shadow: 1px 1px 2px 2px rgb(226, 226, 226) ;
+}
+
+#back-icon {
+  position: absolute;
+  margin-top: 400px;
+  margin-left: 200px;
+  font-size: 80px;
+}
+
+#next-icon {
+  position: absolute;
+  margin-top: 400px;
+  margin-left: 1230px;
+  font-size: 80px;
+}
+.vidare-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  height: 60px;
+  width: 200px;
+  font-weight: 800;
+  font-size: 30px;
+}
+
 
 @media screen and (min-width: 375px) and (max-width: 980px) {
 }
