@@ -138,7 +138,7 @@
   <button @click="goToNextPage" class="vidare-btn" type="submit">Vidare</button>
 </template>
 
-<style>
+<style scoped>
 .circles {
   display: inline-block;
   align-items: center;
@@ -188,7 +188,6 @@ i[class="bx bx-check"] {
 
 label {
   position: relative;
-  border: solid rgb(109, 109, 109) 2px;
   padding: 7px;
   text-align: center;
   margin-top: 25px;
