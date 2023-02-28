@@ -25,7 +25,10 @@ const showSort = ref(false);
         <option>Elektronik</option>
         <option>Glasögon</option>
       </select>
-      <!-- <input class="openClose" type="dropdown" v-model="this.Kategori" v-bind:style="{ display: showSort ? 'block' : 'none' }"> -->
+      <button @click="priceLow">Pris: Lågt till högt</button>
+      <button @click="priceHigh">Pris: Högt till lågt</button>
+      <button @click="alfabeticalHigh">Alfabetisk ordning: A-Ö</button>
+      <button @click="alfabeticalLow">Alfabetisk ordning: Ö-A</button>
     </div>
 
 
@@ -99,11 +102,19 @@ export default {
   // emits: ["produkt-vald"],
   methods: {
     priceHigh() {
-      this.products.sort((a, b) => a.price - b.price);
+      this.products.sort((a, b) => b.price - a.price);
       console.log("körs denna funktion? priceHigh")
     },
+    alfabeticalHigh() {
+      this.products.sort((a, b) => a.title.localeCompare(b.title));
+      console.log("körs denna funktion? AlfabeticalHigh")
+    },
+    alfabeticalLow() {
+      this.products.sort((a, b) => a.title.localeCompare(b.title)).reverse();
+      console.log("körs denna funktion? AlfabeticalLow")
+    },
     priceLow() {
-      this.products.sort((a, b) => b.price - a.price);
+      this.products.sort((a, b) => a.price - b.price);
       console.log("körs denna funktion? priceLow")
     },
 
