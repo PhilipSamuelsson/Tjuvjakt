@@ -1,17 +1,4 @@
 <template>
-  <!-- <div class="grid-container">
-    <div class="grid-item part1">
-      <div>PRODUKTernas produkter</div>
-    </div>
-    <div class="grid-item part2">
-      <ul>
-        <li>Title</li>
-        <li>Kategori</li>
-        <li>Pris</li>
-      </ul>
-    </div>
-  </div> -->
-
   <div class="item-container">
     <div class="img-item">
       <div
@@ -51,7 +38,7 @@ export default {
   components: {},
   methods: {
     remove() {
-      this.$store.commit("removeFromCart", this.productId);
+        this.removeFromCart(this.productId);
     },
     // increment() {
     //     if (this.inStock > this.number) {
@@ -62,10 +49,10 @@ export default {
 
     // FUNKAR EJ
     decrement() {
-      if (this.getCartItemCount > 0) {
-        this.$store.commit("removeFromCart", this.productId);
-      } else {
+      if (this.getCartItemCount > 1) {
         this.removeItemFromCart(this.cartItem);
+      } else {
+        this.remove()
       }
       //   if (this.number > 1) {
       //     this.productPrice -= this.price;
@@ -74,7 +61,7 @@ export default {
       //     this.$store.commit("removeFromCart", this.productId);
       //   }
     },
-    ...mapMutations(["addItemCart", "removeItemFromCart"]),
+    ...mapMutations(["addItemCart", "removeItemFromCart", "removeFromCart"]),
   },
   computed: {
     ...mapGetters(["getCartItemCount"]),
