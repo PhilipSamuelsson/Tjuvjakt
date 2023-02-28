@@ -1,5 +1,5 @@
 <script setup>
-import NavBar from "../components/NavBar.vue";
+// import NavBar from "../components/NavBar.vue";
 // import ProductCard from "../components/ProductCard.vue";
 </script>
 
