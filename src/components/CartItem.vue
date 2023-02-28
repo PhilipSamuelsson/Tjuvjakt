@@ -40,6 +40,7 @@ export default {
   components: {},
   methods: {
     remove() {
+
       this.removeFromCart(this.productId);
     },
     increment() {
@@ -47,13 +48,15 @@ export default {
       this.addMore(this.cartItem)
     },
     decrement() {
-      console.log(this.getCartItemCount);
+
       if (this.getCartItemCount > 1) {
         this.removeItemFromCart(this.cartItem);
       } else {
-        this.removeFromCart(this.productId);
+        this.remove()
+
       }
     },
+
     ...mapMutations(["addItemCart", "removeItemFromCart", "removeFromCart", "addMore"]),
   },
   computed: {
