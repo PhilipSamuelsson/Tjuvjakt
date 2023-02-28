@@ -33,15 +33,15 @@ export default {
       noProductAdded: true,
     };
   },
-  computed:{
-    disabledAddButton(){
-        for (let i = 0; i < this.$store.state.cart.length; i++) {
+  computed: {
+    disabledAddButton() {
+      for (let i = 0; i < this.$store.state.cart.length; i++) {
         if (this.varan.id === this.$store.state.cart[i].id) {
-          return false
+          return false;
         }
       }
-        return true
-    }
+      return true;
+    },
   },
   methods: {
     async fetchProduct() {

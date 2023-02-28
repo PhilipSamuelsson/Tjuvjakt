@@ -28,7 +28,13 @@
       <div class="increment-container">
         <button @click="decrement" class="increment-btn">-</button>
         <p class="increment-number">{{ quantity }}</p>
-        <button :disabled="(this.inStock === this.number)" @click="increment" class="increment-btn">+</button>
+        <button
+          :disabled="this.inStock === this.number"
+          @click="increment"
+          class="increment-btn"
+        >
+          +
+        </button>
       </div>
       <!-- <CartItemIncrement /> -->
     </div>
@@ -162,11 +168,11 @@ export default {
 }
 
 .info-price {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .remove-item-btn {
-    font-size: .8rem;
+  font-size: 0.8rem;
   color: #ffffff;
   margin: 0.3rem;
   background: #000000;
