@@ -20,7 +20,9 @@
 
         <button
           :disabled="this.inStock === getCartItemCount"
+
           @click="increment"
+
           class="increment-btn"
         >
           +
@@ -44,7 +46,6 @@ export default {
       //this.addItemCart(this.cartItem);
       this.addMore(this.cartItem)
     },
-
     decrement() {
       console.log(this.getCartItemCount);
       if (this.getCartItemCount > 1) {

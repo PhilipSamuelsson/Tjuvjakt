@@ -6,7 +6,9 @@
   </div>
   <div class="information">
     <h4 class="titel">Vara {{ productID }}: {{ varan.title }}</h4>
+
     <button v-if="disabledAddButton" class="kopKnapp" @click="varuID">
+
       Lägg i Kundkorg
     </button>
   </div>
@@ -25,7 +27,7 @@
 
 <script>
 import axios from "axios";
-import { mapMutations } from "vuex"
+import { mapMutations } from "vuex";
 export default {
   data() {
     return {

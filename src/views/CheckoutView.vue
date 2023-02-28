@@ -1,40 +1,3 @@
-<script setup>
-// import axios from 'axios',
-// export default {
-//   name:'checkoutView',
-//   data() {
-//     return {
-//       förnamn: '',
-//        efternamn: '',
-//        email: '',
-//        telefonnummer: '',
-//        gatuadress: '',
-//        stad: '',
-//        postnummer:''
-//     }
-//   },
-//   methods: {
-//     async checkoutView(){
-//       let result = await axios.post('/checkoutView',{
-//         förnamn:this.förnamn,
-//         efternamn:this.efternamn,
-//         email:this.email,
-//         telefonnummer:this.telefonnummer,
-//         gatuadress:this.gatuadress,
-//         stad:this.stad,
-//         postnummer:this.postnummer
-//       })
- 
-
-//     }
-//   },
-//   goToNextPage(){
-//     this.$router.push('/checkoutViewSecond')
-//   }
-// }
-//
-</script>
-
 <template>
   <link
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -42,8 +5,8 @@
   />
 
   <div>
-    <i class="bx bx-chevron-left" id="back-icon"></i>
-    <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i>
+   <i class="bx bx-chevron-left" id="back-icon" ></i>
+    <RouterLink to="/checkoutsecond"> <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i></RouterLink>
   </div>
 
   <div class="container">
@@ -71,7 +34,7 @@
       <h3 class="adress">Adress</h3>
       <div>
         <label class="förnamn" for="förnamn"
-          ><input v-model="förnamn" type="text" id="förnamn" placeholder="xx"
+          ><input v-model="förnamn" type="text" id="förnamn" placeholder="xx" required
         /></label>
       </div>
       <br />
@@ -83,6 +46,7 @@
             type="text"
             id="efternamn"
             placeholder="xx"
+            required
         /></label>
       </div>
       <br />
@@ -94,6 +58,7 @@
             type="email"
             id="email"
             placeholder="username@gmail.com"
+            required
         /></label>
       </div>
       <br />
@@ -104,6 +69,7 @@
           type="tel"
           id="telefonnummer"
           placeholder="+ 123 456 789"
+          required
       /></label>
       <br />
 
@@ -114,6 +80,7 @@
             type="text"
             id="gatuadress"
             placeholder="Hägerneholmsvägen"
+            required
         /></label>
       </div>
       <br />
@@ -121,6 +88,7 @@
       <div>
         <label class="stad" for="stad">
           <input v-model="stad" type="text" id="stad" placeholder="Stockholm"
+          required
         /></label>
       </div>
       <br />
@@ -132,12 +100,51 @@
             type="text"
             id="postnummer"
             placeholder="123 45"
+            required
         /></label>
       </div>
     </form>
   </div>
-  <button @click="goToNextPage" class="vidare-btn" type="submit">Vidare</button>
+ <RouterLink to="/checkoutsecond"> <button @click="goToNextPage" class="vidare-btn" type="submit">Vidare</button></RouterLink> 
 </template>
+
+<script >
+import axios from "axios";
+export default {
+  name:'checkoutView',
+  data() {
+    return {
+      förnamn: '',
+       efternamn: '',
+       email: '',
+       telefonnummer: '',
+       gatuadress: '',
+       stad: '',
+       postnummer:''
+    };
+  },
+  methods: {
+    async checkoutView(){
+       await axios.post('/checkoutView',{
+        förnamn:this.förnamn,
+        efternamn:this.efternamn,
+        email:this.email,
+        telefonnummer:this.telefonnummer,
+        gatuadress:this.gatuadress,
+        stad:this.stad,
+        postnummer:this.postnummer
+      })
+ 
+
+    }
+  },
+  goToNextPage(){
+    this.$router.push('/checkoutViewSecond')
+  }
+}
+
+</script>
+
 
 <style scoped>
 .circles {
@@ -226,14 +233,14 @@ label::before {
   position: absolute;
   margin-top: 400px;
   margin-left: 200px;
-  font-size: 100px;
+  font-size: 80px;
 }
 
 #next-icon {
   position: absolute;
   margin-top: 400px;
   margin-left: 1230px;
-  font-size: 100px;
+  font-size: 80px;
 }
 .vidare-btn {
   display: flex;
