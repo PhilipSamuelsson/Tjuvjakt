@@ -138,7 +138,7 @@
   <button @click="goToNextPage" class="vidare-btn" type="submit">Vidare</button>
 </template>
 
-<style>
+<style scoped>
 .circles {
   display: inline-block;
   align-items: center;
@@ -180,6 +180,7 @@ i[class="bx bx-check"] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
   position: relative;
   box-shadow: rgb(233, 233, 233) 0px 0px 2px 2px;
   height: 90vh;
@@ -188,7 +189,6 @@ i[class="bx bx-check"] {
 
 label {
   position: relative;
-  border: solid rgb(109, 109, 109) 2px;
   padding: 7px;
   text-align: center;
   margin-top: 25px;
@@ -197,30 +197,28 @@ label {
 label::before {
   content: "Förnamn";
   position: absolute;
-  top: -15px;
+  top: -10px;
   left: 10px;
   background-color: white;
   padding: 0 5px;
 }
 
-.förnamn,
-.efternamn,
-.stad,
-.postnummer {
+#förnamn,
+#efternamn,
+#stad,
+#postnummer {
   display: inline-flex;
   flex-direction: column;
   width: 300px;
+  height: 40px;
 }
 
-.telefonnummer,
-.gatuadress,
-.email {
+#telefonnummer,
+#gatuadress,
+#email {
   display: flex;
   width: 500px;
-}
-
-input {
-  border: none;
+  height: 40px;
 }
 
 #back-icon {

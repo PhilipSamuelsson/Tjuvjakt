@@ -26,7 +26,6 @@ export default {
     fetchProducts() {
       this.cartList = this.$store.state.cart;
     },
-
   },
   data() {
     return {
