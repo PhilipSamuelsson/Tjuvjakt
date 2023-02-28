@@ -16,6 +16,7 @@ const showSort = ref(false);
     <!-- Sort -->
     <div>
       <i class="fa-solid fa-filter" @click="showSort = !showSort"></i>
+      <h5 v-bind:style="{ display: showSort ? 'block' : 'none' }">Filtrera efter Kategori</h5>
       <select v-model="Kategori" v-bind:style="{ display: showSort ? 'block' : 'none' }"
         @change="filterCategory(this.Kategori)">
         <option>Allt</option>
