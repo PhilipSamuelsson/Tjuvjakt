@@ -14,9 +14,9 @@ export default {
   },
   computed: {
     ...mapGetters(["getCartItemCount"]),
-    displays(){
-        return this.$store.state.cart
-    }
+    displays() {
+      return this.$store.state.cart;
+    },
   },
 };
 </script>
@@ -76,7 +76,7 @@ export default {
       <div class="navbar-nav ml-auto">
         <a @click="$store.commit('toggleCart')" class="nav-link cart" href="#">
           <img class="Kassa" src="../assets/img/shopping-cart-icon-1.png" />
-          <p class="cart-number" >{{ getCartItemCount }}</p>
+          <p class="cart-number">{{ getCartItemCount }}</p>
         </a>
       </div>
     </div>
@@ -128,20 +128,20 @@ nav ul li a:hover {
   width: 39px;
 }
 
-.cart{
-    display: grid;
-    grid-template-rows: 10px;
+.cart {
+  display: grid;
+  grid-template-rows: 10px;
 }
-.cart-number{
-    font-size: .7rem;
-    height: 20px;
-    width:20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000000;
-    background-color: var(--primary-red);
+.cart-number {
+  font-size: 0.7rem;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  background-color: var(--primary-red);
 }
 
 @media screen and (min-width: 375px) and (max-width: 980px) {
