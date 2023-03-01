@@ -12,7 +12,7 @@
         <p class="info-category">{{ productCategory }}</p>
 
         <!-- NU FUNKAR DEN! -->
-        <p class="info-price">{{ productPrice * numberOfItem }}</p>
+        <p class="info-price">{{ productPrice * numberOfItem }} kr</p>
       </div>
 
       <div class="increment-container">
@@ -41,7 +41,7 @@ export default {
       this.removeFromCart(this.productId);
     },
     increment() {
-        this.numberOfItem++
+      this.numberOfItem++
       this.addMore(this.cartItem);
     },
     decrement() {
@@ -61,22 +61,8 @@ export default {
     ]),
   },
 
-
-
   computed: {
     ...mapGetters(["getCartItemCount"]),
-
-
-    totalPrice() {
-      return this.productPrice * this.numberOfItem;
-    },
-
-
-
-
-    // totalProductPrice() {
-    //   return this.$store.commit("getNumberOfProducts", this.cartItem);
-    // },
   },
   data() {
     return {

@@ -6,7 +6,7 @@
 
     <button @click="$store.commit('toggleCart')" class="close">&times;</button>
 
-    <!-- Visas när varukorgen är tom -->
+
     <div v-if="$store.state.cart.length === 0" class="no-products">
       <p>Du har inga stöldgods i varukorgen</p>
       <RouterLink
@@ -20,12 +20,12 @@
       <CartitemsContainer />
     </div>
 
-    <!-- Visas när något är i varukorgen -->
+
     <div v-if="$store.state.cart.length" class="to-checkout-container">
       <div class="total-cost-container">
         <p>Totalt :</p>
 
-        <!-- FUKAR INTE -->
+
         <p>{{ getCartTotal }} KR</p>
       </div>
       <button class="kopKnapp" role="button">Till kassan</button>
@@ -40,21 +40,10 @@ export default {
   computed:{
     ...mapGetters([
         'getCartTotal'
-    ]),
-    totalCost() {
-      return this.totalSum;
-    },
-  },
-  methods: {
-    // ...mapGetters(["getCartTotal"])
+    ])
   },
   components: {
     CartitemsContainer,
-  },
-  data() {
-    return {
-      totalSum: this.$store.commit('getCartTotal'),
-    };
   },
 };
 </script>
