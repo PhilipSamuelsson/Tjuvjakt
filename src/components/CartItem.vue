@@ -12,7 +12,7 @@
         <p class="info-category">{{ productCategory }}</p>
 
         <!-- HÄR SKA PRISET UPPDATERAS MEN FUNKAR INTE -->
-        <p class="info-price">{{ totalPrice }}</p>
+        <p class="info-price">{{ productPrice * numberOfItem }}</p>
       </div>
 
       <div class="increment-container">
@@ -41,10 +41,12 @@ export default {
       this.removeFromCart(this.productId);
     },
     increment() {
+        this.numberOfItem++
       this.addMore(this.cartItem);
     },
     decrement() {
       if (this.getCartItemCount > 1) {
+        this.numberOfItem--
         this.removeItemFromCart(this.cartItem);
       } else {
         this.remove();
@@ -64,7 +66,7 @@ export default {
   computed: {
     ...mapGetters(["getCartItemCount"]),
 
-    
+
     totalPrice() {
         return this.productPrice * this.numberOfItem;
     },
@@ -86,7 +88,7 @@ export default {
       productPrice: this.price,
       inStock: this.stock,
       cartItem: this.product,
-      numberOfItem: this.numberOfProducts,
+      numberOfItem: 1,
     };
   },
   props: {
