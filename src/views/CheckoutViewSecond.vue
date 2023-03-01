@@ -16,7 +16,9 @@ export default {
   />
 
   <div>
-    <router-link to="/checkout"><i class="bx bx-chevron-left" id="back-icon"></i></router-link>
+    <router-link to="/checkout"
+      ><i class="bx bx-chevron-left" id="back-icon"></i
+    ></router-link>
     <RouterLink to="/CheckoutThird">
       <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
@@ -47,9 +49,33 @@ export default {
 
   <div class="containerTwo">
     <h4>Fraktmetod</h4>
-    <div class="firstContent"></div>
+    <div class="firstContent">
+      <div>
+        <input id="fraktmetodFirst" type="radio" value="" name="x" />
+        <lable for="fraktmetodFirst">$2.99</lable>
+      </div>
+      <div>
+        <p style="font-size: 15px">
+          Lorem ipsum dolor sit amet <br />
+          adipisicing elit. Nostrum.
+        </p>
+      </div>
+      <div><img src="../assets/img/Fraktmetod1.PNG" alt="" /></div>
+    </div>
 
-    <div class="secondContent"></div>
+    <div class="secondContent">
+      <div>
+        <input id="fraktmetodSecond" type="radio" value="" name="x" />
+        <lable for="fraktmetodSecond">$9.00</lable>
+      </div>
+      <div>
+        <p style="font-size: 15px">
+          Lorem ipsum dolor sit amet <br />
+          adipisicing elit. Nostrum.
+        </p>
+      </div>
+      <div><img src="../assets/img/Fraktmetod2.PNG" alt="" /></div>
+    </div>
   </div>
 </template>
 
@@ -151,5 +177,37 @@ i[class="bx bx-check"] {
 }
 
 @media screen and (min-width: 375px) and (max-width: 980px) {
+  .circles {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 30px 10px;
+  }
+
+  #icon-toNextCircle {
+    font-size: 30px;
+  }
+  #icone-one,
+  #icone-three,
+  #icone-two,
+  #icone-four {
+    font-size: 30px;
+    margin: 5px auto;
+  }
+
+  .containerTwo {
+    width: 80%;
+  }
+
+  .firstContent,
+  .secondContent {
+    width: 300px;
+  }
+
+  #back-icon {
+    font-size: 40px;
+    margin-left: 0;
+    margin-top: 400px;
+  }
 }
 </style>

@@ -13,7 +13,7 @@ const mutations = {
     state.showCart = !state.showCart;
   },
 
-// TAR BORT EN VARA AV ANTALET
+  // TAR BORT EN VARA AV ANTALET
   removeItemFromCart(state, product) {
     for (let i = 0; i < state.cart.length; i++) {
       if (state.cart[i].id === product.id) {
@@ -41,7 +41,6 @@ const mutations = {
     });
   },
 
-
   addItemCart: (state, payload) => {
     state.cart.push({
       id: payload.id,
@@ -55,7 +54,6 @@ const mutations = {
     });
   },
 };
-
 
 const state = {
   showCart: false,

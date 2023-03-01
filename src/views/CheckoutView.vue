@@ -31,11 +31,9 @@
     </div>
   </div>
 
-
-  
-    <form class="container-checkout">
-      <h3 class="adress">Adress</h3>
-      <div class="col">
+  <form class="container-checkout">
+    <h3 class="adress">Adress</h3>
+    <div class="col">
       <div>
         <label class="förnamn" for="förnamn"
           ><input
@@ -57,10 +55,11 @@
             placeholder="xx"
             required
         /></label>
-      </div></div>
-      <br />
+      </div>
+    </div>
+    <br />
 
-<div class="middle-content">
+    <div class="middle-content">
       <div>
         <label class="email" for="email"
           ><input
@@ -92,11 +91,11 @@
             placeholder="Hägerneholmsvägen"
             required
         /></label>
-      </div></div>
-      <br />
+      </div>
+    </div>
+    <br />
 
-
-<div class="col">
+    <div class="col">
       <div>
         <label class="stad" for="stad">
           <input
@@ -120,7 +119,7 @@
         /></label>
       </div>
     </div>
-    </form>
+  </form>
 
   <RouterLink to="/checkoutsecond">
     <button @click="goToNextPage" class="vidare-btn" type="submit">
@@ -216,7 +215,7 @@ i[class="bx bx-check"] {
   height: 600px;
   width: 600px;
 }
-.col{
+.col {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -255,7 +254,7 @@ label::before {
   height: 40px;
   padding: 20px;
 }
-.middle-content{
+.middle-content {
   display: grid;
   justify-content: center;
 }
@@ -311,18 +310,20 @@ label::before {
   #efternamn,
   #stad,
   #postnummer {
-    width: 200px;
+    width: 150px;
+    padding: 5px;
   }
 
   #telefonnummer,
   #gatuadress,
   #email {
-    width: 350px;
+    width: 320px;
+    padding: 5px;
   }
 
   .container-checkout {
-    width: 90%;
-    height: 800px;
+    width: 80%;
+    height: 600px;
   }
 
   .vidare-btn {

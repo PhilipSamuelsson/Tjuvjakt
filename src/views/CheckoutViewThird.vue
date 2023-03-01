@@ -1,6 +1,4 @@
-<script>
-
-</script>
+<script></script>
 
 <template>
   <link
@@ -9,9 +7,12 @@
   />
 
   <div>
-    <RouterLink to="/checkoutsecond"><i class="bx bx-chevron-left" id="back-icon"></i></RouterLink>
-    <RouterLink to="/checkoutforth"><i class="bx bx-chevron-right" id="next-icon"></i ></RouterLink>
-
+    <RouterLink to="/checkoutsecond"
+      ><i class="bx bx-chevron-left" id="back-icon"></i
+    ></RouterLink>
+    <RouterLink to="/checkoutforth"
+      ><i class="bx bx-chevron-right" id="next-icon"></i
+    ></RouterLink>
   </div>
 
   <div class="container">
@@ -38,78 +39,102 @@
   </div>
 
   <div class="container-info">
-  <div class="first-content">
-  <p style="font-weight: 600; padding:20px; margin-bottom:-15px; margin-left:-12px; ">Betalningmetod</p>
-<div class="row">
-<div>
-<label class="namnPåKort" for="namnPåKort">
-<input v-model="namnPåKort" type="text" id="namnPåKort" placeholder="xxx xxx xxx" required >
-</label>
-</div>
-<div>
-<label class="kortnummer" for="kortnummer">
-<input v-model="kortnummer" type="text" id="kortnummer" placeholder="1111 222 33333 444 55555" required></label>
- </div>
-</div>
+    <div class="first-content">
+      <p
+        style="
+          font-weight: 600;
+          padding: 20px;
+          margin-bottom: -15px;
+          margin-left: -12px;
+        "
+      >
+        Betalningmetod
+      </p>
+      <div class="row">
+        <div>
+          <label class="namnPåKort" for="namnPåKort">
+            <input
+              v-model="namnPåKort"
+              type="text"
+              id="namnPåKort"
+              placeholder="xxx xxx xxx"
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label class="kortnummer" for="kortnummer">
+            <input
+              v-model="kortnummer"
+              type="text"
+              id="kortnummer"
+              placeholder="1111 222 33333 444 55555"
+              required
+          /></label>
+        </div>
+      </div>
 
-  <div class="col">
-<div>
-<label class="år" for="år">
-<select id="år" name="år">
-<option value="2015">2015</option>
-<option value="2016">2016</option>
-<option value="2017">2017</option>
-<option value="2018">2018</option>
-<option value="2019">2019</option>
-<option value="2020">2020</option>
-<option value="2021">2021</option>
-<option value="2022">2022</option>
-<option value="2023">2023</option>
-<option value="2024">2024</option>
-</select>
-</label>
-</div>
+      <div class="col">
+        <div>
+          <label class="år" for="år">
+            <select id="år" name="år">
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+            </select>
+          </label>
+        </div>
 
-<div>
-<label class="månad" for="månad">
-<select id="månad" name="månad" placeholder="Augusti">
-<option value="Januari">Januari</option>
-<option value="Februari">Februari</option>
-<option value="Mars">Mars</option>
-<option value="April">April</option>
-<option value="Maj">Maj</option>
-<option value="Juni">Juni</option>
-<option value="Juli">Juli</option>
-<option value="Augusti">Augusti</option>
-<option value=" September">September</option>
-<option value="Oktober">Oktober</option>
-<option value="November">November</option>
-<option value="December">December</option>
-</select></label>
-</div>
+        <div>
+          <label class="månad" for="månad">
+            <select id="månad" name="månad" placeholder="Augusti">
+              <option value="Januari">Januari</option>
+              <option value="Februari">Februari</option>
+              <option value="Mars">Mars</option>
+              <option value="April">April</option>
+              <option value="Maj">Maj</option>
+              <option value="Juni">Juni</option>
+              <option value="Juli">Juli</option>
+              <option value="Augusti">Augusti</option>
+              <option value=" September">September</option>
+              <option value="Oktober">Oktober</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select></label
+          >
+        </div>
+      </div>
+
+      <div class="colTwo">
+        <label class="cvc" for="cvc">
+          <input v-model="cvc" type="text" id="cvc" placeholder="123 45"
+        /></label>
+        <i class="bx bx-help-circle"></i>
+      </div>
+
+      <p class="txt">Eller betala med våra partners in crime</p>
+
+      <div class="img-betalningmetos">
+        <img src="../assets/img/klarna.PNG" alt="Bild" />
+        <img src="../assets/img/paypal.PNG" alt="Bild" />
+        <img src="../assets/img/bank.PNG" alt="Bild" />
+        <img src="../assets/img/swish.PNG" alt="Bild" />
+      </div>
+    </div>
+
+    <RouterLink to="/checkoutfourth">
+      <button @click="goToNextPage" class="vidare-btn" type="submit">
+        Vidare
+      </button></RouterLink
+    >
   </div>
-
-<div class="colTwo">
-<label class="cvc" for="cvc">
-<input v-model="cvc" type="text" id="cvc" placeholder="123 45"></label>
-<i class='bx bx-help-circle'></i>
-</div>
-
-<p class="txt">Eller betala med våra partners in crime</p>
- 
- <div class="img-betalningmetos">
- <img src="../assets/img/klarna.PNG" alt="Bild">
- <img src="../assets/img/paypal.PNG" alt="Bild">
- <img src="../assets/img/bank.PNG" alt="Bild">
- <img src="../assets/img/swish.PNG" alt="Bild">
- </div>
-  </div>
-
-  <RouterLink to="/checkoutfourth">
-    <button @click="goToNextPage" class="vidare-btn" type="submit">
-      Vidare
-    </button></RouterLink>
-</div>
 </template>
 
 <style scoped>
@@ -118,7 +143,6 @@
   justify-content: center;
   align-items: center;
   display: flex;
-
 }
 
 .circles {
@@ -144,7 +168,8 @@
   font-size: 60px;
 }
 
-#icon-toNextCircleOne, #icon-toNextCircleTwo {
+#icon-toNextCircleOne,
+#icon-toNextCircleTwo {
   color: rgb(48, 189, 135);
 }
 
@@ -180,8 +205,7 @@ i[class="bx bx-check"] {
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 
-
-label{
+label {
   position: relative;
   padding: 7px;
   text-align: center;
@@ -197,35 +221,35 @@ label::before {
   padding: 0 5px;
 }
 
-
-
-#namnPåKort, #kortnummer{
-    width: 500px;
-    height: 40px;
-    padding: 20px;
+#namnPåKort,
+#kortnummer {
+  width: 500px;
+  height: 40px;
+  padding: 20px;
 }
 
-.col{
-    display: flex;
-    justify-content: center;
-    
+.col {
+  display: flex;
+  justify-content: center;
 }
-#år, #månad, #cvc {
-    height: 40px;
-    width: 245px;
-}
-
-.txt{
-    font-weight: 800;
+#år,
+#månad,
+#cvc {
+  height: 40px;
+  width: 245px;
 }
 
-.img-betalningmetos{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
+.txt {
+  font-weight: 800;
 }
-.img-betalningmetos img{
-    margin: 10px auto;
+
+.img-betalningmetos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.img-betalningmetos img {
+  margin: 10px auto;
 }
 
 .vidare-btn {
@@ -252,5 +276,51 @@ label::before {
   margin-top: 400px;
   margin-left: 1230px;
   font-size: 80px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 980px) {
+  .circles {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 30px 10px;
+  }
+
+  #icon-toNextCircle {
+    font-size: 30px;
+  }
+  #icone-one,
+  #icone-three,
+  #icone-two,
+  #icone-four {
+    font-size: 30px;
+    margin: 5px auto;
+  }
+
+  .container-info {
+    width: 80%;
+    height: 700px;
+  }
+
+  #namnPåKort,
+  #kortnummer {
+    width: 300px;
+  }
+  #år,
+  #månad,
+  #cvc {
+    width: 150px;
+  }
+
+  .vidare-btn {
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+  }
+  #back-icon {
+    font-size: 40px;
+    margin-left: 0;
+    margin-top: 400px;
+  }
 }
 </style>

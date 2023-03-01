@@ -85,7 +85,9 @@ export default {
   font-size: 60px;
 }
 
-#icon-toNextCircleOne, #icon-toNextCircleTwo, #icon-toNextCircleThree {
+#icon-toNextCircleOne,
+#icon-toNextCircleTwo,
+#icon-toNextCircleThree {
   color: rgb(48, 189, 135);
 }
 
@@ -125,5 +127,25 @@ i[class="bx bx-check"] {
   margin-top: 400px;
   margin-left: 1230px;
   font-size: 80px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 980px) {
+  .circles {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 30px 10px;
+  }
+
+  #icon-toNextCircle {
+    font-size: 30px;
+  }
+  #icone-one,
+  #icone-three,
+  #icone-two,
+  #icone-four {
+    font-size: 30px;
+    margin: 5px auto;
+  }
 }
 </style>

@@ -6,7 +6,6 @@
 
     <button @click="$store.commit('toggleCart')" class="close">&times;</button>
 
-
     <div v-if="$store.state.cart.length === 0" class="no-products">
       <p>Du har inga stöldgods i varukorgen</p>
       <RouterLink
@@ -20,11 +19,9 @@
       <CartitemsContainer />
     </div>
 
-
     <div v-if="$store.state.cart.length" class="to-checkout-container">
       <div class="total-cost-container">
         <p>Totalt :</p>
-
 
         <p>{{ getCartTotal }} KR</p>
       </div>
@@ -37,10 +34,8 @@
 import CartitemsContainer from "./CartitemsContainer.vue";
 import { mapGetters } from "vuex";
 export default {
-  computed:{
-    ...mapGetters([
-        'getCartTotal'
-    ])
+  computed: {
+    ...mapGetters(["getCartTotal"]),
   },
   components: {
     CartitemsContainer,

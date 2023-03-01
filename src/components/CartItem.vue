@@ -41,12 +41,12 @@ export default {
       this.removeFromCart(this.productId);
     },
     increment() {
-      this.numberOfItem++
+      this.numberOfItem++;
       this.addMore(this.cartItem);
     },
     decrement() {
       if (this.getCartItemCount > 1) {
-        this.numberOfItem--
+        this.numberOfItem--;
         this.removeItemFromCart(this.cartItem);
       } else {
         this.remove();

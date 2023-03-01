@@ -11,8 +11,7 @@
       Lägg i Kundkorg
     </button>
 
-    <button @click="remove" v-if="!disabledAddButton" class="kopKnapp" >
-
+    <button @click="remove" v-if="!disabledAddButton" class="kopKnapp">
       Ta bort från varukorgen
     </button>
   </div>
@@ -59,7 +58,7 @@ export default {
       });
       this.varan = result.data[this.productID - 1];
     },
-    ...mapMutations(["addItemCart", "removeFromCart" ]),
+    ...mapMutations(["addItemCart", "removeFromCart"]),
     varuID() {
       this.addItemCart(this.varan);
       //   this.$store.commit("addToCart", this.varan);
