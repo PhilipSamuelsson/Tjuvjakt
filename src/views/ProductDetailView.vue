@@ -63,7 +63,6 @@ export default {
         },
       });
       this.listOfSimilarProducts = result.data;
-      console.log(this.listOfSimilarProducts)
       this.varan = result.data[this.productID - 1];
     },
     ...mapMutations(["addItemCart", "removeFromCart"]),

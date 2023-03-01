@@ -27,6 +27,7 @@ export default {
   },
   methods: {
     async fetchProducts() {
+        console.log('körs')
       this.products = await this.similarProducts;
     },
     // Filter funktionalitet
@@ -88,7 +89,7 @@ export default {
   },
   data() {
     return {
-      products: this.similarProducts,
+      products: [],
       Kategori: "Allt",
       titlesok: "",
       resterProducts: [],
