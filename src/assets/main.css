@@ -1,5 +1,5 @@
-@import url("https://fonts.google.com/specimen/Outfit?preview.text=outfit&preview.text_type=custom&category=Sans+Serif");
-@import url("https://fonts.google.com/specimen/Turret+Road?preview.text=Tjuvgods&preview.text_type=custom&category=Serif,Display,Monospace");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
 
 /* Root styling */
 * {
@@ -22,7 +22,7 @@ body{
 }
 
 .display-font{
-    font-family: "Turret Road", san-serif;
+    font-family: 'Turret Road', cursive;
     font-size: 2rem;
 }
 

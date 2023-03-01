@@ -1,27 +1,12 @@
-<script>
-import CartitemsContainer from "./CartitemsContainer.vue";
-import { mapGetters } from "vuex";
-export default {
-  computed: {
-    totalCost() {
-      console.log(this.$store.commit("getCartTotal"));
-      return this.$store.commit("getCartTotal");
-    },
-  },
-  methods: {
-    ...mapGetters(["getCartTotal"]),
-  },
-  components: {
-    CartitemsContainer,
-  },
-};
-</script>
 <template>
   <div class="container">
-    <h2 class="display-font">Varukorg</h2>
+    <div class="top-title-container">
+      <h2 class="display-font">Varukorg</h2>
+    </div>
 
-    <button @click="$store.commit('toggleCart')" class="close" >&times;</button>
+    <button @click="$store.commit('toggleCart')" class="close">&times;</button>
 
+    <!-- Visas när varukorgen är tom -->
     <div v-if="$store.state.cart.length === 0" class="no-products">
       <p>Du har inga stöldgods i varukorgen</p>
       <RouterLink
@@ -34,18 +19,45 @@ export default {
     <div class="cart-container">
       <CartitemsContainer />
     </div>
-    <!-- <p v-if="$store.state.cart.length === 0">
-      Du har inga stöldgods i varukorgen
-    </p> -->
+
+    <!-- Visas när något är i varukorgen -->
     <div v-if="$store.state.cart.length" class="to-checkout-container">
       <div class="total-cost-container">
         <p>Totalt :</p>
-        <p>CASH KR</p>
+
+        <!-- FUKAR INTE -->
+        <p>{{ getCartTotal }} KR</p>
       </div>
       <button class="kopKnapp" role="button">Till kassan</button>
     </div>
   </div>
 </template>
+
+<script>
+import CartitemsContainer from "./CartitemsContainer.vue";
+import { mapGetters } from "vuex";
+export default {
+  computed:{
+    ...mapGetters([
+        'getCartTotal'
+    ]),
+    totalCost() {
+      return this.totalSum;
+    },
+  },
+  methods: {
+    // ...mapGetters(["getCartTotal"])
+  },
+  components: {
+    CartitemsContainer,
+  },
+  data() {
+    return {
+      totalSum: this.$store.commit('getCartTotal'),
+    };
+  },
+};
+</script>
 
 <style scoped>
 .close {
@@ -72,15 +84,15 @@ export default {
   flex-direction: column;
 }
 
+.top-title-container {
+}
+
 .cart-item-holder {
   width: 500px;
   height: 400px;
   background-color: yellow;
   z-index: 100;
 }
-
-
-
 
 .cart-container {
   width: 100%;
@@ -101,7 +113,6 @@ export default {
 .link {
   text-decoration: none;
   color: #000000;
-
 }
 
 @media (min-width: 768px) {

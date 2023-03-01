@@ -41,7 +41,7 @@ const mutations = {
     });
   },
 
-  
+
   addItemCart: (state, payload) => {
     state.cart.push({
       id: payload.id,
