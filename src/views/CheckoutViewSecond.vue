@@ -1,4 +1,14 @@
-<script></script>
+// <script>
+// export default {
+//   data() {
+//     return {
+//       goToNextPage(){
+//         this.$router.push('/checkoutthird')
+//       }
+//     }
+//   },
+// }
+// </script>
 <template>
   <link
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -34,25 +44,14 @@
   </div>
 
   <div class="containerTwo">
-  <div class="firstContent">
-  </div>
+    <h4>Fraktmetod</h4>
+    <div class="firstContent"></div>
 
-  <div class="secondContent">
+    <div class="secondContent"></div>
   </div>
-   </div>
 </template>
 
 <style scoped>
-.firstContent, .secondContent{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
-  border: 1px solid black;
-  height: 60px;
-  width: 400px;
-
-}
 .circles {
   display: inline-block;
   align-items: center;
@@ -61,7 +60,7 @@
   width: 60px;
   border: solid rgb(71, 71, 71) 1px;
   border-radius: 50%;
-  margin: 30px;
+  margin: 30px ;
   box-shadow: rgb(223, 223, 223) 0px 2px 2px 2px;
 }
 
@@ -75,41 +74,59 @@ i[class="bx bx-check"] {
   margin: center;
   margin-top: 10px;
   font-size: 40px;
+  color: rgb(248, 248, 248);
 }
 #icone-one {
   color: white;
 }
-#icon-toNextCircleOne, #icon-toNextCircleTwo, #icon-toNextCircleThree{
+#icon-toNextCircleOne,
+#icon-toNextCircleTwo,
+#icon-toNextCircleThree {
   font-size: 60px;
 }
 
 #icon-toNextCircleOne {
   color: rgb(48, 189, 135);
 }
-#circle-correctTwo{
+#circle-correctTwo {
   background-color: rgb(91, 179, 252);
 }
+#circle-correctThree, #circle-correctFour{
+  background-color: rgb(229, 242, 250);
+}
 
-.containerTwo{
-  /* display: flex;
+.containerTwo {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 100px auto;
+  width: 60%;
+  height: 250px;
+  box-shadow: 1px 1px 2px 2px rgb(226, 226, 226);
+}
+
+.firstContent,
+.secondContent {
+  /* display: flex;
+  justify-content: space-between;
   align-items: center; */
   margin: auto;
-  width: 60%;
-  height: 300px;
-  box-shadow: 1px 1px 2px 2px rgb(226, 226, 226) ;
+  border: 1px solid black;
+  height: 60px;
+  width: 400px;
 }
 
 #back-icon {
   position: absolute;
-  margin-top: 400px;
+  margin-top: 300px;
   margin-left: 200px;
   font-size: 80px;
 }
 
 #next-icon {
   position: absolute;
-  margin-top: 400px;
+  margin-top: 300px;
   margin-left: 1230px;
   font-size: 80px;
 }
@@ -123,7 +140,6 @@ i[class="bx bx-check"] {
   font-weight: 800;
   font-size: 30px;
 }
-
 
 @media screen and (min-width: 375px) and (max-width: 980px) {
 }

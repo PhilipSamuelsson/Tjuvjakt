@@ -5,8 +5,10 @@
   />
 
   <div>
-   <i class="bx bx-chevron-left" id="back-icon" ></i>
-    <RouterLink to="/checkoutsecond"> <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i></RouterLink>
+    <i class="bx bx-chevron-left" id="back-icon"></i>
+    <RouterLink to="/checkoutsecond">
+      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
+    ></RouterLink>
   </div>
 
   <div class="container">
@@ -34,7 +36,12 @@
       <h3 class="adress">Adress</h3>
       <div>
         <label class="förnamn" for="förnamn"
-          ><input v-model="förnamn" type="text" id="förnamn" placeholder="xx" required
+          ><input
+            v-model="förnamn"
+            type="text"
+            id="förnamn"
+            placeholder="xx"
+            required
         /></label>
       </div>
       <br />
@@ -87,8 +94,12 @@
 
       <div>
         <label class="stad" for="stad">
-          <input v-model="stad" type="text" id="stad" placeholder="Stockholm"
-          required
+          <input
+            v-model="stad"
+            type="text"
+            id="stad"
+            placeholder="Stockholm"
+            required
         /></label>
       </div>
       <br />
@@ -105,46 +116,46 @@
       </div>
     </form>
   </div>
- <RouterLink to="/checkoutsecond"> <button @click="goToNextPage" class="vidare-btn" type="submit">Vidare</button></RouterLink> 
+  <RouterLink to="/checkoutsecond">
+    <button @click="goToNextPage" class="vidare-btn" type="submit">
+      Vidare
+    </button></RouterLink
+  >
 </template>
 
-<script >
+<script>
 import axios from "axios";
 export default {
-  name:'checkoutView',
+  name: "checkoutView",
   data() {
     return {
-      förnamn: '',
-       efternamn: '',
-       email: '',
-       telefonnummer: '',
-       gatuadress: '',
-       stad: '',
-       postnummer:''
+      förnamn: "",
+      efternamn: "",
+      email: "",
+      telefonnummer: "",
+      gatuadress: "",
+      stad: "",
+      postnummer: "",
     };
   },
   methods: {
-    async checkoutView(){
-       await axios.post('/checkoutView',{
-        förnamn:this.förnamn,
-        efternamn:this.efternamn,
-        email:this.email,
-        telefonnummer:this.telefonnummer,
-        gatuadress:this.gatuadress,
-        stad:this.stad,
-        postnummer:this.postnummer
-      })
- 
-
-    }
+    async checkoutView() {
+      await axios.post("/checkoutView", {
+        förnamn: this.förnamn,
+        efternamn: this.efternamn,
+        email: this.email,
+        telefonnummer: this.telefonnummer,
+        gatuadress: this.gatuadress,
+        stad: this.stad,
+        postnummer: this.postnummer,
+      });
+    },
   },
-  goToNextPage(){
-    this.$router.push('/checkoutViewSecond')
-  }
-}
-
+  goToNextPage() {
+    this.$router.push("/checkoutViewSecond");
+  },
+};
 </script>
-
 
 <style scoped>
 .circles {
@@ -169,15 +180,17 @@ i[class="bx bx-check"] {
   margin: center;
   margin-top: 10px;
   font-size: 40px;
-}
-#icone-one {
-  color: white;
+  color: rgb(248, 248, 248);
+  /* box-shadow: 1px 1px 2px 2px rgb(236, 236, 236); */
 }
 
 #icon-toNextCircle {
   font-size: 60px;
 }
 
+#circle-correctTwo, #circle-correctThree, #circle-correctFour{
+  background-color: rgb(229, 242, 250);
+}
 .container {
   width: 100%;
   justify-content: center;
@@ -247,61 +260,64 @@ label::before {
   justify-content: center;
   align-items: center;
   margin: 40px auto;
-  height: 60px;
-  width: 200px;
+  height: 50px;
+  width: 180px;
   font-weight: 800;
-  font-size: 30px;
+  font-size: 25px;
+  text-decoration: none;
 }
 
 /* input:focus {
   border: none;
 }*/
 @media screen and (min-width: 375px) and (max-width: 980px) {
- 
-  .circles{
+  .circles {
     display: inline-block;
     height: 40px;
     width: 40px;
     margin: 30px 10px;
   }
 
-  #icon-toNextCircle{
-font-size: 30px;
-  }
-  #icone-one, #icone-three, #icone-two, #icone-four{
+  #icon-toNextCircle {
     font-size: 30px;
-    margin:  5px auto;
+  }
+  #icone-one,
+  #icone-three,
+  #icone-two,
+  #icone-four {
+    font-size: 30px;
+    margin: 5px auto;
   }
 
   #förnamn,
-#efternamn,
-#stad,
-#postnummer{
-  width: 200px;
-}
+  #efternamn,
+  #stad,
+  #postnummer {
+    width: 200px;
+  }
 
-#telefonnummer,
-#gatuadress,
-#email{
-  width: 350px;
-}
+  #telefonnummer,
+  #gatuadress,
+  #email {
+    width: 350px;
+  }
 
-.container-checkout{
-  width: 90%;
-  height:800px;
-}
+  .container-checkout {
+    width: 90%;
+    height: 800px;
+  }
 
-.vidare-btn{
-  height: 40px;
-  width: 100px;
-  font-size: 20px;
-}
+  .vidare-btn {
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+  }
 
-#back-icon{
-  font-size: 40px;
-  margin-left: 0;
-}
-/* #next-icon{
+  #back-icon {
+    font-size: 40px;
+    margin-left: 0;
+  }
+  /* #next-icon{
   font-size: 40px;
   margin-right: -40px;
 } */
