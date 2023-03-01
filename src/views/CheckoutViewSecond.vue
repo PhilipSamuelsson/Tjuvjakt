@@ -48,30 +48,29 @@ export default {
   </div>
 
   <div class="containerTwo">
-    <h4>Fraktmetod</h4>
-    <div class="firstContent">
+    <h6>Fraktmetod</h6>
+    <div class="col">
       <div>
         <input id="fraktmetodFirst" type="radio" value="" name="x" />
         <lable for="fraktmetodFirst">$2.99</lable>
       </div>
       <div>
-        <p style="font-size: 15px">
-          Lorem ipsum dolor sit amet <br />
-          adipisicing elit. Nostrum.
+        <p style="font-size: 11px; margin:auto;">
+          USPS 1st Class With Tracking <br>(5-13 days) COVID19 Delay
         </p>
       </div>
       <div><img src="../assets/img/Fraktmetod1.PNG" alt="" /></div>
     </div>
 
-    <div class="secondContent">
+    <div class="col">
       <div>
         <input id="fraktmetodSecond" type="radio" value="" name="x" />
         <lable for="fraktmetodSecond">$9.00</lable>
       </div>
       <div>
-        <p style="font-size: 15px">
-          Lorem ipsum dolor sit amet <br />
-          adipisicing elit. Nostrum.
+        <p style="font-size: 11px; margin:auto;">
+          USPS PRIORITY With Tracking <br /> (5 - 10 days) COVID 19 Delay
+        
         </p>
       </div>
       <div><img src="../assets/img/Fraktmetod2.PNG" alt="" /></div>
@@ -131,25 +130,29 @@ i[class="bx bx-check"] {
 }
 
 .containerTwo {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 100px auto;
+  margin: 100px auto; */
+  margin:100px auto;
   width: 600px;
-  height: 250px;
+  height: 220px;
   box-shadow: 1px 1px 2px 2px rgb(226, 226, 226);
 }
 
-.firstContent,
-.secondContent {
-  /* display: flex;
+.col{
+  display: flex;
   justify-content: space-between;
-  align-items: center; */
-  margin: auto;
+  align-items: center;
+  margin:20px auto;
   border: 1px solid black;
   height: 60px;
   width: 400px;
+}
+
+input, lable{
+  margin-left: 10px;
 }
 
 #back-icon {
@@ -199,8 +202,7 @@ i[class="bx bx-check"] {
     width: 80%;
   }
 
-  .firstContent,
-  .secondContent {
+  .col {
     width: 300px;
   }
 

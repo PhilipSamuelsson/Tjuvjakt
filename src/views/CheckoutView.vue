@@ -32,7 +32,7 @@
   </div>
 
   <form class="container-checkout">
-    <h3 class="adress">Adress</h3>
+    <h5 class="adress">Adress</h5>
     <div class="col">
       <div>
         <label class="förnamn" for="förnamn"
@@ -311,6 +311,7 @@ label::before {
   #stad,
   #postnummer {
     width: 150px;
+    height: 35px;
     padding: 5px;
   }
 
@@ -318,6 +319,7 @@ label::before {
   #gatuadress,
   #email {
     width: 320px;
+    height: 35px;
     padding: 5px;
   }
 
