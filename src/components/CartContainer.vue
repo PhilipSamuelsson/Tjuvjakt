@@ -1,34 +1,33 @@
 <template>
-  <div class="cart-wrapper">
-    <div class="container">
-      <div class="top-title-container">
-        <!-- <h2 class="top-title">Varukorgen</h2> -->
-        <button @click="$store.commit('toggleCart')" class="close">
+  <!-- <div class="cart-wrapper">
+
+  </div> -->
+  <div class="container">
+    <div class="top-title-container">
+      <h2 class="top-title">Varukorgen</h2>
+      <button @click="$store.commit('toggleCart')" class="close">
         &times;
       </button>
-      </div>
+    </div>
+    <div class="cart-container">
+      <CartitemsContainer />
+    </div>
+    <div v-if="$store.state.cart.length === 0" class="to-checkout-container">
+      <p>Du har inga stöldgods i varukorgen</p>
+      <RouterLink
+        @click="$store.commit('toggleCart')"
+        class="action-btn link"
+        to="/testproducts"
+        >Handla istället</RouterLink
+      >
+    </div>
+    <div v-if="$store.state.cart.length" class="to-checkout-container">
+      <div class="total-cost-container">
+        <p>Totalt :</p>
 
-      <div v-if="$store.state.cart.length === 0" class="no-products">
-        <p>Du har inga stöldgods i varukorgen</p>
-        <RouterLink
-          @click="$store.commit('toggleCart')"
-          class="kopKnapp link"
-          to="/testproducts"
-          >Handla istället</RouterLink
-        >
+        <p>{{ getCartTotal }} KR</p>
       </div>
-      <div class="cart-container">
-        <CartitemsContainer />
-      </div>
-
-      <div v-if="$store.state.cart.length" class="to-checkout-container">
-        <div class="total-cost-container">
-          <p>Totalt :</p>
-
-          <p>{{ getCartTotal }} KR</p>
-        </div>
-        <button class="kopKnapp checkout-btn" role="button">Till kassan</button>
-      </div>
+      <button class="action-btn" role="button">Till kassan</button>
     </div>
   </div>
 </template>
@@ -48,32 +47,32 @@ export default {
 
 <style scoped>
 .cart-wrapper {
-    top: .1rem;
-    width: 100vw;
-    position: absolute;
+  top: 0.1rem;
+  width: 100vw;
+  position: absolute;
   display: grid;
   grid-template-columns: 1fr;
 }
 
-
 .close {
-    margin-right: 1rem;
+  margin-right: 1rem;
   background: none;
   border: none;
   font-size: 40px;
   padding-bottom: 1rem;
 }
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* margin-left: -1rem; */
-    min-height: 500px;
-    width: 100%;
-    min-width: 300px;
-    max-width: 200px;
-    position: relative;
-  grid-column: 2;
+    top:.1rem;
+    right: .1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 560px;
+  width: 100%;
+  max-width: 300px;
+  position: absolute;
+  /* grid-column: 2; */
   box-shadow: var(--shadow);
   background-color: white;
   z-index: 99;
@@ -89,39 +88,47 @@ export default {
     }
 } */
 
-@media(min-width:990px){
-    .container{
-        grid-column: 4;
-    }
-    .cart-wrapper{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
+@media (min-width: 990px) {
+  .container {
+    /* grid-column: 4; */
+  }
+  .cart-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .top-title-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items:center;
-    border-bottom: 1px solid #000000;
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000000;
 }
 
-.top-title{
+.top-title {
+  font-weight: 900;
+  font-family: "Turret Road", cursive;
+  font-size: 1.2rem;
+}
+
+.action-btn{
+    border: 3px solid #000000;
+    text-align: center;
+    background: transparent;
+    font-family: Outfit, sans-serif;
     font-weight: 900;
-    font-family: 'Turret Road', cursive;
-    font-size: 1.2rem;
 }
 
 .cart-container {
   width: 100%;
-  max-height: 300px;
+  height: 280px;
   overflow-y: scroll;
 }
-
-.no-products,
 .to-checkout-container {
-    display: grid;
+    width: 100%;
+  display: grid;
+  margin-bottom: 2rem;
 }
-
 .total-cost-container {
   display: flex;
   justify-content: space-between;
@@ -129,15 +136,9 @@ export default {
   margin: 1rem 0;
 }
 
-.checkout-btn{
-    margin-bottom: 2rem;
-}
 
-.no-products p{
-    text-align: center;
-}
 .link {
-    margin-top: 1rem;
+  margin-top: 1rem;
   text-decoration: none;
   color: #000000;
 }
