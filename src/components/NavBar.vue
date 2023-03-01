@@ -4,6 +4,23 @@ import FooterBar from "../components/FooterBar.vue";
 import CartContainer from "../components/CartContainer.vue";
 </script>
 
+<script>
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      someThingInCart: true,
+    };
+  },
+  computed: {
+    ...mapGetters(["getCartItemCount"]),
+    displays(){
+        return this.$store.state.cart
+    }
+  },
+};
+</script>
+
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -57,8 +74,9 @@ import CartContainer from "../components/CartContainer.vue";
         </ul>
       </div>
       <div class="navbar-nav ml-auto">
-        <a @click="$store.commit('toggleCart')" class="nav-link" href="#">
+        <a @click="$store.commit('toggleCart')" class="nav-link cart" href="#">
           <img class="Kassa" src="../assets/img/shopping-cart-icon-1.png" />
+          <p class="cart-number" >{{ getCartItemCount }}</p>
         </a>
       </div>
     </div>
@@ -108,6 +126,22 @@ nav ul li a:hover {
 .Kassa {
   height: 28px;
   width: 39px;
+}
+
+.cart{
+    display: grid;
+    grid-template-rows: 10px;
+}
+.cart-number{
+    font-size: .7rem;
+    height: 20px;
+    width:20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    background-color: var(--primary-red);
 }
 
 @media screen and (min-width: 375px) and (max-width: 980px) {

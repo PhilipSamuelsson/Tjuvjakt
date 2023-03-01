@@ -26,14 +26,20 @@
     <h4>Kategori: {{ varan.category }}</h4>
     <h4>(Antal) I lager: {{ varan.quantity }}</h4>
   </div>
+  <div class="similar-product-container">
+    <SmallProductContainer :similar-products="listOfSimilarProducts" />
+  </div>
 </template>
 
 <script>
 import axios from "axios";
+import SmallProductContainer from "../components/SmallProductContainer.vue";
 import { mapMutations } from "vuex";
 export default {
+  components: { SmallProductContainer },
   data() {
     return {
+      listOfSimilarProducts: [],
       productID: this.$route.params.productID,
       varan: {},
       noProductAdded: true,
@@ -56,12 +62,12 @@ export default {
           Accept: "application/json",
         },
       });
+      this.listOfSimilarProducts = result.data;
       this.varan = result.data[this.productID - 1];
     },
     ...mapMutations(["addItemCart", "removeFromCart"]),
     varuID() {
       this.addItemCart(this.varan);
-      //   this.$store.commit("addToCart", this.varan);
     },
     remove() {
       this.removeFromCart(this.varan.id);
