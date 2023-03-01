@@ -16,7 +16,7 @@ export default {
   />
 
   <div>
-    <i class="bx bx-chevron-left" id="back-icon"></i>
+    <router-link to="/checkout"><i class="bx bx-chevron-left" id="back-icon"></i></router-link>
     <RouterLink to="/CheckoutThird">
       <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>

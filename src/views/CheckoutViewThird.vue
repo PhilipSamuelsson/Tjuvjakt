@@ -1,3 +1,7 @@
+<script>
+
+</script>
+
 <template>
   <link
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -5,10 +9,9 @@
   />
 
   <div>
-    <i class="bx bx-chevron-left" id="back-icon"></i>
-    <RouterLink to="/checkoutforth">
-      <i class="bx bx-chevron-right" id="next-icon"></i
-    ></RouterLink>
+    <RouterLink to="/checkoutsecond"><i class="bx bx-chevron-left" id="back-icon"></i></RouterLink>
+    <RouterLink to="/checkoutforth"><i class="bx bx-chevron-right" id="next-icon"></i ></RouterLink>
+
   </div>
 
   <div class="container">
@@ -34,7 +37,63 @@
     </div>
   </div>
 
-  <div class="container-info"></div>
+  <div class="container-info">
+  <p>Betalningmetod</p>
+<div class="col">
+<div>
+<label class="namnPåKort" for="namnPåKort">
+<input v-model="namnPåKort" type="text" id="namnPåKort" placeholder="xxx xxx xxx" required >
+</label>
+</div>
+<div>
+<label class="kortnummer" for="kortnummer">
+<input v-model="kortnummer" type="text" id="kortnummer" placeholder="1111 222 33333 444 55555" required></label>
+ </div>
+
+
+  <div class="row">
+<div>
+<label class="år" for="år">
+<select id="år" name="år">
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+</select>
+</label>
+</div>
+
+<div>
+<label class="månad" for="månad">
+<select id="månad" name="månad" placeholder="Augusti">
+<option value="Januari">Januari</option>
+<option value="Februari">Februari</option>
+<option value="Mars">Mars</option>
+<option value="April">April</option>
+<option value="Maj">Maj</option>
+<option value="Juni">Juni</option>
+<option value="Juli">Juli</option>
+<option value="Augusti">Augusti</option>
+<option value=" September">September</option>
+<option value="Oktober">Oktober</option>
+<option value="November">November</option>
+<option value="December">December</option>
+</select></label>
+</div>
+  </div>
+
+<div class="colTwo">
+<label class="cvc" for="cvc">
+<input v-model="cvc" type="text" id="cvc" placeholder="123 45"></label>
+</div>
+  </div>
+</div>
 </template>
 
 <style scoped>
@@ -85,13 +144,47 @@ i[class="bx bx-check"] {
 }
 
 .container-info {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin: auto;
   height: 600px;
   width: 500px;
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
+}
+
+
+label{
+  position: relative;
+  padding: 7px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+label::before {
+  content: "Namn på kort";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: white;
+  padding: 0 5px;
+}
+
+
+#namnPåKort, #kortnummer{
+    width: 400px;
+    height: 40px;
+}
+
+.rwo{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    
+}
+#år, #månad {
+    height: 40px;
+    width: 200px;
 }
 
 #back-icon {
