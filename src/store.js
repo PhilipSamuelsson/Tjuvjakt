@@ -12,6 +12,8 @@ const mutations = {
   toggleCart(state) {
     state.showCart = !state.showCart;
   },
+
+// TAR BORT EN VARA AV ANTALET
   removeItemFromCart(state, product) {
     for (let i = 0; i < state.cart.length; i++) {
       if (state.cart[i].id === product.id) {
@@ -19,6 +21,8 @@ const mutations = {
       }
     }
   },
+
+  // TAR BORT ALLA ANTALET
   removeFromCart(state, productId) {
     const removeThisProduct = state.cart.findIndex(
       (product) => product.id === productId
@@ -27,6 +31,8 @@ const mutations = {
       state.cart.splice(removeThisProduct, 1);
     }
   },
+
+  // LÄGG TILL FLER AV SAMMA PRODUKT
   addMore(state, payload) {
     state.cart.forEach((item) => {
       if (payload.id === item.id) {
@@ -34,6 +40,8 @@ const mutations = {
       }
     });
   },
+
+  
   addItemCart: (state, payload) => {
     state.cart.push({
       id: payload.id,
@@ -47,6 +55,8 @@ const mutations = {
     });
   },
 };
+
+
 const state = {
   showCart: false,
   cart: [],

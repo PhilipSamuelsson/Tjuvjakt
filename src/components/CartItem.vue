@@ -10,6 +10,8 @@
       <div class="cart-info">
         <p class="info-title">{{ productTitle }}</p>
         <p class="info-category">{{ productCategory }}</p>
+
+        <!-- HÄR SKA PRISET UPPDATERAS MEN FUNKAR INTE -->
         <p class="info-price">{{ totalPrice }}</p>
       </div>
 
@@ -56,11 +58,20 @@ export default {
       "addMore",
     ]),
   },
+
+
+
   computed: {
     ...mapGetters(["getCartItemCount"]),
+
+    
     totalPrice() {
         return this.productPrice * this.numberOfItem;
     },
+
+
+
+
     // totalProductPrice() {
     //   return this.$store.commit("getNumberOfProducts", this.cartItem);
     // },

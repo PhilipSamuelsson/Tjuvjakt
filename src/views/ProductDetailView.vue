@@ -11,6 +11,11 @@
 
       Lägg i Kundkorg
     </button>
+
+    <button v-if="!disabledAddButton" class="kopKnapp" >
+
+      Ta bort från varukorgen
+    </button>
   </div>
   <div class="mer-information">
     <h4 class="pris">Pris {{ varan.price }} Kr</h4>

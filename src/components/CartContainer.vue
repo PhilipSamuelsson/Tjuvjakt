@@ -18,11 +18,18 @@ export default {
 </script>
 <template>
   <div class="container">
-    <h2 class="cartHeader">Varukorg</h2>
-    <button @click="$store.commit('toggleCart')" class="close">&times;</button>
+    <h2 class="display-font">Varukorg</h2>
+
+    <button @click="$store.commit('toggleCart')" class="close" >&times;</button>
+
     <div v-if="$store.state.cart.length === 0" class="no-products">
-        <p>Du har inga stöldgods i varukorgen</p>
-        <RouterLink class="button-50 link" to="/testproducts">Handla istället</RouterLink>
+      <p>Du har inga stöldgods i varukorgen</p>
+      <RouterLink
+        @click="$store.commit('toggleCart')"
+        class="kopKnapp link"
+        to="/testproducts"
+        >Handla istället</RouterLink
+      >
     </div>
     <div class="cart-container">
       <CartitemsContainer />
@@ -35,7 +42,7 @@ export default {
         <p>Totalt :</p>
         <p>CASH KR</p>
       </div>
-      <button class="button-50" role="button">Till kassan</button>
+      <button class="kopKnapp" role="button">Till kassan</button>
     </div>
   </div>
 </template>
@@ -51,6 +58,7 @@ export default {
   font-size: 40px;
 }
 .container {
+  box-shadow: var(--shadow);
   width: 375px;
   /*    OBS! HARD CODED HEIGHT FOR TESTING */
   height: 600px;
@@ -70,44 +78,9 @@ export default {
   background-color: yellow;
   z-index: 100;
 }
-.button-50 {
-  appearance: button;
-  background-color: #000;
-  border: 1px solid #000;
-  border-radius: 4px;
-  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  overflow: visible;
-  padding: 12px 40px;
-  text-align: center;
-  text-transform: none;
-  -webkit-user-select: none;
-  white-space: nowrap;
-  margin-bottom: 20px;
-}
 
-.button-50:focus {
-  text-decoration: none;
-}
 
-.button-50:hover {
-  text-decoration: none;
-}
 
-.button-50:active {
-  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
-  outline: 0;
-}
-
-.button-50:not([disabled]):active {
-  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-  transform: translate(2px, 2px);
-}
 
 .cart-container {
   width: 100%;
@@ -115,18 +88,19 @@ export default {
   overflow-y: scroll;
 }
 
-.no-products{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+.no-products {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
-.total-cost-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.total-cost-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.link{
-    text-decoration: none;
+.link {
+  text-decoration: none;
+  color: #000000;
 }
 
 @media (min-width: 768px) {
