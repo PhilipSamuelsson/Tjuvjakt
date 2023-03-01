@@ -130,6 +130,7 @@
 
 <script>
 import axios from "axios";
+import CheckoutViewFourth from "./CheckoutViewFourth.vue";
 export default {
   name: "checkoutView",
   data() {
@@ -155,6 +156,14 @@ export default {
         postnummer: this.postnummer,
       });
     },
+
+    methods: {
+      showInfo() {
+          let names =this.förnamn + ' ' + this.efternamn
+          this.$router.push({name:CheckoutViewFourth, params: { förnamn:names, gatuadress: this.gatuadress },
+        });
+      },
+    },
   },
   goToNextPage() {
     this.$router.push("/checkoutViewSecond");
@@ -173,8 +182,8 @@ export default {
   display: inline-block;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border: solid rgb(71, 71, 71) 1px;
   border-radius: 50%;
   margin: 30px 30px;
@@ -189,7 +198,7 @@ i[class="bx bx-check"] {
   display: flex;
   justify-content: center;
   margin: center;
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 40px;
   color: rgb(248, 248, 248);
   /* box-shadow: 1px 1px 2px 2px rgb(236, 236, 236); */
@@ -212,8 +221,8 @@ i[class="bx bx-check"] {
   justify-content: center; */
   margin: auto;
   box-shadow: rgb(233, 233, 233) 0px 0px 2px 2px;
-  height: 600px;
-  width: 600px;
+  height: 570px;
+  width: 570px;
 }
 .col {
   display: flex;

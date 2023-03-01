@@ -2,9 +2,11 @@
 export default {
   data() {
     return {
-      goToNextPage() {
-        this.$router.push("/checkoutThird");
-      },
+      väljFraktmetod: "FraktmetodOne",
+
+      // goToNextPage() {
+      //   this.$router.push("/checkoutThird");
+      // },
     };
   },
 };
@@ -51,12 +53,18 @@ export default {
     <h6>Fraktmetod</h6>
     <div class="col">
       <div>
-        <input id="fraktmetodFirst" type="radio" value="" name="x" />
+        <input
+          v-model="väljFraktmetod"
+          id="fraktmetodFirst"
+          type="radio"
+          value="FraktmetodOne"
+          name="x"
+        />
         <lable for="fraktmetodFirst">$2.99</lable>
       </div>
       <div>
-        <p style="font-size: 11px; margin:auto;">
-          USPS 1st Class With Tracking <br>(5-13 days) COVID19 Delay
+        <p style="font-size: 11px; margin: auto">
+          USPS 1st Class With Tracking <br />(5-13 days) COVID19 Delay
         </p>
       </div>
       <div><img src="../assets/img/Fraktmetod1.PNG" alt="" /></div>
@@ -64,13 +72,19 @@ export default {
 
     <div class="col">
       <div>
-        <input id="fraktmetodSecond" type="radio" value="" name="x" />
+        <input
+          v-model="väljFraktmetod"
+          id="fraktmetodSecond"
+          type="radio"
+          value="FraktmetodTwo"
+          name="x"
+        />
         <lable for="fraktmetodSecond">$9.00</lable>
       </div>
       <div>
-        <p style="font-size: 11px; margin:auto;">
-          USPS PRIORITY With Tracking <br /> (5 - 10 days) COVID 19 Delay
-        
+        <p style="font-size: 11px; margin: auto">
+          USPS PRIORITY With Tracking <br />
+          (5 - 10 days) COVID 19 Delay
         </p>
       </div>
       <div><img src="../assets/img/Fraktmetod2.PNG" alt="" /></div>
@@ -89,8 +103,8 @@ export default {
   display: inline-block;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border: solid rgb(71, 71, 71) 1px;
   border-radius: 50%;
   margin: 30px;
@@ -105,7 +119,7 @@ i[class="bx bx-check"] {
   display: flex;
   justify-content: center;
   margin: center;
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 40px;
   color: rgb(248, 248, 248);
 }
@@ -135,23 +149,25 @@ i[class="bx bx-check"] {
   align-items: center;
   flex-direction: column;
   margin: 100px auto; */
-  margin:100px auto;
-  width: 600px;
+  margin: 100px auto;
+  width: 570px;
   height: 220px;
   box-shadow: 1px 1px 2px 2px rgb(226, 226, 226);
 }
 
-.col{
+.col {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin:20px auto;
-  border: 1px solid black;
+  margin: 20px auto;
+  border-radius: 5px;
   height: 60px;
   width: 400px;
+  border: 1px solid rgb(103, 167, 240);
 }
 
-input, lable{
+input,
+lable {
   margin-left: 10px;
 }
 
@@ -185,6 +201,12 @@ input, lable{
     height: 40px;
     width: 40px;
     margin: 30px 10px;
+  }
+
+  #icon-toNextCircleOne,
+  #icon-toNextCircleTwo,
+  #icon-toNextCircleThree {
+    font-size: 30px;
   }
 
   #icon-toNextCircle {

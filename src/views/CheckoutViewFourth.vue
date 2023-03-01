@@ -1,12 +1,19 @@
 <script>
+import CheckoutView from "./CheckoutView.vue";
+
 export default {
-  data() {
-    return {
-      goToBack() {
-        this.$router.push("/checkoutThird");
-      },
-    };
+  mounted() {
+    if (!this.$router.params.names || !this.$router.params.gatuadress) {
+      this.$router.push({ names: CheckoutView });
+    }
   },
+  //   data() {
+  //     return {
+  //     //   goToBack() {
+  //     //     this.$router.push("/checkoutThird");
+  //     //   },
+  //     };
+  //   },
 };
 </script>
 
@@ -61,8 +68,8 @@ export default {
   display: inline-block;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border: solid rgb(71, 71, 71) 1px;
   border-radius: 50%;
   margin: 30px 30px;
@@ -95,7 +102,7 @@ i[class="bx bx-check"] {
   display: flex;
   justify-content: center;
   margin: center;
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 40px;
   color: rgb(248, 248, 248);
   /* box-shadow: 1px 1px 2px 2px rgb(236, 236, 236); */
@@ -138,6 +145,12 @@ i[class="bx bx-check"] {
   }
 
   #icon-toNextCircle {
+    font-size: 30px;
+  }
+
+  #icon-toNextCircleOne,
+  #icon-toNextCircleTwo,
+  #icon-toNextCircleThree {
     font-size: 30px;
   }
   #icone-one,
