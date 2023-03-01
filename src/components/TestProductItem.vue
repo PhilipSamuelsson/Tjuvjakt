@@ -76,12 +76,10 @@ export default {
 }
 
 .product-title {
-  /* font-family: Arial, Helvetica, sans-serif; */
   font-size: 0.6rem;
 }
 
 .product-price {
-  /* font-family: Arial, Helvetica, sans-serif; */
   font-size: 1.2rem;
 }
 </style>
