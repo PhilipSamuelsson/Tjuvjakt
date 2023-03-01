@@ -101,6 +101,7 @@ export default {
 .link {
   text-decoration: none;
   color: #000000;
+
 }
 
 @media (min-width: 768px) {

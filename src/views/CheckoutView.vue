@@ -158,6 +158,12 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 .circles {
   display: inline-block;
   align-items: center;
@@ -166,7 +172,7 @@ export default {
   width: 60px;
   border: solid rgb(71, 71, 71) 1px;
   border-radius: 50%;
-  margin: 30px;
+  margin: 30px 30px;
   box-shadow: rgb(223, 223, 223) 0px 2px 2px 2px;
 }
 
@@ -188,14 +194,10 @@ i[class="bx bx-check"] {
   font-size: 60px;
 }
 
-#circle-correctTwo, #circle-correctThree, #circle-correctFour{
+#circle-correctTwo,
+#circle-correctThree,
+#circle-correctFour {
   background-color: rgb(229, 242, 250);
-}
-.container {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
 }
 .container-checkout {
   display: flex;
@@ -230,7 +232,7 @@ label::before {
 #postnummer {
   display: inline-flex;
   flex-direction: column;
-  width: 300px;
+  width: 250px;
   height: 40px;
 }
 
