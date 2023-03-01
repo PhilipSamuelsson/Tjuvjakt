@@ -11,7 +11,7 @@
         <p class="info-title">{{ productTitle }}</p>
         <p class="info-category">{{ productCategory }}</p>
 
-        <!-- HÄR SKA PRISET UPPDATERAS MEN FUNKAR INTE -->
+        <!-- NU FUNKAR DEN! -->
         <p class="info-price">{{ productPrice * numberOfItem }}</p>
       </div>
 
