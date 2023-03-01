@@ -1,14 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      goToNextPage() {
-        this.$router.push("/checkoutThird");
-      },
-    };
-  },
-};
-</script>
 <template>
   <link
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -17,8 +6,8 @@ export default {
 
   <div>
     <i class="bx bx-chevron-left" id="back-icon"></i>
-    <RouterLink to="/CheckoutThird">
-      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
+    <RouterLink to="/checkoutforth">
+      <i class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
   </div>
 
@@ -45,12 +34,7 @@ export default {
     </div>
   </div>
 
-  <div class="containerTwo">
-    <h4>Fraktmetod</h4>
-    <div class="firstContent"></div>
-
-    <div class="secondContent"></div>
-  </div>
+  <div class="container-info"></div>
 </template>
 
 <style scoped>
@@ -60,6 +44,7 @@ export default {
   align-items: center;
   display: flex;
 }
+
 .circles {
   display: inline-block;
   align-items: center;
@@ -68,12 +53,17 @@ export default {
   width: 60px;
   border: solid rgb(71, 71, 71) 1px;
   border-radius: 50%;
-  margin: 30px;
+  margin: 30px 30px;
   box-shadow: rgb(223, 223, 223) 0px 2px 2px 2px;
 }
 
-#circle-correctOne {
+#circle-correctOne,
+#circle-correctTwo {
   background-color: rgb(48, 189, 135);
+}
+
+#circle-correctThree {
+  background-color: rgb(91, 179, 252);
 }
 
 i[class="bx bx-check"] {
@@ -83,73 +73,38 @@ i[class="bx bx-check"] {
   margin-top: 10px;
   font-size: 40px;
   color: rgb(248, 248, 248);
+  /* box-shadow: 1px 1px 2px 2px rgb(236, 236, 236); */
 }
-#icone-one {
-  color: white;
-}
-#icon-toNextCircleOne,
-#icon-toNextCircleTwo,
-#icon-toNextCircleThree {
+
+#icon-toNextCircle {
   font-size: 60px;
 }
 
-#icon-toNextCircleOne {
-  color: rgb(48, 189, 135);
-}
-#circle-correctTwo {
-  background-color: rgb(91, 179, 252);
-}
-#circle-correctThree,
 #circle-correctFour {
   background-color: rgb(229, 242, 250);
 }
 
-.containerTwo {
+.container-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: 100px auto;
-  width: 60%;
-  height: 250px;
-  box-shadow: 1px 1px 2px 2px rgb(226, 226, 226);
-}
-
-.firstContent,
-.secondContent {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   margin: auto;
-  border: 1px solid black;
-  height: 60px;
-  width: 400px;
+  height: 600px;
+  width: 500px;
+  box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 
 #back-icon {
   position: absolute;
-  margin-top: 300px;
+  margin-top: 400px;
   margin-left: 200px;
   font-size: 80px;
 }
 
 #next-icon {
   position: absolute;
-  margin-top: 300px;
+  margin-top: 400px;
   margin-left: 1230px;
   font-size: 80px;
-}
-.vidare-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto;
-  height: 60px;
-  width: 200px;
-  font-weight: 800;
-  font-size: 30px;
-}
-
-@media screen and (min-width: 375px) and (max-width: 980px) {
 }
 </style>

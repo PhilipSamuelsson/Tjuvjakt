@@ -68,7 +68,7 @@ export default {
 
 
     totalPrice() {
-        return this.productPrice * this.numberOfItem;
+      return this.productPrice * this.numberOfItem;
     },
 
 

@@ -2,16 +2,24 @@
 import { ref } from "vue";
 const showSearch = ref(false);
 const showSort = ref(false);
-
 </script>
 
 <template>
   <div class="searchSort">
     <!-- Search -->
     <div>
-      <i class="fa-solid fa-magnifying-glass" @click="showSearch = !showSearch"></i>
-      <input @keyup.enter="this.products = searchProducts(this.titlesok)" placeholder="Sök efter produkt..." class="openClose" type="text" v-model="titlesok"
-        v-bind:style="{ display: showSearch ? 'block' : 'none' }">
+      <i
+        class="fa-solid fa-magnifying-glass"
+        @click="showSearch = !showSearch"
+      ></i>
+      <input
+        @keyup.enter="this.products = searchProducts(this.titlesok)"
+        placeholder="Sök efter produkt..."
+        class="openClose"
+        type="text"
+        v-model="titlesok"
+        v-bind:style="{ display: showSearch ? 'block' : 'none' }"
+      />
     </div>
 
     <!-- Sort -->
@@ -144,30 +152,29 @@ export default {
 
     // Sök funktionalitet
     searchProducts(search) {
-      console.log(search)
-      const  matchingProducts = this.products.filter(product => {
-          const title = product.title.toLowerCase();
-          return title.includes(search.toLowerCase());
-        });
-        if(matchingProducts.length==0) {
-          console.log(matchingProducts == true)
-          console.log(matchingProducts.length)
-          console.log(this.resterProducts.length)
-          console.log("Nu ska man fetcha nya produkter")
+      console.log(search);
+      const matchingProducts = this.products.filter((product) => {
+        const title = product.title.toLowerCase();
+        return title.includes(search.toLowerCase());
+      });
+      if (matchingProducts.length == 0) {
+        console.log(matchingProducts == true);
+        console.log(matchingProducts.length);
+        console.log(this.resterProducts.length);
+        console.log("Nu ska man fetcha nya produkter");
 
-          const matchandeProdukter = this.resterProducts.filter(produkt => {
-            const titel = produkt.title.toLowerCase();
-            return titel.includes(search.toLowerCase());
-          })
-          console.log(matchandeProdukter.length, " vi kom till andra sök")
-          return matchandeProdukter
-        }
-        else {
-          console.log("vi kom till else, nu ska man fetcha enligt sök")
-          console.log(matchingProducts, typeof matchingProducts)
-          return matchingProducts;
-        }
-      },
+        const matchandeProdukter = this.resterProducts.filter((produkt) => {
+          const titel = produkt.title.toLowerCase();
+          return titel.includes(search.toLowerCase());
+        });
+        console.log(matchandeProdukter.length, " vi kom till andra sök");
+        return matchandeProdukter;
+      } else {
+        console.log("vi kom till else, nu ska man fetcha enligt sök");
+        console.log(matchingProducts, typeof matchingProducts);
+        return matchingProducts;
+      }
+    },
 
     selectProduct(id) {
       // const valdProdukt = this.products.find(product => product.id == id)
@@ -194,7 +201,7 @@ export default {
       products: [],
       Kategori: "Allt",
       titlesok: "",
-      resterProducts: []
+      resterProducts: [],
       // filteredArray: []
       // Kategori: "Glasögon" || "Skor" || "Kläder" || "Hittegods" || "Elektronik",
     };

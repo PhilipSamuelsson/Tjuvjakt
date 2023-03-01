@@ -6,6 +6,8 @@ import CheckoutView from "../views/CheckoutView.vue";
 import TestProductsView from "../views/TestProductsView.vue";
 import ProductDetailView from "../views/ProductDetailView.vue";
 import CheckoutViewSecond from "../views/CheckoutViewSecond.vue";
+import CheckoutViewThird from "../views/CheckoutViewThird.vue";
+import CheckoutViewFourth from "../views/CheckoutViewFourth.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +46,16 @@ const router = createRouter({
       path: "/checkoutsecond",
       name: "checkoutsecond",
       component: CheckoutViewSecond,
+    },
+    {
+      path: "/checkoutThird",
+      name: "checkoutThird",
+      component: CheckoutViewThird,
+    },
+    {
+      path: "/checkoutfourth",
+      name: "/checkoutfourth",
+      component: CheckoutViewFourth,
     },
   ],
 });
