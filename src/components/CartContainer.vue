@@ -2,7 +2,7 @@
   <div class="cart-wrapper">
     <div class="container">
       <div class="top-title-container">
-        <h2 class="top-title">Varukorgen</h2>
+        <!-- <h2 class="top-title">Varukorgen</h2> -->
         <button @click="$store.commit('toggleCart')" class="close">
         &times;
       </button>
@@ -57,6 +57,7 @@ export default {
 
 
 .close {
+    margin-right: 1rem;
   background: none;
   border: none;
   font-size: 40px;
@@ -99,7 +100,7 @@ export default {
 
 .top-title-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items:center;
     border-bottom: 1px solid #000000;
 }
