@@ -38,8 +38,8 @@
   </div>
 
   <div class="container-info">
-  <p>Betalningmetod</p>
-<div class="col">
+  <p style="font-weight: 600; padding:20px; margin-bottom:-15px; margin-left:-12px; ">Betalningmetod</p>
+<div class="row">
 <div>
 <label class="namnPåKort" for="namnPåKort">
 <input v-model="namnPåKort" type="text" id="namnPåKort" placeholder="xxx xxx xxx" required >
@@ -51,7 +51,7 @@
  </div>
 
 
-  <div class="row">
+  <div class="col">
 <div>
 <label class="år" for="år">
 <select id="år" name="år">
@@ -91,7 +91,10 @@
 <div class="colTwo">
 <label class="cvc" for="cvc">
 <input v-model="cvc" type="text" id="cvc" placeholder="123 45"></label>
+<i class='bx bx-help-circle'></i>
 </div>
+
+<p class="txt">Eller betala med våra partners in crime</p>
   </div>
 </div>
 </template>
@@ -102,6 +105,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
+
 }
 
 .circles {
@@ -149,7 +153,7 @@ i[class="bx bx-check"] {
   align-items: center; */
   margin: auto;
   height: 600px;
-  width: 500px;
+  width: 600px;
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 
@@ -176,15 +180,18 @@ label::before {
     height: 40px;
 }
 
-.rwo{
+.col{
     display: flex;
-    justify-content: center;
     align-items:center ;
     
 }
-#år, #månad {
+#år, #månad, #cvc {
     height: 40px;
     width: 200px;
+}
+
+.txt{
+    font-weight: 800;
 }
 
 #back-icon {

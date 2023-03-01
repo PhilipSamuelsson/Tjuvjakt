@@ -99,7 +99,7 @@ i[class="bx bx-check"] {
   align-items: center;
   margin: auto;
   height: 600px;
-  width: 500px;
+  width: 600px;
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 

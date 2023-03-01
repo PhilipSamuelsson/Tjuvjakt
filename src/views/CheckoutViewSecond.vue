@@ -110,7 +110,7 @@ i[class="bx bx-check"] {
   align-items: center;
   flex-direction: column;
   margin: 100px auto;
-  width: 60%;
+  width: 600px;
   height: 250px;
   box-shadow: 1px 1px 2px 2px rgb(226, 226, 226);
 }

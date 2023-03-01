@@ -31,10 +31,11 @@
     </div>
   </div>
 
-  <div class="container">
+
   
     <form class="container-checkout">
       <h3 class="adress">Adress</h3>
+      <div class="col">
       <div>
         <label class="förnamn" for="förnamn"
           ><input
@@ -56,7 +57,7 @@
             placeholder="xx"
             required
         /></label>
-      </div>
+      </div></div>
       <br />
 
       <div>
@@ -93,6 +94,8 @@
       </div>
       <br />
 
+
+<div class="col">
       <div>
         <label class="stad" for="stad">
           <input
@@ -115,8 +118,9 @@
             required
         /></label>
       </div>
+    </div>
     </form>
-  </div>
+
   <RouterLink to="/checkoutsecond">
     <button @click="goToNextPage" class="vidare-btn" type="submit">
       Vidare
@@ -201,14 +205,20 @@ i[class="bx bx-check"] {
   background-color: rgb(229, 242, 250);
 }
 .container-checkout {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-  position: relative;
+  /* position: relative; */
+  /* align-items: center;
+  justify-content: center; */
+  margin: auto;
   box-shadow: rgb(233, 233, 233) 0px 0px 2px 2px;
-  height: 100vh;
-  width: 50%;
+  height: 600px;
+  width: 600px;
+}
+.col{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 label {
@@ -231,8 +241,6 @@ label::before {
 #efternamn,
 #stad,
 #postnummer {
-  display: inline-flex;
-  flex-direction: column;
   width: 250px;
   height: 40px;
 }
