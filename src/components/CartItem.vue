@@ -9,14 +9,16 @@
     <div class="spec-item">
       <div class="cart-info">
         <p class="info-title">{{ productTitle }}</p>
-        <p class="info-category">{{ productCategory }}</p>
+        <!-- <p class="info-category">{{ productCategory }}</p> -->
 
         <!-- NU FUNKAR DEN! -->
         <p class="info-price">{{ productPrice * numberOfItem }} kr</p>
       </div>
 
       <div class="increment-container">
-        <button @click="decrement" class="increment-btn">-</button>
+        <button @click="decrement" class="increment-btn">
+            <p class="btn-symbol">-</p>
+        </button>
         <p class="increment-number">{{ numberOfProducts }}</p>
 
         <button
@@ -24,7 +26,7 @@
           @click="increment"
           class="increment-btn"
         >
-          +
+         <p class="btn-symbol">+</p>
         </button>
       </div>
     </div>
@@ -116,10 +118,12 @@ export default {
 
 <style scoped>
 .item-container {
+    overflow: hidden;
+    max-height: 130px;
   border: 1px solid #000000;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 100px 35px;
+  grid-template-columns: 130px 1fr 30px;
   margin: 0.5rem 0;
   gap: 0.5rem;
 }
@@ -151,26 +155,36 @@ export default {
 }
 
 .remove-item-btn {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #ffffff;
   margin: 0.3rem;
   background: #000000;
-  max-height: 25px;
+  max-height: 20px;
 }
 
 .increment-container {
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
 }
 
 .increment-btn {
+    position: relative;
   border: 1px solid #000000;
-  height: 30px;
+  height: 25px;
   background: transparent;
   margin: 0;
   padding: 0;
 }
 .increment-number {
+    font-size: 1rem;
   text-align: center;
+}
+
+.btn-symbol{
+    position: relative;
+    bottom: .2rem;
 }
 </style>
