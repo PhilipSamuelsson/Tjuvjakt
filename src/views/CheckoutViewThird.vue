@@ -38,6 +38,7 @@
   </div>
 
   <div class="container-info">
+  <div class="first-content">
   <p style="font-weight: 600; padding:20px; margin-bottom:-15px; margin-left:-12px; ">Betalningmetod</p>
 <div class="row">
 <div>
@@ -49,7 +50,7 @@
 <label class="kortnummer" for="kortnummer">
 <input v-model="kortnummer" type="text" id="kortnummer" placeholder="1111 222 33333 444 55555" required></label>
  </div>
-
+</div>
 
   <div class="col">
 <div>
@@ -95,7 +96,19 @@
 </div>
 
 <p class="txt">Eller betala med våra partners in crime</p>
+ 
+ <div class="img-betalningmetos">
+ <img src="../assets/img/klarna.PNG" alt="Bild">
+ <img src="../assets/img/paypal.PNG" alt="Bild">
+ <img src="../assets/img/bank.PNG" alt="Bild">
+ <img src="../assets/img/swish.PNG" alt="Bild">
+ </div>
   </div>
+
+  <RouterLink to="/checkoutfourth">
+    <button @click="goToNextPage" class="vidare-btn" type="submit">
+      Vidare
+    </button></RouterLink>
 </div>
 </template>
 
@@ -125,6 +138,16 @@
   background-color: rgb(48, 189, 135);
 }
 
+#icon-toNextCircleOne,
+#icon-toNextCircleTwo,
+#icon-toNextCircleThree {
+  font-size: 60px;
+}
+
+#icon-toNextCircleOne, #icon-toNextCircleTwo {
+  color: rgb(48, 189, 135);
+}
+
 #circle-correctThree {
   background-color: rgb(91, 179, 252);
 }
@@ -152,7 +175,7 @@ i[class="bx bx-check"] {
   justify-content: center;
   align-items: center; */
   margin: auto;
-  height: 600px;
+  height: 700px;
   width: 600px;
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
@@ -175,23 +198,46 @@ label::before {
 }
 
 
+
 #namnPåKort, #kortnummer{
-    width: 400px;
+    width: 500px;
     height: 40px;
+    padding: 20px;
 }
 
 .col{
     display: flex;
-    align-items:center ;
+    justify-content: center;
     
 }
 #år, #månad, #cvc {
     height: 40px;
-    width: 200px;
+    width: 245px;
 }
 
 .txt{
     font-weight: 800;
+}
+
+.img-betalningmetos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+}
+.img-betalningmetos img{
+    margin: 10px auto;
+}
+
+.vidare-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  height: 50px;
+  width: 180px;
+  font-weight: 800;
+  font-size: 25px;
+  text-decoration: none;
 }
 
 #back-icon {

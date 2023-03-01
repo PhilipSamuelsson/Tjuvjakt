@@ -60,6 +60,7 @@
       </div></div>
       <br />
 
+<div class="middle-content">
       <div>
         <label class="email" for="email"
           ><input
@@ -91,7 +92,7 @@
             placeholder="Hägerneholmsvägen"
             required
         /></label>
-      </div>
+      </div></div>
       <br />
 
 
@@ -232,7 +233,7 @@ label::before {
   content: "Förnamn";
   position: absolute;
   top: -10px;
-  left: 10px;
+  left: 20px;
   background-color: white;
   padding: 0 5px;
 }
@@ -241,16 +242,22 @@ label::before {
 #efternamn,
 #stad,
 #postnummer {
-  width: 250px;
+  width: 245px;
   height: 40px;
+  padding: 20px;
+  margin: auto;
 }
 
 #telefonnummer,
 #gatuadress,
 #email {
-  display: flex;
   width: 500px;
   height: 40px;
+  padding: 20px;
+}
+.middle-content{
+  display: grid;
+  justify-content: center;
 }
 
 #back-icon {

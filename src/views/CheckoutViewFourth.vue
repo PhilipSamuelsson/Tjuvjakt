@@ -79,6 +79,16 @@ export default {
   background-color: rgb(91, 179, 252);
 }
 
+#icon-toNextCircleOne,
+#icon-toNextCircleTwo,
+#icon-toNextCircleThree {
+  font-size: 60px;
+}
+
+#icon-toNextCircleOne, #icon-toNextCircleTwo, #icon-toNextCircleThree {
+  color: rgb(48, 189, 135);
+}
+
 i[class="bx bx-check"] {
   display: flex;
   justify-content: center;
