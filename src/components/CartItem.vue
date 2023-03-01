@@ -59,7 +59,7 @@ export default {
   computed: {
     ...mapGetters(["getCartItemCount"]),
     totalPrice() {
-        return this.productPrice * this.numberOfItem;
+      return this.productPrice * this.numberOfItem;
     },
     // totalProductPrice() {
     //   return this.$store.commit("getNumberOfProducts", this.cartItem);

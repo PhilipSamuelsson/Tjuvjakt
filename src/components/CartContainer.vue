@@ -21,8 +21,10 @@ export default {
     <h2 class="cartHeader">Varukorg</h2>
     <button @click="$store.commit('toggleCart')" class="close">&times;</button>
     <div v-if="$store.state.cart.length === 0" class="no-products">
-        <p>Du har inga stöldgods i varukorgen</p>
-        <RouterLink class="button-50 link" to="/testproducts">Handla istället</RouterLink>
+      <p>Du har inga stöldgods i varukorgen</p>
+      <RouterLink class="button-50 link" to="/testproducts"
+        >Handla istället</RouterLink
+      >
     </div>
     <div class="cart-container">
       <CartitemsContainer />
@@ -115,18 +117,18 @@ export default {
   overflow-y: scroll;
 }
 
-.no-products{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+.no-products {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
-.total-cost-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.total-cost-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.link{
-    text-decoration: none;
+.link {
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
