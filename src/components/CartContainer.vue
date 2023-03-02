@@ -17,7 +17,7 @@
       <RouterLink
         @click="$store.commit('toggleCart')"
         class="action-btn link"
-        to="/testproducts"
+        to="/products"
         >Handla istället</RouterLink
       >
     </div>
