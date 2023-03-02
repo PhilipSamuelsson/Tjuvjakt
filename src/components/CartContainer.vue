@@ -28,7 +28,9 @@
         <p>{{ getCartTotal }} KR</p>
       </div>
 
-      <button @click="tillKassan" class="action-btn" role="button">Till kassan</button>
+      <button @click="tillKassan" class="action-btn" role="button">
+        Till kassan
+      </button>
     </div>
   </div>
 </template>
@@ -45,11 +47,10 @@ export default {
   },
   methods: {
     tillKassan() {
-      this.$router.push('/summary')
-    }
-  }
+      this.$router.push("/summary");
+    },
+  },
 };
-
 </script>
 
 <style scoped>
