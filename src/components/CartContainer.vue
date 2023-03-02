@@ -14,12 +14,8 @@
     </div>
     <div v-if="$store.state.cart.length === 0" class="to-checkout-container">
       <p>Du har inga stöldgods i varukorgen</p>
-      <RouterLink
-        @click="$store.commit('toggleCart')"
-        class="action-btn link"
-        to="/testproducts"
-        >Handla istället</RouterLink
-      >
+      <RouterLink @click="$store.commit('toggleCart')" class="action-btn link" to="/testproducts">Handla istället
+      </RouterLink>
     </div>
     <div v-if="$store.state.cart.length" class="to-checkout-container">
       <div class="total-cost-container">
@@ -61,9 +57,10 @@ export default {
   font-size: 40px;
   padding-bottom: 1rem;
 }
+
 .container {
-    top:0;
-    right: 0;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,13 +89,14 @@ export default {
   .container {
     /* grid-column: 4; */
   }
+
   .cart-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 .top-title-container {
-    width: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,12 +109,12 @@ export default {
   font-size: 1.2rem;
 }
 
-.action-btn{
-    border: 3px solid #000000;
-    text-align: center;
-    background: transparent;
-    font-family: Outfit, sans-serif;
-    font-weight: 900;
+.action-btn {
+  border: 3px solid #000000;
+  text-align: center;
+  background: transparent;
+  font-family: Outfit, sans-serif;
+  font-weight: 900;
 }
 
 .cart-container {
@@ -124,11 +122,13 @@ export default {
   height: 280px;
   overflow-y: scroll;
 }
+
 .to-checkout-container {
-    width: 100%;
+  width: 100%;
   display: grid;
   margin-bottom: 2rem;
 }
+
 .total-cost-container {
   display: flex;
   justify-content: space-between;
