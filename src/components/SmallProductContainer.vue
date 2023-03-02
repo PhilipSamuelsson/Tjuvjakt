@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     async fetchProducts() {
-        console.log('körs')
+      console.log("körs");
       this.products = await this.similarProducts;
     },
     // Filter funktionalitet
@@ -104,7 +104,7 @@ export default {
 };
 </script>
 
-<style >
+<style>
 /* .product-item {
   cursor: pointer;
 }

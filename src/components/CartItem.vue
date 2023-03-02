@@ -17,7 +17,7 @@
 
       <div class="increment-container">
         <button @click="decrement" class="increment-btn">
-            <p class="btn-symbol">-</p>
+          <p class="btn-symbol">-</p>
         </button>
         <p class="increment-number">{{ numberOfProducts }}</p>
 
@@ -26,7 +26,7 @@
           @click="increment"
           class="increment-btn"
         >
-         <p class="btn-symbol">+</p>
+          <p class="btn-symbol">+</p>
         </button>
       </div>
     </div>
@@ -118,8 +118,8 @@ export default {
 
 <style scoped>
 .item-container {
-    overflow: hidden;
-    max-height: 130px;
+  overflow: hidden;
+  max-height: 130px;
   border: 1px solid #000000;
   width: 100%;
   display: grid;
@@ -171,7 +171,7 @@ export default {
 }
 
 .increment-btn {
-    position: relative;
+  position: relative;
   border: 1px solid #000000;
   height: 25px;
   background: transparent;
@@ -179,12 +179,12 @@ export default {
   padding: 0;
 }
 .increment-number {
-    font-size: 1rem;
+  font-size: 1rem;
   text-align: center;
 }
 
-.btn-symbol{
-    position: relative;
-    bottom: .2rem;
+.btn-symbol {
+  position: relative;
+  bottom: 0.2rem;
 }
 </style>
