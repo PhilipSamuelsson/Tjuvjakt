@@ -17,9 +17,7 @@
       <RouterLink
         @click="$store.commit('toggleCart')"
         class="action-btn link"
-        to="/testproducts"
-        >Handla istället
-      </RouterLink>
+
     </div>
     <div v-if="$store.state.cart.length" class="to-checkout-container">
       <div class="total-cost-container">

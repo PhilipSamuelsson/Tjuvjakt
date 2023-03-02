@@ -10,7 +10,7 @@
     <RouterLink to="/checkoutsecond"
       ><i class="bx bx-chevron-left" id="back-icon"></i
     ></RouterLink>
-    <RouterLink to="/checkoutforth"
+    <RouterLink to="/checkoutfourth"
       ><i class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
   </div>

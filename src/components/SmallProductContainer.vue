@@ -1,8 +1,7 @@
 <template>
   <div class="products-wrapper">
     <div class="products-container">
-      <!-- @click="sendId(product.id)" -->
-      <TestProductItem
+      <ProductItem
         class="product-item"
         v-for="product in products"
         :key="product.id"
@@ -16,19 +15,18 @@
 </template>
 
 <script>
-import TestProductItem from "../components/TestProductItem.vue";
-// import axios from "axios";
+import ProductItem from "../components/ProductItem.vue";
 export default {
   components: {
-    TestProductItem,
+    ProductItem,
   },
-  mounted() {
+  beforeUpdate() {
     this.fetchProducts();
   },
   methods: {
     async fetchProducts() {
-        console.log('körs')
       this.products = await this.similarProducts;
+      console.log(this.products);
     },
     // Filter funktionalitet
     // async filterCategory(kategory) {
@@ -69,23 +67,13 @@ export default {
     //   }
     // },
 
-    // TAR ANVÄNDAREN TILL PRODUCT
+    // TAR ANVÄNDAREN TILL PRODUCT (Funkar men productDetailSidan behöver lite logik)
     selectProduct(id) {
-      console.log(id);
       this.$router.push({
         name: "productdetail",
         params: { productID: id },
       });
-    },
-    // async fetchProducts() {
-    //   console.log("Hej");
-    //   const result = await axios.get("productapi.json", {
-    //     headers: {
-    //       Accept: "application/json",
-    //     },
-    //   });
-    //   this.products = result.data;
-    // },
+    }
   },
   data() {
     return {
@@ -104,9 +92,10 @@ export default {
 };
 </script>
 
-<style >
-/* .product-item {
+<style scoped>
+.product-item {
   cursor: pointer;
+  min-width: 180px;
 }
 
 .products-wrapper {
@@ -115,11 +104,8 @@ export default {
 }
 
 .products-container {
-  position: relative;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: auto;
+  grid-auto-flow: column;
   overflow-x: scroll;
-  grid-template-columns: 80%;
-} */
+}
 </style>

@@ -52,7 +52,7 @@ export default {
 
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <RouterLink to="/testproducts">Produkt</RouterLink>
+              <RouterLink to="/products">Produkt</RouterLink>
             </a>
           </li>
 

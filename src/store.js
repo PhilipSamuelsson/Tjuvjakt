@@ -1,19 +1,22 @@
 import { createStore } from "vuex";
 const mutations = {
-  getNumberOfProducts(state, product) {
-    let count = 0;
-    state.cart.forEach((item) => {
-      if (product.id === item.id) {
-        count += item.numberOfItem;
-      }
-    });
-    return count;
-  },
+    // getNumberOfProducts(state, productId) {
+    //   let count = 0;
+    //   state.cart.forEach((item) => {
+    //       console.log(item)
+    //     if (productId === item.id) {
+    //       count += item.numberOfItem;
+    //     }
+    //   });
+    //   console.log(count)
+    //   return count;
+
+    // },
+
   toggleCart(state) {
     state.showCart = !state.showCart;
   },
 
-  // TAR BORT EN VARA AV ANTALET
   removeItemFromCart(state, product) {
     for (let i = 0; i < state.cart.length; i++) {
       if (state.cart[i].id === product.id) {
@@ -22,7 +25,6 @@ const mutations = {
     }
   },
 
-  // TAR BORT ALLA ANTALET
   removeFromCart(state, productId) {
     const removeThisProduct = state.cart.findIndex(
       (product) => product.id === productId
@@ -32,7 +34,6 @@ const mutations = {
     }
   },
 
-  // LÄGG TILL FLER AV SAMMA PRODUKT
   addMore(state, payload) {
     state.cart.forEach((item) => {
       if (payload.id === item.id) {
@@ -61,6 +62,7 @@ const state = {
 };
 
 const getters = {
+
   getCartItemCount(state) {
     let count = 0;
     state.cart.forEach((item) => {
