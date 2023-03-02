@@ -3,7 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import ProfileView from "../views/ProfileView.vue";
 import CheckoutView from "../views/CheckoutView.vue";
-import TestProductsView from "../views/TestProductsView.vue";
+import ProductsView from "../views/ProductsView.vue";
 import ProductDetailView from "../views/ProductDetailView.vue";
 import CheckoutViewSecond from "../views/CheckoutViewSecond.vue";
 import CheckoutViewThird from "../views/CheckoutViewThird.vue";
@@ -28,12 +28,12 @@ const router = createRouter({
       component: ProfileView,
     },
     {
-      path: "/testproducts",
-      name: "testproducts",
-      component: TestProductsView,
+      path: "/products",
+      name: "products",
+      component: ProductsView,
     },
     {
-      path: "/testproducts/:productID",
+      path: "/products/:productID",
       name: "productdetail",
       component: ProductDetailView,
     },

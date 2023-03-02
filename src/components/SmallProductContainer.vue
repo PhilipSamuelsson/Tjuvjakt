@@ -2,7 +2,7 @@
   <div class="products-wrapper">
     <div class="products-container">
       <!-- @click="sendId(product.id)" -->
-      <TestProductItem
+      <ProductItem
         class="product-item"
         v-for="product in products"
         :key="product.id"
@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import TestProductItem from "../components/TestProductItem.vue";
+import ProductItem from "../components/ProductItem.vue";
 // import axios from "axios";
 export default {
   components: {
-    TestProductItem,
+    ProductItem,
   },
   mounted() {
     this.fetchProducts();
