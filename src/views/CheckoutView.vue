@@ -159,8 +159,10 @@ export default {
 
     methods: {
       showInfo() {
-          let names =this.förnamn + ' ' + this.efternamn
-          this.$router.push({name:CheckoutViewFourth, params: { förnamn:names, gatuadress: this.gatuadress },
+        let names = this.förnamn + " " + this.efternamn;
+        this.$router.push({
+          name: CheckoutViewFourth,
+          params: { förnamn: names, gatuadress: this.gatuadress },
         });
       },
     },
