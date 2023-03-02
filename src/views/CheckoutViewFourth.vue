@@ -2,6 +2,11 @@
 import CheckoutView from "./CheckoutView.vue";
 
 export default {
+    data(){
+        return{
+            gatuadress:''
+        }
+    },
   mounted() {
     if (!this.$router.params.names || !this.$router.params.gatuadress) {
       this.$router.push({ names: CheckoutView });
@@ -53,7 +58,17 @@ export default {
     </div>
   </div>
 
-  <div class="container-info"></div>
+  <div class="container-info">
+  <div class="show-info">
+   <hr>
+  <p>{{names}}</p>
+  <hr>
+  <p>{{gatuadress}}</p>
+  <hr>
+ 
+  <hr>
+  </div>
+  </div>
 </template>
 
 <style scoped>
@@ -120,6 +135,11 @@ i[class="bx bx-check"] {
   height: 600px;
   width: 600px;
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
+}
+
+hr{
+    width: 400px;
+    color: black;
 }
 
 #back-icon {
