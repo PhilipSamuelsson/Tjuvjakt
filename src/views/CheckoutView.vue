@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <form  class="container-checkout">
+  <form class="container-checkout">
     <h5 class="adress">Adress</h5>
     <div class="col">
       <div>
