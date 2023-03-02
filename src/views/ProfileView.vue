@@ -4,12 +4,24 @@
 <template>
   <h2>Ditt konto</h2>
   <div class="profileMenu">
-    <div class="profileBar">Beställningar</div>
-    <div class="profileBar">Returnera artikel</div>
-    <div class="profileBar">Adresser</div>
-    <div class="profileBar">Betalmetoder</div>
-    <div class="profileBar">Kundservice</div>
-    <div class="profileBar">Kundservice</div>
+    <div class="profileBar">
+      <i class="fa-sharp fa-solid fa-store"></i> Beställningar
+    </div>
+    <div class="profileBar">
+      <i class="fa-sharp fa-solid fa-arrow-rotate-left"></i> Returnera artikel
+    </div>
+    <div class="profileBar">
+      <i class="fa-sharp fa-solid fa-map-location-dot"></i> Adresser
+    </div>
+    <div class="profileBar">
+      <i class="fa-regular fa-credit-card"></i>Betalmetoder
+    </div>
+    <div class="profileBar">
+      <i class="fa-regular fa-envelope"></i>Kundservice
+    </div>
+    <div class="profileBar">
+      <i class="fa-regular fa-envelope"></i>Kundservice
+    </div>
   </div>
 </template>
 
