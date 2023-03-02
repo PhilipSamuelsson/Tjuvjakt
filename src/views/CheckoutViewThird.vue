@@ -1,4 +1,17 @@
-<script></script>
+<script>
+export default {
+    data(){
+        return{
+            namnPåKort:'',
+            kortnummer:'',
+            år:'',
+            månad:'',
+            cvc:''
+
+        }
+    }
+}
+</script>
 
 <template>
   <link

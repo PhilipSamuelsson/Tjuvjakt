@@ -90,6 +90,9 @@ export default {
       <div><img src="../assets/img/Fraktmetod2.PNG" alt="" /></div>
     </div>
   </div>
+  <RouterLink to="/checkoutThird">
+    <button class="vidare-btn" type="submit">Vidare</button></RouterLink
+  >
 </template>
 
 <style scoped>
@@ -189,8 +192,8 @@ lable {
   justify-content: center;
   align-items: center;
   margin: 40px auto;
-  height: 60px;
-  width: 200px;
+  height: 50px;
+  width: 180px;
   font-weight: 800;
   font-size: 30px;
 }
@@ -231,7 +234,12 @@ lable {
   #back-icon {
     font-size: 40px;
     margin-left: 0;
-    margin-top: 400px;
+    margin-top: 300px;
+  }
+  .vidare-btn {
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
   }
 }
 </style>

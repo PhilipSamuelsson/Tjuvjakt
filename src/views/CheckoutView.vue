@@ -122,10 +122,14 @@
   </form>
 
   <RouterLink to="/checkoutsecond">
-    <button @click="goToNextPage" class="vidare-btn" type="submit">
+    <button @click="vidare = !vidare" class="vidare-btn" type="submit">
       Vidare
     </button></RouterLink
   >
+
+  <!-- h1  and h2 for test -->
+  <h1>{{ förnamn }} {{ efternamn }}</h1>
+  <h2>{{ gatuadress }}</h2>
 </template>
 
 <script>
@@ -135,6 +139,7 @@ export default {
   name: "checkoutView",
   data() {
     return {
+      // vidare: false,
       förnamn: "",
       efternamn: "",
       email: "",
@@ -159,10 +164,14 @@ export default {
 
     methods: {
       showInfo() {
-        let names = this.förnamn + " " + this.efternamn;
+        // let names = this.förnamn + " " + this.efternamn;
         this.$router.push({
           name: CheckoutViewFourth,
-          params: { names: names, gatuadress: this.gatuadress },
+          params: {
+            förnamn: this.förnamn,
+            efternamn: this.efternamn,
+            gatuadress: this.gatuadress,
+          },
         });
       },
     },

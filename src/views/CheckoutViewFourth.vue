@@ -4,9 +4,11 @@ import CheckoutView from "./CheckoutView.vue";
 export default {
   mounted() {
     if (!this.$router.params.names || !this.$router.params.gatuadress) {
-      this.$router.push({ names: CheckoutView });
+      this.$router.push({ name: CheckoutView });
     }
   },
+
+  
   //   data() {
   //     return {
   //     //   goToBack() {
@@ -54,13 +56,33 @@ export default {
   </div>
 
   <div class="container-info">
-  <hr>
-  <p>{{ names }}aaaaaaaa</p>
-  <hr>
-  <p>{{ gatuadress }}</p>
-  <hr>
-  <p></p>
-  <hr>
+  
+  <div class="col">
+  <div class="content-one">
+
+  </div>
+
+  <div class="content-one">
+  
+</div>
+  </div>
+
+  
+
+
+    <div class="content">
+      <hr />
+      <p>Namn: {{ förnamn }} {{ efternamn }}</p>
+      <hr />
+      <p>Leveransadress: {{ gatuadress }}</p>
+      <hr />
+      <p>Betalningsmetod:</p>
+      <hr />
+    </div>
+    <RouterLink to="/checkoutfourth">
+      <button class="köp-btn" type="submit">Köp
+      </button></RouterLink
+    >
   </div>
 </template>
 
@@ -121,15 +143,48 @@ i[class="bx bx-check"] {
 }
 
 .container-info {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+
   margin: auto;
-  height: 600px;
+  height: 650px;
   width: 600px;
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 
+.content {
+  padding: 40px;
+}
+.col{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.content-one{
+    height: 180px;
+    width: 150px;
+    border: 1px solid black;
+    margin: 20px auto;
+}
+
+hr {
+  width: 560px;
+  height: 5px;
+  color: black;
+}
+
+.köp-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  height: 50px;
+  width: 180px;
+  font-weight: 800;
+  font-size: 30px;
+}
 #back-icon {
   position: absolute;
   margin-top: 400px;
@@ -167,6 +222,11 @@ i[class="bx bx-check"] {
   #icone-four {
     font-size: 30px;
     margin: 5px auto;
+  }
+  .köp-btn {
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
   }
 }
 </style>
