@@ -162,7 +162,7 @@ export default {
         let names = this.förnamn + " " + this.efternamn;
         this.$router.push({
           name: CheckoutViewFourth,
-          params: { förnamn: names, gatuadress: this.gatuadress },
+          params: { names: names, gatuadress: this.gatuadress },
         });
       },
     },

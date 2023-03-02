@@ -54,6 +54,15 @@ export default {
   </div>
 
   <div class="container-info"></div>
+  <div>
+  <hr>
+  <p>{{ names }}</p>
+  <hr>
+  <p>{{ gatuadress }}</p>
+  <hr>
+  <p></p>
+  <hr>
+  </div>
 </template>
 
 <style scoped>
