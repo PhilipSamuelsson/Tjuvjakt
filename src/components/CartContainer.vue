@@ -14,7 +14,11 @@
     </div>
     <div v-if="$store.state.cart.length === 0" class="to-checkout-container">
       <p>Du har inga stöldgods i varukorgen</p>
-      <RouterLink @click="$store.commit('toggleCart')" class="action-btn link" to="/testproducts">Handla istället
+      <RouterLink
+        @click="$store.commit('toggleCart')"
+        class="action-btn link"
+        to="/testproducts"
+        >Handla istället
       </RouterLink>
     </div>
     <div v-if="$store.state.cart.length" class="to-checkout-container">
@@ -23,7 +27,9 @@
 
         <p>{{ getCartTotal }} KR</p>
       </div>
-      <button class="action-btn" role="button">Till kassan</button>
+      <RouterLink to="/SummaryView">
+        <button class="action-btn" role="button">Till kassan</button>
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -135,7 +141,6 @@ export default {
   border-bottom: 1px solid #000000;
   margin: 1rem 0;
 }
-
 
 .link {
   margin-top: 1rem;
