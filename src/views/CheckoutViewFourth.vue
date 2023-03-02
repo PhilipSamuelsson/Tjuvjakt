@@ -53,10 +53,9 @@ export default {
     </div>
   </div>
 
-  <div class="container-info"></div>
-  <div>
+  <div class="container-info">
   <hr>
-  <p>{{ names }}</p>
+  <p>{{ names }}aaaaaaaa</p>
   <hr>
   <p>{{ gatuadress }}</p>
   <hr>
