@@ -18,8 +18,8 @@
         @click="$store.commit('toggleCart')"
         class="action-btn link"
         to="/products"
-        >Handla istället
-      </RouterLink>
+        >Handla istället</RouterLink
+      >
     </div>
     <div v-if="$store.state.cart.length" class="to-checkout-container">
       <div class="total-cost-container">
@@ -27,7 +27,6 @@
 
         <p>{{ getCartTotal }} KR</p>
       </div>
-
       <button @click="tillKassan" class="action-btn" role="button">
         Till kassan
       </button>
@@ -69,7 +68,6 @@ export default {
   font-size: 40px;
   padding-bottom: 1rem;
 }
-
 .container {
   top: 0;
   right: 0;
@@ -101,7 +99,6 @@ export default {
   .container {
     /* grid-column: 4; */
   }
-
   .cart-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
@@ -134,13 +131,11 @@ export default {
   height: 280px;
   overflow-y: scroll;
 }
-
 .to-checkout-container {
   width: 100%;
   display: grid;
   margin-bottom: 2rem;
 }
-
 .total-cost-container {
   display: flex;
   justify-content: space-between;

@@ -2,7 +2,7 @@
   <div class="products-wrapper">
     <div class="products-container">
       <!-- @click="sendId(product.id)" -->
-      <TestProductItem
+      <ProductItem
         class="product-item"
         v-for="product in products"
         :key="product.id"
@@ -16,18 +16,22 @@
 </template>
 
 <script>
-import TestProductItem from "../components/TestProductItem.vue";
+import ProductItem from "../components/ProductItem.vue";
 // import axios from "axios";
 export default {
+  beforeUpdate() {
+    this.fetchProducts();
+  },
+
   components: {
-    TestProductItem,
+    ProductItem,
   },
   mounted() {
     this.fetchProducts();
   },
   methods: {
     async fetchProducts() {
-        console.log('körs')
+      console.log("körs");
       this.products = await this.similarProducts;
     },
     // Filter funktionalitet
@@ -104,9 +108,10 @@ export default {
 };
 </script>
 
-<style >
-/* .product-item {
+<style scoped>
+.product-item {
   cursor: pointer;
+  min-width: 180px;
 }
 
 .products-wrapper {
@@ -115,11 +120,8 @@ export default {
 }
 
 .products-container {
-  position: relative;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: auto;
+  grid-auto-flow: column;
   overflow-x: scroll;
-  grid-template-columns: 80%;
-} */
+}
 </style>
