@@ -6,7 +6,7 @@
 
   <div>
     <i class="bx bx-chevron-left" id="back-icon"></i>
-    <RouterLink to="/checkoutsecond">
+    <RouterLink to="/checkoutsecond" class="blueColor">
       <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
   </div>
@@ -121,7 +121,7 @@
     </div>
   </form>
 
-  <RouterLink to="/checkoutsecond">
+  <RouterLink to="/checkoutsecond" class="underline">
     <button @click="vidare = !vidare" class="vidare-btn" type="submit">
       Vidare
     </button></RouterLink
@@ -133,7 +133,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 import CheckoutViewFourth from "./CheckoutViewFourth.vue";
 export default {
   name: "checkoutView",
@@ -149,36 +149,37 @@ export default {
       postnummer: "",
     };
   },
+
+  // methods: {
+  //   async checkoutView() {
+  //     await axios.post("/checkoutView", {
+  //       förnamn: this.förnamn,
+  //       efternamn: this.efternamn,
+  //       email: this.email,
+  //       telefonnummer: this.telefonnummer,
+  //       gatuadress: this.gatuadress,
+  //       stad: this.stad,
+  //       postnummer: this.postnummer,
+  //     });
+  //   },
+
   methods: {
-    async checkoutView() {
-      await axios.post("/checkoutView", {
-        förnamn: this.förnamn,
-        efternamn: this.efternamn,
-        email: this.email,
-        telefonnummer: this.telefonnummer,
-        gatuadress: this.gatuadress,
-        stad: this.stad,
-        postnummer: this.postnummer,
+    showInfo() {
+      // let names = this.förnamn + " " + this.efternamn;
+      this.$router.push({
+        name: CheckoutViewFourth,
+        params: {
+          förnamn: this.förnamn,
+          efternamn: this.efternamn,
+          gatuadress: this.gatuadress,
+        },
       });
     },
-
-    methods: {
-      showInfo() {
-        // let names = this.förnamn + " " + this.efternamn;
-        this.$router.push({
-          name: CheckoutViewFourth,
-          params: {
-            förnamn: this.förnamn,
-            efternamn: this.efternamn,
-            gatuadress: this.gatuadress,
-          },
-        });
-      },
-    },
   },
-  goToNextPage() {
-    this.$router.push("/checkoutViewSecond");
-  },
+  // },
+  // goToNextPage() {
+  //   this.$router.push("/checkoutViewSecond");
+  // },
 };
 </script>
 
@@ -225,11 +226,6 @@ i[class="bx bx-check"] {
   background-color: rgb(229, 242, 250);
 }
 .container-checkout {
-  /* display: flex;
-  flex-direction: column;
-  /* position: relative; */
-  /* align-items: center;
-  justify-content: center; */
   margin: auto;
   box-shadow: rgb(233, 233, 233) 0px 0px 2px 2px;
   height: 570px;
@@ -248,7 +244,7 @@ label {
   margin-top: 25px;
 }
 
-label::before {
+.förnamn::before {
   content: "Förnamn";
   position: absolute;
   top: -10px;
@@ -256,6 +252,55 @@ label::before {
   background-color: white;
   padding: 0 5px;
 }
+.efternamn::before {
+  content: "Efternamn";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+.email::before {
+  content: "Email";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+.telefonnummer::before {
+  content: "Telefonnummer";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+.gatuadress::before {
+  content: "Gatuadress";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+.stad::before {
+  content: "Stad";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+.postnummer::before {
+  content: "Postnummer";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+
 
 #förnamn,
 #efternamn,
@@ -299,9 +344,14 @@ label::before {
   margin: 40px auto;
   height: 50px;
   width: 180px;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 25px;
+}
+.underline{
   text-decoration: none;
+}
+.blueColor{
+    color: black;
 }
 
 /* input:focus {

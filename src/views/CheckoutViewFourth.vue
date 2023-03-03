@@ -1,22 +1,38 @@
 <script>
-import CheckoutView from "./CheckoutView.vue";
+// import CheckoutView from "./CheckoutView.vue";
 
-export default {
-  mounted() {
-    if (!this.$router.params.names || !this.$router.params.gatuadress) {
-      this.$router.push({ name: CheckoutView });
-    }
-  },
+// export default {
+//     props:{
+//         förnamn:{
+//             type:String,
+//             required:true,
+//         },
+//         efternamn:{
+//             type:String,
+//             required:true
+//         },
+//         gatuadress:{
+//             type:String,
+//             required:true
+//         }
+//     }
+// }
 
-  
-  //   data() {
-  //     return {
-  //     //   goToBack() {
-  //     //     this.$router.push("/checkoutThird");
-  //     //   },
-  //     };
-  //   },
-};
+// export default {
+//   mounted() {
+//     if (!this.$router.params.names || !this.$router.params.gatuadress) {
+//       this.$router.push({ name: CheckoutView });
+//     }
+//   },
+////
+//   data() {
+//     return {
+//     //   goToBack() {
+//     //     this.$router.push("/checkoutThird");
+//     //   },
+//     };
+//   },
+// };
 </script>
 
 <template>
@@ -26,10 +42,9 @@ export default {
   />
 
   <div>
-    <RouterLink to="/checkoutThird"
+    <RouterLink to="/checkoutThird" class="blueColor"
       ><i @click="goToBack" class="bx bx-chevron-left" id="back-icon"></i
     ></RouterLink>
-    <i class="bx bx-chevron-right" id="next-icon"></i>
   </div>
 
   <div class="container">
@@ -56,19 +71,12 @@ export default {
   </div>
 
   <div class="container-info">
-  
-  <div class="col">
-  <div class="content-one">
+    <p style="font-weight: 600; padding: 20px">Bekräfta köp</p>
+    <div class="col">
+      <div class="content-one"></div>
 
-  </div>
-
-  <div class="content-one">
-  
-</div>
-  </div>
-
-  
-
+      <div class="content-one"></div>
+    </div>
 
     <div class="content">
       <hr />
@@ -79,9 +87,8 @@ export default {
       <p>Betalningsmetod:</p>
       <hr />
     </div>
-    <RouterLink to="/checkoutfourth">
-      <button class="köp-btn" type="submit">Köp
-      </button></RouterLink
+    <RouterLink to="/checkoutfourth" class="underline">
+      <button class="köp-btn" type="submit">Köp</button></RouterLink
     >
   </div>
 </template>
@@ -148,7 +155,7 @@ i[class="bx bx-check"] {
   align-items: center; */
 
   margin: auto;
-  height: 650px;
+  height: 750px;
   width: 600px;
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
@@ -156,21 +163,20 @@ i[class="bx bx-check"] {
 .content {
   padding: 40px;
 }
-.col{
-display: flex;
-justify-content: center;
-align-items: center;
-
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.content-one{
-    height: 180px;
-    width: 150px;
-    border: 1px solid black;
-    margin: 20px auto;
+.content-one {
+  height: 200px;
+  width: 150px;
+  border: 1px solid black;
+  margin: 20px auto;
 }
 
 hr {
-  width: 560px;
+  width: 520px;
   height: 5px;
   color: black;
 }
@@ -182,8 +188,14 @@ hr {
   margin: 40px auto;
   height: 50px;
   width: 180px;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 30px;
+}
+.underline{
+  text-decoration: none; 
+}
+.blueColor{
+    color: black;
 }
 #back-icon {
   position: absolute;
@@ -223,10 +235,22 @@ hr {
     font-size: 30px;
     margin: 5px auto;
   }
+  .container-info {
+    width: 80%;
+  }
+
+  hr {
+    width: 260px;
+  }
   .köp-btn {
     height: 40px;
     width: 100px;
     font-size: 20px;
+  }
+  #back-icon {
+    font-size: 40px;
+    margin-left: 0;
+    margin-top: 500px;
   }
 }
 </style>
