@@ -1,4 +1,16 @@
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      namnPåKort: "",
+      kortnummer: "",
+      år: "",
+      månad: "",
+      cvc: "",
+    };
+  },
+};
+</script>
 
 <template>
   <link
@@ -7,10 +19,10 @@
   />
 
   <div>
-    <RouterLink to="/checkoutsecond"
+    <RouterLink to="/checkoutsecond" class="blueColor"
       ><i class="bx bx-chevron-left" id="back-icon"></i
     ></RouterLink>
-    <RouterLink to="/checkoutfourth"
+    <RouterLink to="/checkoutfourth" class="blueColor"
       ><i class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
   </div>
@@ -39,97 +51,95 @@
   </div>
 
   <div class="container-info">
+    <p
+      style="
+        font-weight: 600;
+        padding: 20px;
+        margin-bottom: -15px;
+        margin-left: -12px;
+      "
+    >
+      Betalningmetod
+    </p>
     <div class="first-content">
-      <p
-        style="
-          font-weight: 600;
-          padding: 20px;
-          margin-bottom: -15px;
-          margin-left: -12px;
-        "
-      >
-        Betalningmetod
-      </p>
-      <div class="row">
-        <div>
-          <label class="namnPåKort" for="namnPåKort">
-            <input
-              v-model="namnPåKort"
-              type="text"
-              id="namnPåKort"
-              placeholder="xxx xxx xxx"
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label class="kortnummer" for="kortnummer">
-            <input
-              v-model="kortnummer"
-              type="text"
-              id="kortnummer"
-              placeholder="1111 222 33333 444 55555"
-              required
-          /></label>
-        </div>
+      <div>
+        <label class="namnPåKort" for="namnPåKort">
+          <input
+            v-model="namnPåKort"
+            type="text"
+            id="namnPåKort"
+            placeholder="xxx xxx xxx"
+            required
+          />
+        </label>
       </div>
-
-      <div class="col">
-        <div>
-          <label class="år" for="år">
-            <select id="år" name="år">
-              <option value="2015">2015</option>
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-              <option value="2020">2020</option>
-              <option value="2021">2021</option>
-              <option value="2022">2022</option>
-              <option value="2023">2023</option>
-              <option value="2024">2024</option>
-            </select>
-          </label>
-        </div>
-
-        <div>
-          <label class="månad" for="månad">
-            <select id="månad" name="månad" placeholder="Augusti">
-              <option value="Januari">Januari</option>
-              <option value="Februari">Februari</option>
-              <option value="Mars">Mars</option>
-              <option value="April">April</option>
-              <option value="Maj">Maj</option>
-              <option value="Juni">Juni</option>
-              <option value="Juli">Juli</option>
-              <option value="Augusti">Augusti</option>
-              <option value=" September">September</option>
-              <option value="Oktober">Oktober</option>
-              <option value="November">November</option>
-              <option value="December">December</option>
-            </select></label
-          >
-        </div>
-      </div>
-
-      <div class="colTwo">
-        <label class="cvc" for="cvc">
-          <input v-model="cvc" type="text" id="cvc" placeholder="123 45"
+      <div>
+        <label class="kortnummer" for="kortnummer">
+          <input
+            v-model="kortnummer"
+            type="text"
+            id="kortnummer"
+            placeholder="1111 222 33333 444 55555"
+            required
         /></label>
-        <i class="bx bx-help-circle"></i>
-      </div>
-
-      <p class="txt">Eller betala med våra partners in crime</p>
-
-      <div class="img-betalningmetos">
-        <img src="../assets/img/klarna.PNG" alt="Bild" />
-        <img src="../assets/img/paypal.PNG" alt="Bild" />
-        <img src="../assets/img/bank.PNG" alt="Bild" />
-        <img src="../assets/img/swish.PNG" alt="Bild" />
       </div>
     </div>
 
-    <RouterLink to="/checkoutfourth">
+    <div class="col">
+      <div>
+        <label class="år" for="år">
+          <select id="år" name="år">
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+          </select>
+        </label>
+      </div>
+
+      <div>
+        <label class="månad" for="månad">
+          <select id="månad" name="månad" placeholder="Augusti">
+            <option value="Januari">Januari</option>
+            <option value="Februari">Februari</option>
+            <option value="Mars">Mars</option>
+            <option value="April">April</option>
+            <option value="Maj">Maj</option>
+            <option value="Juni">Juni</option>
+            <option value="Juli">Juli</option>
+            <option value="Augusti">Augusti</option>
+            <option value=" September">September</option>
+            <option value="Oktober">Oktober</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select></label
+        >
+      </div>
+    </div>
+
+    <div class="colTwo">
+      <label class="cvc" for="cvc">
+        <input v-model="cvc" type="text" id="cvc" placeholder="123 45"
+      /></label>
+      <i class="bx bx-help-circle"></i>
+    </div>
+
+    <p class="txt">Eller betala med våra partners in crime</p>
+
+    <div class="img-betalningmetos">
+      <img src="../assets/img/klarna.PNG" alt="Bild" />
+      <img src="../assets/img/paypal.PNG" alt="Bild" />
+      <img src="../assets/img/bank.PNG" alt="Bild" />
+      <img src="../assets/img/swish.PNG" alt="Bild" />
+    </div>
+
+    <RouterLink to="/checkoutfourth" class="underline">
       <button @click="goToNextPage" class="vidare-btn" type="submit">
         Vidare
       </button></RouterLink
@@ -196,11 +206,8 @@ i[class="bx bx-check"] {
 }
 
 .container-info {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   margin: auto;
-  height: 700px;
+  height: 730px;
   width: 570px;
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
@@ -212,15 +219,51 @@ label {
   margin-top: 25px;
 }
 
-label::before {
+.namnPåKort::before {
   content: "Namn på kort";
   position: absolute;
   top: -10px;
-  left: 10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+.kortnummer::before {
+  content: "Kortnummer";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+.år::before {
+  content: "År";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+.månad::before {
+  content: "Månad";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
+.cvc::before {
+  content: "CVC";
+  position: absolute;
+  top: -10px;
+  left: 20px;
   background-color: white;
   padding: 0 5px;
 }
 
+.first-content {
+  display: grid;
+  justify-content: center;
+}
 #namnPåKort,
 #kortnummer {
   width: 500px;
@@ -238,9 +281,13 @@ label::before {
   height: 40px;
   width: 245px;
 }
-
+.colTwo {
+  margin-left: 30px;
+}
 .txt {
-  font-weight: 800;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-top: 30px;
 }
 
 .img-betalningmetos {
@@ -259,9 +306,15 @@ label::before {
   margin: 40px auto;
   height: 50px;
   width: 180px;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 25px;
   text-decoration: none;
+}
+.underline {
+  text-decoration: none;
+}
+.blueColor {
+  color: black;
 }
 
 #back-icon {
@@ -310,7 +363,7 @@ label::before {
 
   #namnPåKort,
   #kortnummer {
-    width: 300px;
+    width: 320px;
   }
   #år,
   #månad,
@@ -327,6 +380,9 @@ label::before {
     font-size: 40px;
     margin-left: 0;
     margin-top: 400px;
+  }
+  .colTwo {
+    margin-left: 10px;
   }
 }
 </style>
