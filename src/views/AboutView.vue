@@ -4,10 +4,8 @@
   <div class="container-about">
     <img
       src="https://images.unsplash.com/photo-1543983419-dbdc20257c3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-      class="vr-header"
-      alt="vr headset"
-    />
-    <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+      class="vr-header" alt="vr headset" />
+    <h1>Lorem ipsum Ackman dolor sit amet consectetur.</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut modi,
       aspernatur excepturi iusto, laudantium ullam et minus delectus, ab tempore
@@ -30,21 +28,17 @@
         </p>
       </div>
       <div>
-        <img
-          class="img"
+        <img class="img"
           src="https://images.unsplash.com/photo-1443884590026-2e4d21aee71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1686&q=80"
-          alt="Bild"
-        />
+          alt="Bild" />
       </div>
     </div>
 
     <div class="content-second">
       <div>
-        <img
-          class="img"
+        <img class="img"
           src="https://images.unsplash.com/photo-1527090526205-beaac8dc3c62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-          alt="Bild"
-        />
+          alt="Bild" />
       </div>
       <div class="title-content-second">
         <h2>Varför och hur</h2>
@@ -71,6 +65,7 @@
 .container-about p {
   width: 70%;
 }
+
 .container-about h1 {
   font-weight: 600;
 }
@@ -90,6 +85,7 @@
   font-family: "Outfit", sans-serif;
   margin-top: 70px;
 }
+
 .content-first,
 .content-second {
   display: flex;
@@ -113,12 +109,14 @@
   margin: 0 auto;
   margin-left: 60px;
 }
+
 .title-content-second {
   text-align: start;
   width: 400px;
   margin: 0 auto;
   margin-right: 60px;
 }
+
 .title-content-first h2,
 .title-content-second h2 {
   font-weight: 700;
@@ -138,6 +136,7 @@
   .content-second {
     width: 100%;
   }
+
   .container-about h1 {
     font-size: 20px;
   }
