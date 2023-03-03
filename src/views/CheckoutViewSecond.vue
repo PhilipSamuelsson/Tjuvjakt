@@ -18,10 +18,10 @@ export default {
   />
 
   <div>
-    <router-link to="/checkout"
+    <router-link to="/checkout" class="blueColor"
       ><i class="bx bx-chevron-left" id="back-icon"></i
     ></router-link>
-    <RouterLink to="/CheckoutThird">
+    <RouterLink to="/CheckoutThird" class="blueColor">
       <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
   </div>
@@ -50,9 +50,9 @@ export default {
   </div>
 
   <div class="containerTwo">
-    <h6>Fraktmetod</h6>
+    <h6 style="padding: 10px; margin-left: 20px">Fraktmetod</h6>
     <div class="col">
-      <div>
+      <div class="aa">
         <input
           v-model="väljFraktmetod"
           id="fraktmetodFirst"
@@ -90,9 +90,15 @@ export default {
       <div><img src="../assets/img/Fraktmetod2.PNG" alt="" /></div>
     </div>
   </div>
+  <RouterLink to="/checkoutThird" class="underline">
+    <button class="vidare-btn" type="submit">Vidare</button></RouterLink
+  >
 </template>
 
 <style scoped>
+.col:focus {
+  background-color: blue;
+}
 .container {
   width: 100%;
   justify-content: center;
@@ -162,8 +168,14 @@ i[class="bx bx-check"] {
   margin: 20px auto;
   border-radius: 5px;
   height: 60px;
-  width: 400px;
+  width: 500px;
   border: 1px solid rgb(103, 167, 240);
+}
+.col:hover {
+  background-color: rgb(138, 155, 253);
+  opacity: 0.3;
+  color: black;
+  border: 2px solid blue;
 }
 
 input,
@@ -189,10 +201,16 @@ lable {
   justify-content: center;
   align-items: center;
   margin: 40px auto;
-  height: 60px;
-  width: 200px;
-  font-weight: 800;
+  height: 50px;
+  width: 160px;
+  font-weight: 600;
   font-size: 30px;
+}
+.underline{
+  text-decoration: none;
+}
+.blueColor{
+    color: black;
 }
 
 @media screen and (min-width: 375px) and (max-width: 980px) {
@@ -231,7 +249,12 @@ lable {
   #back-icon {
     font-size: 40px;
     margin-left: 0;
-    margin-top: 400px;
+    margin-top: 300px;
+  }
+  .vidare-btn {
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
   }
 }
 </style>
