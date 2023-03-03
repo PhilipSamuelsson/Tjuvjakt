@@ -22,7 +22,9 @@ export default {
     <RouterLink to="/checkoutsecond" class="blueColor"
       ><i class="bx bx-chevron-left" id="back-icon"></i
     ></RouterLink>
+
     <RouterLink to="/checkoutfourth" class="blueColor"
+
       ><i class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
   </div>

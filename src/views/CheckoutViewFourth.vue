@@ -70,6 +70,7 @@
     </div>
   </div>
 
+
   <div class="container-info">
     <p style="font-weight: 600; padding: 20px">Bekräfta köp</p>
     <div class="col">
@@ -91,6 +92,7 @@
       <button class="köp-btn" type="submit">Köp</button></RouterLink
     >
   </div>
+
 </template>
 
 <style scoped>
@@ -160,6 +162,7 @@ i[class="bx bx-check"] {
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 
+
 .content {
   padding: 40px;
 }
@@ -197,6 +200,7 @@ hr {
 .blueColor{
     color: black;
 }
+
 #back-icon {
   position: absolute;
   margin-top: 400px;

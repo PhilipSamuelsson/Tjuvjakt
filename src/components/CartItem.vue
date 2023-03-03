@@ -11,12 +11,13 @@
         <p class="info-title">{{ productTitle }}</p>
         <!-- <p class="info-category">{{ productCategory }}</p> -->
 
-        <p class="info-price">{{ numberOfProducts * productPrice }} kr</p>
+        <!-- NU FUNKAR DEN! -->
+        <p class="info-price">{{ productPrice * numberOfItem }} kr</p>
       </div>
 
       <div class="increment-container">
         <button @click="decrement" class="increment-btn">
-          <p class="btn-symbol">-</p>
+            <p class="btn-symbol">-</p>
         </button>
         <p class="increment-number">{{ numberOfProducts }}</p>
 
@@ -25,7 +26,7 @@
           @click="increment"
           class="increment-btn"
         >
-          <p class="btn-symbol">+</p>
+         <p class="btn-symbol">+</p>
         </button>
       </div>
     </div>
@@ -35,27 +36,35 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   methods: {
     remove() {
       this.removeFromCart(this.productId);
     },
     increment() {
+      this.numberOfItem++;
       this.addMore(this.cartItem);
     },
     decrement() {
-      if (this.numberOfProducts > 1) {
+      if (this.getCartItemCount > 1) {
+        this.numberOfItem--;
         this.removeItemFromCart(this.cartItem);
       } else {
         this.remove();
       }
     },
+
     ...mapMutations([
+      "addItemCart",
       "removeItemFromCart",
       "removeFromCart",
       "addMore",
     ]),
+  },
+
+  computed: {
+    ...mapGetters(["getCartItemCount"]),
   },
   data() {
     return {
@@ -67,8 +76,7 @@ export default {
       productPrice: this.price,
       inStock: this.stock,
       cartItem: this.product,
-
-      numberOfItem: this.numberOfProducts,
+      numberOfItem: 1,
     };
   },
   props: {
@@ -110,8 +118,8 @@ export default {
 
 <style scoped>
 .item-container {
-  overflow: hidden;
-  max-height: 130px;
+    overflow: hidden;
+    max-height: 130px;
   border: 1px solid #000000;
   width: 100%;
   display: grid;
@@ -163,7 +171,7 @@ export default {
 }
 
 .increment-btn {
-  position: relative;
+    position: relative;
   border: 1px solid #000000;
   height: 25px;
   background: transparent;
@@ -171,12 +179,12 @@ export default {
   padding: 0;
 }
 .increment-number {
-  font-size: 1rem;
+    font-size: 1rem;
   text-align: center;
 }
 
-.btn-symbol {
-  position: relative;
-  bottom: 0.2rem;
+.btn-symbol{
+    position: relative;
+    bottom: .2rem;
 }
 </style>
