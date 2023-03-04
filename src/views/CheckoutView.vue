@@ -122,7 +122,7 @@
   </form>
 
   <RouterLink to="/checkoutsecond" class="underline">
-    <button @click="vidare = !vidare" class="vidare-btn" type="submit">
+    <button @click="showInfo" class="vidare-btn" type="submit">
       Vidare
     </button></RouterLink
   >
@@ -301,7 +301,6 @@ label {
   padding: 0 5px;
 }
 
-
 #förnamn,
 #efternamn,
 #stad,
@@ -347,11 +346,11 @@ label {
   font-weight: 600;
   font-size: 25px;
 }
-.underline{
+.underline {
   text-decoration: none;
 }
-.blueColor{
-    color: black;
+.blueColor {
+  color: black;
 }
 
 /* input:focus {
@@ -380,7 +379,7 @@ label {
   #efternamn,
   #stad,
   #postnummer {
-    width: 150px;
+    width: 140px;
     height: 35px;
     padding: 5px;
   }
@@ -388,13 +387,13 @@ label {
   #telefonnummer,
   #gatuadress,
   #email {
-    width: 320px;
+    width: 290px;
     height: 35px;
     padding: 5px;
   }
 
   .container-checkout {
-    width: 80%;
+    width: 85%;
     height: 600px;
   }
 
@@ -405,7 +404,7 @@ label {
   }
 
   #back-icon {
-    font-size: 40px;
+    font-size: 35px;
     margin-left: 0;
   }
   /* #next-icon{

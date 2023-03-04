@@ -359,18 +359,18 @@ label {
   }
 
   .container-info {
-    width: 80%;
-    height: 700px;
+    width: 85%;
+    height: 750px;
   }
 
   #namnPåKort,
   #kortnummer {
-    width: 320px;
+    width: 300px;
   }
   #år,
   #månad,
   #cvc {
-    width: 150px;
+    width: 140px;
   }
 
   .vidare-btn {

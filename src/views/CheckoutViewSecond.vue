@@ -239,7 +239,7 @@ lable {
   }
 
   .containerTwo {
-    width: 80%;
+    width: 85%;
   }
 
   .col {

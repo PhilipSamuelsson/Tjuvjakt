@@ -1,22 +1,22 @@
 <script>
 // import CheckoutView from "./CheckoutView.vue";
 
-// export default {
-//     props:{
-//         förnamn:{
-//             type:String,
-//             required:true,
-//         },
-//         efternamn:{
-//             type:String,
-//             required:true
-//         },
-//         gatuadress:{
-//             type:String,
-//             required:true
-//         }
-//     }
-// }
+export default {
+    props:{
+        förnamn:{
+            type:String,
+            required:true,
+        },
+        efternamn:{
+            type:String,
+            required:true
+        },
+        gatuadress:{
+            type:String,
+            required:true
+        }
+    }
+}
 
 // export default {
 //   mounted() {
@@ -244,7 +244,11 @@ hr {
   }
 
   hr {
-    width: 260px;
+    width: 230px;
+  }
+  .content p{
+    font-size: 10px;
+    font-weight: 800;
   }
   .köp-btn {
     height: 40px;
