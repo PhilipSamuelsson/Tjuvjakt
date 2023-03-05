@@ -1,23 +1,22 @@
 <script>
 // import CheckoutView from "./CheckoutView.vue";
 
-export default {
-    props:{
-        förnamn:{
-            type:String,
-            required:true,
-        },
-        efternamn:{
-            type:String,
-            required:true
-        },
-        gatuadress:{
-            type:String,
-            required:true
-        }
-    }
-}
-
+// export default {
+//     props:{
+//         förnamn:{
+//             type:String,
+//             required:true,
+//         },
+//         efternamn:{
+//             type:String,
+//             required:true
+//         },
+//         gatuadress:{
+//             type:String,
+//             required:true
+//         }
+//     }
+// }
 // export default {
 //   mounted() {
 //     if (!this.$router.params.names || !this.$router.params.gatuadress) {
@@ -75,8 +74,9 @@ export default {
     <p style="font-weight: 600; padding: 20px">Bekräfta köp</p>
     <div class="col">
       <div class="content-one"></div>
-
+      <div class="content-two"></div>
       <div class="content-one"></div>
+      <div class="content-two"></div>
     </div>
 
     <div class="content">
@@ -173,15 +173,23 @@ i[class="bx bx-check"] {
 }
 .content-one {
   height: 200px;
-  width: 150px;
-  border: 1px solid black;
+  width: 130px;
+  border: 1px solid rgb(199, 199, 199);
   margin: 20px auto;
 }
 
+.content-two{
+  height: 200px;
+  width: 150px;
+  border-bottom: 3px solid rgb(199, 199, 199);
+  border-top: 3px solid rgb(199, 199, 199);
+}
+
 hr {
-  width: 520px;
-  height: 5px;
-  color: black;
+  /* width: 520px;
+  height: 5px; */
+  color: rgb(161, 161, 161);
+  border-top: 3px solid rgb(95, 95, 95);
 }
 
 .köp-btn {
@@ -193,6 +201,7 @@ hr {
   width: 180px;
   font-weight: 600;
   font-size: 30px;
+  background-color: white;
 }
 .underline{
   text-decoration: none; 
@@ -240,11 +249,17 @@ hr {
     margin: 5px auto;
   }
   .container-info {
-    width: 80%;
+    width: 90%;
+  }
+  .content-one{
+    width: 80px;
+  }
+  .content-two{
+    width: 70px;
   }
 
   hr {
-    width: 230px;
+    width: 250px;
   }
   .content p{
     font-size: 10px;
@@ -257,7 +272,7 @@ hr {
   }
   #back-icon {
     font-size: 40px;
-    margin-left: 0;
+    margin-left: -10px;
     margin-top: 500px;
   }
 }

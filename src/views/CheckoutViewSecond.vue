@@ -205,6 +205,7 @@ lable {
   width: 160px;
   font-weight: 600;
   font-size: 30px;
+   background-color: white;
 }
 .underline{
   text-decoration: none;
@@ -249,7 +250,12 @@ lable {
   #back-icon {
     font-size: 40px;
     margin-left: 0;
-    margin-top: 300px;
+    margin-top: 310px;
+  }
+  #next-icon{
+    font-size: 40px;
+    /* margin: -40px; */
+    margin: 310px 395px ;
   }
   .vidare-btn {
     height: 40px;

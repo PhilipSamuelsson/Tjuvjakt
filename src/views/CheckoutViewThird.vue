@@ -2,6 +2,7 @@
 export default {
   data() {
     return {
+      selected:'',
       namnPåKort: "",
       kortnummer: "",
       år: "",
@@ -24,7 +25,6 @@ export default {
     ></RouterLink>
 
     <RouterLink to="/checkoutfourth" class="blueColor"
-
       ><i class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
   </div>
@@ -90,7 +90,7 @@ export default {
     <div class="col">
       <div>
         <label class="år" for="år">
-          <select id="år" name="år">
+          <select id="år" name="år" >
             <option value="2015">2015</option>
             <option value="2016">2016</option>
             <option value="2017">2017</option>
@@ -107,7 +107,7 @@ export default {
 
       <div>
         <label class="månad" for="månad">
-          <select id="månad" name="månad" placeholder="Augusti">
+          <select  id="månad" name="månad"  placeholder="Augusti">
             <option value="Januari">Januari</option>
             <option value="Februari">Februari</option>
             <option value="Mars">Mars</option>
@@ -220,46 +220,28 @@ label {
   text-align: center;
   margin-top: 25px;
 }
+label::before {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
 
 .namnPåKort::before {
   content: "Namn på kort";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .kortnummer::before {
   content: "Kortnummer";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .år::before {
   content: "År";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .månad::before {
   content: "Månad";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .cvc::before {
   content: "CVC";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 
 .first-content {
@@ -311,6 +293,7 @@ label {
   font-weight: 600;
   font-size: 25px;
   text-decoration: none;
+  background-color: white;
 }
 .underline {
   text-decoration: none;
@@ -373,6 +356,10 @@ label {
     width: 140px;
   }
 
+  /* #cvc {
+    margin-left: 0px;
+  } */
+
   .vidare-btn {
     height: 40px;
     width: 100px;
@@ -383,6 +370,10 @@ label {
     margin-left: 0;
     margin-top: 400px;
   }
+  #next-icon{
+    font-size: 35px;
+  }
+
   .colTwo {
     margin-left: 10px;
   }

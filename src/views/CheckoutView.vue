@@ -4,12 +4,12 @@
     rel="stylesheet"
   />
 
-  <div>
+  <!-- <div>
     <i class="bx bx-chevron-left" id="back-icon"></i>
     <RouterLink to="/checkoutsecond" class="blueColor">
       <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
-  </div>
+  </div> -->
 
   <div class="container">
     <div class="container-circles">
@@ -32,7 +32,14 @@
   </div>
 
   <form class="container-checkout">
-    <h5 class="adress">Adress</h5>
+    <p class="adress"
+      style="
+        font-weight: 600;
+        padding: 20px;
+        margin-bottom: -15px;
+        margin-left: 10px;
+      "
+      >Adress</p>
     <div class="col">
       <div>
         <label class="förnamn" for="förnamn"
@@ -81,6 +88,12 @@
           required
       /></label>
       <br />
+      <div>
+    <i class="bx bx-chevron-left" id="back-icon"></i>
+    <RouterLink to="/checkoutsecond" class="blueColor">
+      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
+    ></RouterLink>
+  </div>
 
       <div>
         <label class="gatuadress" for="gatuadress"
@@ -228,7 +241,7 @@ i[class="bx bx-check"] {
 .container-checkout {
   margin: auto;
   box-shadow: rgb(233, 233, 233) 0px 0px 2px 2px;
-  height: 570px;
+  height: 600px;
   width: 570px;
 }
 .col {
@@ -243,62 +256,34 @@ label {
   text-align: center;
   margin-top: 25px;
 }
+label::before{
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: white;
+  padding: 0 5px;
+}
 
 .förnamn::before {
   content: "Förnamn";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .efternamn::before {
   content: "Efternamn";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .email::before {
   content: "Email";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .telefonnummer::before {
   content: "Telefonnummer";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .gatuadress::before {
   content: "Gatuadress";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .stad::before {
   content: "Stad";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 .postnummer::before {
   content: "Postnummer";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background-color: white;
-  padding: 0 5px;
 }
 
 #förnamn,
@@ -325,15 +310,15 @@ label {
 
 #back-icon {
   position: absolute;
-  margin-top: 400px;
-  margin-left: 200px;
+  margin-top: -40px;
+  margin-left: -210px;
   font-size: 80px;
 }
 
 #next-icon {
   position: absolute;
-  margin-top: 400px;
-  margin-left: 1230px;
+  margin-top: -33px;
+  margin-left: 650px;
   font-size: 80px;
 }
 .vidare-btn {
@@ -345,6 +330,7 @@ label {
   width: 180px;
   font-weight: 600;
   font-size: 25px;
+  background-color: white;
 }
 .underline {
   text-decoration: none;
@@ -405,11 +391,12 @@ label {
 
   #back-icon {
     font-size: 35px;
-    margin-left: 0;
+    margin:  -40px;
   }
-  /* #next-icon{
-  font-size: 40px;
-  margin-right: -40px;
-} */
+  #next-icon{
+  font-size: 35px;
+  margin:  -40px;
+  margin-left: 310px;
+}
 }
 </style>
