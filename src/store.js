@@ -1,17 +1,17 @@
 import { createStore } from "vuex";
 const mutations = {
-    // getNumberOfProducts(state, productId) {
-    //   let count = 0;
-    //   state.cart.forEach((item) => {
-    //       console.log(item)
-    //     if (productId === item.id) {
-    //       count += item.numberOfItem;
-    //     }
-    //   });
-    //   console.log(count)
-    //   return count;
+  // getNumberOfProducts(state, productId) {
+  //   let count = 0;
+  //   state.cart.forEach((item) => {
+  //       console.log(item)
+  //     if (productId === item.id) {
+  //       count += item.numberOfItem;
+  //     }
+  //   });
+  //   console.log(count)
+  //   return count;
 
-    // },
+  // },
 
   toggleCart(state) {
     state.showCart = !state.showCart;
@@ -39,7 +39,16 @@ const mutations = {
       if (payload.id === item.id) {
         item.numberOfItem++;
       }
-    });
+    })
+  },
+
+  // inputkey
+  setUserInfo(inputvalue) {
+    console.log("körs setUser?")
+    state.user.fornamn = inputvalue;
+  },
+  getUserInfo() {
+    return state.user.fornamn
   },
 
   addItemCart: (state, payload) => {
@@ -59,7 +68,23 @@ const mutations = {
 const state = {
   showCart: false,
   cart: [],
+  user: {
+    fornamn: '',
+    efternamn: '',
+    gatuadress: '',
+    postnummer: '',
+    email: '',
+    telefonnummer: '',
+    stad: ''
+  }
 };
+
+// Används ej. Kanske ta bort. inputkey,
+const setters = {
+  setUserInfo: (inputvalue) => {
+    state.user.fornamn = inputvalue;
+  }
+}
 
 const getters = {
 
@@ -78,6 +103,10 @@ const getters = {
     });
     return total;
   },
+
+  getUserInfo: () => {
+    return state.user.fornamn || "funkar ej"
+  }
 };
 
-export default createStore({ mutations, state, getters, strict: true });
+export default createStore({ mutations, state, getters, strict: true, setters });

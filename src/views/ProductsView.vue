@@ -11,21 +11,10 @@ const showSort = ref(false);
   <div class="searchSort">
     <!-- Search -->
     <div class="search-filter">
-      <h5 v-bind:style="{display: showSearch ? 'none' : 'inline'}">Sök </h5>
-      <i
-        class="fa-solid fa-magnifying-glass"
-        @click="showSearch = !showSearch"
-
-      ></i>
-
-      <input
-        @keyup.enter="this.products = searchProducts(this.titlesok)"
-        placeholder="Sök efter produkt..."
-        class="openClose"
-        type="text"
-        v-model="titlesok"
-        v-bind:style="{ display: showSearch ? 'inline' : 'none' }"
-      />
+      <h5 v-bind:style="{ display: showSearch ? 'none' : 'inline' }">Sök </h5>
+      <i class="fa-solid fa-magnifying-glass" @click="showSearch = !showSearch"></i>
+      <input @keyup.enter="this.products = searchProducts(this.titlesok)" placeholder="Sök efter produkt..."
+        class="openClose" type="text" v-model="titlesok" v-bind:style="{ display: showSearch ? 'inline' : 'none' }" />
     </div>
 
     <!-- Sort -->
@@ -35,11 +24,8 @@ const showSort = ref(false);
       <h5 v-bind:style="{ display: showSort ? 'block' : 'none' }">
         <!-- Filtrera efter Kategori -->
       </h5>
-      <select
-        v-model="Kategori"
-        v-bind:style="{ display: showSort ? 'block' : 'none' }"
-        @change="filterCategory(this.Kategori)"
-      >
+      <select v-model="Kategori" v-bind:style="{ display: showSort ? 'block' : 'none' }"
+        @change="filterCategory(this.Kategori)">
         <option>Allt</option>
         <option>Hittegods</option>
         <option>Kläder</option>
@@ -48,10 +34,14 @@ const showSort = ref(false);
         <option>Glasögon</option>
       </select>
 
-       <button v-bind:style="{ display: showSort ? 'inline' : 'none' }" class="filter-button" @click="priceLow">Pris: Lågt till högt</button>
-      <button v-bind:style="{ display: showSort ? 'inline' : 'none' }" class="filter-button" @click="priceHigh">Pris: Högt till lågt</button>
-      <button v-bind:style="{ display: showSort ? 'inline' : 'none' }" class="filter-button" @click="alfabeticalHigh">Alfabetisk ordning: A-Ö</button>
-      <button v-bind:style="{ display: showSort ? 'inline' : 'none' }" class="filter-button" @click="alfabeticalLow">Alfabetisk ordning: Ö-A</button>
+      <button v-bind:style="{ display: showSort ? 'inline' : 'none' }" class="filter-button" @click="priceLow">Pris: Lågt
+        till högt</button>
+      <button v-bind:style="{ display: showSort ? 'inline' : 'none' }" class="filter-button" @click="priceHigh">Pris: Högt
+        till lågt</button>
+      <button v-bind:style="{ display: showSort ? 'inline' : 'none' }" class="filter-button"
+        @click="alfabeticalHigh">Alfabetisk ordning: A-Ö</button>
+      <button v-bind:style="{ display: showSort ? 'inline' : 'none' }" class="filter-button"
+        @click="alfabeticalLow">Alfabetisk ordning: Ö-A</button>
     </div>
 
     <!-- Div @click style=display:block/none -->
@@ -62,21 +52,13 @@ const showSort = ref(false);
   <div class="products-wrapper">
     <div class="products-container">
       <!-- @click="sendId(product.id)" -->
-      <ProductItem
-        class="product-item"
-        v-for="product in products"
-        :key="product.id"
-        @click="selectProduct(product.id)"
-        :image="product.image"
-        :price="product.price"
-        :title="product.title"
-      />
+      <ProductItem class="product-item" v-for="product in products" :key="product.id" @click="selectProduct(product.id)"
+        :image="product.image" :price="product.price" :title="product.title" />
     </div>
   </div>
 </template>
 
 <style scoped>
-
 .som-hittat {
   width: 100%;
   height: 40vh;
@@ -92,6 +74,7 @@ const showSort = ref(false);
   text-align: center;
   background-color: white;
 }
+
 .searchSort {
   padding-top: 2vh;
   padding-left: 2vw;
@@ -102,6 +85,7 @@ const showSort = ref(false);
 i {
   display: inline;
 }
+
 .search-filter {
   padding-right: 1em;
 }
@@ -109,6 +93,7 @@ i {
 .search-filter-2 {
   padding-left: 8vh;
 }
+
 .filter-button {
   padding: .5em 1em;
   margin-right: .5em;
@@ -120,6 +105,7 @@ i {
 h5 {
   display: inline;
 }
+
 .product-item {
   cursor: pointer;
 }
