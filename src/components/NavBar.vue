@@ -68,6 +68,11 @@ export default {
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
+              <RouterLink to="/custom-support">Kundsupport</RouterLink>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
               <RouterLink to="/checkout">Test checkout</RouterLink>
             </a>
           </li>
