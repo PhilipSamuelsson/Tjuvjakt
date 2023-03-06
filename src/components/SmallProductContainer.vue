@@ -2,11 +2,12 @@
   <div class="products-wrapper">
     <div class="products-container">
       <!-- @click="sendId(product.id)" -->
+      <!--         @click="selectProduct(product.id)" -->
       <ProductItem
+      @click="sendId(product.id)"
         class="product-item"
         v-for="product in products"
         :key="product.id"
-        @click="selectProduct(product.id)"
         :image="product.image"
         :price="product.price"
         :title="product.title"
@@ -31,7 +32,6 @@ export default {
   },
   methods: {
     async fetchProducts() {
-      console.log("körs");
       this.products = await this.similarProducts;
     },
     // Filter funktionalitet
@@ -75,12 +75,14 @@ export default {
 
     // TAR ANVÄNDAREN TILL PRODUCT
     selectProduct(id) {
-      console.log(id);
       this.$router.push({
         name: "productdetail",
         params: { productID: id },
       });
     },
+    sendId(id){
+        this.$emit("idFromSmallProduct",id)
+    }
     // async fetchProducts() {
     //   console.log("Hej");
     //   const result = await axios.get("productapi.json", {
