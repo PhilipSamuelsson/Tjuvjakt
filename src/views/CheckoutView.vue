@@ -179,7 +179,7 @@ export default {
   methods: {
     showInfo() {
       // let names = this.förnamn + " " + this.efternamn;
-      this.$router.push({
+      this.$route.push({
         name: CheckoutViewFourth,
         params: {
           förnamn: this.förnamn,
