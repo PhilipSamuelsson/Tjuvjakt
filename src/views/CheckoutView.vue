@@ -30,45 +30,55 @@
 
   <form class="container-checkout">
     <p class="adress" style="
-                                  font-weight: 600;
-                                  padding: 20px;
-                                  margin-bottom: -15px;
-                                  margin-left: 10px;
-                                ">Adress</p>
+                                            font-weight: 600;
+                                            padding: 20px;
+                                            margin-bottom: -15px;
+                                            margin-left: 10px;
+                                          ">Adress</p>
     <div class="col">
       <div>
-        <label class="förnamn" for="fornamn"><input v-model="fornamn" type="text" id="förnamn" placeholder="xx"
-            required /></label>
+        <label class="förnamn" for="fornamn">
+          <input @input="checker" v-model="userComp.fornamn" type="text" id="förnamn" placeholder="xx" required />
+        </label>
       </div>
       <br />
 
       <div>
-        <label class="efternamn" for="efternamn"><input v-model="efternamn" type="text" id="efternamn" placeholder="xx"
-            required /></label>
+        <label class="efternamn" for="efternamn">
+          <input @input="checker" v-model="userComp.efternamn" type="text" id="efternamn" placeholder="xx" required />
+        </label>
       </div>
     </div>
     <br />
 
     <div class="middle-content">
       <div>
-        <label class="email" for="email"><input v-model="email" type="email" id="email" placeholder="username@gmail.com"
-            required /></label>
+        <label class="email" for="email">
+          <input @input="checker" v-model="userComp.email" type="email" id="email" placeholder="username@gmail.com"
+            required />
+        </label>
       </div>
       <br />
 
-      <label class="telefonnummer" for="telefonnummer"><input v-model="telefonnummer" type="tel" id="telefonnummer"
-          placeholder="+ 123 456 789" required /></label>
+      <label class="telefonnummer" for="telefonnummer">
+        <input @input="checker" v-model="userComp.telefonnummer" type="tel" id="telefonnummer" placeholder="+ 123 456 789"
+          required />
+      </label>
       <br />
       <div>
-        <i class="bx bx-chevron-left" id="back-icon"></i>
+        <RouterLink to="/summary" class="blueColor">
+          <i class="bx bx-chevron-left" @click="goToNextPage" id="back-icon"></i>
+        </RouterLink>
         <RouterLink to="/checkoutsecond" class="blueColor">
           <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i>
         </RouterLink>
       </div>
 
       <div>
-        <label class="gatuadress" for="gatuadress"><input v-model="gatuadress" type="text" id="gatuadress"
-            placeholder="Hägerneholmsvägen" required /></label>
+        <label class="gatuadress" for="gatuadress">
+          <input @input="checker" v-model="userComp.gatuadress" type="text" id="gatuadress"
+            placeholder="Hägerneholmsvägen" required />
+        </label>
       </div>
     </div>
     <br />
@@ -76,26 +86,28 @@
     <div class="col">
       <div>
         <label class="stad" for="stad">
-          <input v-model="stad" type="text" id="stad" placeholder="Stockholm" required /></label>
+          <input @input="checker" v-model="userComp.stad" type="text" id="stad" placeholder="Stockholm" required />
+        </label>
       </div>
       <br />
 
       <div>
-        <label class="postnummer" for="postnummer"><input v-model="postnummer" type="text" id="postnummer"
-            placeholder="123 45" required /></label>
+        <label class="postnummer" for="postnummer">
+          <input @input="checker" v-model="userComp.postnummer" type="text" id="postnummer" placeholder="123 45"
+            required />
+        </label>
       </div>
     </div>
   </form>
-
-  <!-- <RouterLink to="/checkoutsecond" class="underline"> -->
-  <button @click="updateUserInfo()" class="vidare-btn" type="submit">
-    Vidare
-  </button>
-  <!-- </RouterLink> -->
+  <RouterLink to="/checkoutsecond" class="underline">
+    <button @click="updateUserInfo()" class="vidare-btn" type="submit" v-bind:disabled="btnToggler">
+      Vidare
+    </button>
+  </RouterLink>
 
   <!-- h1  and h2 for test -->
-  <h1>{{ fornamn }} {{ efternamn }}</h1>
-  <h2> 2{{ getUserInfo }}</h2>
+  <h1>{{ userComp.fornamn }} {{ userComp.efternamn }}</h1>
+  <h2> {{ getUserInfo }}</h2>
 </template>
 
 <script>
@@ -105,18 +117,32 @@ import CheckoutViewFourth from "./CheckoutViewFourth.vue";
 export default {
   name: "checkoutView",
   computed: {
-    ...mapGetters(['getUserInfo'])
+    ...mapGetters(['getUserInfo']),
+    checker() {
+      if (this.userComp.fornamn !== "" && this.userComp.efternamn !== "" && this.userComp.email !== "" && this.userComp.telefonnummer !== "" && this.userComp.gatuadress !== "" && this.userComp.stad !== "" && this.userComp.postnummer !== "") {
+        console.log("Sätter toggler till falskt (ska synas)")
+        this.btnToggler = false
+        console.log("just nu är knapp: ", this.btnToggler)
+      }
+      else {
+        this.btnToggler = true
+        console.log("Knapp är fortf TRUE")
+      }
+    }
   },
   data() {
     return {
       // vidare: false,
-      fornamn: "",
-      efternamn: "",
-      email: "",
-      telefonnummer: "",
-      gatuadress: "",
-      stad: "",
-      postnummer: "",
+      userComp: {
+        fornamn: "",
+        efternamn: "",
+        email: "",
+        telefonnummer: "",
+        gatuadress: "",
+        stad: "",
+        postnummer: ""
+      },
+      btnToggler: true
     };
   },
 
@@ -136,7 +162,7 @@ export default {
   methods: {
     ...mapMutations(['setUserInfo']),
     updateUserInfo() {
-      this.setUserInfo(this.fornamn);
+      this.setUserInfo(this.userComp);
     }
   }
   // showInfo() {

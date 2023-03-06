@@ -42,14 +42,25 @@ const mutations = {
     })
   },
 
+  // setUserInfo: (inputvalue) => {
+  //   state.user.fornamn = inputvalue
   // inputkey
-  setUserInfo(inputvalue) {
-    console.log("körs setUser?")
-    state.user.fornamn = inputvalue;
+  setUserInfo(state, inputvalue) {
+    state.user.fornamn = inputvalue.fornamn
+    state.user.efternamn = inputvalue.efternamn
+    state.user.gatuadress = inputvalue.gatuadress
+    state.user.telefonnummer = inputvalue.telefonnummer
+    state.user.postnummer = inputvalue.postnummer
+    state.user.email = inputvalue.email
+    state.user.stad = inputvalue.stad
   },
-  getUserInfo() {
-    return state.user.fornamn
-  },
+
+  // Filter funktionalitet
+  // async filterCategory(kategory) {
+  //   this.products = this.products.filter(
+  //     (item) => item.category === kategory
+  //   );
+  // },
 
   addItemCart: (state, payload) => {
     state.cart.push({
@@ -79,13 +90,6 @@ const state = {
   }
 };
 
-// Används ej. Kanske ta bort. inputkey,
-const setters = {
-  setUserInfo: (inputvalue) => {
-    state.user.fornamn = inputvalue;
-  }
-}
-
 const getters = {
 
   getCartItemCount(state) {
@@ -105,8 +109,8 @@ const getters = {
   },
 
   getUserInfo: () => {
-    return state.user.fornamn || "funkar ej"
+    return state.user || "funkar ej"
   }
 };
 
-export default createStore({ mutations, state, getters, strict: true, setters });
+export default createStore({ mutations, state, getters, strict: true });
