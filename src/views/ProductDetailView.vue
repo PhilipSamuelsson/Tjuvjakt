@@ -26,17 +26,21 @@
     <h4>Kategori: {{ varan.category }}</h4>
     <h4>(Antal) I lager: {{ varan.quantity }}</h4>
   </div>
-  <div class="similar-product-container">
-    <SmallProductContainer :similar-products="listOfSimilarProducts" />
-  </div>
+
+  <!-- <div class="similar-product-container">
+    <SmallProductContainer
+      @idFromSmallProduct="toProductdetail"
+      :similar-products="listOfSimilarProducts"
+    />
+  </div> -->
 </template>
 
 <script>
 import axios from "axios";
-import SmallProductContainer from "../components/SmallProductContainer.vue";
+// import SmallProductContainer from "../components/SmallProductContainer.vue";
 import { mapMutations } from "vuex";
 export default {
-  components: { SmallProductContainer },
+//   components: { SmallProductContainer },
   data() {
     return {
       listOfSimilarProducts: [],
@@ -56,6 +60,13 @@ export default {
     },
   },
   methods: {
+    toProductdetail(id) {
+      this.refreshComponent();
+      this.$router.push({
+        name: "productdetail",
+        params: { productID: id },
+      });
+    },
     async fetchProduct() {
       const result = await axios.get("/productapi.json", {
         headers: {
@@ -72,8 +83,13 @@ export default {
     remove() {
       this.removeFromCart(this.varan.id);
     },
+    refreshComponent() {
+        console.log('hej')
+      this.$forceUpdate();
+      console.log(this.$forceUpdate)
+    },
   },
-  mounted() {
+  created() {
     this.fetchProduct();
   },
 };
