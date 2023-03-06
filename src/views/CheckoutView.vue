@@ -30,11 +30,11 @@
 
   <form class="container-checkout">
     <p class="adress" style="
-                                            font-weight: 600;
-                                            padding: 20px;
-                                            margin-bottom: -15px;
-                                            margin-left: 10px;
-                                          ">Adress</p>
+        font-weight: 600;
+        padding: 20px;
+        margin-bottom: -15px;
+        margin-left: 10px;
+      ">Adress</p>
     <div class="col">
       <div>
         <label class="förnamn" for="fornamn">
@@ -69,7 +69,7 @@
         <RouterLink to="/summary" class="blueColor">
           <i class="bx bx-chevron-left" @click="goToNextPage" id="back-icon"></i>
         </RouterLink>
-        <RouterLink to="/checkoutsecond" class="blueColor">
+        <RouterLink to="/checkoutsecond" class="blueColor" v-bind:style="{ display: btnToggler ? 'none' : 'block' }">
           <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i>
         </RouterLink>
       </div>
