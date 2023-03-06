@@ -80,3 +80,11 @@ body{
     font-weight: bolder;
     text-align: center;
   }
+
+  .action-btn {
+    border: 3px solid #000000;
+    text-align: center;
+    background: transparent;
+    font-family: Outfit, sans-serif;
+    font-weight: 900;
+  }

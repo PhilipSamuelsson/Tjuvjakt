@@ -9,6 +9,7 @@ import CheckoutViewSecond from "../views/CheckoutViewSecond.vue";
 import CheckoutViewThird from "../views/CheckoutViewThird.vue";
 import CheckoutViewFourth from "../views/CheckoutViewFourth.vue";
 import SummaryView from "../views/SummaryView.vue";
+import CustomerSupportView from "../views/CustomerSupportView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -62,6 +63,11 @@ const router = createRouter({
       path: "/summary",
       name: "Summering",
       component: SummaryView,
+    },
+    {
+      path: "/custom-support",
+      name: "CustomerSupportView",
+      component: CustomerSupportView,
     },
   ],
 });
