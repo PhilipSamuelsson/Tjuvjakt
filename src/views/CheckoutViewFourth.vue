@@ -40,11 +40,7 @@
     rel="stylesheet"
   />
 
-  <div>
-    <RouterLink to="/checkoutThird" class="blueColor"
-      ><i @click="goToBack" class="bx bx-chevron-left" id="back-icon"></i
-    ></RouterLink>
-  </div>
+
 
   <div class="container">
     <div class="container-circles">
@@ -92,7 +88,11 @@
       <button class="köp-btn" type="submit">Köp</button></RouterLink
     >
   </div>
-
+  <div>
+    <RouterLink to="/checkoutThird" class="blueColor"
+      ><i @click="goToBack" class="bx bx-chevron-left" id="back-icon"></i
+    ></RouterLink>
+  </div>
 </template>
 
 <style scoped>
@@ -170,17 +170,20 @@ i[class="bx bx-check"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  margin: auto;
+
 }
 .content-one {
-  height: 200px;
-  width: 130px;
+  height: 10vh;
+  width: 8vw;
   border: 1px solid rgb(199, 199, 199);
   margin: 20px auto;
 }
 
 .content-two{
-  height: 200px;
-  width: 150px;
+  height: 10vh;
+  width: 15vw;
   border-bottom: 3px solid rgb(199, 199, 199);
   border-top: 3px solid rgb(199, 199, 199);
 }
@@ -204,7 +207,7 @@ hr {
   background-color: white;
 }
 .underline{
-  text-decoration: none; 
+  text-decoration: none;
 }
 .blueColor{
     color: black;
@@ -212,9 +215,11 @@ hr {
 
 #back-icon {
   position: absolute;
-  margin-top: 400px;
-  margin-left: 200px;
-  font-size: 80px;
+  top: 50%;
+  left: 0;
+/*   margin-top: 400px;
+  margin-left: 200px; */
+  font-size: 40px;
 }
 
 #next-icon {
@@ -249,13 +254,13 @@ hr {
     margin: 5px auto;
   }
   .container-info {
-    width: 90%;
+    width: 80%;
   }
   .content-one{
-    width: 80px;
+    width: 15vw;
   }
   .content-two{
-    width: 70px;
+    width: 20vw;
   }
 
   hr {
@@ -271,9 +276,12 @@ hr {
     font-size: 20px;
   }
   #back-icon {
-    font-size: 40px;
-    margin-left: -10px;
-    margin-top: 500px;
+/*     font-size: 40px;
+    position: absolute;
+    top: 50;
+    left: 0; */
+/*     margin-left: -10px;
+    margin-top: 500px; */
   }
 }
 </style>

@@ -19,15 +19,7 @@ export default {
     rel="stylesheet"
   />
 
-  <div>
-    <RouterLink to="/checkoutsecond" class="blueColor"
-      ><i class="bx bx-chevron-left" id="back-icon"></i
-    ></RouterLink>
 
-    <RouterLink to="/checkoutfourth" class="blueColor"
-      ><i class="bx bx-chevron-right" id="next-icon"></i
-    ></RouterLink>
-  </div>
 
   <div class="container">
     <div class="container-circles">
@@ -129,7 +121,7 @@ export default {
       <label class="cvc" for="cvc">
         <input v-model="cvc" type="text" id="cvc" placeholder="123 45"
       /></label>
-      <i class="bx bx-help-circle"></i>
+      <i class="bx bx-help-circle question"></i>
     </div>
 
     <p class="txt">Eller betala med våra partners in crime</p>
@@ -141,12 +133,22 @@ export default {
       <img src="../assets/img/swish.PNG" alt="Bild" />
     </div>
 
+    <div>
+    <RouterLink to="/checkoutsecond" class="blueColor"
+      ><i class="bx bx-chevron-left" id="back-icon"></i
+    ></RouterLink>
+
+    <RouterLink to="/checkoutfourth" class="blueColor"
+      ><i class="bx bx-chevron-right" id="next-icon"></i
+    ></RouterLink>
+  </div>
     <RouterLink to="/checkoutfourth" class="underline">
       <button @click="goToNextPage" class="vidare-btn" type="submit">
         Vidare
       </button></RouterLink
     >
   </div>
+
 </template>
 
 <style scoped>
@@ -214,6 +216,10 @@ i[class="bx bx-check"] {
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 
+.question {
+  padding-top: 31px;
+}
+
 label {
   position: relative;
   padding: 7px;
@@ -267,11 +273,15 @@ label::before {
 }
 .colTwo {
   margin-left: 30px;
+  display: flex;
+  justify-content: center;
 }
 .txt {
   font-weight: 600;
-  margin-left: 10px;
-  margin-top: 30px;
+/*   margin-left: 10px;
+  margin-top: 30px; */
+  text-align: center;
+  margin-top: 0.5em;
 }
 
 .img-betalningmetos {
@@ -302,18 +312,21 @@ label::before {
   color: black;
 }
 
-#back-icon {
-  position: absolute;
-  margin-top: 400px;
-  margin-left: 200px;
-  font-size: 80px;
+ #back-icon {
+ position: absolute;
+ top: 50%;
+ left: 2%;
+
+  font-size: 40px;
 }
 
 #next-icon {
   position: absolute;
-  margin-top: 400px;
-  margin-left: 1230px;
-  font-size: 80px;
+    top: 50%;
+    right: 2%;
+    font-size: 40px;
+
+  font-size: 40px;
 }
 
 @media screen and (min-width: 375px) and (max-width: 980px) {
@@ -342,7 +355,7 @@ label::before {
   }
 
   .container-info {
-    width: 85%;
+    width: 80%;
     height: 750px;
   }
 
@@ -353,12 +366,10 @@ label::before {
   #år,
   #månad,
   #cvc {
-    width: 140px;
+    width: 143px;
   }
 
-  /* #cvc {
-    margin-left: 0px;
-  } */
+
 
   .vidare-btn {
     height: 40px;
@@ -367,15 +378,21 @@ label::before {
   }
   #back-icon {
     font-size: 40px;
-    margin-left: 0;
-    margin-top: 400px;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+
+
+    /* margin-left: 0; */
+    /* margin-top: 400px; */
   }
   #next-icon{
-    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    font-size: 40px;
   }
 
-  .colTwo {
-    margin-left: 10px;
-  }
+
 }
 </style>

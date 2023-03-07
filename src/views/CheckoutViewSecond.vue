@@ -17,14 +17,7 @@ export default {
     rel="stylesheet"
   />
 
-  <div>
-    <router-link to="/checkout" class="blueColor"
-      ><i class="bx bx-chevron-left" id="back-icon"></i
-    ></router-link>
-    <RouterLink to="/CheckoutThird" class="blueColor">
-      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
-    ></RouterLink>
-  </div>
+
 
   <div class="container">
     <div class="container-circles">
@@ -60,15 +53,17 @@ export default {
           value="FraktmetodOne"
           name="x"
         />
-        <lable for="fraktmetodFirst">$2.99</lable>
+        <lable for="fraktmetodFirst">49 kr</lable>
       </div>
       <div>
         <p style="font-size: 11px; margin: auto">
-          USPS 1st Class With Tracking <br />(5-13 days) COVID19 Delay
+          DHL postombud <br />3-5 arbetsdagar
         </p>
       </div>
       <div><img src="../assets/img/Fraktmetod1.PNG" alt="" /></div>
     </div>
+
+
 
     <div class="col">
       <div>
@@ -79,17 +74,26 @@ export default {
           value="FraktmetodTwo"
           name="x"
         />
-        <lable for="fraktmetodSecond">$9.00</lable>
+        <lable for="fraktmetodSecond">99 kr</lable>
       </div>
       <div>
         <p style="font-size: 11px; margin: auto">
-          USPS PRIORITY With Tracking <br />
-          (5 - 10 days) COVID 19 Delay
+          Postnord Hemleverans<br />
+          3-5 arbetsdagar
         </p>
       </div>
       <div><img src="../assets/img/Fraktmetod2.PNG" alt="" /></div>
     </div>
   </div>
+  <div>
+    <router-link to="/checkout" class="blueColor"
+      ><i class="bx bx-chevron-left" id="back-icon"></i
+    ></router-link>
+    <RouterLink to="/CheckoutThird" class="blueColor">
+      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
+    ></RouterLink>
+  </div>
+
   <RouterLink to="/checkoutThird" class="underline">
     <button class="vidare-btn" type="submit">Vidare</button></RouterLink
   >
@@ -156,7 +160,7 @@ i[class="bx bx-check"] {
   flex-direction: column;
   margin: 100px auto; */
   margin: 100px auto;
-  width: 570px;
+  width: 60%;
   height: 220px;
   box-shadow: 1px 1px 2px 2px rgb(226, 226, 226);
 }
@@ -185,16 +189,16 @@ lable {
 
 #back-icon {
   position: absolute;
-  margin-top: 300px;
-  margin-left: 200px;
-  font-size: 80px;
+    left: 0;
+    top: 39%;
+    font-size: 40px;
 }
 
 #next-icon {
   position: absolute;
-  margin-top: 300px;
-  margin-left: 1230px;
-  font-size: 80px;
+    right: 0;
+    top: 39%;
+    font-size: 40px;
 }
 .vidare-btn {
   display: flex;
@@ -214,7 +218,7 @@ lable {
     color: black;
 }
 
-@media screen and (min-width: 375px) and (max-width: 980px) {
+@media screen and (min-width: 375px) and (max-width: 950px) {
   .circles {
     display: inline-block;
     height: 40px;
@@ -244,18 +248,23 @@ lable {
   }
 
   .col {
-    width: 300px;
+    width: 320px;
   }
 
   #back-icon {
+    position: absolute;
+    left: 0;
+    top: 39%;
     font-size: 40px;
-    margin-left: 0;
-    margin-top: 310px;
   }
   #next-icon{
+    position: absolute;
+    right: 0;
+    top: 39%;
     font-size: 40px;
     /* margin: -40px; */
-    margin: 310px 395px ;
+
+
   }
   .vidare-btn {
     height: 40px;
