@@ -1,17 +1,17 @@
 import { createStore } from "vuex";
 const mutations = {
-    // getNumberOfProducts(state, productId) {
-    //   let count = 0;
-    //   state.cart.forEach((item) => {
-    //       console.log(item)
-    //     if (productId === item.id) {
-    //       count += item.numberOfItem;
-    //     }
-    //   });
-    //   console.log(count)
-    //   return count;
+  // getNumberOfProducts(state, productId) {
+  //   let count = 0;
+  //   state.cart.forEach((item) => {
+  //       console.log(item)
+  //     if (productId === item.id) {
+  //       count += item.numberOfItem;
+  //     }
+  //   });
+  //   console.log(count)
+  //   return count;
 
-    // },
+  // },
 
   toggleCart(state) {
     state.showCart = !state.showCart;
@@ -39,8 +39,28 @@ const mutations = {
       if (payload.id === item.id) {
         item.numberOfItem++;
       }
-    });
+    })
   },
+
+  // setUserInfo: (inputvalue) => {
+  //   state.user.fornamn = inputvalue
+  // inputkey
+  setUserInfo(state, inputvalue) {
+    state.user.fornamn = inputvalue.fornamn
+    state.user.efternamn = inputvalue.efternamn
+    state.user.gatuadress = inputvalue.gatuadress
+    state.user.telefonnummer = inputvalue.telefonnummer
+    state.user.postnummer = inputvalue.postnummer
+    state.user.email = inputvalue.email
+    state.user.stad = inputvalue.stad
+  },
+
+  // Filter funktionalitet
+  // async filterCategory(kategory) {
+  //   this.products = this.products.filter(
+  //     (item) => item.category === kategory
+  //   );
+  // },
 
   addItemCart: (state, payload) => {
     state.cart.push({
@@ -59,6 +79,15 @@ const mutations = {
 const state = {
   showCart: false,
   cart: [],
+  user: {
+    fornamn: '',
+    efternamn: '',
+    gatuadress: '',
+    postnummer: '',
+    email: '',
+    telefonnummer: '',
+    stad: ''
+  }
 };
 
 const getters = {
@@ -78,6 +107,10 @@ const getters = {
     });
     return total;
   },
+
+  getUserInfo: () => {
+    return state.user || "funkar ej"
+  }
 };
 
 export default createStore({ mutations, state, getters, strict: true });

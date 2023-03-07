@@ -1,8 +1,5 @@
 <template>
-  <link
-    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
   <!-- <div>
     <i class="bx bx-chevron-left" id="back-icon"></i>
@@ -32,78 +29,56 @@
   </div>
 
   <form class="container-checkout">
-    <p class="adress"
-      style="
+    <p class="adress" style="
         font-weight: 600;
         padding: 20px;
         margin-bottom: -15px;
         margin-left: 10px;
-      "
-      >Adress</p>
+      ">Adress</p>
     <div class="col">
       <div>
-        <label class="förnamn" for="förnamn"
-          ><input
-            v-model="förnamn"
-            type="text"
-            id="förnamn"
-            placeholder="xx"
-            required
-        /></label>
+        <label class="förnamn" for="fornamn">
+          <input @input="checker" v-model="userComp.fornamn" type="text" id="förnamn" placeholder="xx" required />
+        </label>
       </div>
       <br />
 
       <div>
-        <label class="efternamn" for="efternamn"
-          ><input
-            v-model="efternamn"
-            type="text"
-            id="efternamn"
-            placeholder="xx"
-            required
-        /></label>
+        <label class="efternamn" for="efternamn">
+          <input @input="checker" v-model="userComp.efternamn" type="text" id="efternamn" placeholder="xx" required />
+        </label>
       </div>
     </div>
     <br />
 
     <div class="middle-content">
       <div>
-        <label class="email" for="email"
-          ><input
-            v-model="email"
-            type="email"
-            id="email"
-            placeholder="username@gmail.com"
-            required
-        /></label>
+        <label class="email" for="email">
+          <input @input="checker" v-model="userComp.email" type="email" id="email" placeholder="username@gmail.com"
+            required />
+        </label>
       </div>
       <br />
 
-      <label class="telefonnummer" for="telefonnummer"
-        ><input
-          v-model="telefonnummer"
-          type="tel"
-          id="telefonnummer"
-          placeholder="+ 123 456 789"
-          required
-      /></label>
+      <label class="telefonnummer" for="telefonnummer">
+        <input @input="checker" v-model="userComp.telefonnummer" type="tel" id="telefonnummer" placeholder="+ 123 456 789"
+          required />
+      </label>
       <br />
       <div>
-    <i class="bx bx-chevron-left" id="back-icon"></i>
-    <RouterLink to="/checkoutsecond" class="blueColor">
-      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
-    ></RouterLink>
-  </div>
+        <RouterLink to="/summary" class="blueColor">
+          <i class="bx bx-chevron-left" @click="goToNextPage" id="back-icon"></i>
+        </RouterLink>
+        <RouterLink to="/checkoutsecond" class="blueColor" v-bind:style="{ display: btnToggler ? 'none' : 'block' }">
+          <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i>
+        </RouterLink>
+      </div>
 
       <div>
-        <label class="gatuadress" for="gatuadress"
-          ><input
-            v-model="gatuadress"
-            type="text"
-            id="gatuadress"
-            placeholder="Hägerneholmsvägen"
-            required
-        /></label>
+        <label class="gatuadress" for="gatuadress">
+          <input @input="checker" v-model="userComp.gatuadress" type="text" id="gatuadress"
+            placeholder="Hägerneholmsvägen" required />
+        </label>
       </div>
     </div>
     <br />
@@ -111,55 +86,63 @@
     <div class="col">
       <div>
         <label class="stad" for="stad">
-          <input
-            v-model="stad"
-            type="text"
-            id="stad"
-            placeholder="Stockholm"
-            required
-        /></label>
+          <input @input="checker" v-model="userComp.stad" type="text" id="stad" placeholder="Stockholm" required />
+        </label>
       </div>
       <br />
 
       <div>
-        <label class="postnummer" for="postnummer"
-          ><input
-            v-model="postnummer"
-            type="text"
-            id="postnummer"
-            placeholder="123 45"
-            required
-        /></label>
+        <label class="postnummer" for="postnummer">
+          <input @input="checker" v-model="userComp.postnummer" type="text" id="postnummer" placeholder="123 45"
+            required />
+        </label>
       </div>
     </div>
   </form>
-
   <RouterLink to="/checkoutsecond" class="underline">
-    <button @click="showInfo" class="vidare-btn" type="submit">
+    <button @click="updateUserInfo()" class="vidare-btn" type="submit" v-bind:disabled="btnToggler">
       Vidare
-    </button></RouterLink
-  >
+    </button>
+  </RouterLink>
 
   <!-- h1  and h2 for test -->
-  <h1>{{ förnamn }} {{ efternamn }}</h1>
-  <h2>{{ gatuadress }}</h2>
+  <h1>{{ userComp.fornamn }} {{ userComp.efternamn }}</h1>
+  <h2> {{ getUserInfo }}</h2>
 </template>
 
 <script>
+import { mapMutations, mapGetters } from 'vuex';
 // import axios from "axios";
 import CheckoutViewFourth from "./CheckoutViewFourth.vue";
 export default {
   name: "checkoutView",
+  computed: {
+    ...mapGetters(['getUserInfo']),
+    checker() {
+      if (this.userComp.fornamn !== "" && this.userComp.efternamn !== "" && this.userComp.email !== "" && this.userComp.telefonnummer !== "" && this.userComp.gatuadress !== "" && this.userComp.stad !== "" && this.userComp.postnummer !== "") {
+        console.log("Sätter toggler till falskt (ska synas)")
+        this.btnToggler = false
+        console.log("just nu är knapp: ", this.btnToggler)
+      }
+      else {
+        this.btnToggler = true
+        console.log("Knapp är fortf TRUE")
+      }
+    }
+  },
   data() {
     return {
       // vidare: false,
-      förnamn: "",
-      efternamn: "",
-      email: "",
-      telefonnummer: "",
-      gatuadress: "",
-      stad: "",
-      postnummer: "",
+      userComp: {
+        fornamn: "",
+        efternamn: "",
+        email: "",
+        telefonnummer: "",
+        gatuadress: "",
+        stad: "",
+        postnummer: ""
+      },
+      btnToggler: true
     };
   },
 
@@ -177,18 +160,23 @@ export default {
   //   },
 
   methods: {
-    showInfo() {
-      // let names = this.förnamn + " " + this.efternamn;
-      this.$route.push({
-        name: CheckoutViewFourth,
-        params: {
-          förnamn: this.förnamn,
-          efternamn: this.efternamn,
-          gatuadress: this.gatuadress,
-        },
-      });
-    },
-  },
+    ...mapMutations(['setUserInfo']),
+    updateUserInfo() {
+      this.setUserInfo(this.userComp);
+    }
+  }
+  // showInfo() {
+  // let names = this.förnamn + " " + this.efternamn;
+  //     this.$route.push({
+  //       name: CheckoutViewFourth,
+  //       params: {
+  //         förnamn: this.förnamn,
+  //         efternamn: this.efternamn,
+  //         gatuadress: this.gatuadress,
+  //       },
+  //     });
+  //   },
+  // },
   // },
   // goToNextPage() {
   //   this.$router.push("/checkoutViewSecond");
@@ -203,6 +191,7 @@ export default {
   align-items: center;
   display: flex;
 }
+
 .circles {
   display: inline-block;
   align-items: center;
@@ -238,12 +227,14 @@ i[class="bx bx-check"] {
 #circle-correctFour {
   background-color: rgb(229, 242, 250);
 }
+
 .container-checkout {
   margin: auto;
   box-shadow: rgb(233, 233, 233) 0px 0px 2px 2px;
   height: 600px;
   width: 570px;
 }
+
 .col {
   display: flex;
   align-items: center;
@@ -256,7 +247,8 @@ label {
   text-align: center;
   margin-top: 25px;
 }
-label::before{
+
+label::before {
   position: absolute;
   top: -10px;
   left: 20px;
@@ -267,21 +259,27 @@ label::before{
 .förnamn::before {
   content: "Förnamn";
 }
+
 .efternamn::before {
   content: "Efternamn";
 }
+
 .email::before {
   content: "Email";
 }
+
 .telefonnummer::before {
   content: "Telefonnummer";
 }
+
 .gatuadress::before {
   content: "Gatuadress";
 }
+
 .stad::before {
   content: "Stad";
 }
+
 .postnummer::before {
   content: "Postnummer";
 }
@@ -303,6 +301,7 @@ label::before{
   height: 40px;
   padding: 20px;
 }
+
 .middle-content {
   display: grid;
   justify-content: center;
@@ -325,6 +324,7 @@ label::before{
   margin-left: 650px; */
   font-size: 40px;
 }
+
 .vidare-btn {
   display: flex;
   justify-content: center;
@@ -336,9 +336,11 @@ label::before{
   font-size: 25px;
   background-color: white;
 }
+
 .underline {
   text-decoration: none;
 }
+
 .blueColor {
   color: black;
 }
@@ -357,6 +359,7 @@ label::before{
   #icon-toNextCircle {
     font-size: 30px;
   }
+
   #icone-one,
   #icone-three,
   #icone-two,
@@ -395,12 +398,13 @@ label::before{
 
   #back-icon {
     font-size: 35px;
-    margin:  -40px;
+    margin: -40px;
   }
-  #next-icon{
-  font-size: 35px;
-  margin:  -40px;
-  margin-left: 310px;
-}
+
+  #next-icon {
+    font-size: 35px;
+    margin: -40px;
+    margin-left: 310px;
+  }
 }
 </style>
