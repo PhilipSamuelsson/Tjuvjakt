@@ -1,23 +1,29 @@
 <script>
+import { mapMutations, mapGetters } from 'vuex';
 export default {
   data() {
     return {
-      selected:'',
-      namnPåKort: "",
-      kortnummer: "",
-      år: "",
-      månad: "",
-      cvc: "",
+      selected: '',
+      user: {
+        namnPåKort: "",
+        kortnummer: "",
+        år: "2015",
+        månad: "Januari",
+        cvc: "",
+      }
     };
   },
+  methods: {
+    ...mapMutations(['setBankInfo']),
+    updateBankInfo() {
+      this.setBankInfo(this.user);
+    }
+  }
 };
 </script>
 
 <template>
-  <link
-    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
 
 
@@ -45,44 +51,31 @@ export default {
   </div>
 
   <div class="container-info">
-    <p
-      style="
-        font-weight: 600;
-        padding: 20px;
-        margin-bottom: -15px;
-        margin-left: -12px;
-      "
-    >
+    <p style="
+            font-weight: 600;
+            padding: 20px;
+            margin-bottom: -15px;
+            margin-left: -12px;
+          ">
       Betalningmetod
     </p>
     <div class="first-content">
       <div>
         <label class="namnPåKort" for="namnPåKort">
-          <input
-            v-model="namnPåKort"
-            type="text"
-            id="namnPåKort"
-            placeholder="xxx xxx xxx"
-            required
-          />
+          <input v-model="user.namnPåKort" type="text" id="namnPåKort" placeholder="xxx xxx xxx" required />
         </label>
       </div>
       <div>
         <label class="kortnummer" for="kortnummer">
-          <input
-            v-model="kortnummer"
-            type="text"
-            id="kortnummer"
-            placeholder="1111 222 33333 444 55555"
-            required
-        /></label>
+          <input v-model="user.kortnummer" type="text" id="kortnummer" placeholder="1111 222 33333 444 55555"
+            required /></label>
       </div>
     </div>
 
     <div class="col">
       <div>
         <label class="år" for="år">
-          <select id="år" name="år" >
+          <select id="år" name="år" v-model="user.år">
             <option value="2015">2015</option>
             <option value="2016">2016</option>
             <option value="2017">2017</option>
@@ -99,7 +92,7 @@ export default {
 
       <div>
         <label class="månad" for="månad">
-          <select  id="månad" name="månad"  placeholder="Augusti">
+          <select id="månad" name="månad" placeholder="Augusti" v-model="user.månad">
             <option value="Januari">Januari</option>
             <option value="Februari">Februari</option>
             <option value="Mars">Mars</option>
@@ -112,15 +105,13 @@ export default {
             <option value="Oktober">Oktober</option>
             <option value="November">November</option>
             <option value="December">December</option>
-          </select></label
-        >
+          </select></label>
       </div>
     </div>
 
     <div class="colTwo">
       <label class="cvc" for="cvc">
-        <input v-model="cvc" type="text" id="cvc" placeholder="123 45"
-      /></label>
+        <input v-model="user.cvc" type="text" id="cvc" placeholder="123 45" /></label>
       <i class="bx bx-help-circle question"></i>
     </div>
 
@@ -134,21 +125,16 @@ export default {
     </div>
 
     <div>
-    <RouterLink to="/checkoutsecond" class="blueColor"
-      ><i class="bx bx-chevron-left" id="back-icon"></i
-    ></RouterLink>
+      <RouterLink to="/checkoutsecond" class="blueColor"><i class="bx bx-chevron-left" id="back-icon"></i></RouterLink>
 
-    <RouterLink to="/checkoutfourth" class="blueColor"
-      ><i class="bx bx-chevron-right" id="next-icon"></i
-    ></RouterLink>
-  </div>
+      <RouterLink to="/checkoutfourth" class="blueColor"><i class="bx bx-chevron-right" id="next-icon"></i></RouterLink>
+    </div>
     <RouterLink to="/checkoutfourth" class="underline">
-      <button @click="goToNextPage" class="vidare-btn" type="submit">
+      <button class="vidare-btn" type="submit" @click="updateBankInfo()">
         Vidare
-      </button></RouterLink
-    >
+      </button>
+    </RouterLink>
   </div>
-
 </template>
 
 <style scoped>
@@ -226,6 +212,7 @@ label {
   text-align: center;
   margin-top: 25px;
 }
+
 label::before {
   position: absolute;
   top: -10px;
@@ -237,15 +224,19 @@ label::before {
 .namnPåKort::before {
   content: "Namn på kort";
 }
+
 .kortnummer::before {
   content: "Kortnummer";
 }
+
 .år::before {
   content: "År";
 }
+
 .månad::before {
   content: "Månad";
 }
+
 .cvc::before {
   content: "CVC";
 }
@@ -254,6 +245,7 @@ label::before {
   display: grid;
   justify-content: center;
 }
+
 #namnPåKort,
 #kortnummer {
   width: 500px;
@@ -265,20 +257,23 @@ label::before {
   display: flex;
   justify-content: center;
 }
+
 #år,
 #månad,
 #cvc {
   height: 40px;
   width: 245px;
 }
+
 .colTwo {
   margin-left: 30px;
   display: flex;
   justify-content: center;
 }
+
 .txt {
   font-weight: 600;
-/*   margin-left: 10px;
+  /*   margin-left: 10px;
   margin-top: 30px; */
   text-align: center;
   margin-top: 0.5em;
@@ -289,6 +284,7 @@ label::before {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
 }
+
 .img-betalningmetos img {
   margin: 10px auto;
 }
@@ -305,26 +301,28 @@ label::before {
   text-decoration: none;
   background-color: white;
 }
+
 .underline {
   text-decoration: none;
 }
+
 .blueColor {
   color: black;
 }
 
- #back-icon {
- position: absolute;
- top: 50%;
- left: 2%;
+#back-icon {
+  position: absolute;
+  top: 50%;
+  left: 2%;
 
   font-size: 40px;
 }
 
 #next-icon {
   position: absolute;
-    top: 50%;
-    right: 2%;
-    font-size: 40px;
+  top: 50%;
+  right: 2%;
+  font-size: 40px;
 
   font-size: 40px;
 }
@@ -346,6 +344,7 @@ label::before {
   #icon-toNextCircleThree {
     font-size: 30px;
   }
+
   #icone-one,
   #icone-three,
   #icone-two,
@@ -363,6 +362,7 @@ label::before {
   #kortnummer {
     width: 300px;
   }
+
   #år,
   #månad,
   #cvc {
@@ -376,6 +376,7 @@ label::before {
     width: 100px;
     font-size: 20px;
   }
+
   #back-icon {
     font-size: 40px;
     position: absolute;
@@ -386,7 +387,8 @@ label::before {
     /* margin-left: 0; */
     /* margin-top: 400px; */
   }
-  #next-icon{
+
+  #next-icon {
     position: absolute;
     top: 50%;
     right: 2%;

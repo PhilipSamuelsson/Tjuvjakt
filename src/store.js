@@ -42,9 +42,6 @@ const mutations = {
     })
   },
 
-  // setUserInfo: (inputvalue) => {
-  //   state.user.fornamn = inputvalue
-  // inputkey
   setUserInfo(state, inputvalue) {
     state.user.fornamn = inputvalue.fornamn
     state.user.efternamn = inputvalue.efternamn
@@ -55,12 +52,17 @@ const mutations = {
     state.user.stad = inputvalue.stad
   },
 
-  // Filter funktionalitet
-  // async filterCategory(kategory) {
-  //   this.products = this.products.filter(
-  //     (item) => item.category === kategory
-  //   );
-  // },
+  setBankInfo(state, inputvalue) {
+    state.user.namnPåKort = inputvalue.namnPåKort
+    state.user.kortnummer = inputvalue.kortnummer
+    state.user.år = inputvalue.år
+    state.user.månad = inputvalue.månad
+    state.user.cvc = inputvalue.cvc
+  },
+
+  setFraktMetod(state, payload) {
+    state.user.fraktmetod = payload
+  },
 
   addItemCart: (state, payload) => {
     state.cart.push({
@@ -86,7 +88,13 @@ const state = {
     postnummer: '',
     email: '',
     telefonnummer: '',
-    stad: ''
+    stad: '',
+    fraktmetod: "",
+    namnPåKort: "",
+    kortnummer: "",
+    år: "",
+    månad: "",
+    cvc: "",
   }
 };
 
