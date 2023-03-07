@@ -82,6 +82,7 @@ body{
   }
 
   .action-btn {
+    padding: .3rem;
     border: 3px solid #000000;
     text-align: center;
     background: transparent;
