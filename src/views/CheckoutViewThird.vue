@@ -117,11 +117,29 @@ export default {
 
     <p class="txt">Eller betala med våra partners in crime</p>
 
-    <div class="img-betalningmetos">
-      <img src="../assets/img/klarna.PNG" alt="Bild" />
-      <img src="../assets/img/paypal.PNG" alt="Bild" />
-      <img src="../assets/img/bank.PNG" alt="Bild" />
-      <img src="../assets/img/swish.PNG" alt="Bild" />
+<div class="container-betalningmetos" style="margin-top: -30px;">
+    <div class="col">
+   <label for="klarna"> 
+   <input v-model="klarna" type="radio" id="klarna" name="betalningmetos">
+    Klarna</label>
+
+   <label for="paypal"> 
+   <input v-model="paypal" type="radio" id="paypal" name="betalningmetos">
+    PayPal</label>
+  </div>
+
+    <div class="col">
+     <label for="bank"  style="right: 10px;">
+     <input v-model="bank" type="radio" id="bank" name="betalningmetos">
+   Bank </label>
+
+   <label for="swish" style="right: -2px;"> <input v-model="swish" type="radio" id="swish" name="betalningmetos">
+    Swish</label>
+</div>
+    
+
+
+
     </div>
 
     <div>
@@ -253,7 +271,7 @@ label::before {
   padding: 20px;
 }
 
-.col {
+.container-info .col {
   display: flex;
   justify-content: center;
 }
@@ -276,17 +294,7 @@ label::before {
   /*   margin-left: 10px;
   margin-top: 30px; */
   text-align: center;
-  margin-top: 0.5em;
-}
-
-.img-betalningmetos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-}
-
-.img-betalningmetos img {
-  margin: 10px auto;
+  margin-top: 2em;
 }
 
 .vidare-btn {
