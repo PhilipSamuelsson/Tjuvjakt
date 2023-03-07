@@ -310,16 +310,20 @@ label::before{
 
 #back-icon {
   position: absolute;
-  margin-top: -40px;
-  margin-left: -210px;
-  font-size: 80px;
+  top: 50;
+  left: 10%;
+  /* margin-top: -40px;
+  margin-left: -210px; */
+  font-size: 40px;
 }
 
 #next-icon {
   position: absolute;
-  margin-top: -33px;
-  margin-left: 650px;
-  font-size: 80px;
+  top: 50;
+  right: 10%;
+/*   margin-top: -33px;
+  margin-left: 650px; */
+  font-size: 40px;
 }
 .vidare-btn {
   display: flex;
@@ -342,7 +346,7 @@ label::before{
 /* input:focus {
   border: none;
 }*/
-@media screen and (min-width: 375px) and (max-width: 980px) {
+@media screen and (min-width: 375px)  {
   .circles {
     display: inline-block;
     height: 40px;
@@ -379,7 +383,7 @@ label::before{
   }
 
   .container-checkout {
-    width: 85%;
+    width: 80%;
     height: 600px;
   }
 
