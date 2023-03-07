@@ -40,8 +40,6 @@
     rel="stylesheet"
   />
 
-
-
   <div class="container">
     <div class="container-circles">
       <div class="circles" id="circle-correctOne">
@@ -65,7 +63,6 @@
     </div>
   </div>
 
-
   <div class="container-info">
     <p style="font-weight: 600; padding: 20px">Bekräfta köp</p>
     <div class="col">
@@ -77,7 +74,7 @@
 
     <div class="content">
       <hr />
-      <p>Namn: {{ förnamn }} {{ efternamn }}</p>
+      <p>Namn: {{ $store.state.fornamn }}</p>
       <hr />
       <p>Leveransadress: {{ gatuadress }}</p>
       <hr />
@@ -162,7 +159,6 @@ i[class="bx bx-check"] {
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 
-
 .content {
   padding: 40px;
 }
@@ -172,7 +168,6 @@ i[class="bx bx-check"] {
   align-items: center;
   width: 90%;
   margin: auto;
-
 }
 .content-one {
   height: 10vh;
@@ -181,7 +176,7 @@ i[class="bx bx-check"] {
   margin: 20px auto;
 }
 
-.content-two{
+.content-two {
   height: 10vh;
   width: 15vw;
   border-bottom: 3px solid rgb(199, 199, 199);
@@ -206,18 +201,18 @@ hr {
   font-size: 30px;
   background-color: white;
 }
-.underline{
+.underline {
   text-decoration: none;
 }
-.blueColor{
-    color: black;
+.blueColor {
+  color: black;
 }
 
 #back-icon {
   position: absolute;
   top: 50%;
   left: 0;
-/*   margin-top: 400px;
+  /*   margin-top: 400px;
   margin-left: 200px; */
   font-size: 40px;
 }
@@ -256,17 +251,17 @@ hr {
   .container-info {
     width: 80%;
   }
-  .content-one{
+  .content-one {
     width: 15vw;
   }
-  .content-two{
+  .content-two {
     width: 20vw;
   }
 
   hr {
     width: 250px;
   }
-  .content p{
+  .content p {
     font-size: 10px;
     font-weight: 800;
   }
@@ -276,11 +271,11 @@ hr {
     font-size: 20px;
   }
   #back-icon {
-/*     font-size: 40px;
+    /*     font-size: 40px;
     position: absolute;
     top: 50;
     left: 0; */
-/*     margin-left: -10px;
+    /*     margin-left: -10px;
     margin-top: 500px; */
   }
 }

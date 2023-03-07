@@ -39,29 +39,29 @@ const mutations = {
       if (payload.id === item.id) {
         item.numberOfItem++;
       }
-    })
+    });
   },
 
   setUserInfo(state, inputvalue) {
-    state.user.fornamn = inputvalue.fornamn
-    state.user.efternamn = inputvalue.efternamn
-    state.user.gatuadress = inputvalue.gatuadress
-    state.user.telefonnummer = inputvalue.telefonnummer
-    state.user.postnummer = inputvalue.postnummer
-    state.user.email = inputvalue.email
-    state.user.stad = inputvalue.stad
+    state.user.fornamn = inputvalue.fornamn;
+    state.user.efternamn = inputvalue.efternamn;
+    state.user.gatuadress = inputvalue.gatuadress;
+    state.user.telefonnummer = inputvalue.telefonnummer;
+    state.user.postnummer = inputvalue.postnummer;
+    state.user.email = inputvalue.email;
+    state.user.stad = inputvalue.stad;
   },
 
   setBankInfo(state, inputvalue) {
-    state.user.namnPåKort = inputvalue.namnPåKort
-    state.user.kortnummer = inputvalue.kortnummer
-    state.user.år = inputvalue.år
-    state.user.månad = inputvalue.månad
-    state.user.cvc = inputvalue.cvc
+    state.user.namnPåKort = inputvalue.namnPåKort;
+    state.user.kortnummer = inputvalue.kortnummer;
+    state.user.år = inputvalue.år;
+    state.user.månad = inputvalue.månad;
+    state.user.cvc = inputvalue.cvc;
   },
 
   setFraktMetod(state, payload) {
-    state.user.fraktmetod = payload
+    state.user.fraktmetod = payload;
   },
 
   addItemCart: (state, payload) => {
@@ -82,24 +82,23 @@ const state = {
   showCart: false,
   cart: [],
   user: {
-    fornamn: '',
-    efternamn: '',
-    gatuadress: '',
-    postnummer: '',
-    email: '',
-    telefonnummer: '',
-    stad: '',
+    fornamn: "hej",
+    efternamn: "",
+    gatuadress: "",
+    postnummer: "",
+    email: "",
+    telefonnummer: "",
+    stad: "",
     fraktmetod: "",
     namnPåKort: "",
     kortnummer: "",
     år: "",
     månad: "",
     cvc: "",
-  }
+  },
 };
 
 const getters = {
-
   getCartItemCount(state) {
     let count = 0;
     state.cart.forEach((item) => {
@@ -117,8 +116,8 @@ const getters = {
   },
 
   getUserInfo: () => {
-    return state.user || "funkar ej"
-  }
+    return state.user || "funkar ej";
+  },
 };
 
 export default createStore({ mutations, state, getters, strict: true });
