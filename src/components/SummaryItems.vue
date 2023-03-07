@@ -2,8 +2,7 @@
   <div class="sum">
     <h4>{{ productTitle }}</h4>
     <img :src="productImg" class="img-fluid" alt="..." >
-    <p v-if="beskr!==''">{{  beskr  }}</p>
-    <p v-else>{{  lorem  }}</p>
+
     <p> Pris {{ productPrice }}:- </p>
     <div class="increment-container">
         <button @click="decrement" class="increment-btn">
@@ -141,6 +140,7 @@ img {
     }
     .sum {
         width: 90%;
+        margin-left: 10vw;
     }
 }
 
@@ -151,6 +151,13 @@ img {
     .sum {
         width: 60%;
     }
+}
+
+@media (min-width: 950px) {
+  .sum {
+    width: 60%;
+    margin-left: 20vw;
+  }
 }
 
 .increment-btn {

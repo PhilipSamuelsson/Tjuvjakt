@@ -71,7 +71,7 @@ export default {
           DHL postombud <br />3-5 arbetsdagar
         </p>
       </div>
-      <div><img src="../assets/img/Fraktmetod1.PNG" alt="" /></div>
+      <div><img class="img-dhl" src="../assets/img/DHL.png" alt="" /></div>
     </div>
 
     <div class="col">
@@ -92,7 +92,7 @@ export default {
           3-5 arbetsdagar
         </p>
       </div>
-      <div><img src="../assets/img/Fraktmetod2.PNG" alt="" /></div>
+      <div><img class="img-dhl" src="../assets/img/postnord.webp" alt="" /></div>
     </div>
   </div>
   <div>
@@ -114,6 +114,11 @@ export default {
 </template>
 
 <style scoped>
+
+.img-dhl {
+  width: 2em;
+  margin-right: 1em;
+}
 .col:focus {
   background-color: blue;
 }
