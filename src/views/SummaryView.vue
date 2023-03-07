@@ -1,4 +1,5 @@
 <template>
+  <h2>Översikt</h2>
   <div class="kontägner">
     <SummaryItems
       v-for="cartItem in cartList"
@@ -17,7 +18,7 @@
   <div class="till-betalning">
     <p><b>Totalkostnad:</b> {{ getCartTotal }}:-</p>
     <RouterLink to="/checkout">
-      <button class="button-89" role="button">Till kassan</button>
+      <button class="button-89" role="button">Till betalning</button>
     </RouterLink>
   </div>
 </template>
@@ -51,21 +52,38 @@ export default {
 </script>
 
 <style scoped>
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  font-weight: 700;
+}
 .till-betalning {
-  width: 60%;
-  margin: 0 auto;
+  padding-left: 50%;
   margin-top: 30px;
 }
 .kontägner {
   width: 80%;
-  padding-top: 100px;
 }
 
-.button-89 {
-  --b: 3px; /* border thickness */
-  --s: 0.45em; /* size of
+@media (min-width: 950px) {
+  .kontägner {
+    width: 50%;
+  }
+  .till-betalning {
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    padding-right: 15vw;
+  }
+}
+/* .button-89 { */
+ /*  --b: 3px; */ /* border thickness */
+ /*  --s: 0.45em; */ /* size of
 the corner */
-  --color: #373b44;
+/*   --color: #373b44;
   padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
   color: var(--color);
   --_p: var(--s);
@@ -83,17 +101,25 @@ the corner */
   border: 0;
   user-select: none;
   -webkit-user-select: none;
-  touch-action: manipulation;
-}
-.button-89:hover,
-.button-89:focus-visible {
+  touch-action: manipulation; */
+/* } */
+/* .button-89:hover, */
+/* .button-89:focus-visible {
   --_p: 0px;
   outline-color: var(--color);
   outline-offset: 0.05em;
-}
-.button-89:active {
+} */
+/* .button-89:active {
   background: var(--color);
   color: #fff;
+} */
+.button-89 {
+  border: 3px solid #000000;
+    text-align: center;
+    background: transparent;
+    font-family: Outfit, sans-serif;
+    font-weight: 900;
+    padding: 0.5em 1em;
 }
 </style>
 
