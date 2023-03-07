@@ -32,6 +32,32 @@
 //     };
 //   },
 // };
+import ConfirmSummary from "../components/ConfirmSummary.vue";
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters(["getCartTotal"]),
+  },
+
+  components: {
+    ConfirmSummary,
+  },
+
+  mounted() {
+    this.fetchProducts();
+  },
+  methods: {
+    fetchProducts() {
+      this.cartList = this.$store.state.cart;
+    },
+  },
+  data() {
+    return {
+      cartList: [],
+    };
+  },
+};
 </script>
 
 <template>
@@ -65,20 +91,31 @@
 
   <div class="container-info">
     <p style="font-weight: 600; padding: 20px">Bekräfta köp</p>
-    <div class="col">
-      <div class="content-one"></div>
+    <div class="col flex-row">
+      <ConfirmSummary
+        v-for="cartItem in cartList"
+        :key="cartItem.id"
+        :id="cartItem.id"
+        :title="cartItem.title"
+        :image="cartItem.image"
+        :price="cartItem.price"
+        :product="cartItem"
+      />
+      <!--       <div class="content-one"></div>
       <div class="content-two"></div>
       <div class="content-one"></div>
-      <div class="content-two"></div>
+      <div class="content-two"></div> -->
     </div>
 
     <div class="content">
       <hr />
-      <p>Namn: {{ $store.state.fornamn }}</p>
+      <p>
+        Namn: {{ $store.state.user.fornamn }} {{ $store.state.user.efternamn }}
+      </p>
       <hr />
-      <p>Leveransadress: {{ gatuadress }}</p>
+      <p>Leveransadress: {{ $store.state.user.gatuadress }}</p>
       <hr />
-      <p>Betalningsmetod:</p>
+      <p>Fraktmetod: {{ $store.state.user.fraktmetod }}</p>
       <hr />
     </div>
     <RouterLink to="/checkoutfourth" class="underline">

@@ -1,27 +1,28 @@
 <script>
-import { mapMutations, mapGetters } from 'vuex';
+import { mapMutations, mapGetters } from "vuex";
 export default {
   data() {
     return {
       väljFraktmetod: "FraktmetodOne",
-      fraktmetod: "FraktmetodOne"
+      fraktmetod: "FraktmetodOne",
       // goToNextPage() {
       //   this.$router.push("/checkoutThird");
       // },
     };
   },
   methods: {
-    ...mapMutations(['setFraktMetod']),
+    ...mapMutations(["setFraktMetod"]),
     updateFraktMetod() {
       this.setFraktMetod(this.fraktmetod);
-    }
-  }
+    },
+  },
 };
 </script>
 <template>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
-
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
 
   <div class="container">
     <div class="container-circles">
@@ -50,7 +51,13 @@ export default {
     <h6 style="padding: 10px; margin-left: 20px">Fraktmetod</h6>
     <div class="col">
       <div class="aa">
-        <input v-model="fraktmetod" id="fraktmetodFirst" type="radio" value="FraktmetodOne" name="x" />
+        <input
+          v-model="fraktmetod"
+          id="fraktmetodFirst"
+          type="radio"
+          value="DHL"
+          name="x"
+        />
         <lable for="fraktmetodFirst">49 kr</lable>
       </div>
       <div>
@@ -61,11 +68,15 @@ export default {
       <div><img src="../assets/img/Fraktmetod1.PNG" alt="" /></div>
     </div>
 
-
-
     <div class="col">
       <div>
-        <input v-model="fraktmetod" id="fraktmetodSecond" type="radio" value="FraktmetodTwo" name="x" />
+        <input
+          v-model="fraktmetod"
+          id="fraktmetodSecond"
+          type="radio"
+          value="Postnord"
+          name="x"
+        />
         <lable for="fraktmetodSecond">99 kr</lable>
       </div>
       <div>
@@ -78,14 +89,18 @@ export default {
     </div>
   </div>
   <div>
-    <router-link to="/checkout" class="blueColor"><i class="bx bx-chevron-left" id="back-icon"></i></router-link>
+    <router-link to="/checkout" class="blueColor"
+      ><i class="bx bx-chevron-left" id="back-icon"></i
+    ></router-link>
     <RouterLink to="/CheckoutThird" class="blueColor">
       <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i>
     </RouterLink>
   </div>
 
   <RouterLink to="/checkoutThird" class="underline">
-    <button class="vidare-btn" type="submit" @click="updateFraktMetod()">Vidare</button>
+    <button class="vidare-btn" type="submit" @click="updateFraktMetod()">
+      Vidare
+    </button>
   </RouterLink>
 </template>
 
@@ -265,8 +280,6 @@ lable {
     top: 39%;
     font-size: 40px;
     /* margin: -40px; */
-
-
   }
 
   .vidare-btn {
