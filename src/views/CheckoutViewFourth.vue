@@ -32,6 +32,32 @@
 //     };
 //   },
 // };
+import ConfirmSummary from "../components/ConfirmSummary.vue";
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters(["getCartTotal"]),
+  },
+
+  components: {
+    ConfirmSummary,
+  },
+
+  mounted() {
+    this.fetchProducts();
+  },
+  methods: {
+    fetchProducts() {
+      this.cartList = this.$store.state.cart;
+    },
+  },
+  data() {
+    return {
+      cartList: [],
+    };
+  },
+};
 </script>
 
 <template>
@@ -39,8 +65,6 @@
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
     rel="stylesheet"
   />
-
-
 
   <div class="container">
     <div class="container-circles">
@@ -65,23 +89,33 @@
     </div>
   </div>
 
-
   <div class="container-info">
     <p style="font-weight: 600; padding: 20px">Bekräfta köp</p>
-    <div class="col">
-      <div class="content-one"></div>
+    <div class="col flex-row">
+      <ConfirmSummary
+        v-for="cartItem in cartList"
+        :key="cartItem.id"
+        :id="cartItem.id"
+        :title="cartItem.title"
+        :image="cartItem.image"
+        :price="cartItem.price"
+        :product="cartItem"
+      />
+      <!--       <div class="content-one"></div>
       <div class="content-two"></div>
       <div class="content-one"></div>
-      <div class="content-two"></div>
+      <div class="content-two"></div> -->
     </div>
 
     <div class="content">
       <hr />
-      <p>Namn: {{ förnamn }} {{ efternamn }}</p>
+      <p>
+        Namn: {{ $store.state.user.fornamn }} {{ $store.state.user.efternamn }}
+      </p>
       <hr />
-      <p>Leveransadress: {{ gatuadress }}</p>
+      <p>Leveransadress: {{ $store.state.user.gatuadress }}</p>
       <hr />
-      <p>Betalningsmetod:</p>
+      <p>Fraktmetod: {{ $store.state.user.fraktmetod }}</p>
       <hr />
     </div>
     <RouterLink to="/checkoutfourth" class="underline">
@@ -162,7 +196,6 @@ i[class="bx bx-check"] {
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 
-
 .content {
   padding: 40px;
 }
@@ -172,7 +205,6 @@ i[class="bx bx-check"] {
   align-items: center;
   width: 90%;
   margin: auto;
-
 }
 .content-one {
   height: 10vh;
@@ -181,7 +213,7 @@ i[class="bx bx-check"] {
   margin: 20px auto;
 }
 
-.content-two{
+.content-two {
   height: 10vh;
   width: 15vw;
   border-bottom: 3px solid rgb(199, 199, 199);
@@ -206,18 +238,18 @@ hr {
   font-size: 30px;
   background-color: white;
 }
-.underline{
+.underline {
   text-decoration: none;
 }
-.blueColor{
-    color: black;
+.blueColor {
+  color: black;
 }
 
 #back-icon {
   position: absolute;
   top: 50%;
   left: 0;
-/*   margin-top: 400px;
+  /*   margin-top: 400px;
   margin-left: 200px; */
   font-size: 40px;
 }
@@ -256,17 +288,17 @@ hr {
   .container-info {
     width: 80%;
   }
-  .content-one{
+  .content-one {
     width: 15vw;
   }
-  .content-two{
+  .content-two {
     width: 20vw;
   }
 
   hr {
     width: 250px;
   }
-  .content p{
+  .content p {
     font-size: 10px;
     font-weight: 800;
   }
@@ -276,11 +308,11 @@ hr {
     font-size: 20px;
   }
   #back-icon {
-/*     font-size: 40px;
+    /*     font-size: 40px;
     position: absolute;
     top: 50;
     left: 0; */
-/*     margin-left: -10px;
+    /*     margin-left: -10px;
     margin-top: 500px; */
   }
 }

@@ -1,14 +1,27 @@
 <script>
+
+import { mapMutations, mapGetters } from "vuex";
+
 export default {
   data() {
     return {
       väljFraktmetod: "FraktmetodOne",
+
+      fraktmetod: "FraktmetodOne",
 
       // goToNextPage() {
       //   this.$router.push("/checkoutThird");
       // },
     };
   },
+
+  methods: {
+    ...mapMutations(["setFraktMetod"]),
+    updateFraktMetod() {
+      this.setFraktMetod(this.fraktmetod);
+    },
+  },
+
 };
 </script>
 <template>
@@ -16,9 +29,6 @@ export default {
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
     rel="stylesheet"
   />
-
-
-
   <div class="container">
     <div class="container-circles">
       <div class="circles" id="circle-correctOne">
@@ -47,10 +57,11 @@ export default {
     <div class="col">
       <div class="aa">
         <input
-          v-model="väljFraktmetod"
+
+          v-model="fraktmetod"
           id="fraktmetodFirst"
           type="radio"
-          value="FraktmetodOne"
+          value="DHL"
           name="x"
         />
         <lable for="fraktmetodFirst">49 kr</lable>
@@ -63,15 +74,14 @@ export default {
       <div><img src="../assets/img/Fraktmetod1.PNG" alt="" /></div>
     </div>
 
-
-
     <div class="col">
       <div>
         <input
-          v-model="väljFraktmetod"
+
+          v-model="fraktmetod"
           id="fraktmetodSecond"
           type="radio"
-          value="FraktmetodTwo"
+          value="Postnord"
           name="x"
         />
         <lable for="fraktmetodSecond">99 kr</lable>
@@ -95,8 +105,12 @@ export default {
   </div>
 
   <RouterLink to="/checkoutThird" class="underline">
-    <button class="vidare-btn" type="submit">Vidare</button></RouterLink
-  >
+
+    <button class="vidare-btn" type="submit" @click="updateFraktMetod()">
+      Vidare
+    </button>
+  </RouterLink>
+
 </template>
 
 <style scoped>
@@ -263,8 +277,6 @@ lable {
     top: 39%;
     font-size: 40px;
     /* margin: -40px; */
-
-
   }
   .vidare-btn {
     height: 40px;
