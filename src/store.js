@@ -52,6 +52,14 @@ const mutations = {
     state.user.stad = inputvalue.stad
   },
 
+  setBankInfo(state, inputvalue) {
+    state.user.namnPåKort = inputvalue.namnPåKort
+    state.user.kortnummer = inputvalue.kortnummer
+    state.user.år = inputvalue.år
+    state.user.månad = inputvalue.månad
+    state.user.cvc = inputvalue.cvc
+  },
+
   setFraktMetod(state, payload) {
     state.user.fraktmetod = payload
   },
@@ -81,7 +89,12 @@ const state = {
     email: '',
     telefonnummer: '',
     stad: '',
-    fraktmetod: ""
+    fraktmetod: "",
+    namnPåKort: "",
+    kortnummer: "",
+    år: "",
+    månad: "",
+    cvc: "",
   }
 };
 
