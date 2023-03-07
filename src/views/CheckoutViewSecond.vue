@@ -1,29 +1,32 @@
 <script>
+import { mapMutations, mapGetters } from 'vuex';
 export default {
   data() {
     return {
       väljFraktmetod: "FraktmetodOne",
+      fraktmetod: "FraktmetodOne"
 
       // goToNextPage() {
       //   this.$router.push("/checkoutThird");
       // },
     };
   },
+  methods: {
+    ...mapMutations(['setFraktMetod']),
+    updateFraktMetod() {
+      this.setFraktMetod(this.fraktmetod);
+    }
+  }
 };
 </script>
 <template>
-  <link
-    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
   <div>
-    <router-link to="/checkout" class="blueColor"
-      ><i class="bx bx-chevron-left" id="back-icon"></i
-    ></router-link>
+    <router-link to="/checkout" class="blueColor"><i class="bx bx-chevron-left" id="back-icon"></i></router-link>
     <RouterLink to="/CheckoutThird" class="blueColor">
-      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
-    ></RouterLink>
+      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i>
+    </RouterLink>
   </div>
 
   <div class="container">
@@ -53,13 +56,7 @@ export default {
     <h6 style="padding: 10px; margin-left: 20px">Fraktmetod</h6>
     <div class="col">
       <div class="aa">
-        <input
-          v-model="väljFraktmetod"
-          id="fraktmetodFirst"
-          type="radio"
-          value="FraktmetodOne"
-          name="x"
-        />
+        <input v-model="fraktmetod" id="fraktmetodFirst" type="radio" value="FraktmetodOne" name="x" />
         <lable for="fraktmetodFirst">$2.99</lable>
       </div>
       <div>
@@ -72,13 +69,7 @@ export default {
 
     <div class="col">
       <div>
-        <input
-          v-model="väljFraktmetod"
-          id="fraktmetodSecond"
-          type="radio"
-          value="FraktmetodTwo"
-          name="x"
-        />
+        <input v-model="fraktmetod" id="fraktmetodSecond" type="radio" value="FraktmetodTwo" name="x" />
         <lable for="fraktmetodSecond">$9.00</lable>
       </div>
       <div>
@@ -91,20 +82,22 @@ export default {
     </div>
   </div>
   <RouterLink to="/checkoutThird" class="underline">
-    <button class="vidare-btn" type="submit">Vidare</button></RouterLink
-  >
+    <button class="vidare-btn" type="submit" @click="updateFraktMetod()">Vidare</button>
+  </RouterLink>
 </template>
 
 <style scoped>
 .col:focus {
   background-color: blue;
 }
+
 .container {
   width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
 }
+
 .circles {
   display: inline-block;
   align-items: center;
@@ -129,9 +122,11 @@ i[class="bx bx-check"] {
   font-size: 40px;
   color: rgb(248, 248, 248);
 }
+
 #icone-one {
   color: white;
 }
+
 #icon-toNextCircleOne,
 #icon-toNextCircleTwo,
 #icon-toNextCircleThree {
@@ -141,9 +136,11 @@ i[class="bx bx-check"] {
 #icon-toNextCircleOne {
   color: rgb(48, 189, 135);
 }
+
 #circle-correctTwo {
   background-color: rgb(91, 179, 252);
 }
+
 #circle-correctThree,
 #circle-correctFour {
   background-color: rgb(229, 242, 250);
@@ -171,6 +168,7 @@ i[class="bx bx-check"] {
   width: 500px;
   border: 1px solid rgb(103, 167, 240);
 }
+
 .col:hover {
   background-color: rgb(138, 155, 253);
   opacity: 0.3;
@@ -196,6 +194,7 @@ lable {
   margin-left: 1230px;
   font-size: 80px;
 }
+
 .vidare-btn {
   display: flex;
   justify-content: center;
@@ -205,13 +204,15 @@ lable {
   width: 160px;
   font-weight: 600;
   font-size: 30px;
-   background-color: white;
+  background-color: white;
 }
-.underline{
+
+.underline {
   text-decoration: none;
 }
-.blueColor{
-    color: black;
+
+.blueColor {
+  color: black;
 }
 
 @media screen and (min-width: 375px) and (max-width: 980px) {
@@ -231,6 +232,7 @@ lable {
   #icon-toNextCircle {
     font-size: 30px;
   }
+
   #icone-one,
   #icone-three,
   #icone-two,
@@ -252,11 +254,13 @@ lable {
     margin-left: 0;
     margin-top: 310px;
   }
-  #next-icon{
+
+  #next-icon {
     font-size: 40px;
     /* margin: -40px; */
-    margin: 310px 395px ;
+    margin: 310px 395px;
   }
+
   .vidare-btn {
     height: 40px;
     width: 100px;
