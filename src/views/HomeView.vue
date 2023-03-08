@@ -15,7 +15,7 @@ import CarouselComponent from "../components/CarouselComponent.vue";
     </div>
     <div class="c-item grey">
       <h3 class="explainer-text">Våra produkter är svåra och ibland lätta att komma över. Kolla en kort vido på hur vårt gäng arbetar ute på gatorna</h3>
-      <a target="_blank" class="action-btn link" href="https://www.youtube.com/watch?v=QWaWsgBbFsA&ab_channel=Justice">Se video</a>
+      <a target="_blank" class="action-btn link" href="https://www.youtube.com/watch?v=gxIEt3KEohk&ab_channel=RMR">Se video</a>
       <!-- <RouterLink to="/about" class="action-btn link">Om oss</RouterLink> -->
     </div>
     <!-- <div class="c-item">
