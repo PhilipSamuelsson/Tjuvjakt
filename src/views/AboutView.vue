@@ -1,7 +1,11 @@
 <script setup></script>
 
 <template>
-  <div class="container-about">
+  <h1>Välkommen till vår butik!</h1>
+
+  <p>Välkommen till Tjuvgods, butiken för alla dina stulna varor! Vi är specialiserade på sällsynta, unika föremål som du inte hittar någon annanstans. Från bananer till avancerad elektronik, vi har allt. Vårt expertteam av tjuvar letar igenom staden efter de bästa kapen, så att du inte behöver göra det. Och oroa dig inte, vi har en strikt "inga frågor ställda"-policy när det kommer till ursprunget för våra varor. Så ta en titt bland våra produkter och klicka hem några unika skatter. Fråga oss bara inte var vi fick dem ifrån!
+</p>
+<!--   <div class="container-about">
     <img
       src="https://images.unsplash.com/photo-1543983419-dbdc20257c3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
       class="vr-header" alt="vr headset" />
@@ -49,11 +53,20 @@
         </p>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style>
-.container-about {
+h1 {
+  text-align: center;
+  padding: 1.5em;
+}
+
+p {
+  width: 80%;
+  margin: 0 auto;
+}
+/* .container-about {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +138,7 @@
 /* .title-content-first p{
 
 } */
-
+/*
 @media screen and (min-width: 375px) and (max-width: 980px) {
   .Container {
     flex-direction: column;
@@ -145,5 +158,5 @@
     height: 200px;
     width: 200px;
   }
-}
+} */
 </style>
