@@ -8,6 +8,7 @@ export default {
       väljFraktmetod: "FraktmetodOne",
 
       fraktmetod: "FraktmetodOne",
+      btnDisabled: true
 
       // goToNextPage() {
       //   this.$router.push("/checkoutThird");
@@ -22,6 +23,14 @@ export default {
     },
   },
 
+vidareDisabled(){
+  if (this.fraktmetod ||  this.fraktmetod) {
+    this.btnDisabled= false;
+  }
+  else{
+    this.btnDisabled = true;
+  }
+}
 };
 </script>
 <template>
@@ -57,12 +66,11 @@ export default {
     <div class="col">
       <div class="aa">
         <input
-
+          @input="vidareDisabled"
           v-model="fraktmetod"
           id="fraktmetodFirst"
           type="radio"
           value="DHL"
-          name="x"
         />
         <lable for="fraktmetodFirst">49 kr</lable>
       </div>
@@ -77,12 +85,11 @@ export default {
     <div class="col">
       <div>
         <input
-
+         @input="vidareDisabled"
           v-model="fraktmetod"
           id="fraktmetodSecond"
           type="radio"
           value="Postnord"
-          name="x"
         />
         <lable for="fraktmetodSecond">99 kr</lable>
       </div>
@@ -106,7 +113,7 @@ export default {
 
   <RouterLink to="/checkoutThird" class="underline">
 
-    <button class="vidare-btn" type="submit" @click="updateFraktMetod()">
+    <button class="vidare-btn" type="submit" @click="updateFraktMetod()" :disabled="btnDisabled">
       Vidare
     </button>
   </RouterLink>

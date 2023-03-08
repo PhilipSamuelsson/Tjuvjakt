@@ -155,17 +155,16 @@ export default {
     ...mapMutations(['setBankInfo']),
     updateBankInfo() {
       this.setBankInfo(this.user);
-    }
-  },
-
+    },
 
   vidareDisabled(){
-  if (this.user.namnPåKort !=='' && this.user.kortnummer !== '' && this.user.år !== ''&& this.user.månad !== '' &&  this.user.cvc !=='') {
+  if (this.user.namnPåKort !=='' && this.user.kortnummer !== '' && this.user.år !== ''&& this.user.månad !== '' &&  this.user.cvc !=='' &&
+   (this.klarna || this.paypal || this.bank || this.swish)) {
     this.btnDisabled= false;
   }
   else{
     this.btnDisabled= true;
-  }}
+  }} },
 };
 </script>
 
