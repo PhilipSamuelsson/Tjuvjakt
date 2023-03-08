@@ -34,6 +34,7 @@
 // };
 import ConfirmSummary from "../components/ConfirmSummary.vue";
 import { mapGetters } from "vuex";
+import ConfirmList from "../components/ConfirmList.vue";
 
 export default {
   computed: {
@@ -118,9 +119,54 @@ export default {
       <p>Fraktmetod: {{ $store.state.user.fraktmetod }}</p>
       <hr />
     </div>
-    <RouterLink to="/checkoutfourth" class="underline">
-      <button class="köp-btn" type="submit">Köp</button></RouterLink
+    <button
+      type="button"
+      class="köp-btn"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
     >
+      Köp
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Orderbekräftelse
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p text-center>
+              Tack för ditt köp! <br />
+              Dina tjuvgods är nu påväg!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div>
     <RouterLink to="/checkoutThird" class="blueColor"
