@@ -105,9 +105,7 @@
     </button>
   </RouterLink>
 
-  <!-- h1  and h2 for test -->
-  <h1>{{ userComp.fornamn }} {{ userComp.efternamn }}</h1>
-  <h2> {{ getUserInfo }}</h2>
+
 </template>
 
 <script>

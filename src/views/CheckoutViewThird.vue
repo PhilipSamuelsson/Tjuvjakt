@@ -10,6 +10,7 @@ export default {
         år: "2015",
         månad: "Januari",
         cvc: "",
+        btnDisabled:true
       }
     };
   },
@@ -18,7 +19,16 @@ export default {
     updateBankInfo() {
       this.setBankInfo(this.user);
     }
+  },
+
+
+  vidareDisabled(){
+  if (this.user.namnPåKort !=='' && this.user.kortnummer !== '' && this.user.år !== ''&& this.user.månad !== '' &&  this.user.cvc !=='') {
+    this.btnDisabled= false;
   }
+  else{
+    this.btnDisabled= true;
+  }}
 };
 </script>
 
@@ -62,12 +72,12 @@ export default {
     <div class="first-content">
       <div>
         <label class="namnPåKort" for="namnPåKort">
-          <input v-model="user.namnPåKort" type="text" id="namnPåKort" placeholder="xxx xxx xxx" required />
+          <input @input="vidareDisabled" v-model="user.namnPåKort" type="text" id="namnPåKort" placeholder="xxx xxx xxx" required />
         </label>
       </div>
       <div>
         <label class="kortnummer" for="kortnummer">
-          <input v-model="user.kortnummer" type="text" id="kortnummer" placeholder="1111 222 33333 444 55555"
+          <input @input="vidareDisabled" v-model="user.kortnummer" type="text" id="kortnummer" placeholder="1111 222 33333 444 55555"
             required /></label>
       </div>
     </div>
@@ -75,7 +85,7 @@ export default {
     <div class="col">
       <div>
         <label class="år" for="år">
-          <select id="år" name="år" v-model="user.år">
+          <select @input="vidareDisabled" id="år" name="år" v-model="user.år">
             <option value="2015">2015</option>
             <option value="2016">2016</option>
             <option value="2017">2017</option>
@@ -92,7 +102,7 @@ export default {
 
       <div>
         <label class="månad" for="månad">
-          <select id="månad" name="månad" placeholder="Augusti" v-model="user.månad">
+          <select @input="vidareDisabled" id="månad" name="månad" placeholder="Augusti" v-model="user.månad">
             <option value="Januari">Januari</option>
             <option value="Februari">Februari</option>
             <option value="Mars">Mars</option>
@@ -111,7 +121,7 @@ export default {
 
     <div class="colTwo">
       <label class="cvc" for="cvc">
-        <input v-model="user.cvc" type="text" id="cvc" placeholder="123 45" /></label>
+        <input @input="vidareDisabled" v-model="user.cvc" type="text" id="cvc" placeholder="123 45" /></label>
       <i class="bx bx-help-circle question"></i>
     </div>
 
@@ -120,20 +130,20 @@ export default {
 <div class="container-betalningmetos" style="margin-top: -30px;">
     <div class="col">
    <label for="klarna"> 
-   <input v-model="klarna" type="radio" id="klarna" name="betalningmetos">
+   <input @input="vidareDisabled" v-model="klarna" type="radio" id="klarna" name="betalningmetos">
     Klarna</label>
 
    <label for="paypal"> 
-   <input v-model="paypal" type="radio" id="paypal" name="betalningmetos">
+   <input @input="vidareDisabled" v-model="paypal" type="radio" id="paypal" name="betalningmetos">
     PayPal</label>
   </div>
 
     <div class="col">
      <label for="bank"  style="right: 10px;">
-     <input v-model="bank" type="radio" id="bank" name="betalningmetos">
+     <input @input="vidareDisabled" v-model="bank" type="radio" id="bank" name="betalningmetos">
    Bank </label>
 
-   <label for="swish" style="right: -2px;"> <input v-model="swish" type="radio" id="swish" name="betalningmetos">
+   <label for="swish" style="right: -2px;"> <input @input="vidareDisabled" v-model="swish" type="radio" id="swish" name="betalningmetos">
     Swish</label>
 </div>
     
@@ -148,7 +158,7 @@ export default {
       <RouterLink to="/checkoutfourth" class="blueColor"><i class="bx bx-chevron-right" id="next-icon"></i></RouterLink>
     </div>
     <RouterLink to="/checkoutfourth" class="underline">
-      <button class="vidare-btn" type="submit" @click="updateBankInfo()">
+      <button class="vidare-btn" type="submit" @click="updateBankInfo()" :disabled="btnDisabled">
         Vidare
       </button>
     </RouterLink>
