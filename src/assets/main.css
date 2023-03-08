@@ -106,3 +106,14 @@ body{
     text-decoration: none;
     color: #000000;
   }
+
+  ::-webkit-scrollbar{
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track{
+    background: var(--grey);
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: var(--primary-red);
+  }
