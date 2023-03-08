@@ -157,6 +157,10 @@ button {
   text-align: center;
 }
 
+.thank-you-container p{
+    padding-bottom: 1rem;
+}
+
 .info-container {
   max-width: 500px;
   padding-bottom: 5rem;
@@ -183,11 +187,11 @@ button {
 .send-btn {
   float: right;
 }
-.link {
+/* .link {
   margin-top: 1rem;
   text-decoration: none;
   color: #000000;
-}
+} */
 .selection-input {
   display: grid;
 }

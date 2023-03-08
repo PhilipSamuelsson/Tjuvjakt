@@ -8,8 +8,9 @@
       <div class="bigContainerMobile"></div>
       <div class="smallContainer">
         <div class="small1">
+            <!-- <h6>Det här är rena stölden</h6> -->
           <RouterLink to="/products">
-            <button class="button-50" role="button">Till produkter</button>
+            <button class="action-btn" role="button">Till produkter</button>
           </RouterLink>
         </div>
         <div class="small2"></div>
@@ -25,12 +26,14 @@
 
 <style>
 .heroSection {
-  width: 100%;
-  height: 50vh;
-  background-position: center;
+/* margin-top: 3rem; */
+  /* width: 100%; */
+  /* height: 50vh; */
+  /* background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: relative; */
+  padding-bottom: auto;
 }
 /* .heroText {
   text-align: center;
@@ -41,9 +44,11 @@
   color: white;
 } */
 .gridSection {
-  height: 100%;
-  width: 100%;
+    min-height: 500px;
+  /* height: 100%;
+  width: 100%; */
   display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas: "smallContainer bigContainer";
 }
 .gridSection div {
@@ -52,13 +57,15 @@
 .smallContainer {
   position: relative;
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "small1 small2"
     "small3 small4";
 }
 .small1 {
   display: grid;
-  background-color: #f13d3c;
+  background-color: var(--primary-red);
   align-items: center;
   justify-content: center;
 }
@@ -90,7 +97,7 @@
   background-image: url("https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1598&q=80");
 }
 
-.button-50 {
+/* .button-50 {
   appearance: button;
   background-color: #000;
   border: 1px solid #000;
@@ -108,7 +115,7 @@
   text-transform: none;
   -webkit-user-select: none;
   white-space: nowrap;
-}
+} */
 
 button {
   margin: 0;
@@ -116,7 +123,7 @@ button {
   box-sizing: border-box;
 }
 
-.button-50:focus {
+/* .button-50:focus {
   text-decoration: none;
 }
 
@@ -138,10 +145,11 @@ button {
   .button-50 {
     padding: 12px 50px;
   }
-}
+} */
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 800px) {
   .gridSection {
+    grid-template-columns: 1fr;
     grid-template-areas:
       "bigContainer"
       "smallContainer";

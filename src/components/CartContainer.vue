@@ -142,10 +142,4 @@ export default {
   border-bottom: 1px solid #000000;
   margin: 1rem 0;
 }
-
-.link {
-  margin-top: 1rem;
-  text-decoration: none;
-  color: #000000;
-}
 </style>

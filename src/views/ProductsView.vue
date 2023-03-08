@@ -61,18 +61,21 @@ const showSort = ref(false);
 <style scoped>
 .som-hittat {
   width: 100%;
-  height: 40vh;
-  background-color: #F13D3C;
+  height: 50vh;
+  background-color: var(--primary-red);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .big-text {
+    font-family: 'Turret Road', cursive;
+    font-weight: bold;
   font-size: 4em;
   margin: 0 auto;
   text-align: center;
   background-color: white;
+  padding: 1rem;
 }
 
 .searchSort {
