@@ -1,13 +1,8 @@
 <template>
-  <div class="sum">
-    <ul flex-wrap>
-      <li flex-wrap>
-        <img :src="productImg" class="img-fluid" alt="..." />
-        <h4>{{ productTitle }}</h4>
-        <p>Pris {{ productPrice }}:-</p>
-      </li>
-    </ul>
-  </div>
+  <li>
+    <h4>{{ productTitle }}</h4>
+    <p>Pris {{ productPrice }}:-</p>
+  </li>
 
   <div class="line"></div>
 </template>
@@ -98,7 +93,15 @@ export default {
 <style scoped>
 .sum {
   display: flex;
+  justify-content: center;
+  padding: 5px;
   width: 100%;
-  flex-wrap: wrap;
+  flex-direction: row;
+}
+.flex-container {
+}
+img {
+  width: 30%;
+  height: 30%;
 }
 </style>
