@@ -62,7 +62,7 @@ const showSort = ref(false);
 .som-hittat {
   width: 100%;
   height: 50vh;
-  background-color: #F13D3C;
+  background-color: var(--primary-red);
   display: flex;
   justify-content: center;
   align-items: center;

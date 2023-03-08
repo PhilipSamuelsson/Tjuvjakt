@@ -1,5 +1,5 @@
 <template>
-  <h2 class="caroHeader">Toppsäljare</h2>
+  <!-- <h2 class="caroHeader">Toppsäljare</h2> -->
 
   <div class="caroContainer">
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
@@ -57,13 +57,15 @@
   background: none;
 }
 .caroContainer {
+    background-color: var(--primary-red);
   display: flex;
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
+  /* width: 50%; */
   align-items: center;
 }
 
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
   .caroContainer {
     width: 70%;
   }
@@ -73,5 +75,5 @@
   .caroContainer {
     width: 100%;
   }
-}
+} */
 </style>

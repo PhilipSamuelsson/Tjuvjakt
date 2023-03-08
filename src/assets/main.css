@@ -6,7 +6,7 @@
   font-family: Outfit, sans-serif;
   box-sizing: border-box;
 
-  --primary-red: #f56b6b;
+  --primary-red: #f13d3c;
   --secondary-red: #ef6c6c;
   --third-red: #f2a7a7;
   --grey: #f2f2f2;
@@ -82,10 +82,19 @@ body{
   }
 
   .action-btn {
+    border-radius: 100px;
+    font-size: 1.2rem;
     padding: .3rem;
     border: 3px solid #000000;
     text-align: center;
     background: transparent;
     font-family: Outfit, sans-serif;
     font-weight: 900;
+    background-color: #FFFFFF;
+  }
+
+  .link {
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #000000;
   }
