@@ -38,12 +38,12 @@
     <div class="first-content">
       <div>
         <label class="namnPåKort" for="namnPåKort">
-          <input @input="vidareDisabled" v-model="user.namnPåKort" type="text" id="namnPåKort" placeholder="xxx xxx xxx" required />
+          <input  v-model="user.namnPåKort" type="text" id="namnPåKort" placeholder="xxxx xxxx" required />
         </label>
       </div>
       <div>
         <label class="kortnummer" for="kortnummer">
-          <input @input= "vidareDisabled" v-model="user.kortnummer" type="text" id="kortnummer" placeholder="1111 222 33333 444 55555"
+          <input v-model="user.kortnummer" type="text" id="kortnummer" maxlength="20" placeholder="1111 222 33333 444 55555"
             required /></label>
       </div>
     </div>
@@ -51,8 +51,12 @@
     <div class="col">
       <div>
         <label class="år" for="år">
-          <select @input="vidareDisabled" id="år" name="år" v-model="user.år">
-            <option value="2015">2015</option>
+          <select id="år" name="år" v-model="user.år" placeholder="2015" required>
+            <option value="" disabled selected>År</option>
+          <option v-for="year in years" :value="year" :key="year">
+            {{ year }}
+          </option>
+            <!-- <option value="2015">2015</option>
             <option value="2016">2016</option>
             <option value="2017">2017</option>
             <option value="2018">2018</option>
@@ -61,15 +65,23 @@
             <option value="2021">2021</option>
             <option value="2022">2022</option>
             <option value="2023">2023</option>
-            <option value="2024">2024</option>
+            <option value="2024">2024</option> -->
           </select>
         </label>
       </div>
 
       <div>
         <label class="månad" for="månad">
-          <select @input="vidareDisabled" id="månad" name="månad" placeholder="Augusti" v-model="user.månad">
-            <option value="Januari">Januari</option>
+          <select id="månad" name="månad" placeholder="Augusti" v-model="user.månad">
+            <option value="" disabled selected>Månad</option>
+          <option
+            v-for="(month, index) in months"
+            :value="index + 1"
+            :key="month"
+          >
+            {{ month }}
+          </option>
+            <!-- <option value="Januari">Januari</option>
             <option value="Februari">Februari</option>
             <option value="Mars">Mars</option>
             <option value="April">April</option>
@@ -80,14 +92,14 @@
             <option value=" September">September</option>
             <option value="Oktober">Oktober</option>
             <option value="November">November</option>
-            <option value="December">December</option>
+            <option value="December">December</option> -->
           </select></label>
-      </div>
+      </div> 
     </div>
 
     <div class="colTwo">
       <label class="cvc" for="cvc">
-        <input @input="vidareDisabled" v-model="user.cvc" type="text" id="cvc" placeholder="123 45" /></label>
+        <input v-model="user.cvc" type="text" id="cvc" maxlength="5" placeholder="123 45" required/></label>
       <i class="bx bx-help-circle question"></i>
     </div>
 
@@ -96,20 +108,20 @@
 <div class="container-betalningmetos" style="margin-top: -30px;">
     <div class="col">
    <label for="klarna"> 
-   <input @input="vidareDisabled" v-model="klarna" type="radio" id="klarna" name="betalningmetos">
+   <input v-model="klarna" type="radio" id="klarna" name="betalningmetos">
     Klarna</label>
 
    <label for="paypal"> 
-   <input @input="vidareDisabled" v-model="paypal" type="radio" id="paypal" name="betalningmetos">
+   <input v-model="paypal" type="radio" id="paypal" name="betalningmetos">
     PayPal</label>
   </div>
 
     <div class="col">
      <label for="bank"  style="right: 10px;">
-     <input @input="vidareDisabled" v-model="bank" type="radio" id="bank" name="betalningmetos">
+     <input v-model="bank" type="radio" id="bank" name="betalningmetos">
    Bank </label>
 
-   <label for="swish" style="right: -2px;"> <input @input="vidareDisabled" v-model="swish" type="radio" id="swish" name="betalningmetos">
+   <label for="swish" style="right: -2px;"> <input v-model="swish" type="radio" id="swish" name="betalningmetos">
     Swish</label>
 </div>
     
@@ -137,19 +149,61 @@ export default {
   data() {
     return {
       selected: '',
-      user: {
-        namnPåKort: "",
-        kortnummer: "",
-        år: "2015",
-        månad: "Januari",
-        cvc: "",
-        klarna:"",
-        paypal:"",
-        bank:"",
-        swish:"",
-        btnDisabled:true
-      }
+      // user: {
+      //   namnPåKort: "",
+      //   kortnummer: "",
+      //   år: "2015",
+      //   månad: "Januari",
+      //   cvc: "",
+      //   btnDisabled:true
+      // }
+      user: { namnPåKort: "", kortnummer: "", år: "2015", månad: "Januari", cvc: "" },
+      klarna: false,
+      paypal: false,
+      bank: false,
+      swish: false,
     };
+  },
+  computed: {
+    years(){
+      return[
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ]
+    },
+    months() {
+      return [
+        "Januari",
+        "Februari",
+        "Mars",
+        "April",
+        "Maj",
+        "Juni",
+        "Juli",
+        "Augusti",
+        "September",
+        "Oktober",
+        "November",
+        "December"
+      ];
+    },
+    btnDisabled() {
+      return !(
+        this.user.namnPåKort &&
+        this.user.kortnummer &&
+        this.user.år &&
+        this.user.månad &&
+        this.user.cvc &&
+        (this.klarna || this.paypal || this.bank || this.swish)
+      );
+    },
   },
   methods: {
     ...mapMutations(['setBankInfo']),
@@ -157,14 +211,14 @@ export default {
       this.setBankInfo(this.user);
     },
 
-  vidareDisabled(){
-  if (this.user.namnPåKort !=='' && this.user.kortnummer !== '' && this.user.år !== ''&& this.user.månad !== '' &&  this.user.cvc !=='' &&
-   (this.klarna || this.paypal || this.bank || this.swish)) {
-    this.btnDisabled= false;
-  }
-  else{
-    this.btnDisabled= true;
-  }} },
+  // vidareDisabled(){
+  // if (this.user.namnPåKort !=='' && this.user.kortnummer !== '' && this.user.år !== ''&& this.user.månad !== '' &&  this.user.cvc !=='' && (this.klarna )) {
+  //   this.btnDisabled= false;
+  // }
+  // else{
+  //   this.btnDisabled= true;
+  // }} 
+},
 };
 </script>
 
