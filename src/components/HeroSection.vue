@@ -10,12 +10,14 @@
         <div class="small1">
             <!-- <h6>Det här är rena stölden</h6> -->
           <RouterLink to="/products">
-            <button class="action-btn" role="button">Till produkter</button>
+            <button class="action-btn" role="button">Börja shoppa</button>
           </RouterLink>
         </div>
         <div class="small2"></div>
         <div class="small3"></div>
-        <div class="small4"></div>
+        <div class="small4">
+            <div class="simple-logo-container"></div>
+        </div>
       </div>
       <div class="bigContainer"></div>
     </div>
@@ -82,7 +84,21 @@
   background-position: center center;
 }
 .small4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   background-color: black;
+}
+
+.simple-logo-container{
+    background-color: #FFFFFF;
+    width: 140px;
+    height: 160px;
+    background-image: url("../assets/img/tjuvgods_logo_simple.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
 }
 .bigContainer {
   background-color: blueviolet;
@@ -150,6 +166,7 @@ button {
 @media screen and (max-width: 800px) {
   .gridSection {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "bigContainer"
       "smallContainer";
