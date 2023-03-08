@@ -104,8 +104,6 @@
       Vidare
     </button>
   </RouterLink>
-
-
 </template>
 
 <script>

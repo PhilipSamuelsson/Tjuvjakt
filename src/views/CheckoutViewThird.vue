@@ -1,37 +1,3 @@
-<script>
-import { mapMutations, mapGetters } from 'vuex';
-export default {
-  data() {
-    return {
-      selected: '',
-      user: {
-        namnPåKort: "",
-        kortnummer: "",
-        år: "2015",
-        månad: "Januari",
-        cvc: "",
-        btnDisabled:true
-      }
-    };
-  },
-  methods: {
-    ...mapMutations(['setBankInfo']),
-    updateBankInfo() {
-      this.setBankInfo(this.user);
-    }
-  },
-
-
-  vidareDisabled(){
-  if (this.user.namnPåKort !=='' && this.user.kortnummer !== '' && this.user.år !== ''&& this.user.månad !== '' &&  this.user.cvc !=='') {
-    this.btnDisabled= false;
-  }
-  else{
-    this.btnDisabled= true;
-  }}
-};
-</script>
-
 <template>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
@@ -77,7 +43,7 @@ export default {
       </div>
       <div>
         <label class="kortnummer" for="kortnummer">
-          <input @input="vidareDisabled" v-model="user.kortnummer" type="text" id="kortnummer" placeholder="1111 222 33333 444 55555"
+          <input @input= "vidareDisabled" v-model="user.kortnummer" type="text" id="kortnummer" placeholder="1111 222 33333 444 55555"
             required /></label>
       </div>
     </div>
@@ -164,6 +130,44 @@ export default {
     </RouterLink>
   </div>
 </template>
+
+<script>
+import { mapMutations, mapGetters } from 'vuex';
+export default {
+  data() {
+    return {
+      selected: '',
+      user: {
+        namnPåKort: "",
+        kortnummer: "",
+        år: "2015",
+        månad: "Januari",
+        cvc: "",
+        klarna:"",
+        paypal:"",
+        bank:"",
+        swish:"",
+        btnDisabled:true
+      }
+    };
+  },
+  methods: {
+    ...mapMutations(['setBankInfo']),
+    updateBankInfo() {
+      this.setBankInfo(this.user);
+    }
+  },
+
+
+  vidareDisabled(){
+  if (this.user.namnPåKort !=='' && this.user.kortnummer !== '' && this.user.år !== ''&& this.user.månad !== '' &&  this.user.cvc !=='') {
+    this.btnDisabled= false;
+  }
+  else{
+    this.btnDisabled= true;
+  }}
+};
+</script>
 
 <style scoped>
 .container {
