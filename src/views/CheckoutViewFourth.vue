@@ -62,10 +62,7 @@ export default {
 </script>
 
 <template>
-  <link
-    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
   <div class="container">
     <div class="container-circles">
@@ -92,62 +89,39 @@ export default {
 
   <div class="container-info">
     <p style="font-weight: 600; padding: 20px">Bekräfta köp</p>
-    <div class="col flex-row">
-      <ConfirmSummary
-        v-for="cartItem in cartList"
-        :key="cartItem.id"
-        :id="cartItem.id"
-        :title="cartItem.title"
-        :image="cartItem.image"
-        :price="cartItem.price"
-        :product="cartItem"
-      />
+    <div class="col items-wrap">
+      <ConfirmSummary v-for="cartItem in cartList" :key="cartItem.id" :id="cartItem.id" :title="cartItem.title"
+        :image="cartItem.image" :price="cartItem.price" :product="cartItem" />
       <!--       <div class="content-one"></div>
-      <div class="content-two"></div>
-      <div class="content-one"></div>
-      <div class="content-two"></div> -->
+                          <div class="content-two"></div>
+                          <div class="content-one"></div>
+                          <div class="content-two"></div> -->
     </div>
 
     <div class="content">
       <hr />
-      <p>
+      <p class="p-content">
         Namn: {{ $store.state.user.fornamn }} {{ $store.state.user.efternamn }}
       </p>
       <hr />
-      <p>Leveransadress: {{ $store.state.user.gatuadress }}</p>
+      <p class="p-content">Leveransadress: {{ $store.state.user.gatuadress }}</p>
       <hr />
-      <p>Fraktmetod: {{ $store.state.user.fraktmetod }}</p>
+      <p class="p-content">Fraktmetod: {{ $store.state.user.fraktmetod }}</p>
       <hr />
     </div>
-    <button
-      type="button"
-      class="köp-btn"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
+    <button type="button" class="köp-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Köp
     </button>
 
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">
               Orderbekräftelse
             </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <p text-center>
@@ -156,11 +130,7 @@ export default {
             </p>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               Close
             </button>
           </div>
@@ -169,9 +139,8 @@ export default {
     </div>
   </div>
   <div>
-    <RouterLink to="/checkoutThird" class="blueColor"
-      ><i @click="goToBack" class="bx bx-chevron-left" id="back-icon"></i
-    ></RouterLink>
+    <RouterLink to="/checkoutThird" class="blueColor"><i @click="goToBack" class="bx bx-chevron-left" id="back-icon"></i>
+    </RouterLink>
   </div>
 </template>
 
@@ -235,23 +204,35 @@ i[class="bx bx-check"] {
   /* display: flex;
   justify-content: center;
   align-items: center; */
-
   margin: auto;
-  height: 750px;
-  width: 600px;
+  height: auto;
+  width: clamp(800px, 65%, 900px);
+  /* width: 615px; */
+  padding-bottom: 10px;
   box-shadow: 1px 1px 2px 2px rgb(228, 228, 228);
 }
 
 .content {
   padding: 40px;
 }
+
+.content .p-content {
+  font-size: .8rem;
+}
+
 .col {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  margin-left: 40px;
 }
+
+.items-wrap {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .content-one {
   height: 10vh;
   width: 8vw;
@@ -284,9 +265,11 @@ hr {
   font-size: 30px;
   background-color: white;
 }
+
 .underline {
   text-decoration: none;
 }
+
 .blueColor {
   color: black;
 }
@@ -324,6 +307,7 @@ hr {
   #icon-toNextCircleThree {
     font-size: 30px;
   }
+
   #icone-one,
   #icone-three,
   #icone-two,
@@ -331,28 +315,34 @@ hr {
     font-size: 30px;
     margin: 5px auto;
   }
+
   .container-info {
     width: 80%;
   }
+
   .content-one {
     width: 15vw;
   }
+
   .content-two {
     width: 20vw;
   }
 
   hr {
-    width: 250px;
+    width: 100%;
   }
+
   .content p {
     font-size: 10px;
     font-weight: 800;
   }
+
   .köp-btn {
     height: 40px;
     width: 100px;
     font-size: 20px;
   }
+
   #back-icon {
     /*     font-size: 40px;
     position: absolute;
@@ -360,6 +350,13 @@ hr {
     left: 0; */
     /*     margin-left: -10px;
     margin-top: 500px; */
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .items-wrap {
+    margin: auto;
+    text-align: center;
   }
 }
 </style>
