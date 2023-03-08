@@ -9,7 +9,6 @@ import axios from "axios";
 export default {
   data() {
     return {
-        products : [],
       listOfProducts: [],
     };
   },
@@ -23,12 +22,11 @@ export default {
           Accept: "application/json",
         },
       });
-      this.products = result.data;
-      this.listOfProducts = this.products.filter(
-          (item) => item.category === "Hittegods"
-        );
+      this.listOfProducts = result.data.filter(
+        (item) => item.category === "Hittegods"
+      );
     },
-    toProductdetail(id) {
+    toProductDetail(id) {
       this.$router.push({
         name: "productdetail",
         params: { productID: id },
@@ -66,14 +64,14 @@ export default {
       <h1 class="explainer-header">Senaste fynden</h1>
     </div>
     <SmallProductContainer
-      @idFromSmallProduct="toProductdetail"
+      @idFromSmallProduct="toProductDetail"
       :similar-products="listOfProducts"
     />
   </div>
   <div class="explainer">
-      <h1 class="explainer-header">Vilka är Tjuvgods?</h1>
-            <RouterLink to="/about" class="action-btn link">Läs om oss</RouterLink>
-    </div>
+    <h1 class="explainer-header">Vilka är Tjuvgods?</h1>
+    <RouterLink to="/about" class="action-btn link">Läs om oss</RouterLink>
+  </div>
 </template>
 
 <style scoped>
@@ -127,18 +125,18 @@ export default {
   text-align: center;
 }
 
-.explainer{
-    min-height: 300px;
-    background-color: var(--grey);
+.explainer {
+  min-height: 300px;
+  background-color: var(--grey);
 }
 .grey {
   background-color: var(--grey);
 }
 
-.products-container{
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+.products-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
 @media (min-width: 970px) {
   .bottom-position {
@@ -149,7 +147,7 @@ export default {
     grid-template-rows: 1fr 1fr;
   }
 
-  .products-container{
+  .products-container {
     grid-template-columns: 1fr 1fr;
   }
 }
