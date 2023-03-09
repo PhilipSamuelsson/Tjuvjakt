@@ -7,7 +7,7 @@
     </button>
   <div class="col">
     <div class="kontägner">
-      <img :src="varan.image" alt="product image" class="produktbilden" />
+      <img :src="varan.image" alt="product image" class="produktbilden"/>
     </div>
   </div>
   <div class="information">
@@ -129,12 +129,14 @@ html{
   /* flex-direction: column; */
   flex-direction: row;
   align-items: center;
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 
 .produktbilden {
   width: clamp(250px, 80%, 920px);
   margin: 5vh;
+  height: 80vh;
+  box-sizing: content-box;
 }
 
 .information {
