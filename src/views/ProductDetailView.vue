@@ -197,7 +197,7 @@ html{
   display: flex;
   margin: 120vh 133vh;
   flex-direction: column;
-  margin-top: -110vh;
+  margin-top: -100vh;
   margin-bottom: 40vh;
 }
 }
