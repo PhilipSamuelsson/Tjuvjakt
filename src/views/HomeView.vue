@@ -147,8 +147,8 @@ export default {
     grid-template-rows: 1fr 1fr;
   }
 
-  .products-container {
+  /* .products-container {
     grid-template-columns: 1fr 1fr;
-  }
+  } */
 }
 </style>
