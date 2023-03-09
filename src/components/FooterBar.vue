@@ -1,15 +1,17 @@
 <script setup>
-import { RouterLink } from "vue-router";
-import { ref } from "vue";
+// import { RouterLink } from "vue-router";
+// import { ref } from "vue";
 
-const showVillkor = ref(false);
-const showKontakt = ref(false);
+// const showVillkor = ref(false);
+// const showKontakt = ref(false);
 </script>
 
 <template>
   <footer class="footerbar">
-    <h4 class="footer-header">Quick Links</h4>
-    <div class="footer-links">
+    <div class="footer-info">
+        <h4 class="footer-header">Följ oss gärna så följer vi tillbaka, så att vi får ha koll på ditt privatliv. </h4>
+    </div>
+    <!-- <div class="footer-links">
       <div class="desktop-footer">
         <p>Terms of Service</p>
         <p>Privacy</p>
@@ -22,7 +24,6 @@ const showKontakt = ref(false);
           class="fa-solid"
           v-bind:class="{ 'fa-plus': !showVillkor, 'fa-minus': showVillkor }"
         ></i>
-        <!-- <i class="fa-solid fa-minus/plus" id="togglare"></i> -->
       </div>
       <div class="villkor" v-show="showVillkor">
         <RouterLink
@@ -55,31 +56,41 @@ const showKontakt = ref(false);
           >(No) Contact Policy</RouterLink
         >
       </div>
-    </div>
+    </div> -->
     <div class="footer-icon">
-      <i class="fa-brands fa-youtube"></i>
-      <i class="fa-brands fa-twitter"></i>
-      <i class="fa-brands fa-tiktok"></i>
-      <i class="fa-brands fa-snapchat"></i>
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-twitch"></i>
+      <a target="_blank" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+      <a target="_blank" href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+      <a target="_blank" href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+      <a target="_blank" href="https://www.snapchat.com/"><i class="fa-brands fa-snapchat"></i></a>
+      <a target="_blank" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+      <a target="_blank" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+      <a target="_blank" href="https://www.twitch.tv/"><i class="fa-brands fa-twitch"></i></a>
+    </div>
+    <div class="complaint-container">
+        <RouterLink class="customer-complaint-link" to="/custom-support">Reklamation</RouterLink>
     </div>
   </footer>
 </template>
 
 <style scoped>
 .footerbar {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   /* position: absolute;
   bottom: 0; */
-  width: 98vw;
+  /* width: 98vw; */
   /* border-top: 2px solid black; */
-  padding: auto 20px;
+  /* padding: auto 20px; */
   margin-top: 17vh;
+  margin-bottom: 5rem;
 }
 
 .desktop-footer {
   display: flex;
+  display: none;
 }
 
 .desktop-footer p {
@@ -92,9 +103,10 @@ const showKontakt = ref(false);
 }
 
 .footer-header {
-  margin: 5px auto;
+    margin: 1rem;
+    padding-bottom: 1rem;
   text-align: center;
-  font-size: 24px;
+  font-size: 0.9rem;
 }
 
 .footer-links {
@@ -118,16 +130,31 @@ const showKontakt = ref(false);
 }
 
 .footer-icon {
+    width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 800px;
 }
 
 .footer-icon * {
-  margin: 12px 25px 10px;
-  font-size: 2em;
+  /* margin: 12px 25px 10px; */
+  font-size: 2rem;
+  color: var(--black);
 }
 
+.complaint-container{
+    margin: 1rem 0 .5rem 0;
+}
+.customer-complaint-link{
+    text-align: center;
+    text-decoration: none;
+    color: rgba(0,0,0,.5);
+}
+
+/*
 @media (max-width: 949px) {
   .footer-header {
     display: none;
@@ -142,7 +169,6 @@ const showKontakt = ref(false);
     flex-direction: row;
     justify-content: space-between;
     margin: auto 15vw;
-    /* align-items: center; */
   }
 
   .footer-links a {
@@ -155,16 +181,10 @@ const showKontakt = ref(false);
     align-self: center;
     padding: 0.2rem;
   }
-
-  /* .mobile i {
-    align-self: center;
-  } */
-
-  /* .footer-links .mobile i.fa-solid.fa-minus {
-    display: none;
-  } */
   .desktop-footer {
     display: none;
   }
 }
+
+*/
 </style>

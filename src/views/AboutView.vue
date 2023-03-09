@@ -56,7 +56,7 @@
   </div> -->
 </template>
 
-<style>
+<style scoped>
 h1 {
   text-align: center;
   padding: 1.5em;
