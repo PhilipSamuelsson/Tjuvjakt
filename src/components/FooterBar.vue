@@ -74,7 +74,7 @@
 
 <style scoped>
 .footerbar {
-    margin: 2rem;
+    margin: 0 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,8 +84,8 @@
   /* width: 98vw; */
   /* border-top: 2px solid black; */
   /* padding: auto 20px; */
-  margin-top: 17vh;
-  margin-bottom: 5rem;
+  margin-top: 10vh;
+  margin-bottom: 2rem;
 }
 
 .desktop-footer {
@@ -146,9 +146,10 @@
 }
 
 .complaint-container{
-    margin: 1rem 0 .5rem 0;
+    /* margin: 1rem 0 .5rem 0; */
 }
 .customer-complaint-link{
+    font-size: .5rem;
     text-align: center;
     text-decoration: none;
     color: rgba(0,0,0,.5);
