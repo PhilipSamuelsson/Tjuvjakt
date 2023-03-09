@@ -24,57 +24,23 @@ export default {
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <RouterLink to="/">
-          <img
-            class="img-logo"
-            src="../assets/img/tjuvgods_logo.png"
-            alt="Logo" /></RouterLink
-      ></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <RouterLink to="/">
+        <img class="img-logo" src="../assets/img/tjuvgods_logo.png" alt="Logo" />
+      </RouterLink>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              <RouterLink to="/">Hem</RouterLink>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <RouterLink to="/products">Produkt</RouterLink>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <RouterLink to="/profile">Mitt konto</RouterLink>
-            </a>
+            <RouterLink to="/" class="nav-link active" aria-current="page">Hem</RouterLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <RouterLink to="/about">Om Tjuvgods</RouterLink>
-            </a>
+            <RouterLink to="/products" class="nav-link">Produkter</RouterLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <RouterLink to="/custom-support">Kundsupport</RouterLink>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <RouterLink to="/checkout">Test checkout</RouterLink>
-            </a>
+            <RouterLink to="/about" class="nav-link">Om Tjuvgods</RouterLink>
           </li>
         </ul>
       </div>
@@ -101,6 +67,25 @@ nav[class="navbar navbar-expand-lg bg-body-tertiary"] {
   font-size: 20px;
 }
 
+/* bootstrap fix */
+.nav-link {
+  width: auto;
+  font-weight: 600;
+}
+
+/* mobile bootstrap navbar fix */
+.navbar-toggler {
+  margin-bottom: 12px
+}
+
+.navbar-toggler {
+  margin-bottom: 12px;
+}
+
+.navbar-nav {
+  margin-top: 0;
+}
+
 nav {
   background-color: white;
   height: 60px;
@@ -124,23 +109,28 @@ nav ul li a:hover {
 }
 
 .img-logo {
-  height: 25px;
-  width: 147px;
+  height: auto;
+  width: 175px;
+  margin-top: 3px;
 }
 
 .Kassa {
   height: 28px;
   width: 39px;
+  margin-top: 5px;
 }
 
 .cart {
   display: grid;
   grid-template-rows: 10px;
 }
+
 .cart-number {
   font-size: 0.7rem;
   height: 20px;
   width: 20px;
+  margin-top: 5px;
+  margin-left: 3px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -168,6 +158,7 @@ nav ul li a:hover {
   .navbar-toggler {
     order: -1;
   }
+
   .img-logo {
     display: none;
   }
