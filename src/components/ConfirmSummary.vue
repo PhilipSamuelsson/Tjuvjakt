@@ -1,15 +1,11 @@
 <template>
   <div class="sum">
-    <ul flex-wrap>
-      <li flex-wrap>
-        <img :src="productImg" class="img-fluid" alt="..." />
-        <h4>{{ productTitle }}</h4>
-        <p>Pris {{ productPrice }}:-</p>
-      </li>
-    </ul>
+    <img :src="productImg" class="confirmsummarybild" alt="..." />
+    <h6 class="confirmsummaryh6">{{ productTitle }}</h6>
+    <p class="confirmsummarypris">Pris {{ productPrice }}:-</p>
   </div>
 
-  <div class="line"></div>
+  <!-- <div class="line"></div> -->
 </template>
 
 <script>
@@ -97,8 +93,57 @@ export default {
 </script>
 <style scoped>
 .sum {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
+  /* width: clamp(20%, 46%, 70%);
+  padding: 10px;
+  margin: 10px; */
+  height: 220px;
+  width: calc((100% / 2) - 10px);
+  margin-bottom: 20px;
+}
+
+.confirmsummarybild {
+  /* max-width: 250px; */
+  /* max-height: 147px; */
+  width: 12em;
+  height: 10em;
+  object-fit: cover;
+}
+
+.confirmsummarypris {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.confirmsummaryh6 {
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+  font-weight: 500;
+  /* line-height: 2; */
+  padding-right: 36%;
+}
+
+.container-info {
+  margin: auto;
+  height: auto;
+  width: 620px;
+  padding-bottom: 10px;
+  box-shadow: 1px 1px 2px 2px rgb(228 228 228);
+}
+
+/* Three items in a row */
+@media only screen and (min-width: 1000px) {
+  .sum {
+    width: calc((100% / 3) - 10px);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .sum {
+    width: calc((100%) - 10px);
+  }
+
+  .confirmsummaryh6 {
+    padding-right: 0;
+  }
 }
 </style>
