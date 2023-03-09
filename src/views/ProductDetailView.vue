@@ -1,4 +1,10 @@
 <template>
+  <button @click="backToProducts" class="back-to">
+  <div class="symbol-container">
+  <img src="../assets/img/arrow.png" alt="Arrow vector">
+  </div>
+    <p>Produkter</p>
+    </button>
   <div class="col">
     <div class="kontägner">
       <img :src="varan.image" alt="product image" class="produktbilden" />
@@ -19,7 +25,7 @@
     <h4 class="pris">Pris {{ varan.price }} Kr</h4>
   </div>
   <div class="mera-information">
-    <p>
+    <p >
       Beskrivning: <br />
       {{ varan.description }}
     </p>
@@ -67,6 +73,9 @@ export default {
         params: { productID: id },
       });
     },
+    backToProducts(){
+     this.$router.push('/products')
+    },
     async fetchProduct() {
       const result = await axios.get("/productapi.json", {
         headers: {
@@ -96,21 +105,42 @@ export default {
 </script>
 
 <style>
+button {
+  border: none;
+  background: none;
+}
+.back-to {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+}
+.symbol-container {
+  max-width: 30px;
+}
+.symbol-container img {
+  width: 100%;
+  height: auto;
+}
+html{
+  overflow-x: hidden
+}
 .kontägner {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  flex-direction: row;
   align-items: center;
   margin-top: 10vh;
 }
 
 .produktbilden {
   width: clamp(250px, 80%, 920px);
+  margin: 5vh;
 }
 
 .information {
   width: clamp(250px, 80%, 920px);
   display: flex;
-  margin: 3vh auto;
+  margin: 3vh 5vh;
   justify-content: space-between;
 }
 
@@ -131,7 +161,7 @@ export default {
 .mer-information {
   width: clamp(250px, 80%, 920px);
   display: flex;
-  margin: 3vh auto;
+  margin: 3vh 5vh;
   justify-content: space-between;
 }
 
@@ -140,22 +170,35 @@ export default {
   font-family: "Outfit", sans-serif;
 }
 
-.mera-information {
-  width: clamp(250px, 80%, 920px);
+/* .mera-information {
+  width: clamp(250px, 30%, 920px);
   display: flex;
-  margin: 12vh auto;
+  margin: 120vh 130vh;
   flex-direction: column;
-}
+  margin-top: -110vh;
+  margin-bottom: 50vh;
+
+} */
 
 .mera-information h4 {
   font-size: clamp(16px, 4vw, 24px);
   font-family: "Outfit", sans-serif;
-  margin: 2vh 0;
+  margin: 2vh 3vh;
 }
 
 .mera-information p {
   font-size: clamp(12px, 3vw, 20px);
   font-family: "Outfit", sans-serif;
   line-height: 2.2em;
+}
+@media screen and (min-width: 950px)  {
+  .mera-information {
+  width: clamp(250px, 30%, 920px);
+  display: flex;
+  margin: 120vh 133vh;
+  flex-direction: column;
+  margin-top: -110vh;
+  margin-bottom: 40vh;
+}
 }
 </style>
