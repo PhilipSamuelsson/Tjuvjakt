@@ -24,41 +24,24 @@ export default {
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-    <RouterLink to="/">
-      <img class="img-logo" src="../assets/img/tjuvgods_logo.png" alt="Logo" />
-    </RouterLink>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      <RouterLink to="/">
+        <img class="img-logo" src="../assets/img/tjuvgods_logo.png" alt="Logo" />
+      </RouterLink>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
-            <RouterLink to="/">Hem</RouterLink>
-            </a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <RouterLink to="/" class="nav-link active" aria-current="page">Hem</RouterLink>
           </li>
-
           <li class="nav-item">
             <RouterLink to="/products" class="nav-link">Produkter</RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink to="/about" class="nav-link">Om Tjuvgods</RouterLink>
           </li>
-          <!-- Gamla länkar. TA BORT DETTA SEN -->
-          <!-- <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <RouterLink to="/profile">Mitt konto</RouterLink>
-                  </a>
-                </li> -->
-          <!-- <li class="nav-item">
-                  <RouterLink to="/custom-support" class="nav-link">Kundsupport</RouterLink>
-                </li> -->
-          <!-- <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <RouterLink to="/checkout">Test checkout</RouterLink>
-                  </a>
-                </li> -->
         </ul>
       </div>
       <div class="navbar-nav ml-auto">
@@ -85,9 +68,9 @@ nav[class="navbar navbar-expand-lg bg-body-tertiary"] {
 }
 
 /* bootstrap fix */
-
 .nav-link {
   width: auto;
+  font-weight: 600;
 }
 
 /* mobile bootstrap navbar fix */
@@ -134,6 +117,7 @@ nav ul li a:hover {
 .Kassa {
   height: 28px;
   width: 39px;
+  margin-top: 5px;
 }
 
 .cart {
@@ -145,6 +129,8 @@ nav ul li a:hover {
   font-size: 0.7rem;
   height: 20px;
   width: 20px;
+  margin-top: 5px;
+  margin-left: 3px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
