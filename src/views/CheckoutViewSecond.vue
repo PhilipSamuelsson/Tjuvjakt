@@ -106,7 +106,7 @@ vidareDisabled(){
     <router-link to="/checkout" class="blueColor"
       ><i class="bx bx-chevron-left" id="back-icon"></i
     ></router-link>
-    <RouterLink to="/CheckoutThird" class="blueColor">
+    <RouterLink to="/CheckoutThird" class="blueColor" v-bind:style="{ display: btnDisabled ? 'none' : 'block' }">
       <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
   </div>
