@@ -5,14 +5,8 @@ import { mapMutations, mapGetters } from "vuex";
 export default {
   data() {
     return {
-      väljFraktmetod: "FraktmetodOne",
-
-      fraktmetod: "FraktmetodOne",
+      fraktmetod: "DHL",
       btnDisabled: true
-
-      // goToNextPage() {
-      //   this.$router.push("/checkoutThird");
-      // },
     };
   },
 
@@ -66,13 +60,12 @@ vidareDisabled(){
     <div class="col">
       <div class="aa">
         <input
-          @input="vidareDisabled"
           v-model="fraktmetod"
           id="fraktmetodFirst"
           type="radio"
           value="DHL"
         />
-        <lable for="fraktmetodFirst">49 kr</lable>
+        <label for="fraktmetodFirst">49 kr</label>
       </div>
       <div>
         <p style="font-size: 11px; margin: auto">
@@ -85,13 +78,12 @@ vidareDisabled(){
     <div class="col">
       <div>
         <input
-         @input="vidareDisabled"
           v-model="fraktmetod"
           id="fraktmetodSecond"
           type="radio"
           value="Postnord"
         />
-        <lable for="fraktmetodSecond">99 kr</lable>
+        <label for="fraktmetodSecond">99 kr</label>
       </div>
       <div>
         <p style="font-size: 11px; margin: auto">
@@ -106,14 +98,13 @@ vidareDisabled(){
     <router-link to="/checkout" class="blueColor"
       ><i class="bx bx-chevron-left" id="back-icon"></i
     ></router-link>
-    <RouterLink to="/CheckoutThird" class="blueColor" v-bind:style="{ display: btnDisabled ? 'none' : 'block' }">
-      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
+    <RouterLink to="/CheckoutThird" class="blueColor">
+      <i @click="updateFraktMetod()" class="bx bx-chevron-right" id="next-icon"></i
     ></RouterLink>
   </div>
 
   <RouterLink to="/checkoutThird" class="underline">
-
-    <button class="vidare-btn" type="submit" @click="updateFraktMetod()" :disabled="btnDisabled">
+    <button class="vidare-btn" type="submit" @click="updateFraktMetod()">
       Vidare
     </button>
   </RouterLink>
@@ -209,7 +200,7 @@ i[class="bx bx-check"] {
 }
 
 input,
-lable {
+label {
   margin-left: 10px;
 }
 

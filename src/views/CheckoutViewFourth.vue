@@ -1,40 +1,7 @@
 <script>
-// import CheckoutView from "./CheckoutView.vue";
 
-// export default {
-//     props:{
-//         förnamn:{
-//             type:String,
-//             required:true,
-//         },
-//         efternamn:{
-//             type:String,
-//             required:true
-//         },
-//         gatuadress:{
-//             type:String,
-//             required:true
-//         }
-//     }
-// }
-// export default {
-//   mounted() {
-//     if (!this.$router.params.names || !this.$router.params.gatuadress) {
-//       this.$router.push({ name: CheckoutView });
-//     }
-//   },
-////
-//   data() {
-//     return {
-//     //   goToBack() {
-//     //     this.$router.push("/checkoutThird");
-//     //   },
-//     };
-//   },
-// };
 import ConfirmSummary from "../components/ConfirmSummary.vue";
 import { mapGetters } from "vuex";
-import ConfirmList from "../components/ConfirmList.vue";
 
 export default {
   computed: {
@@ -102,10 +69,7 @@ export default {
         :price="cartItem.price"
         :product="cartItem"
       />
-      <!--       <div class="content-one"></div>
-                          <div class="content-two"></div>
-                          <div class="content-one"></div>
-                          <div class="content-two"></div> -->
+
     </div>
 
     <div class="content">
@@ -120,6 +84,9 @@ export default {
       <hr />
       <p class="p-content">Fraktmetod: {{ $store.state.user.fraktmetod }}</p>
       <hr />
+    </div>
+    <div class="finalprice">
+      <h4>Kostnad: {{ getCartTotal }} KR</h4>
     </div>
     <button
       type="button"
@@ -173,8 +140,8 @@ export default {
     </div>
   </div>
   <div>
-    <RouterLink to="/checkoutThird" class="blueColor"
-      ><i @click="goToBack" class="bx bx-chevron-left" id="back-icon"></i>
+    <RouterLink to="/checkoutThird" class="blueColor">
+      <i class="bx bx-chevron-left" id="back-icon"></i>
     </RouterLink>
   </div>
 </template>
@@ -253,6 +220,15 @@ i[class="bx bx-check"] {
 
 .content .p-content {
   font-size: 0.8rem;
+}
+
+.finalprice {
+  display: flex;
+}
+
+.finalprice h4 {
+  display: flex;
+  margin: auto;
 }
 
 .col {
