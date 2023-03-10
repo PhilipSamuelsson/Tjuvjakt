@@ -43,7 +43,7 @@
       </div>
       <div>
         <label class="kortnummer" for="kortnummer">
-          <input v-model="user.kortnummer" type="text" id="kortnummer" maxlength="20" placeholder="1111 222 33333 444 55555"
+          <input v-model="user.kortnummer" type="text" id="kortnummer" maxlength="16" placeholder="1111 2222 3333 4444"
             required /></label>
       </div>
     </div>
@@ -133,7 +133,7 @@
     <div>
       <RouterLink to="/checkoutsecond" class="blueColor"><i class="bx bx-chevron-left" id="back-icon"></i></RouterLink>
 
-      <RouterLink to="/checkoutfourth" class="blueColor"><i class="bx bx-chevron-right" id="next-icon"></i></RouterLink>
+      <RouterLink to="/checkoutfourth" class="blueColor" v-bind:style="{ display: btnDisabled ? 'none' : 'block' }"><i class="bx bx-chevron-right" id="next-icon"></i></RouterLink>
     </div>
     <RouterLink to="/checkoutfourth" class="underline">
       <button class="vidare-btn" type="submit" @click="updateBankInfo()" :disabled="btnDisabled">
@@ -348,6 +348,9 @@ label::before {
 #cvc {
   height: 40px;
   width: 245px;
+}
+#cvc{
+  padding: 20px;
 }
 
 .colTwo {
