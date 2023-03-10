@@ -136,7 +136,7 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   color: #000000;
-  background-color: var(--primary-red);
+  background-color: var(--third-red);
 }
 
 @media screen and (min-width: 375px) and (max-width: 980px) {
