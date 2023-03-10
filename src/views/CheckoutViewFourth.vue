@@ -62,7 +62,10 @@ export default {
 </script>
 
 <template>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
 
   <div class="container">
     <div class="container-circles">
@@ -90,8 +93,15 @@ export default {
   <div class="container-info">
     <p style="font-weight: 600; padding: 20px">Bekräfta köp</p>
     <div class="col items-wrap">
-      <ConfirmSummary v-for="cartItem in cartList" :key="cartItem.id" :id="cartItem.id" :title="cartItem.title"
-        :image="cartItem.image" :price="cartItem.price" :product="cartItem" />
+      <ConfirmSummary
+        v-for="cartItem in cartList"
+        :key="cartItem.id"
+        :id="cartItem.id"
+        :title="cartItem.title"
+        :image="cartItem.image"
+        :price="cartItem.price"
+        :product="cartItem"
+      />
       <!--       <div class="content-one"></div>
                           <div class="content-two"></div>
                           <div class="content-one"></div>
@@ -104,24 +114,42 @@ export default {
         Namn: {{ $store.state.user.fornamn }} {{ $store.state.user.efternamn }}
       </p>
       <hr />
-      <p class="p-content">Leveransadress: {{ $store.state.user.gatuadress }}</p>
+      <p class="p-content">
+        Leveransadress: {{ $store.state.user.gatuadress }}
+      </p>
       <hr />
       <p class="p-content">Fraktmetod: {{ $store.state.user.fraktmetod }}</p>
       <hr />
     </div>
-    <button type="button" class="köp-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button
+      type="button"
+      class="köp-btn"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
       Köp
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">
               Orderbekräftelse
             </h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <p text-center>
@@ -130,16 +158,23 @@ export default {
             </p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-              Close
-            </button>
+            <RouterLink to="/">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Stäng
+              </button>
+            </RouterLink>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div>
-    <RouterLink to="/checkoutThird" class="blueColor"><i @click="goToBack" class="bx bx-chevron-left" id="back-icon"></i>
+    <RouterLink to="/checkoutThird" class="blueColor"
+      ><i @click="goToBack" class="bx bx-chevron-left" id="back-icon"></i>
     </RouterLink>
   </div>
 </template>
@@ -217,7 +252,7 @@ i[class="bx bx-check"] {
 }
 
 .content .p-content {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .col {
