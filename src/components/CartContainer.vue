@@ -2,7 +2,7 @@
   <!-- <div class="cart-wrapper">
 
   </div> -->
-  <div class="container">
+  <div class="container" id="kassaModul">
     <div class="top-title-container">
       <h2 class="top-title">Varukorgen</h2>
       <button @click="$store.commit('toggleCart')" class="close">
@@ -18,8 +18,7 @@
         @click="$store.commit('toggleCart')"
         class="action-btn link"
         to="/products"
-        >Handla istället</RouterLink
-      >
+        >Handla istället</RouterLink>
     </div>
     <div v-if="$store.state.cart.length" class="to-checkout-container">
       <div class="total-cost-container">
@@ -27,9 +26,13 @@
 
         <p>{{ getCartTotal }} KR</p>
       </div>
-      <button @click="tillKassan" class="action-btn" role="button">
-        Till kassan
-      </button>
+      <div @click="tillKassan" class="action-btn" role="button">
+        <RouterLink
+        @click="$store.commit('toggleCart')"
+        class="action-btn link"
+        to="/summary"
+        > Till kassan</RouterLink>
+      </div>
     </div>
   </div>
 </template>
@@ -37,6 +40,7 @@
 <script>
 import CartitemsContainer from "./CartitemsContainer.vue";
 import { mapGetters } from "vuex";
+import { V_SHOW } from "@vue/compiler-dom";
 export default {
   computed: {
     ...mapGetters(["getCartTotal"]),
@@ -47,7 +51,7 @@ export default {
   methods: {
     tillKassan() {
       this.$router.push("/summary");
-    },
+      },
   },
 };
 </script>
