@@ -1,13 +1,6 @@
 <template>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-  <!-- <div>
-    <i class="bx bx-chevron-left" id="back-icon"></i>
-    <RouterLink to="/checkoutsecond" class="blueColor">
-      <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i
-    ></RouterLink>
-  </div> -->
-
   <div class="container">
     <div class="container-circles">
       <div class="circles" id="circle-correctOne">
@@ -67,10 +60,10 @@
       <br />
       <div>
         <RouterLink to="/summary" class="blueColor">
-          <i class="bx bx-chevron-left" @click="goToNextPage" id="back-icon"></i>
+          <i class="bx bx-chevron-left" id="back-icon"></i>
         </RouterLink>
         <RouterLink to="/checkoutsecond" class="blueColor" v-bind:style="{ display: btnToggler ? 'none' : 'block' }">
-          <i @click="goToNextPage" class="bx bx-chevron-right" id="next-icon"></i>
+          <i @click="updateUserInfo()" class="bx bx-chevron-right" id="next-icon"></i>
         </RouterLink>
       </div>
 
@@ -128,7 +121,6 @@ export default {
   },
   data() {
     return {
-      // vidare: false,
       userComp: {
         fornamn: "",
         efternamn: "",
@@ -142,41 +134,13 @@ export default {
     };
   },
 
-  // methods: {
-  //   async checkoutView() {
-  //     await axios.post("/checkoutView", {
-  //       förnamn: this.förnamn,
-  //       efternamn: this.efternamn,
-  //       email: this.email,
-  //       telefonnummer: this.telefonnummer,
-  //       gatuadress: this.gatuadress,
-  //       stad: this.stad,
-  //       postnummer: this.postnummer,
-  //     });
-  //   },
-
   methods: {
     ...mapMutations(['setUserInfo']),
     updateUserInfo() {
       this.setUserInfo(this.userComp);
     }
   }
-  // showInfo() {
-  // let names = this.förnamn + " " + this.efternamn;
-  //     this.$route.push({
-  //       name: CheckoutViewFourth,
-  //       params: {
-  //         förnamn: this.förnamn,
-  //         efternamn: this.efternamn,
-  //         gatuadress: this.gatuadress,
-  //       },
-  //     });
-  //   },
-  // },
-  // },
-  // goToNextPage() {
-  //   this.$router.push("/checkoutViewSecond");
-  // },
+
 };
 </script>
 

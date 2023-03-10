@@ -40,7 +40,7 @@
 <script>
 import CartitemsContainer from "./CartitemsContainer.vue";
 import { mapGetters } from "vuex";
-import { V_SHOW } from "@vue/compiler-dom";
+// import { V_SHOW } from "@vue/compiler-dom";
 export default {
   computed: {
     ...mapGetters(["getCartTotal"]),

@@ -94,7 +94,7 @@
             <option value="November">November</option>
             <option value="December">December</option> -->
           </select></label>
-      </div> 
+      </div>
     </div>
 
     <div class="colTwo">
@@ -107,11 +107,11 @@
 
 <div class="container-betalningmetos" style="margin-top: -30px;">
     <div class="col">
-   <label for="klarna"> 
+   <label for="klarna">
    <input v-model="klarna" type="radio" id="klarna" name="betalningmetos">
     Klarna</label>
 
-   <label for="paypal"> 
+   <label for="paypal">
    <input v-model="paypal" type="radio" id="paypal" name="betalningmetos">
     PayPal</label>
   </div>
@@ -119,21 +119,24 @@
     <div class="col">
      <label for="bank"  style="right: 10px;">
      <input v-model="bank" type="radio" id="bank" name="betalningmetos">
-   Bank </label>
+    Bank </label>
 
    <label for="swish" style="right: -2px;"> <input v-model="swish" type="radio" id="swish" name="betalningmetos">
     Swish</label>
 </div>
-    
+
 
 
 
     </div>
 
     <div>
-      <RouterLink to="/checkoutsecond" class="blueColor"><i class="bx bx-chevron-left" id="back-icon"></i></RouterLink>
-
-      <RouterLink to="/checkoutfourth" class="blueColor" v-bind:style="{ display: btnDisabled ? 'none' : 'block' }"><i class="bx bx-chevron-right" id="next-icon"></i></RouterLink>
+      <RouterLink to="/checkoutsecond" class="blueColor">
+        <i class="bx bx-chevron-left" id="back-icon"></i>
+      </RouterLink>
+      <RouterLink to="/checkoutfourth" class="blueColor" v-bind:style="{ display: btnDisabled ? 'none' : 'block' }">
+        <i class="bx bx-chevron-right" id="next-icon" @click="updateBankInfo()"></i>
+      </RouterLink>
     </div>
     <RouterLink to="/checkoutfourth" class="underline">
       <button class="vidare-btn" type="submit" @click="updateBankInfo()" :disabled="btnDisabled">
@@ -144,7 +147,7 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters } from 'vuex';
+import { mapMutations } from 'vuex';
 export default {
   data() {
     return {
@@ -217,7 +220,7 @@ export default {
   // }
   // else{
   //   this.btnDisabled= true;
-  // }} 
+  // }}
 },
 };
 </script>
