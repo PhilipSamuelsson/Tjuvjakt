@@ -12,9 +12,7 @@
         Vi är så glada att du väljer att tro på att vi kan lösa ditt problem, du
         ska veta att vi skriver att vi lovar att titta på saken, det var allt.
       </p>
-      <RouterLink
-        class="action-btn link"
-        to="/products"
+      <RouterLink class="action-btn link" to="/products"
         >Handla lite?</RouterLink
       >
     </div>
@@ -51,7 +49,7 @@
         <textarea
           v-if="addComplaintView"
           class="selection-input"
-          :placeholder=complaint
+          :placeholder="complaint"
         ></textarea>
         <button
           v-if="addComplaintView"
@@ -153,12 +151,14 @@ button {
 }
 
 .thank-you-container {
-    max-width: 600px;
+  max-width: 600px;
   text-align: center;
+  margin: 0 1rem;
 }
 
-.thank-you-container p{
-    padding-bottom: 1rem;
+.thank-you-container p {
+  padding-bottom: 1rem;
+  margin: 0 1rem;
 }
 
 .info-container {
