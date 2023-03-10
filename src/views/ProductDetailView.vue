@@ -1,36 +1,32 @@
 <template>
   <button @click="backToProducts" class="back-to">
-  <div class="symbol-container">
-  <img src="../assets/img/arrow.png" alt="Arrow vector">
-  </div>
+    <div class="symbol-container">
+      <img src="../assets/img/arrow.png" alt="Arrow vector" />
+    </div>
     <p>Produkter</p>
-    </button>
+  </button>
   <div class="col">
     <div class="kontägner">
-      <img :src="varan.image" alt="product image" class="produktbilden"/>
+      <img :src="varan.image" alt="product image" class="produktbilden" />
     </div>
   </div>
-  <div class="information">
-    <h4 class="titel">Vara {{ productID }}: {{ varan.title }}</h4>
-
-    <button v-if="disabledAddButton" class="kopKnapp" @click="varuID">
-      Lägg i Kundkorg
-    </button>
-
-    <button @click="remove" v-if="!disabledAddButton" class="kopKnapp">
-      Ta bort från varukorgen
-    </button>
-  </div>
-  <div class="mer-information">
-    <h4 class="pris">Pris {{ varan.price }} Kr</h4>
-  </div>
+  <div class="information"></div>
+  <div class="mer-information"></div>
   <div class="mera-information">
-    <p >
+    <h4 class="titel">{{ varan.title }}</h4>
+    <p>
       Beskrivning: <br />
       {{ varan.description }}
     </p>
     <h4>Kategori: {{ varan.category }}</h4>
-    <h4>(Antal) I lager: {{ varan.quantity }}</h4>
+    <h4 class="pris">Pris {{ varan.price }} Kr</h4>
+    <h4>Lagersaldo: {{ varan.quantity }}</h4>
+    <button v-if="disabledAddButton" class="kopKnapp" @click="varuID">
+      Lägg i Kundkorg
+    </button>
+    <button @click="remove" v-if="!disabledAddButton" class="kopKnapp">
+      Ta bort från varukorgen
+    </button>
   </div>
 
   <!-- <div class="similar-product-container">
@@ -46,7 +42,7 @@ import axios from "axios";
 // import SmallProductContainer from "../components/SmallProductContainer.vue";
 import { mapMutations } from "vuex";
 export default {
-//   components: { SmallProductContainer },
+  //   components: { SmallProductContainer },
   data() {
     return {
       listOfSimilarProducts: [],
@@ -73,8 +69,8 @@ export default {
         params: { productID: id },
       });
     },
-    backToProducts(){
-     this.$router.push('/products')
+    backToProducts() {
+      this.$router.push("/products");
     },
     async fetchProduct() {
       const result = await axios.get("/productapi.json", {
@@ -93,9 +89,9 @@ export default {
       this.removeFromCart(this.varan.id);
     },
     refreshComponent() {
-        console.log('hej')
+      console.log("hej");
       this.$forceUpdate();
-      console.log(this.$forceUpdate)
+      console.log(this.$forceUpdate);
     },
   },
   created() {
@@ -110,7 +106,7 @@ button {
   background: none;
 }
 .back-to {
-  margin: 1rem;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 40px 1fr;
 }
@@ -121,8 +117,8 @@ button {
   width: 100%;
   height: auto;
 }
-html{
-  overflow-x: hidden
+html {
+  overflow-x: hidden;
 }
 .kontägner {
   display: flex;
@@ -134,9 +130,12 @@ html{
 
 .produktbilden {
   width: clamp(250px, 80%, 920px);
-  margin: 5vh;
+  margin-bottom: 5vh;
+  margin-top: 0;
   height: 80vh;
   box-sizing: content-box;
+  object-fit: contain;
+  margin-left: 5vh;
 }
 
 .information {
@@ -185,7 +184,7 @@ html{
 .mera-information h4 {
   font-size: clamp(16px, 4vw, 24px);
   font-family: "Outfit", sans-serif;
-  margin: 2vh 3vh;
+  margin-top: 1.5vh;
 }
 
 .mera-information p {
@@ -193,14 +192,16 @@ html{
   font-family: "Outfit", sans-serif;
   line-height: 2.2em;
 }
-@media screen and (min-width: 950px)  {
+@media screen and (min-width: 950px) {
   .mera-information {
-  width: clamp(250px, 30%, 920px);
-  display: flex;
-  margin: 120vh 133vh;
-  flex-direction: column;
-  margin-top: -100vh;
-  margin-bottom: 40vh;
-}
+    width: clamp(250px, 30%, 920px);
+    display: flex;
+    margin: 120vh 133vh;
+    flex-direction: column;
+    margin-top: -100vh;
+    margin-bottom: 40vh;
+  }
+  .kontägner {
+  }
 }
 </style>
