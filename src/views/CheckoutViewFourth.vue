@@ -19,7 +19,7 @@ export default {
     fetchProducts() {
       this.cartList = this.$store.state.cart;
     },
-    
+
     deleteVarukorgContent(){
       this.$store.commit('deleteVarukorgProducts')
     }
@@ -126,7 +126,7 @@ export default {
           <div class="modal-body">
             <p text-center>
               Tack för ditt köp! <br />
-              Dina tjuvgods är nu påväg!
+              Ditt tjuvgods är nu påväg!
             </p>
           </div>
           <div class="modal-footer">
