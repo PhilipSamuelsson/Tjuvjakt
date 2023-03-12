@@ -19,6 +19,10 @@ export default {
     fetchProducts() {
       this.cartList = this.$store.state.cart;
     },
+    
+    deleteVarukorgContent(){
+      this.$store.commit('deleteVarukorgProducts')
+    }
   },
   data() {
     return {
@@ -89,6 +93,7 @@ export default {
       <h4>Kostnad: {{ getCartTotal }} KR</h4>
     </div>
     <button
+      @click="deleteVarukorgContent"
       type="button"
       class="köp-btn"
       data-bs-toggle="modal"

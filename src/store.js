@@ -42,6 +42,9 @@ const mutations = {
     });
   },
 
+deleteVarukorgProducts(state){
+state.cart =[]
+  },
   // setUserInfo: (inputvalue) => {
   //   state.user.fornamn = inputvalue
   // inputkey
