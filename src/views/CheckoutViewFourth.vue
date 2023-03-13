@@ -1,15 +1,9 @@
 <script>
-
-import ConfirmSummary from "../components/ConfirmSummary.vue";
 import { mapGetters } from "vuex";
 
 export default {
   computed: {
     ...mapGetters(["getCartTotal"]),
-  },
-
-  components: {
-    ConfirmSummary,
   },
 
   mounted() {
@@ -20,9 +14,9 @@ export default {
       this.cartList = this.$store.state.cart;
     },
 
-    deleteVarukorgContent(){
-      this.$store.commit('deleteVarukorgProducts')
-    }
+    deleteVarukorgContent() {
+      this.$store.commit("deleteVarukorgProducts");
+    },
   },
   data() {
     return {
@@ -73,7 +67,6 @@ export default {
         :price="cartItem.price"
         :product="cartItem"
       />
-
     </div>
 
     <div class="content">

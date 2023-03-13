@@ -5,11 +5,30 @@
     </div>
     <p>Produkter</p>
   </button>
-  <div class="col">
-    <div class="kontägner">
-      <img :src="varan.image" alt="product image" class="produktbilden" />
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <img :src="varan.image" alt="product image" class="produktbilden" />
+      </div>
+      <div class="col-lg-4">
+        <h4 class="titel">{{ varan.title }}</h4>
+        <p>
+          Beskrivning: <br />
+          {{ varan.description }}
+        </p>
+        <h4>Kategori: {{ varan.category }}</h4>
+        <h4 class="pris">Pris {{ varan.price }} Kr</h4>
+        <h4>Lagersaldo: {{ varan.quantity }}</h4>
+        <button v-if="disabledAddButton" class="kopKnapp" @click="varuID">
+          Lägg i Kundkorg
+        </button>
+        <button @click="remove" v-if="!disabledAddButton" class="kopKnapp">
+          Ta bort från varukorgen
+        </button>
+      </div>
     </div>
   </div>
+<!--
   <div class="information"></div>
   <div class="mer-information"></div>
   <div class="mera-information">
@@ -28,6 +47,10 @@
       Ta bort från varukorgen
     </button>
   </div>
+  -->
+  <!-- <div class="information"></div>
+  <div class="mer-information"></div> -->
+
 
   <!-- <div class="similar-product-container">
     <SmallProductContainer
@@ -119,6 +142,7 @@ button {
 }
 html {
   overflow-x: hidden;
+  padding: 10px;
 }
 .kontägner {
   display: flex;
@@ -135,7 +159,7 @@ html {
   height: 80vh;
   box-sizing: content-box;
   object-fit: contain;
-  margin-left: 5vh;
+  margin-left: 5.5vh;
 }
 
 .information {
@@ -200,8 +224,6 @@ html {
     flex-direction: column;
     margin-top: -100vh;
     margin-bottom: 40vh;
-  }
-  .kontägner {
   }
 }
 </style>
