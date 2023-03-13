@@ -5,14 +5,12 @@
     </div>
     <p>Produkter</p>
   </button>
-  <div class="col">
-    <div class="kontägner">
+  <div class="container">
+ <div class="row">
+    <div class="col-lg-8">
       <img :src="varan.image" alt="product image" class="produktbilden" />
     </div>
-  </div>
-  <div class="information"></div>
-  <div class="mer-information"></div>
-  <div class="mera-information">
+    <div class="col-lg-4">
     <h4 class="titel">{{ varan.title }}</h4>
     <p>
       Beskrivning: <br />
@@ -28,6 +26,11 @@
       Ta bort från varukorgen
     </button>
   </div>
+  </div>
+</div>
+  <!-- <div class="information"></div>
+  <div class="mer-information"></div> -->
+
 
   <!-- <div class="similar-product-container">
     <SmallProductContainer
@@ -119,6 +122,7 @@ button {
 }
 html {
   overflow-x: hidden;
+  padding: 10px;
 }
 .kontägner {
   display: flex;
@@ -135,7 +139,7 @@ html {
   height: 80vh;
   box-sizing: content-box;
   object-fit: contain;
-  margin-left: 5vh;
+  margin-left: 5.5vh;
 }
 
 .information {
@@ -200,8 +204,6 @@ html {
     flex-direction: column;
     margin-top: -100vh;
     margin-bottom: 40vh;
-  }
-  .kontägner {
   }
 }
 </style>
