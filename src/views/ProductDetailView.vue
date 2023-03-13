@@ -21,10 +21,10 @@
     <h4>Kategori: {{ varan.category }}</h4>
     <h4 class="pris">Pris {{ varan.price }} Kr</h4>
     <h4>Lagersaldo: {{ varan.quantity }}</h4>
-    <button v-if="disabledAddButton" class="kopKnapp" @click="varuID">
+    <button v-if="disabledAddButton" class="kopKnapp action-btn" @click="varuID">
       Lägg i Kundkorg
     </button>
-    <button @click="remove" v-if="!disabledAddButton" class="kopKnapp">
+    <button @click="remove" v-if="!disabledAddButton" class="kopKnapp action-btn">
       Ta bort från varukorgen
     </button>
   </div>

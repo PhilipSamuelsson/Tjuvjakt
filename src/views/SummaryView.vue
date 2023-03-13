@@ -18,7 +18,7 @@
   <div class="till-betalning">
     <p><b>Totalkostnad:</b> {{ getCartTotal }}:-</p>
     <RouterLink to="/checkout">
-      <button class="button-89" role="button">Till betalning</button>
+      <button class="action-btn" role="button">Till betalning</button>
     </RouterLink>
   </div>
 </template>

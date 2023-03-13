@@ -95,7 +95,7 @@ export default {
     <button
       @click="deleteVarukorgContent"
       type="button"
-      class="köp-btn"
+      class="köp-btn action-btn"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
     >

@@ -93,7 +93,7 @@
     </div>
   </form>
   <RouterLink to="/checkoutsecond" class="underline">
-    <button @click="updateUserInfo()" class="vidare-btn" type="submit" v-bind:disabled="btnToggler">
+    <button @click="updateUserInfo()" class="action-btn vidare-btn" type="submit" v-bind:disabled="btnToggler">
       Vidare
     </button>
   </RouterLink>

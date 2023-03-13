@@ -104,7 +104,7 @@ vidareDisabled(){
   </div>
 
   <RouterLink to="/checkoutThird" class="underline">
-    <button class="vidare-btn" type="submit" @click="updateFraktMetod()">
+    <button class="action-btn vidare-btn" type="submit" @click="updateFraktMetod()">
       Vidare
     </button>
   </RouterLink>
