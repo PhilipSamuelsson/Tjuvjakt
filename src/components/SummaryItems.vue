@@ -123,6 +123,7 @@ export default {
     height: 0.3em;
     background-color: black;
     margin-bottom: 1em;
+    width: 150px;
 }
 
 img {
