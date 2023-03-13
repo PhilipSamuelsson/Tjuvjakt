@@ -1,9 +1,13 @@
 <script>
+import ConfirmSummary from "../components/ConfirmSummary.vue";
 import { mapGetters } from "vuex";
 
 export default {
   computed: {
     ...mapGetters(["getCartTotal"]),
+  },
+  components: {
+    ConfirmSummary,
   },
 
   mounted() {
