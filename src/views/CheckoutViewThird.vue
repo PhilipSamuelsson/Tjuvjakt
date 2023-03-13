@@ -139,7 +139,7 @@
       </RouterLink>
     </div>
     <RouterLink to="/checkoutfourth" class="underline">
-      <button class="action-btn" type="submit" @click="updateBankInfo()" :disabled="btnDisabled">
+      <button class="action-btn vidare-btn" type="submit" @click="updateBankInfo()" :disabled="btnDisabled">
         Vidare
       </button>
     </RouterLink>
