@@ -29,7 +29,7 @@
       <div @click="tillKassan" class="action-btn" role="button">
         <RouterLink
         @click="$store.commit('toggleCart')"
-        class="action-btn link"
+        class="link"
         to="/summary"
         > Till kassan</RouterLink>
       </div>
@@ -57,6 +57,11 @@ export default {
 </script>
 
 <style scoped>
+
+.link {
+  text-decoration: none;
+  color: var(--black);
+}
 .cart-wrapper {
   top: 0.1rem;
   width: 100vw;
