@@ -28,7 +28,7 @@
       </div>
     </div>
   </div>
-<!--
+  <!--
   <div class="information"></div>
   <div class="mer-information"></div>
   <div class="mera-information">
@@ -50,7 +50,6 @@
   -->
   <!-- <div class="information"></div>
   <div class="mer-information"></div> -->
-
 
   <!-- <div class="similar-product-container">
     <SmallProductContainer
@@ -139,10 +138,6 @@ button {
 .symbol-container img {
   width: 100%;
   height: auto;
-}
-html {
-  overflow-x: hidden;
-  padding: 10px;
 }
 .kontägner {
   display: flex;
