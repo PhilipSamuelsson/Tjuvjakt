@@ -31,9 +31,9 @@
     />
   </div></div>
   <div class="till-betalning">
-    <p><b>Totalkostnad:</b> {{ getCartTotal }}:-</p>
+    <p v-if="cartList.length"><b>Totalkostnad:</b> {{ getCartTotal }}:-</p>
     <RouterLink to="/checkout">
-      <button class="action-btn" role="button">Till betalning</button>
+      <button class="action-btn" role="button"  v-if="cartList.length" >Till betalning</button>
     </RouterLink>
   </div>
 </template>
