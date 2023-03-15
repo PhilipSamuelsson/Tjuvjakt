@@ -1,5 +1,6 @@
 <template>
   <div class="sum">
+  <div class="mobile">
     <h4>{{ productTitle }}</h4>
     <img :src="productImg" class="img-fluid" alt="..." >
 
@@ -17,7 +18,7 @@
         >
          <p class="btn-symbol">+</p>
         </button>
-      </div>
+      </div></div>
 
 
 
@@ -142,6 +143,33 @@ img {
     padding: 1em 0;
 }
 
+@media (max-width: 350px){
+  h4{
+    font-size: 12px;
+  }
+  .sum{
+    width: 20%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .line{
+    width: 80px;
+  }
+  img{
+    width: 100%;
+  }
+  .btn-symbol{
+    width: 100%;
+  }
+  .increment-container {
+        width: 40%;
+    }
+    .increment-btn{
+      width: 30px;
+      height: 30px;
+    }
+ 
+}
 
 @media (min-width: 350px) {
     .increment-container {

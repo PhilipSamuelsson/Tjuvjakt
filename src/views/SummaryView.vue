@@ -1,20 +1,14 @@
 <template>
   <h2>Översikt</h2>
 
-
+<!-- EN KOLUMN -->
   <!-- <div class="container" style=" display: flex; flex-wrap: wrap; justify-content:space-between;">
   <div class="kontägner"  style=" display:flex; flex-direction:column; width:50%; padding:10px;"
 > -->
-
+<!-- TVÅ KOLUMN -->
 <div class="container">
   <div class="kontägner" style=" display: grid;   grid-template-columns: repeat(2,1fr);"
 >
-    <!-- <div class="container" style=" display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)) grid-gap:10px; margin:auto;">
-  <div class="kontägner"  style=" display:grid; grid-template-columns: repeat(2,1fr) grid-gap:5px;"
-> -->
-
-
-
   <!-- <div class="kontägner"> -->
     <SummaryItems
       v-for="cartItem in cartList"
@@ -84,6 +78,15 @@ h2 {
 }
 .kontägner {
   width: 80%;
+}
+@media (max-width: 350px){
+  .till-betalning{
+  position: relative;
+right: 22%;
+}
+.till-betalning p{
+  font-size: 15px;
+}
 }
 @media (min-width: 375px){
   .till-betalning { 
