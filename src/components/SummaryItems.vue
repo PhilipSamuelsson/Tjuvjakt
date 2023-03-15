@@ -38,14 +38,24 @@ export default {
       this.numberOfItem++;
       this.addMore(this.cartItem);
     },
+    // decrement() {
+    //   if (this.getCartItemCount > 1) {
+    //     this.numberOfItem--;
+    //     this.removeItemFromCart(this.cartItem);
+    //   } else {
+    //     this.remove();
+    //   }
+    // },
+
     decrement() {
-      if (this.getCartItemCount > 1) {
+      if (this.numberOfItem > 1) {
         this.numberOfItem--;
         this.removeItemFromCart(this.cartItem);
       } else {
         this.remove();
       }
     },
+
 
     ...mapMutations([
       "addItemCart",
