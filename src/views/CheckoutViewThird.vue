@@ -139,7 +139,7 @@
       </RouterLink>
     </div>
     <RouterLink to="/checkoutfourth" class="underline">
-      <button class="action-btn vidare-btn" type="submit" @click="updateBankInfo()" :disabled="btnDisabled">
+      <button class="vidare-btn" type="submit" @click="updateBankInfo()" :disabled="btnDisabled">
         Vidare
       </button>
     </RouterLink>
@@ -381,6 +381,22 @@ label::before {
   font-size: 25px;
   text-decoration: none;
   background-color: white;
+
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    padding: .3rem;
+    border: 3px solid var(--black);
+    text-align: center;
+    background: transparent;
+    font-family: Outfit, sans-serif;
+    font-weight: 900;
+    margin-top: 1rem;
+    text-decoration: none;
+    /* color: var(--black); */
+    background-color: var(--grey);
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
 }
 
 .underline {

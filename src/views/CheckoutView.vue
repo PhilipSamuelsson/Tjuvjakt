@@ -93,7 +93,7 @@
     </div>
   </form>
   <RouterLink to="/checkoutsecond" class="underline">
-    <button @click="updateUserInfo()" class="action-btn vidare-btn" type="submit" v-bind:disabled="btnToggler">
+    <button @click="updateUserInfo()" class="vidare-btn" type="submit" v-bind:disabled="btnToggler">
       Vidare
     </button>
   </RouterLink>
@@ -295,6 +295,22 @@ label::before {
   font-weight: 600;
   font-size: 25px;
   background-color: white;
+
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    padding: .3rem;
+    border: 3px solid var(--black);
+    text-align: center;
+    background: transparent;
+    font-family: Outfit, sans-serif;
+    font-weight: 900;
+    margin-top: 1rem;
+    text-decoration: none;
+    /* color: var(--black); */
+    background-color: var(--grey);
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
 }
 
 .underline {
