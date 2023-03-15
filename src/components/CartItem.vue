@@ -9,7 +9,6 @@
     <div class="spec-item">
       <div class="cart-info">
         <p class="info-title">{{ productTitle }}</p>
-        <!-- <p class="info-category">{{ productCategory }}</p> -->
 
         <p class="info-price">{{ numberOfProducts * productPrice }} kr</p>
       </div>
@@ -157,9 +156,6 @@ export default {
 .increment-container {
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
 }
 
 .increment-btn {
