@@ -1,6 +1,15 @@
 <template>
   <h2>Översikt</h2>
-  <div class="kontägner">
+
+<!-- EN KOLUMN -->
+  <!-- <div class="container" style=" display: flex; flex-wrap: wrap; justify-content:space-between;">
+  <div class="kontägner"  style=" display:flex; flex-direction:column; width:50%; padding:10px;"
+> -->
+<!-- TVÅ KOLUMN -->
+<div class="container">
+  <div class="kontägner" style=" display: grid;   grid-template-columns: repeat(2,1fr);"
+>
+  <!-- <div class="kontägner"> -->
     <SummaryItems
       v-for="cartItem in cartList"
       :key="cartItem.id"
@@ -14,11 +23,11 @@
       :product="cartItem"
       :beskrivning="cartItem.description"
     />
-  </div>
+  </div></div>
   <div class="till-betalning">
-    <p><b>Totalkostnad:</b> {{ getCartTotal }}:-</p>
+    <p v-if="cartList.length"><b>Totalkostnad:</b> {{ getCartTotal }}:-</p>
     <RouterLink to="/checkout">
-      <button class="action-btn" role="button">Till betalning</button>
+      <button class="action-btn" role="button"  v-if="cartList.length" >Till betalning</button>
     </RouterLink>
   </div>
 </template>
@@ -64,19 +73,37 @@ h2 {
   padding-left: 50%;
   margin-top: 30px;
 }
+.container{
+  width: 100%;
+}
 .kontägner {
   width: 80%;
 }
-
+@media (max-width: 350px){
+  .till-betalning{
+  position: relative;
+right: 22%;
+}
+.till-betalning p{
+  font-size: 15px;
+}
+}
+@media (min-width: 375px){
+  .till-betalning { 
+position: relative;
+    right: 15%;}
+}
 @media (min-width: 950px) {
   .kontägner {
     width: 50%;
   }
   .till-betalning {
-    position: absolute;
+    /* position: absolute; */
+    position: relative;
     top: 60%;
     right: 5%;
-    padding-right: 15vw;
+    /* padding-right: 15vw;
+    bottom: 10px; */
   }
 }
 /* .button-89 { */
