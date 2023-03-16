@@ -48,10 +48,8 @@ const showSort = ref(false);
 
     <!-- <input class=openClose type=dropdown v-model=this.data> -->
   </div>
-  <!-- {display: showVillkor ? 'block' : 'none' }" -->
   <div class="products-wrapper">
     <div class="products-container">
-      <!-- @click="sendId(product.id)" -->
       <ProductItem class="product-item" v-for="product in products" :key="product.id" @click="selectProduct(product.id)"
         :image="product.image" :price="product.price" :title="product.title" />
     </div>
