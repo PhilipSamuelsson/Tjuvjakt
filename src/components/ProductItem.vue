@@ -52,11 +52,6 @@ export default {
   grid-template-rows: 200px 80px;
 }
 
-.product-img-container {
-  /* min-height: 100px;
-    overflow: hidden; */
-}
-
 .product-img-container img {
   max-width: 100%;
   height: auto;
