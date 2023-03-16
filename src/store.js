@@ -1,17 +1,5 @@
 import { createStore } from "vuex";
 const mutations = {
-  // getNumberOfProducts(state, productId) {
-  //   let count = 0;
-  //   state.cart.forEach((item) => {
-  //       console.log(item)
-  //     if (productId === item.id) {
-  //       count += item.numberOfItem;
-  //     }
-  //   });
-  //   console.log(count)
-  //   return count;
-
-  // },
 
   toggleCart(state) {
     state.showCart = !state.showCart;
@@ -45,9 +33,6 @@ const mutations = {
 deleteVarukorgProducts(state){
 state.cart =[]
   },
-  // setUserInfo: (inputvalue) => {
-  //   state.user.fornamn = inputvalue
-  // inputkey
   setUserInfo(state, inputvalue) {
     state.user.fornamn = inputvalue.fornamn;
     state.user.efternamn = inputvalue.efternamn;
@@ -70,14 +55,6 @@ state.cart =[]
   setFraktMetod(state, payload) {
     state.user.fraktmetod = payload;
   },
-
-  // Filter funktionalitet
-  // async filterCategory(kategory) {
-  //   this.products = this.products.filter(
-  //     (item) => item.category === kategory
-  //   );
-  // },
-
 
   addItemCart: (state, payload) => {
     state.cart.push({
