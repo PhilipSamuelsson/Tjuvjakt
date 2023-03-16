@@ -1,5 +1,9 @@
 <template>
   <h2>Översikt</h2>
+  <div v-if="!getCartTotal" class="optional-message">
+    <p>Hoppsan! Tomt i varukorgen, inte fick du kalla fötter väl? Köp lite skor isåfall... </p>
+    <RouterLink to="/products" class="action-btn">Handla...?</RouterLink>
+  </div>
 
 <!-- EN KOLUMN -->
   <!-- <div class="container" style=" display: flex; flex-wrap: wrap; justify-content:space-between;">
@@ -89,7 +93,7 @@ right: 22%;
 }
 }
 @media (min-width: 375px){
-  .till-betalning { 
+  .till-betalning {
 position: relative;
     right: 15%;}
 }
@@ -105,6 +109,10 @@ position: relative;
     /* padding-right: 15vw;
     bottom: 10px; */
   }
+}
+
+.optional-message{
+    text-align: center;
 }
 /* .button-89 { */
  /*  --b: 3px; */ /* border thickness */
