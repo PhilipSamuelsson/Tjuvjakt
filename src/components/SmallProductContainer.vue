@@ -31,12 +31,6 @@ export default {
     async fetchProducts() {
       this.products = await this.similarProducts;
     },
-    selectProduct(id) {
-      this.$router.push({
-        name: "productdetail",
-        params: { productID: id },
-      });
-    },
     sendId(id) {
       this.$emit("idFromSmallProduct", id);
     },
