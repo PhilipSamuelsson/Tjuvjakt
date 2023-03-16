@@ -45,7 +45,6 @@
           Beskriv ditt problem, gärna så kort som möjligt så får vi se ifall vi
           kan eller vill svara
         </h6>
-        <!-- <label v-if="addComplaintView">Jag har problem med</label> -->
         <textarea
           v-if="addComplaintView"
           class="selection-input"
@@ -94,7 +93,6 @@ export default {
   },
   methods: {
     selectionComplaint(selection) {
-      // console.log(selection)
       this.complaint = selection;
       this.isSelectedOption();
       this.addComplaint();
@@ -187,11 +185,6 @@ button {
 .send-btn {
   float: right;
 }
-/* .link {
-  margin-top: 1rem;
-  text-decoration: none;
-  color: #000000;
-} */
 .selection-input {
   display: grid;
 }
