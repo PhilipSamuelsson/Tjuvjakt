@@ -1,7 +1,4 @@
 <template>
-  <!-- <div class="cart-wrapper">
-
-  </div> -->
   <div class="container" id="kassaModul">
     <div class="top-title-container">
       <h2 class="top-title">Varukorgen</h2>
@@ -18,7 +15,8 @@
         @click="$store.commit('toggleCart')"
         class="action-btn link"
         to="/products"
-        >Handla istället</RouterLink>
+        >Handla istället</RouterLink
+      >
     </div>
     <div v-if="$store.state.cart.length" class="to-checkout-container">
       <div class="total-cost-container">
@@ -28,10 +26,12 @@
       </div>
       <div @click="tillKassan" class="action-btn" role="button">
         <RouterLink
-        @click="$store.commit('toggleCart')"
-        class="link"
-        to="/summary"
-        > Till kassan</RouterLink>
+          @click="$store.commit('toggleCart')"
+          class="link"
+          to="/summary"
+        >
+          Till kassan</RouterLink
+        >
       </div>
     </div>
   </div>
@@ -51,23 +51,15 @@ export default {
   methods: {
     tillKassan() {
       this.$router.push("/summary");
-      },
+    },
   },
 };
 </script>
 
 <style scoped>
-
 .link {
   text-decoration: none;
   color: var(--black);
-}
-.cart-wrapper {
-  top: 0.1rem;
-  width: 100vw;
-  position: absolute;
-  display: grid;
-  grid-template-columns: 1fr;
 }
 
 .close {
@@ -88,29 +80,9 @@ export default {
   width: 100%;
   max-width: 300px;
   position: absolute;
-  /* grid-column: 2; */
   box-shadow: var(--shadow);
   background-color: white;
   z-index: 99;
-}
-
-/* @media(min-width:768px){
-    .container{
-        background-color: red;
-        grid-column: 2;
-    }
-    .cart-wrapper{
-        grid-template-columns: 1fr 1fr;
-    }
-} */
-
-@media (min-width: 990px) {
-  .container {
-    /* grid-column: 4; */
-  }
-  .cart-wrapper {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 }
 
 .top-title-container {
@@ -125,14 +97,6 @@ export default {
   font-weight: 900;
   font-family: "Turret Road", cursive;
   font-size: 1.2rem;
-}
-
-.action-btn {
-  border: 3px solid #000000;
-  text-align: center;
-  background: transparent;
-  font-family: Outfit, sans-serif;
-  font-weight: 900;
 }
 
 .cart-container {
