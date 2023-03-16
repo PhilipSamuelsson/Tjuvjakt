@@ -1,7 +1,7 @@
 <template>
   <h2>Översikt</h2>
   <div v-if="!getCartTotal" class="optional-message">
-    <p>Hoppsan! Tomt i varukorgen, inte fick du kalla fötter väl? Köp lite skor isåfall... </p>
+    <p>Hoppsan! Tomt i varukorgen, fick du kalla fötter? Köp lite skor... </p>
     <RouterLink to="/products" class="action-btn">Handla...?</RouterLink>
   </div>
 
