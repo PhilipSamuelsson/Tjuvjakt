@@ -48,8 +48,8 @@ export default {
     </div>
     <div class="c-item grey">
       <h3 class="explainer-text">
-        Våra produkter är svåra och ibland lätta att komma över. Kolla en kort
-        vido på hur vårt gäng arbetar ute på gatorna
+        Våra produkter är svåra och ibland lätta att komma över. Titta på en kort
+        video på hur vårt gäng arbetar ute på gatorna
       </h3>
       <a
         target="_blank"
@@ -146,9 +146,5 @@ export default {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
-
-  /* .products-container {
-    grid-template-columns: 1fr 1fr;
-  } */
 }
 </style>
